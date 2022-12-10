@@ -161,9 +161,9 @@ public class Main extends javax.swing.JFrame {
         DonateBtn2 = new javax.swing.JButton();
         AboutUsBtn = new javax.swing.JButton();
         CareersBtn = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        LoginHero = new javax.swing.JLabel();
+        FooterText = new javax.swing.JLabel();
+        HeroFooter = new javax.swing.JLabel();
         LoginComboBox = new javax.swing.JComboBox<>();
 
         jLabel1.setText("jLabel1");
@@ -191,9 +191,13 @@ public class Main extends javax.swing.JFrame {
 
         loginPanel.add(mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(-270, -160, 990, 70));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("/Users/sirius/Desktop/logo.png")); // NOI18N
-        jLabel6.setText("Logo");
-        loginPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 200, 130));
+        jLabel6.setFont(new java.awt.Font("Kodchasan", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(23, 143, 206));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/images/logo.png"))); // NOI18N
+        jLabel6.setText("Charity-Eco");
+        jLabel6.setToolTipText("Name");
+        jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        loginPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 270, 130));
 
         DonateBtn1.setBackground(new java.awt.Color(59, 135, 211));
         DonateBtn1.setFont(new java.awt.Font("Khmer MN", 0, 18)); // NOI18N
@@ -204,7 +208,7 @@ public class Main extends javax.swing.JFrame {
                 DonateBtn1ActionPerformed(evt);
             }
         });
-        loginPanel.add(DonateBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 50, 140, 50));
+        loginPanel.add(DonateBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 50, 170, 50));
 
         VolunteerBtn.setFont(new java.awt.Font("Khmer MN", 0, 18)); // NOI18N
         VolunteerBtn.setForeground(new java.awt.Color(59, 135, 211));
@@ -214,7 +218,7 @@ public class Main extends javax.swing.JFrame {
                 VolunteerBtnActionPerformed(evt);
             }
         });
-        loginPanel.add(VolunteerBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 60, -1, 30));
+        loginPanel.add(VolunteerBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 50, 120, 50));
 
         NeedFoodBtn.setFont(new java.awt.Font("Khmer MN", 0, 18)); // NOI18N
         NeedFoodBtn.setForeground(new java.awt.Color(59, 135, 211));
@@ -224,7 +228,7 @@ public class Main extends javax.swing.JFrame {
                 NeedFoodBtnActionPerformed(evt);
             }
         });
-        loginPanel.add(NeedFoodBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 60, -1, 30));
+        loginPanel.add(NeedFoodBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 50, 120, 50));
 
         DonateBtn2.setBackground(new java.awt.Color(204, 153, 0));
         DonateBtn2.setFont(new java.awt.Font("Khmer MN", 0, 18)); // NOI18N
@@ -235,17 +239,20 @@ public class Main extends javax.swing.JFrame {
                 DonateBtn2ActionPerformed(evt);
             }
         });
-        loginPanel.add(DonateBtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 540, -1, 30));
+        loginPanel.add(DonateBtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 460, 150, 50));
 
         AboutUsBtn.setFont(new java.awt.Font("Khmer MN", 0, 18)); // NOI18N
         AboutUsBtn.setForeground(new java.awt.Color(59, 135, 211));
         AboutUsBtn.setText("About us");
+        AboutUsBtn.setAlignmentY(0.0F);
+        AboutUsBtn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        AboutUsBtn.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         AboutUsBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AboutUsBtnActionPerformed(evt);
             }
         });
-        loginPanel.add(AboutUsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 60, -1, 30));
+        loginPanel.add(AboutUsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 50, 120, 50));
 
         CareersBtn.setFont(new java.awt.Font("Khmer MN", 0, 18)); // NOI18N
         CareersBtn.setForeground(new java.awt.Color(59, 135, 211));
@@ -255,19 +262,19 @@ public class Main extends javax.swing.JFrame {
                 CareersBtnActionPerformed(evt);
             }
         });
-        loginPanel.add(CareersBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 60, -1, 30));
+        loginPanel.add(CareersBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 50, 120, 50));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("/Users/sirius/Downloads/HFH_image_2022.jpeg")); // NOI18N
-        loginPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 1410, 580));
+        LoginHero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/images/bg.jpeg"))); // NOI18N
+        loginPanel.add(LoginHero, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 1420, 580));
 
-        jLabel7.setFont(new java.awt.Font("Hiragino Maru Gothic ProN", 3, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(59, 135, 211));
-        jLabel7.setText("   Address: The Boston Food Bank, 70 South Bay Avenue Boston, MA 02118               Phone: 617.427.5200                 Email: bostonfoodbank@gmail.com");
-        loginPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 720, 1420, 70));
+        FooterText.setBackground(new java.awt.Color(204, 204, 204));
+        FooterText.setFont(new java.awt.Font("Hiragino Maru Gothic ProN", 3, 18)); // NOI18N
+        FooterText.setForeground(new java.awt.Color(59, 135, 211));
+        FooterText.setText("   Address: The Boston Food Bank, 70 South Bay Avenue Boston, MA 02118               Phone: 617.427.5200                 Email: bostonfoodbank@gmail.com");
+        loginPanel.add(FooterText, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 720, 1420, 70));
 
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setIcon(new javax.swing.ImageIcon("/Users/sirius/Downloads/back.jpeg")); // NOI18N
-        loginPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 1410, 640));
+        HeroFooter.setForeground(new java.awt.Color(255, 255, 255));
+        loginPanel.add(HeroFooter, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 1410, 640));
 
         LoginComboBox.setFont(new java.awt.Font("Khmer MN", 0, 18)); // NOI18N
         LoginComboBox.setForeground(new java.awt.Color(59, 135, 211));
@@ -277,7 +284,7 @@ public class Main extends javax.swing.JFrame {
                 LoginComboBoxActionPerformed(evt);
             }
         });
-        loginPanel.add(LoginComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 60, -1, 30));
+        loginPanel.add(LoginComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 50, 220, 50));
 
         getContentPane().add(loginPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1420, 790));
 
@@ -374,7 +381,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton CareersBtn;
     private javax.swing.JButton DonateBtn1;
     private javax.swing.JButton DonateBtn2;
+    private javax.swing.JLabel FooterText;
+    private javax.swing.JLabel HeroFooter;
     private javax.swing.JComboBox<String> LoginComboBox;
+    private javax.swing.JLabel LoginHero;
     private javax.swing.JButton NeedFoodBtn;
     private javax.swing.JButton VolunteerBtn;
     private javax.swing.JLabel jLabel1;
@@ -382,10 +392,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel loginPanel;
     private javax.swing.JPanel mainPanel;
     // End of variables declaration//GEN-END:variables
