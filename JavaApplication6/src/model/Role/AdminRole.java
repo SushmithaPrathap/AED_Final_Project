@@ -6,7 +6,6 @@ package model.Role;
 
 import model.EcoSystem;
 import model.Enterprise.Enterprise;
-import model.Network.Network;
 import model.Organization.Organization;
 import model.UserAccount.UserAccount;
 import userinterface.AdministrativeRole.AdminWorkAreaJPanel;
