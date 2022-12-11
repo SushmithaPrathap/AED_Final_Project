@@ -4,10 +4,12 @@
  */
 package model.Nurse;
 
+import model.Employee.Employee;
+
 /**
  *
  * @author sushmithaprathap
  */
-public class Nurse {
+public class Nurse extends Employee{
     
 }

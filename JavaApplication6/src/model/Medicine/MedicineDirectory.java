@@ -4,10 +4,27 @@
  */
 package model.Medicine;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author sushmithaprathap
  */
 public class MedicineDirectory {
-    
+
+    List<Medicine> medicineList;
+
+    public List<Medicine> getMedicineList() {
+        return medicineList;
+    }
+
+    public void setMedicineList(List<Medicine> medicineList) {
+        this.medicineList = medicineList;
+    }
+
+    public MedicineDirectory() {
+        medicineList = new ArrayList<>();
+    }
+
 }
