@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model.Bed;
+package Business.Bed;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +27,7 @@ public class BedDirectory {
     public BedDirectory(int count){
         bedList = new ArrayList<Bed>();
         //create beds-->> todo
-        for(int i=0;i<count;i++){
+        for(int i=0;i<count;i++){ 
         
             Bed bed = new Bed();
             bedList.add(bed);
