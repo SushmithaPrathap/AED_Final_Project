@@ -1,13 +1,31 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
  */
 package model.Role;
 
+import model.EcoSystem;
+import model.Enterprise.Enterprise;
+import model.Organization.Organization;
+import model.UserAccount.UserAccount;
+import userinterface.LabTechnicianRole.LabAssistantMainAreaJPanel;
+import javax.swing.JPanel;
+
 /**
  *
- * @author sushmithaprathap
+ * @author Suprith
  */
-public class LabTechnicianRole {
+public class LabTechnicianRole extends Role {
+
+    @Override
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
+        return new LabAssistantMainAreaJPanel(userProcessContainer, account, organization, business, enterprise);
+    }
+    
+    @Override
+    public String roleValue()
+    {
+        return "Lab Technician Role";
+    }
     
 }
