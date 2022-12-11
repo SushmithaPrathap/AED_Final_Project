@@ -10,7 +10,7 @@ import model.Enterprise.Enterprise;
 import model.Organization.Organization;
 import model.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import userinterface.NurseRole.NurseWorkAreaJPanel;
+import UI.NurseRole.NurseWorkAreaJPanel;
 
 
 /**

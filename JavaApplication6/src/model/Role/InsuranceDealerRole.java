@@ -9,7 +9,7 @@ import model.Enterprise.Enterprise;
 import model.Organization.Organization;
 import model.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import userinterface.InsuranceRole.InsuranceDMainAreaJPanel;
+import UI.InsuranceRole.InsuranceDMainAreaJPanel;
 
 /**
  *

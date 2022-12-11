@@ -8,7 +8,7 @@ import model.EcoSystem;
 import model.Enterprise.Enterprise;
 import model.Organization.Organization;
 import model.UserAccount.UserAccount;
-import userinterface.SystemAdminWorkArea.SystemAdminWorkAreaJPanel;
+import UI.SystemAdmin.SystemAdminWorkAreaJPanel;
 import javax.swing.JPanel;
 
 /**

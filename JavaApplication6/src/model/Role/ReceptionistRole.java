@@ -10,7 +10,7 @@ import model.Enterprise.Enterprise;
 import model.Organization.Organization;
 import model.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import userinterface.ReceptionistRole.ReceptionistWorkAreaJPanel;
+import UI.ReceptionistRole.ReceptionistWorkAreaJPanel;
 
 /**
  *

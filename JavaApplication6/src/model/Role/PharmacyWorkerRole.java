@@ -8,7 +8,7 @@ import model.EcoSystem;
 import model.Enterprise.Enterprise;
 import model.Organization.Organization;
 import model.UserAccount.UserAccount;
-import userinterface.PharmacyWorkerRole.PharmacyManageAreaJPanel;
+import UI.PharmacyWorkerRole.PharmacyManageAreaJPanel;
 import javax.swing.JPanel;
 
 /**

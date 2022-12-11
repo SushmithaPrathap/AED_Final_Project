@@ -4,22 +4,22 @@
  */
 package UI;
 
-import Business.EcoSystem;
-import Business.DB4OUtil.DB4OUtil;
-import Business.Enterprise.Enterprise;
-import Business.Network.Network;
-import Business.Organization.Organization;
-import Business.UserAccount.UserAccount;
+import model.EcoSystem;
+import model.DB4OUtil.DB4OUtil;
+import model.Enterprise.Enterprise;
+import model.Network.Network;
+import model.Organization.Organization;
+import model.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.GraphicsEnvironment;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import userinterface.PatientLogin.CreateNewPatientSelfJPanel;
+import UI.PatientLogin.CreateNewPatientSelfJPanel;
 
 /**
  *
- * @author sushmitamaity
+ * @author sushmithaprathap
  */
 public class MainJFrame extends javax.swing.JFrame {
 

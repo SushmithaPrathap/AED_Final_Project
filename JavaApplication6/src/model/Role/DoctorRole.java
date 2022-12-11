@@ -8,7 +8,7 @@ import model.EcoSystem;
 import model.Enterprise.Enterprise;
 import model.Organization.Organization;
 import model.UserAccount.UserAccount;
-import userinterface.DoctorRole.DoctorWorkAreaJPanel;
+import UI.Doctor.DoctorWorkAreaJPanel;
 import javax.swing.JPanel;
 
 /**
