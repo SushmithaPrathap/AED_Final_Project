@@ -8,6 +8,23 @@ package model.Organization;
  *
  * @author sushmithaprathap
  */
-public class InsuranceOrganization {
-    
+//import model.Role.InsuranceDealerRole;
+import model.Role.InsuranceDealerRole;
+import model.Role.Role;
+import java.util.ArrayList;
+
+public class InsuranceOrganization extends Organization {
+
+    public InsuranceOrganization() {
+        // super(Organization.Type.Dental.getValue());
+        super(Organization.Type.Insurance.getValue());
+    }
+
+    //@Override
+    public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> roles = new ArrayList();
+        roles.add(new InsuranceDealerRole());
+        return roles;
+    }
+
 }

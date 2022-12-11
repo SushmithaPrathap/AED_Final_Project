@@ -8,6 +8,26 @@ package model.Organization;
  *
  * @author sushmithaprathap
  */
-public class GeneralOrganization {
-    
+import model.Role.DoctorRole;
+import model.Role.NurseRole;
+import model.Role.ReceptionistRole;
+import model.Role.Role;
+import java.util.ArrayList;
+
+public class GeneralOrganization extends Organization {
+
+    public GeneralOrganization(String type) {
+        // super(Organization.Type.Dental.getValue());
+        super(type);
+    }
+
+    //@Override
+    public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> roles = new ArrayList();
+        roles.add(new DoctorRole());
+        roles.add(new NurseRole());
+        roles.add(new ReceptionistRole());
+        return roles;
+    }
+
 }
