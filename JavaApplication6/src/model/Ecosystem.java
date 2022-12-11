@@ -18,56 +18,54 @@ import java.util.ArrayList;
  */
 public class EcoSystem extends Organization{
     
-    private static EcoSystem business;
-    private ArrayList<Network> networkList;
-    private PatientDirectory patientDirectory;
+    private static EcoSystem ecosystem;
+    private ArrayList<Network> networkArray;
+    private PatientDirectory patDirectory;
     
     public static EcoSystem getInstance(){
-        if(business==null){
-            business=new EcoSystem();
-            business.setPatientDirectory(new PatientDirectory());
+        if(ecosystem==null){
+            ecosystem=new EcoSystem();
+            ecosystem.setPatDirectory(new PatientDirectory());
         }
-        return business;
+        return ecosystem;
     }
     
-    public Network createAndAddNetwork(){
+    public Network createAddNetwork(){
         Network network=new Network();
-        networkList.add(network);
+        networkArray.add(network);
         return network;
     }
     @Override
-    public ArrayList<Role> getSupportedRole() {
+    public ArrayList<Role> getRoleSupported() {
         ArrayList<Role> roleList=new ArrayList<>();
         roleList.add(new SystemAdminRole());
         return roleList;
     }
     private EcoSystem(){
         super(null);
-        networkList=new ArrayList<>();
+        networkArray=new ArrayList<>();
     }
 
-    public ArrayList<Network> getNetworkList() {
-        return networkList;
+    public ArrayList<Network> getNetworkArray() {
+        return networkArray;
     }
 
-    public void setNetworkList(ArrayList<Network> networkList) {
-        this.networkList = networkList;
+    public void setNetworkArray(ArrayList<Network> networkArray) {
+        this.networkArray = networkArray;
     }
     
-    public boolean checkIfUserIsUnique(String userName){
+    public boolean checkUserUnique(String userName){
         if(!this.getUserAccountDirectory().checkIfUsernameIsUnique(userName)){
             return false;
         }
         return true;
     }
 
-    public PatientDirectory getPatientDirectory() {
-        return patientDirectory;
+    public PatientDirectory getPatDirectory() {
+        return patDirectory;
     }
 
-    public void setPatientDirectory(PatientDirectory patientDirectory) {
-        this.patientDirectory = patientDirectory;
+    public void setPatDirectory(PatientDirectory patDirectory) {
+        this.patDirectory = patDirectory;
     }
-    
-    
 }

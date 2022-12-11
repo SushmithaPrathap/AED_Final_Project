@@ -57,7 +57,7 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
         //this.system = system;
         this.patient = patient;
         
-        txtPatientName.setText(patient.getName());
+        txtPatientName.setText(patient.getNameVar());
         
         time=0;
         //populate doctor
@@ -81,7 +81,7 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
            for(Organization dept : deptList)
                 {
                     if(dept instanceof model.Organization.GeneralOrganization){
-                    for(Employee emp : dept.getEmployeeDirectory().getEmployeeList()){
+                    for(Employee emp : dept.getEmployeeDirectory().getEmployeeArray()){
                         if(emp.getRole()!= null && (emp.getRole().equals("Doctor Role")))
                         {
                             empList.add(emp);
@@ -94,7 +94,7 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
                 {
                     if((dept instanceof model.Organization.PathologyOrganization) || 
                             (dept instanceof model.Organization.RadiologyOrganization)){
-                    for(Employee emp : dept.getEmployeeDirectory().getEmployeeList()){
+                    for(Employee emp : dept.getEmployeeDirectory().getEmployeeArray()){
                         if(emp.getRole()!= null && (emp.getRole().equals("Lab Technician Role")))
                         {
                             empList.add(emp);
@@ -507,14 +507,14 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
         Employee doctor = (Employee)cmbDoctor.getSelectedItem();
         if(enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Hospital.getValue())){
             for(Appointment appointment : patient.getAppointmentDirectory().getAppointmentList()){
-                if((appointment.getDate().compareTo(date1) == 0) && (appointment.getDoctor().getId() == doctor.getId()) && !appointment.getStatus().equalsIgnoreCase(Appointment.AppointmentStatus.Cancel.getValue())){
+                if((appointment.getDate().compareTo(date1) == 0) && (appointment.getDoctor().getID() == doctor.getID()) && !appointment.getStatus().equalsIgnoreCase(Appointment.AppointmentStatus.Cancel.getValue())){
                     JOptionPane.showMessageDialog(null, "Patient has already booked appointment!", "Warning", JOptionPane.WARNING_MESSAGE);
                     return;
                 }
             }
         }else if(enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())){
             for(Appointment appointment : patient.getLabAppointmentDirectory().getAppointmentList()){
-                if((appointment.getDate().compareTo(date1) == 0) && (appointment.getDoctor().getId() == doctor.getId()) && !appointment.getStatus().equalsIgnoreCase(Appointment.AppointmentStatus.Cancel.getValue())){
+                if((appointment.getDate().compareTo(date1) == 0) && (appointment.getDoctor().getID() == doctor.getID()) && !appointment.getStatus().equalsIgnoreCase(Appointment.AppointmentStatus.Cancel.getValue())){
                     JOptionPane.showMessageDialog(null, "Patient has already booked appointment!", "Warning", JOptionPane.WARNING_MESSAGE);
                     return;
                 }
@@ -523,7 +523,7 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
         
         
        
-        boolean check = doctor.checkScheduleIsAvaible(date1, time);
+        boolean check = doctor.checkAvailableSchedule(date1, time);
         if(check ==false)
         {
                 JOptionPane.showMessageDialog(null, "Doctor has other appointment already, please select other time!", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -563,7 +563,7 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
        
        
        
-        doctor.addSchedule(date1, time);
+        doctor.postSchedule(date1, time);
         txtPatientName.setText("");
         cmbDoctor.setSelectedIndex(0);
         txtAppointmetDate.setText("");
@@ -621,11 +621,11 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
                 
           //send email and sms
 
-        String statusString = "Hello! Your appointment is booked! Date: "+ date1 + "Doctor: "+ doctor.getName();
+        String statusString = "Hello! Your appointment is booked! Date: "+ date1 + "Doctor: "+ doctor.getNameVar();
 
-        String uEmail= patient.getEmailID();
+        String uEmail= patient.getEmail();
         UserAccount account = patient.getUserAccount();
-        String phonecontact = patient.getPhoneNum()+patient.getCarrier();
+        String phonecontact = patient.getPhone()+patient.getMobileCarrier();
         //registrationRequest.setContactCarrierName(contact);
         sendEmailMessageAppointment(uEmail, account, statusString);//.getText());
         sendTextMessageAppointment(phonecontact, account, statusString);      

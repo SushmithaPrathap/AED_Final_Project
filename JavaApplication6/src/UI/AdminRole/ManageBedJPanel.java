@@ -56,12 +56,12 @@ public class ManageBedJPanel extends javax.swing.JPanel {
         
         model.setRowCount(0);
         String bedStatus = (String)bedStatusCmb.getSelectedItem();
-        for (Bed bed : bedorg.getBedList().getBedList()){
-            if(bed.getStatus().getStatus().equals(bedStatus)){
+        for (Bed bed : bedorg.getBedList().getListBed()){
+            if(bed.getBedStatus().getStatus().equals(bedStatus)){
             Object[] row = new Object[3];
-            row[0] = bed.getBedID();
-            row[1] = bed.getStatus().getStatus();
-            Patient p = bed.getPatient();
+            row[0] = bed.getBedId();
+            row[1] = bed.getBedStatus().getStatus();
+            Patient p = bed.getPat();
             row[2] = p == null ? "": p;
             model.addRow(row);
             //row[2] = 

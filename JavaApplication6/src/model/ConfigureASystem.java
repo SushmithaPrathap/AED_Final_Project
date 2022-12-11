@@ -34,47 +34,47 @@ public class ConfigureASystem {
         
         EcoSystem system = EcoSystem.getInstance();
         
-        //Create a network
-        //create an enterprise
-        //initialize some organizations
-        //have some employees 
-        //create user account
+        //Add a network
+        //Add an enterprise
+        //Create some dummy organizations
+        //Create some dummy employees 
+        //Add user account
         
         
-        Employee employee = new Employee();//system.getEmployeeDirectory().createEmployee("sysadmin");
+        Employee employee = new Employee();//system.getEmployeeDirectory().postEmployee("sysadmin");
         
-        UserAccount ua = system.getUserAccountDirectory().createUserAccount("sysadmin", "sysadmin", employee, new SystemAdminRole());
+        UserAccount userAcc = system.getUserAccountDirectory().createUserAccount("sysadmin", "sysadmin", employee, new SystemAdminRole());
         
-        String [] bgs = {"A+","A-","B+","B-","O+","O-","AB+","AB-"};
-        String bg;
-        String[] genders = {"Male","Female","Other"};
-        String gender;
+        String [] bloodGroup = {"A+","A-","B+","B-","O+","O-","AB+","AB-"};
+        String bgVar;
+        String[] genderArray = {"Male","Female","Other"};
+        String genderVar;
         
         // Boston Network
         System.err.println("Boston Network");
-        system.createAndAddNetwork().setName("Boston");
+        system.createAddNetwork().setName("Boston");
         
             // Boston Insurance - Enterprise
             System.err.println("Boston Blue Cross Insurance");
             Enterprise Ie = new Insurance("Boston Blue Cross Insurance");
             
                 Organization o;
-                Employee e1 = new Employee();
-                UserAccount u = new UserAccount();
-                String ssn;
-                String insId;
+                Employee emp1 = new Employee();
+                UserAccount user1 = new UserAccount();
+                String ssnVar;
+                String insID;
                 
-                Faker admFaker = new Faker(Locale.US, new Random(0));
-                String firstName = admFaker.name().firstName().replaceAll("'", "");
-                String lastName = admFaker.name().lastName().replaceAll("'", "");
+                Faker fakerAdmin = new Faker(Locale.US, new Random(0));
+                String firstName = fakerAdmin.name().firstName().replaceAll("'", "");
+                String lastName = fakerAdmin.name().lastName().replaceAll("'", "");
                 String name = firstName + " " + lastName;
-                String username = firstName.toLowerCase() + "." + lastName.toLowerCase();
+                String userName = firstName.toLowerCase() + "." + lastName.toLowerCase();
                 
-                e1 = Ie.getEmployeeDirectory().createEmployee(name);
-                e1.setRole("Head Role");
-                u = Ie.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new AdminRole());
-                u.setEmployee(e1);
-                System.out.println("Head: " + username);
+                emp1 = Ie.getEmployeeDirectory().postEmployee(name);
+                emp1.setRole("Head Role");
+                user1 = Ie.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new AdminRole());
+                user1.setEmployee(emp1);
+                System.out.println("Head: " + userName);
             
                 System.out.println("Insurance Organization");
                 o = Ie.getOrganizationDirectory().createOrganization(Organization.Type.Insurance);
@@ -87,27 +87,27 @@ public class ConfigureASystem {
                         firstName = faker.name().firstName().replaceAll("'", "");
                         lastName = faker.name().lastName().replaceAll("'", "");
                         name = firstName + " " + lastName;
-                        username = firstName.toLowerCase() + "." + lastName.toLowerCase();
-                        String email = "avinash.raikesh@gmail.com";
+                        userName = firstName.toLowerCase() + "." + lastName.toLowerCase();
+                        String email = "mithaarshi78@gmail.com";
                         String phone = faker.phoneNumber().phoneNumber().replaceAll("\\(","").replaceAll("\\)","")
                     .   replaceAll(" ","").replaceAll("-","").replaceAll("\\.","").replaceAll("x", "").substring(0, 10);
                         //int officeNo = faker.number().numberBetween(1, 999);
                     
-                        System.out.println("Insurance Dealer: "  + username);
-                        e1 =  o.getEmployeeDirectory().createEmployee(name);
-                        e1.setRole((new InsuranceDealerRole()).roleValue());
-                        e1.setSpecialization(Employee.SpecializationType.Physician);
-                        e1.setVisitingCharge(20);
-                        u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new InsuranceDealerRole());
+                        System.out.println("Insurance Dealer: "  + userName);
+                        emp1 =  o.getEmployeeDirectory().postEmployee(name);
+                        emp1.setRole((new InsuranceDealerRole()).roleValue());
+                        emp1.setSpecialization(Employee.TypeSpecialization.Physician);
+                        emp1.setVisitCharge(20);
+                        user1 = o.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new InsuranceDealerRole());
 
-                        u.setEmployee(e1);
-                        e1.setEmailID(email);
-                        e1.setPhoneNum("8574246269");
-                        e1.setCarrier("@tmomail.net");
+                        user1.setEmployee(emp1);
+                        emp1.setEmail(email);
+                        emp1.setPhone("5085099183");
+                        emp1.setMobileCarrier("@tmomail.net");
                         
                     }
-            System.out.println();
-            system.getNetworkList().get(0).getEnterpriseDirectory().getEnterpriseList().add(Ie) ;
+//            System.out.println();
+            system.getNetworkArray().get(0).getEnterpriseDirectory().getEnterpriseList().add(Ie) ;
 
         
             // Boston Hospital - Enterprise
@@ -115,19 +115,19 @@ public class ConfigureASystem {
             Enterprise e = new Hospital("Boston BIDMC Hospital");
                 
                 // ENT Organization
-                admFaker = new Faker(Locale.US, new Random(40));
+                fakerAdmin = new Faker(Locale.US, new Random(40));
                 
-                firstName = admFaker.name().firstName().replaceAll("'", "");
-                lastName = admFaker.name().lastName().replaceAll("'", "");
+                firstName = fakerAdmin.name().firstName().replaceAll("'", "");
+                lastName = fakerAdmin.name().lastName().replaceAll("'", "");
                 name = firstName + " " + lastName;
-                username = firstName.toLowerCase() + "." + lastName.toLowerCase();
+                userName = firstName.toLowerCase() + "." + lastName.toLowerCase();
 
                 
-                e1 = e.getEmployeeDirectory().createEmployee(name);
-                e1.setRole("Head Role");
-                u = e.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new AdminRole());
-                u.setEmployee(e1);
-                System.out.println("Head: " + username);
+                emp1 = e.getEmployeeDirectory().postEmployee(name);
+                emp1.setRole("Head Role");
+                user1 = e.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new AdminRole());
+                user1.setEmployee(emp1);
+                System.out.println("Head: " + userName);
                 
                 System.out.println("ENT Organization");
                 o = e.getOrganizationDirectory().createOrganization(Organization.Type.ENT);
@@ -140,56 +140,56 @@ public class ConfigureASystem {
                     firstName = faker.name().firstName().replaceAll("'", "");
                     lastName = faker.name().lastName().replaceAll("'", "");
                     name = firstName + " " + lastName;
-                    username = firstName.toLowerCase() + "." + lastName.toLowerCase();
-                    String email = "avinash.raikesh@gmail.com";
-                    String phone = faker.phoneNumber().phoneNumber().replaceAll("\\(","").replaceAll("\\)","")
+                    userName = firstName.toLowerCase() + "." + lastName.toLowerCase();
+                    String emailVar = "mithaarshi78@gmail.com";
+                    String phoneVar = faker.phoneNumber().phoneNumber().replaceAll("\\(","").replaceAll("\\)","")
                     .replaceAll(" ","").replaceAll("-","").replaceAll("\\.","").replaceAll("x", "").substring(0, 10);
                     //int officeNo = faker.number().numberBetween(1, 999);
                     if(i <=5)
                     {
-                        System.out.println("Doctor: " + username);
-                        e1 =  o.getEmployeeDirectory().createEmployee(name);
-                        e1.setRole((new DoctorRole()).roleValue());
-                        e1.setSpecialization(Employee.SpecializationType.Physician);
-                        e1.setVisitingCharge(20);
-                        u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new DoctorRole());
+                        System.out.println("Doctor: " + userName);
+                        emp1 =  o.getEmployeeDirectory().postEmployee(name);
+                        emp1.setRole((new DoctorRole()).roleValue());
+                        emp1.setSpecialization(Employee.TypeSpecialization.Physician);
+                        emp1.setVisitCharge(20);
+                        user1 = o.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new DoctorRole());
                     }
                     else if(i <= 10)
                     {
-                        System.out.println("Nurse: " + username);
-                        e1 =  o.getEmployeeDirectory().createEmployee(name);
-                        e1.setRole((new NurseRole()).roleValue());
-                        u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new NurseRole());
+                        System.out.println("Nurse: " + userName);
+                        emp1 =  o.getEmployeeDirectory().postEmployee(name);
+                        emp1.setRole((new NurseRole()).roleValue());
+                        user1 = o.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new NurseRole());
                     }
                     else if(i == 11)
                     {
-                        System.out.println("Receptionist: " + username);
-                        e1 =  o.getEmployeeDirectory().createEmployee(name);
-                        e1.setRole((new ReceptionistRole()).roleValue());
-                        u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new ReceptionistRole());
+                        System.out.println("Receptionist: " + userName);
+                        emp1 =  o.getEmployeeDirectory().postEmployee(name);
+                        emp1.setRole((new ReceptionistRole()).roleValue());
+                        user1 = o.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new ReceptionistRole());
                     }
                     else
                     {
                         
-                        bg = bgs[faker.number().numberBetween(0, 8)];
-                        gender = genders[faker.number().numberBetween(0, 3)];
-                        ssn = String.valueOf(faker.number().numberBetween(123456789l, 999999999l));
-                        insId = "BST" + String.valueOf(faker.number().numberBetween(12345678l, 99999999l));
-                        System.out.println("Patient: " + username);
+                        bgVar = bloodGroup[faker.number().numberBetween(0, 8)];
+                        genderVar = genderArray[faker.number().numberBetween(0, 3)];
+                        ssnVar = String.valueOf(faker.number().numberBetween(123456789l, 999999999l));
+                        insID = "BST" + String.valueOf(faker.number().numberBetween(12345678l, 99999999l));
+                        System.out.println("Patient: " + userName);
                         Location locationPoint = new Location();
                         locationPoint.setStreet(faker.address().streetAddress());
                         locationPoint.setState(faker.address().state());
                         locationPoint.setCity(faker.address().cityName());
-                        u = system.getUserAccountDirectory().createUserAccount(username, "Sam123!!", null, new PatientRole());
-                        e1= system.getPatientDirectory().createPatient(name, "8574246269", gender, bg, u, locationPoint, "email",(Insurance)Ie,insId , ssn);
-                        e.getPatientDirectory().getPatientList().add((Patient)e1);
-                        Ie.getPatientDirectory().getPatientList().add((Patient)e1);
+                        user1 = system.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", null, new PatientRole());
+                        emp1= system.getPatDirectory().createPatient(name, "5085099183", genderVar, bgVar, user1, locationPoint, "email",(Insurance)Ie,insID , ssnVar);
+                        e.getPatDirectory().getPatientList().add((Patient)emp1);
+                        Ie.getPatDirectory().getPatientList().add((Patient)emp1);
                     }
                     
-                    u.setEmployee(e1);
-                    e1.setEmailID(email);
-                    e1.setPhoneNum("8574246269");
-                    e1.setCarrier("@tmomail.net");
+                    user1.setEmployee(emp1);
+                    emp1.setEmail(emailVar);
+                    emp1.setPhone("5085099183");
+                    emp1.setMobileCarrier("@tmomail.net");
                 
                 }
                 System.out.println();
@@ -201,60 +201,59 @@ public class ConfigureASystem {
                 {
                     Faker faker = new Faker(Locale.US, new Random(i));
   
-                    //int id = faker.number().numberBetween(1000, 10000);
                     firstName = faker.name().firstName().replaceAll("'", "");
                     lastName = faker.name().lastName().replaceAll("'", "");
                     name = firstName + " " + lastName;
-                    username = firstName.toLowerCase() + "." + lastName.toLowerCase();
-                    String email = "avinash.raikesh@gmail.com";
-                    String phone = faker.phoneNumber().phoneNumber().replaceAll("\\(","").replaceAll("\\)","")
+                    userName = firstName.toLowerCase() + "." + lastName.toLowerCase();
+                    String emailVar = "mithaarshi78@gmail.com";
+                    String phoneVar = faker.phoneNumber().phoneNumber().replaceAll("\\(","").replaceAll("\\)","")
                     .replaceAll(" ","").replaceAll("-","").replaceAll("\\.","").replaceAll("x", "").substring(0, 10);
-                    //int officeNo = faker.number().numberBetween(1, 999);
+                    
                     if(i <=105)
                     {
-                        System.out.println("Doctor: " + username);
-                        e1 =  o.getEmployeeDirectory().createEmployee(name);
-                        e1.setRole((new DoctorRole()).roleValue());
-                        e1.setSpecialization(Employee.SpecializationType.Physician);
-                        e1.setVisitingCharge(20);
-                        u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new DoctorRole());
+                        System.out.println("Doctor: " + userName);
+                        emp1 =  o.getEmployeeDirectory().postEmployee(name);
+                        emp1.setRole((new DoctorRole()).roleValue());
+                        emp1.setSpecialization(Employee.TypeSpecialization.Physician);
+                        emp1.setVisitCharge(20);
+                        user1 = o.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new DoctorRole());
                     }
                     else if(i <= 110)
                     {
-                        System.out.println("Nurse: " + username);
-                        e1 =  o.getEmployeeDirectory().createEmployee(name);
-                        e1.setRole((new NurseRole()).roleValue());
-                        u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new NurseRole());
+                        System.out.println("Nurse: " + userName);
+                        emp1 =  o.getEmployeeDirectory().postEmployee(name);
+                        emp1.setRole((new NurseRole()).roleValue());
+                        user1 = o.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new NurseRole());
                     }
                     else if(i == 111)
                     {
-                        System.out.println("Receptionist: " + username);
-                        e1 =  o.getEmployeeDirectory().createEmployee(name);
-                        e1.setRole((new ReceptionistRole()).roleValue());
-                        u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new ReceptionistRole());
+                        System.out.println("Receptionist: " + userName);
+                        emp1 =  o.getEmployeeDirectory().postEmployee(name);
+                        emp1.setRole((new ReceptionistRole()).roleValue());
+                        user1 = o.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new ReceptionistRole());
                     }
                     else
                     {
-                        bg = bgs[faker.number().numberBetween(0, 8)];
-                        gender = genders[faker.number().numberBetween(0, 3)];
-                        ssn = String.valueOf(faker.number().numberBetween(123456789l, 999999999l));
-                        insId = "BST" + String.valueOf(faker.number().numberBetween(12345678l, 99999999l));
+                        bgVar = bloodGroup[faker.number().numberBetween(0, 8)];
+                        genderVar = genderArray[faker.number().numberBetween(0, 3)];
+                        ssnVar = String.valueOf(faker.number().numberBetween(123456789l, 999999999l));
+                        insID = "BST" + String.valueOf(faker.number().numberBetween(12345678l, 99999999l));
                         
-                        System.out.println("Patient: " + username);
+                        System.out.println("Patient: " + userName);
                         Location locationPoint = new Location();
                         locationPoint.setStreet(faker.address().streetAddress());
                         locationPoint.setState(faker.address().state());
                         locationPoint.setCity(faker.address().cityName());
-                        u = system.getUserAccountDirectory().createUserAccount(username, "Sam123!!", null, new PatientRole());
-                        e1= system.getPatientDirectory().createPatient(name, "8574246269", gender, bg, u, locationPoint, email,(Insurance)Ie,insId,ssn);
-                        e.getPatientDirectory().getPatientList().add((Patient)e1);
-                        Ie.getPatientDirectory().getPatientList().add((Patient)e1);
+                        user1 = system.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", null, new PatientRole());
+                        emp1= system.getPatDirectory().createPatient(name, "5085099183", genderVar, bgVar, user1, locationPoint, emailVar,(Insurance)Ie,insID,ssnVar);
+                        e.getPatDirectory().getPatientList().add((Patient)emp1);
+                        Ie.getPatDirectory().getPatientList().add((Patient)emp1);
                     }
                     
-                    u.setEmployee(e1);
-                    e1.setEmailID(email);
-                    e1.setPhoneNum("8574246269");
-                    e1.setCarrier("@tmomail.net");
+                    user1.setEmployee(emp1);
+                    emp1.setEmail(emailVar);
+                    emp1.setPhone("5085099183");
+                    emp1.setMobileCarrier("@tmomail.net");
                 }
                 
                 System.out.println();
@@ -270,25 +269,25 @@ public class ConfigureASystem {
                 //((BillingDepartment)o).generateInvoice(date, patient);
                 
          
-            system.getNetworkList().get(0).getEnterpriseDirectory().getEnterpriseList().add(e) ;
+            system.getNetworkArray().get(0).getEnterpriseDirectory().getEnterpriseList().add(e) ;
         
         
             // Boston Lab - Enterprise
-            System.err.println("Boston EastPac Lab");
-            e = new Lab("Boston EastPac Lab");
+            System.err.println("Boston WestPac Lab");
+            e = new Lab("Boston WestPac Lab");
             
-                admFaker = new Faker(Locale.US, new Random(1000));
+                fakerAdmin = new Faker(Locale.US, new Random(1000));
                 
-                firstName = admFaker.name().firstName().replaceAll("'", "");
-                lastName = admFaker.name().lastName().replaceAll("'", "");
+                firstName = fakerAdmin.name().firstName().replaceAll("'", "");
+                lastName = fakerAdmin.name().lastName().replaceAll("'", "");
                 name = firstName + " " + lastName;
-                username = firstName.toLowerCase() + "." + lastName.toLowerCase();
+                userName = firstName.toLowerCase() + "." + lastName.toLowerCase();
                 
-                e1 = e.getEmployeeDirectory().createEmployee(name);
-                e1.setRole("Head Role");
-                u = e.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new AdminRole());
-                u.setEmployee(e1);
-                System.out.println("Head: " + username);
+                emp1 = e.getEmployeeDirectory().postEmployee(name);
+                emp1.setRole("Head Role");
+                user1 = e.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new AdminRole());
+                user1.setEmployee(emp1);
+                System.out.println("Head: " + userName);
                 
                     System.out.println("Pathology Organization");
                     o = e.getOrganizationDirectory().createOrganization(Organization.Type.Pathology);
@@ -301,33 +300,33 @@ public class ConfigureASystem {
                         firstName = faker.name().firstName().replaceAll("'", "");
                         lastName = faker.name().lastName().replaceAll("'", "");
                         name = firstName + " " + lastName;
-                        username = firstName.toLowerCase() + "." + lastName.toLowerCase();
-                        String email = "avinash.raikesh@gmail.com";
-                        String phone = faker.phoneNumber().phoneNumber().replaceAll("\\(","").replaceAll("\\)","")
+                        userName = firstName.toLowerCase() + "." + lastName.toLowerCase();
+                        String emailVar = "mithaarshi78@gmail.com";
+                        String phoneVar = faker.phoneNumber().phoneNumber().replaceAll("\\(","").replaceAll("\\)","")
                     .   replaceAll(" ","").replaceAll("-","").replaceAll("\\.","").replaceAll("x", "").substring(0, 10);
                         //int officeNo = faker.number().numberBetween(1, 999);
                     
                         if(i<26)
                         {
-                            System.out.println("Lab Technician: " + username);
-                            e1 =  o.getEmployeeDirectory().createEmployee(name);
-                            e1.setRole((new LabTechnicianRole()).roleValue());
-                            e1.setSpecialization(Employee.SpecializationType.Physician);
-                            e1.setVisitingCharge(20);
-                            u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new LabTechnicianRole());
+                            System.out.println("Lab Technician: " + userName);
+                            emp1 =  o.getEmployeeDirectory().postEmployee(name);
+                            emp1.setRole((new LabTechnicianRole()).roleValue());
+                            emp1.setSpecialization(Employee.TypeSpecialization.Physician);
+                            emp1.setVisitCharge(20);
+                            user1 = o.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new LabTechnicianRole());
                         }
                         else
                         {
-                            System.out.println("Receptionist: " + username);
-                            e1 =  o.getEmployeeDirectory().createEmployee(name);
-                            e1.setRole((new ReceptionistRole()).roleValue());
-                            u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new ReceptionistRole());
+                            System.out.println("Receptionist: " + userName);
+                            emp1 =  o.getEmployeeDirectory().postEmployee(name);
+                            emp1.setRole((new ReceptionistRole()).roleValue());
+                            user1 = o.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new ReceptionistRole());
                         }
                     
-                        u.setEmployee(e1);
-                        e1.setEmailID(email);
-                        e1.setPhoneNum("8574246269");
-                        e1.setCarrier("@tmomail.net");
+                        user1.setEmployee(emp1);
+                        emp1.setEmail(emailVar);
+                        emp1.setPhone("5085099183");
+                        emp1.setMobileCarrier("@tmomail.net");
                         
                         
                         
@@ -348,56 +347,56 @@ public class ConfigureASystem {
                         firstName = faker.name().firstName().replaceAll("'", "");
                         lastName = faker.name().lastName().replaceAll("'", "");
                         name = firstName + " " + lastName;
-                        username = firstName.toLowerCase() + "." + lastName.toLowerCase();
-                        String email = "avinash.raikesh@gmail.com";
-                        String phone = faker.phoneNumber().phoneNumber().replaceAll("\\(","").replaceAll("\\)","")
+                        userName = firstName.toLowerCase() + "." + lastName.toLowerCase();
+                        String emailVar = "mithaarshi78@gmail.com";
+                        String phoneVar = faker.phoneNumber().phoneNumber().replaceAll("\\(","").replaceAll("\\)","")
                     .   replaceAll(" ","").replaceAll("-","").replaceAll("\\.","").replaceAll("x", "").substring(0, 10);
                         //int officeNo = faker.number().numberBetween(1, 999);
                     
                         if(i<32)
                         {
-                            System.out.println("Lab Technician: "  + username);
-                            e1 =  o.getEmployeeDirectory().createEmployee(name);
-                            e1.setRole((new LabTechnicianRole()).roleValue());
-                            e1.setSpecialization(Employee.SpecializationType.Physician);
-                            e1.setVisitingCharge(20);
-                            u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new LabTechnicianRole());
+                            System.out.println("Lab Technician: "  + userName);
+                            emp1 =  o.getEmployeeDirectory().postEmployee(name);
+                            emp1.setRole((new LabTechnicianRole()).roleValue());
+                            emp1.setSpecialization(Employee.TypeSpecialization.Physician);
+                            emp1.setVisitCharge(20);
+                            user1 = o.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new LabTechnicianRole());
                         }
                         else
                         {
-                            System.out.println("Receptionist: " + username);
-                            e1 =  o.getEmployeeDirectory().createEmployee(name);
-                            e1.setRole((new ReceptionistRole()).roleValue());
-                            u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new ReceptionistRole());
+                            System.out.println("Receptionist: " + userName);
+                            emp1 =  o.getEmployeeDirectory().postEmployee(name);
+                            emp1.setRole((new ReceptionistRole()).roleValue());
+                            user1 = o.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new ReceptionistRole());
                         }
                         
-                        u.setEmployee(e1);
-                        e1.setEmailID(email);
-                        e1.setPhoneNum("8574246269");
-                        e1.setCarrier("@tmomail.net");
+                        user1.setEmployee(emp1);
+                        emp1.setEmail(emailVar);
+                        emp1.setPhone("5085099183");
+                        emp1.setMobileCarrier("@tmomail.net");
                         
                     }
                     
                     System.out.println();
         
-            system.getNetworkList().get(0).getEnterpriseDirectory().getEnterpriseList().add(e) ;
+            system.getNetworkArray().get(0).getEnterpriseDirectory().getEnterpriseList().add(e) ;
         
             // Boston Pharmacy - Enterprise
             System.err.println("Boston CVS Pharmacy");
             e = new Pharmacy("Boston CVS Pharmacy");
             
-                admFaker = new Faker(Locale.US, new Random(33));
+                fakerAdmin = new Faker(Locale.US, new Random(33));
                 
-                firstName = admFaker.name().firstName().replaceAll("'", "");
-                lastName = admFaker.name().lastName().replaceAll("'", "");
+                firstName = fakerAdmin.name().firstName().replaceAll("'", "");
+                lastName = fakerAdmin.name().lastName().replaceAll("'", "");
                 name = firstName + " " + lastName;
-                username = firstName.toLowerCase() + "." + lastName.toLowerCase();
+                userName = firstName.toLowerCase() + "." + lastName.toLowerCase();
                 
-                e1 = e.getEmployeeDirectory().createEmployee(name);
-                e1.setRole("Head Role");
-                u = e.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new AdminRole());
-                u.setEmployee(e1);
-                System.out.println("Head: " + username);
+                emp1 = e.getEmployeeDirectory().postEmployee(name);
+                emp1.setRole("Head Role");
+                user1 = e.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new AdminRole());
+                user1.setEmployee(emp1);
+                System.out.println("Head: " + userName);
             
                 System.out.println("Medical Store Organization");
                 o = e.getOrganizationDirectory().createOrganization(Organization.Type.MedicalStore);
@@ -410,27 +409,27 @@ public class ConfigureASystem {
                         firstName = faker.name().firstName().replaceAll("'", "");
                         lastName = faker.name().lastName().replaceAll("'", "");
                         name = firstName + " " + lastName;
-                        username = firstName.toLowerCase() + "." + lastName.toLowerCase();
-                        String email = "avinash.raikesh@gmail.com";
-                        String phone = faker.phoneNumber().phoneNumber().replaceAll("\\(","").replaceAll("\\)","")
+                        userName = firstName.toLowerCase() + "." + lastName.toLowerCase();
+                        String emailVar = "mithaarshi78@gmail.com";
+                        String phoneVar = faker.phoneNumber().phoneNumber().replaceAll("\\(","").replaceAll("\\)","")
                     .   replaceAll(" ","").replaceAll("-","").replaceAll("\\.","").replaceAll("x", "").substring(0, 10);
                         //int officeNo = faker.number().numberBetween(1, 999);
                     
-                        System.out.println("Pharmacy Worker: "  + username);
-                        e1 =  o.getEmployeeDirectory().createEmployee(name);
-                        e1.setRole((new PharmacyWorkerRole()).roleValue());
-                        u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new PharmacyWorkerRole());
+                        System.out.println("Pharmacy Worker: "  + userName);
+                        emp1 =  o.getEmployeeDirectory().postEmployee(name);
+                        emp1.setRole((new PharmacyWorkerRole()).roleValue());
+                        user1 = o.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new PharmacyWorkerRole());
 
-                        u.setEmployee(e1);
-                        e1.setEmailID(email);
-                        e1.setPhoneNum("8574246269");
-                        e1.setCarrier("@tmomail.net");
+                        user1.setEmployee(emp1);
+                        emp1.setEmail(emailVar);
+                        emp1.setPhone("5085099183");
+                        emp1.setMobileCarrier("@tmomail.net");
                         
                     }
                     
                     System.out.println();
         
-            system.getNetworkList().get(0).getEnterpriseDirectory().getEnterpriseList().add(e) ;
+            system.getNetworkArray().get(0).getEnterpriseDirectory().getEnterpriseList().add(e) ;
              
             
         
@@ -439,24 +438,24 @@ public class ConfigureASystem {
 
         // Seattle Network
         System.err.println("Seattle Network");
-        system.createAndAddNetwork().setName("Seattle");
+        system.createAddNetwork().setName("Seattle");
         
             // Seattle Insurance - Enterprise
             System.err.println("Seattle Aetna Insurance");
             Ie = new Insurance("Seattle Aetna Insurance");
             
-                admFaker = new Faker(Locale.US, new Random(86));
+                fakerAdmin = new Faker(Locale.US, new Random(86));
                 
-                firstName = admFaker.name().firstName().replaceAll("'", "");
-                lastName = admFaker.name().lastName().replaceAll("'", "");
+                firstName = fakerAdmin.name().firstName().replaceAll("'", "");
+                lastName = fakerAdmin.name().lastName().replaceAll("'", "");
                 name = firstName + " " + lastName;
-                username = firstName.toLowerCase() + "." + lastName.toLowerCase();
+                userName = firstName.toLowerCase() + "." + lastName.toLowerCase();
                 
-                e1 = Ie.getEmployeeDirectory().createEmployee(name);
-                e1.setRole("Head Role");
-                u = Ie.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new AdminRole());
-                u.setEmployee(e1);
-                System.out.println("Head: " + username);
+                emp1 = Ie.getEmployeeDirectory().postEmployee(name);
+                emp1.setRole("Head Role");
+                user1 = Ie.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new AdminRole());
+                user1.setEmployee(emp1);
+                System.out.println("Head: " + userName);
             
                 System.out.println("Insurance Organization");
                 o = Ie.getOrganizationDirectory().createOrganization(Organization.Type.Insurance);
@@ -469,28 +468,28 @@ public class ConfigureASystem {
                         firstName = faker.name().firstName().replaceAll("'", "");
                         lastName = faker.name().lastName().replaceAll("'", "");
                         name = firstName + " " + lastName;
-                        username = firstName.toLowerCase() + "." + lastName.toLowerCase();
-                        String email = "avinash.raikesh@gmail.com";
-                        String phone = faker.phoneNumber().phoneNumber().replaceAll("\\(","").replaceAll("\\)","")
+                        userName = firstName.toLowerCase() + "." + lastName.toLowerCase();
+                        String emailVar = "mithaarshi78@gmail.com";
+                        String phoneVar = faker.phoneNumber().phoneNumber().replaceAll("\\(","").replaceAll("\\)","")
                     .   replaceAll(" ","").replaceAll("-","").replaceAll("\\.","").replaceAll("x", "").substring(0, 10);
                         //int officeNo = faker.number().numberBetween(1, 999);
                     
-                        System.out.println("Insurance Dealer: " + username);
-                        e1 =  o.getEmployeeDirectory().createEmployee(name);
-                        e1.setRole((new InsuranceDealerRole()).roleValue());
-                        e1.setSpecialization(Employee.SpecializationType.Physician);
-                        e1.setVisitingCharge(20);
-                        u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new InsuranceDealerRole());
+                        System.out.println("Insurance Dealer: " + userName);
+                        emp1 =  o.getEmployeeDirectory().postEmployee(name);
+                        emp1.setRole((new InsuranceDealerRole()).roleValue());
+                        emp1.setSpecialization(Employee.TypeSpecialization.Physician);
+                        emp1.setVisitCharge(20);
+                        user1 = o.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new InsuranceDealerRole());
                     
-                        u.setEmployee(e1);
-                        e1.setEmailID(email);
-                        e1.setPhoneNum("8574246269");
-                        e1.setCarrier("@tmomail.net");
+                        user1.setEmployee(emp1);
+                        emp1.setEmail(emailVar);
+                        emp1.setPhone("5085099183");
+                        emp1.setMobileCarrier("@tmomail.net");
                         
                     }
         
             System.out.println();
-            system.getNetworkList().get(1).getEnterpriseDirectory().getEnterpriseList().add(Ie) ;
+            system.getNetworkArray().get(1).getEnterpriseDirectory().getEnterpriseList().add(Ie) ;
         
             // Boston Hospital - Enterprise
             System.err.println("Seattle Grey-Sloan Hospital");
@@ -498,17 +497,17 @@ public class ConfigureASystem {
                 
                 // Denyal Organization
                 
-                admFaker = new Faker(Locale.US, new Random(46));
-                firstName = admFaker.name().firstName().replaceAll("'", "");
-                lastName = admFaker.name().lastName().replaceAll("'", "");
+                fakerAdmin = new Faker(Locale.US, new Random(46));
+                firstName = fakerAdmin.name().firstName().replaceAll("'", "");
+                lastName = fakerAdmin.name().lastName().replaceAll("'", "");
                 name = firstName + " " + lastName;
-                username = firstName.toLowerCase() + "." + lastName.toLowerCase();
+                userName = firstName.toLowerCase() + "." + lastName.toLowerCase();
                 
-                e1 = e.getEmployeeDirectory().createEmployee(name);
-                e1.setRole("Head Role");
-                u = e.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new AdminRole());
-                u.setEmployee(e1);
-                System.out.println("Head: " + username);
+                emp1 = e.getEmployeeDirectory().postEmployee(name);
+                emp1.setRole("Head Role");
+                user1 = e.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new AdminRole());
+                user1.setEmployee(emp1);
+                System.out.println("Head: " + userName);
                 
                 System.out.println("Dental Organization");
                 o = e.getOrganizationDirectory().createOrganization(Organization.Type.Dental);
@@ -521,57 +520,57 @@ public class ConfigureASystem {
                     firstName = faker.name().firstName().replaceAll("'", "");
                     lastName = faker.name().lastName().replaceAll("'", "");
                     name = firstName + " " + lastName;
-                    username = firstName.toLowerCase() + "." + lastName.toLowerCase();
-                    String email = "avinash.raikesh@gmail.com";
-                    String phone = faker.phoneNumber().phoneNumber().replaceAll("\\(","").replaceAll("\\)","")
+                    userName = firstName.toLowerCase() + "." + lastName.toLowerCase();
+                    String emailVar = "mithaarshi78@gmail.com";
+                    String phoneVar = faker.phoneNumber().phoneNumber().replaceAll("\\(","").replaceAll("\\)","")
                     .replaceAll(" ","").replaceAll("-","").replaceAll("\\.","").replaceAll("x", "").substring(0, 10);
                     //int officeNo = faker.number().numberBetween(1, 999);
                     if(i <=52)
                     {
-                        System.out.println("Doctor: " + username);
-                        e1 =  o.getEmployeeDirectory().createEmployee(name);
-                        e1.setRole((new DoctorRole()).roleValue());
-                        e1.setSpecialization(Employee.SpecializationType.Physician);
-                        e1.setVisitingCharge(20);
-                        u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new DoctorRole());
+                        System.out.println("Doctor: " + userName);
+                        emp1 =  o.getEmployeeDirectory().postEmployee(name);
+                        emp1.setRole((new DoctorRole()).roleValue());
+                        emp1.setSpecialization(Employee.TypeSpecialization.Physician);
+                        emp1.setVisitCharge(20);
+                        user1 = o.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new DoctorRole());
                     }
                     else if(i <= 57)
                     {
-                        System.out.println("Nurse: " + username);
-                        e1 =  o.getEmployeeDirectory().createEmployee(name);
-                        e1.setRole((new NurseRole()).roleValue());
-                        u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new NurseRole());
+                        System.out.println("Nurse: " + userName);
+                        emp1 =  o.getEmployeeDirectory().postEmployee(name);
+                        emp1.setRole((new NurseRole()).roleValue());
+                        user1 = o.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new NurseRole());
                     }
                     else if(i == 58)
                     {
-                        System.out.println("Receptionist: " + username);
-                        e1 =  o.getEmployeeDirectory().createEmployee(name);
-                        e1.setRole((new ReceptionistRole()).roleValue());
-                        u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new ReceptionistRole());
+                        System.out.println("Receptionist: " + userName);
+                        emp1 =  o.getEmployeeDirectory().postEmployee(name);
+                        emp1.setRole((new ReceptionistRole()).roleValue());
+                        user1 = o.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new ReceptionistRole());
                     }
                     else
                     {
                         
-                        bg = bgs[faker.number().numberBetween(0, 8)];
-                        gender = genders[faker.number().numberBetween(0, 3)];
-                        ssn = String.valueOf(faker.number().numberBetween(123456789l, 999999999l));
-                        insId = "SEA" + String.valueOf(faker.number().numberBetween(12345678l, 99999999l));
+                        bgVar = bloodGroup[faker.number().numberBetween(0, 8)];
+                        genderVar = genderArray[faker.number().numberBetween(0, 3)];
+                        ssnVar = String.valueOf(faker.number().numberBetween(123456789l, 999999999l));
+                        insID = "SEA" + String.valueOf(faker.number().numberBetween(12345678l, 99999999l));
                         
-                        System.out.println("Patient: " + username);
+                        System.out.println("Patient: " + userName);
                         Location locationPoint = new Location();
                         locationPoint.setStreet(faker.address().streetAddress());
                         locationPoint.setState(faker.address().state());
                         locationPoint.setCity(faker.address().cityName());
-                        u = system.getUserAccountDirectory().createUserAccount(username, "Sam123!!", null, new PatientRole());
-                        e1= system.getPatientDirectory().createPatient(name, "8574246269", gender, bg, u, locationPoint, email,(Insurance)Ie, insId , ssn);
-                        e.getPatientDirectory().getPatientList().add((Patient)e1);
-                        Ie.getPatientDirectory().getPatientList().add((Patient)e1);
+                        user1 = system.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", null, new PatientRole());
+                        emp1= system.getPatDirectory().createPatient(name, "5085099183", genderVar, bgVar, user1, locationPoint, emailVar,(Insurance)Ie, insID , ssnVar);
+                        e.getPatDirectory().getPatientList().add((Patient)emp1);
+                        Ie.getPatDirectory().getPatientList().add((Patient)emp1);
                     }
                     
-                    u.setEmployee(e1);
-                    e1.setEmailID(email);
-                    e1.setPhoneNum("8574246269");
-                    e1.setCarrier("@tmomail.net");
+                    user1.setEmployee(emp1);
+                    emp1.setEmail(emailVar);
+                    emp1.setPhone("5085099183");
+                    emp1.setMobileCarrier("@tmomail.net");
                 
                 }
                 
@@ -586,56 +585,56 @@ public class ConfigureASystem {
                     firstName = faker.name().firstName().replaceAll("'", "");
                     lastName = faker.name().lastName().replaceAll("'", "");
                     name = firstName + " " + lastName;
-                    username = firstName.toLowerCase() + "." + lastName.toLowerCase();
-                    String email = "avinash.raikesh@gmail.com";
-                    String phone = faker.phoneNumber().phoneNumber().replaceAll("\\(","").replaceAll("\\)","")
+                    userName = firstName.toLowerCase() + "." + lastName.toLowerCase();
+                    String emailVar = "mithaarshi78@gmail.com";
+                    String phoneVar = faker.phoneNumber().phoneNumber().replaceAll("\\(","").replaceAll("\\)","")
                     .replaceAll(" ","").replaceAll("-","").replaceAll("\\.","").replaceAll("x", "").substring(0, 10);
                     //int officeNo = faker.number().numberBetween(1, 999);
                     if(i <=205)
                     {
-                        System.out.println("Doctor: " + username);
-                        e1 =  o.getEmployeeDirectory().createEmployee(name);
-                        e1.setRole((new DoctorRole()).roleValue());
-                        e1.setSpecialization(Employee.SpecializationType.Physician);
-                        e1.setVisitingCharge(20);
-                        u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new DoctorRole());
+                        System.out.println("Doctor: " + userName);
+                        emp1 =  o.getEmployeeDirectory().postEmployee(name);
+                        emp1.setRole((new DoctorRole()).roleValue());
+                        emp1.setSpecialization(Employee.TypeSpecialization.Physician);
+                        emp1.setVisitCharge(20);
+                        user1 = o.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new DoctorRole());
                     }
                     else if(i <= 210)
                     {
-                        System.out.println("Nurse: " + username);
-                        e1 =  o.getEmployeeDirectory().createEmployee(name);
-                        e1.setRole((new NurseRole()).roleValue());
-                        u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new NurseRole());
+                        System.out.println("Nurse: " + userName);
+                        emp1 =  o.getEmployeeDirectory().postEmployee(name);
+                        emp1.setRole((new NurseRole()).roleValue());
+                        user1 = o.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new NurseRole());
                     }
                     else if(i == 211)
                     {
-                        System.out.println("Receptionist: " + username);
-                        e1 =  o.getEmployeeDirectory().createEmployee(name);
-                        e1.setRole((new ReceptionistRole()).roleValue());
-                        u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new ReceptionistRole());
+                        System.out.println("Receptionist: " + userName);
+                        emp1 =  o.getEmployeeDirectory().postEmployee(name);
+                        emp1.setRole((new ReceptionistRole()).roleValue());
+                        user1 = o.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new ReceptionistRole());
                     }
                     else
                     {
-                        bg = bgs[faker.number().numberBetween(0, 8)];
-                        gender = genders[faker.number().numberBetween(0, 3)];
-                        ssn = String.valueOf(faker.number().numberBetween(123456789l, 999999999l));
-                        insId = "SEA" + String.valueOf(faker.number().numberBetween(12345678l, 99999999l));
+                        bgVar = bloodGroup[faker.number().numberBetween(0, 8)];
+                        genderVar = genderArray[faker.number().numberBetween(0, 3)];
+                        ssnVar = String.valueOf(faker.number().numberBetween(123456789l, 999999999l));
+                        insID = "SEA" + String.valueOf(faker.number().numberBetween(12345678l, 99999999l));
                         
-                        System.out.println("Patient: " + username);
+                        System.out.println("Patient: " + userName);
                         Location locationPoint = new Location();
                         locationPoint.setStreet(faker.address().streetAddress());
                         locationPoint.setState(faker.address().state());
                         locationPoint.setCity(faker.address().cityName());
-                        u = system.getUserAccountDirectory().createUserAccount(username, "Sam123!!", null, new PatientRole());
-                        e1= system.getPatientDirectory().createPatient(name, "8574246269", gender, bg, u, locationPoint, email,(Insurance)Ie,insId , ssn);
-                        e.getPatientDirectory().getPatientList().add((Patient)e1);
-                        Ie.getPatientDirectory().getPatientList().add((Patient)e1);
+                        user1 = system.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", null, new PatientRole());
+                        emp1= system.getPatDirectory().createPatient(name, "5085099183", genderVar, bgVar, user1, locationPoint, emailVar,(Insurance)Ie,insID , ssnVar);
+                        e.getPatDirectory().getPatientList().add((Patient)emp1);
+                        Ie.getPatDirectory().getPatientList().add((Patient)emp1);
                     }
                     
-                    u.setEmployee(e1);
-                    e1.setEmailID(email);
-                    e1.setPhoneNum("8574246269");
-                    e1.setCarrier("@tmomail.net");
+                    user1.setEmployee(emp1);
+                    emp1.setEmail(emailVar);
+                    emp1.setPhone("5085099183");
+                    emp1.setMobileCarrier("@tmomail.net");
                 }
                 System.out.println();
                 
@@ -649,25 +648,25 @@ public class ConfigureASystem {
                 o = e.getOrganizationDirectory().createOrganization(Organization.Type.Billing);
                 
             
-            system.getNetworkList().get(1).getEnterpriseDirectory().getEnterpriseList().add(e) ;
+            system.getNetworkArray().get(1).getEnterpriseDirectory().getEnterpriseList().add(e) ;
         
         
             // Seattle Lab - Enterprise
             System.err.println("Seattle WestPac Lab");
             e = new Lab("Seattle WestPac Lab");
             
-                admFaker = new Faker(Locale.US, new Random(69));
+                fakerAdmin = new Faker(Locale.US, new Random(69));
                 
-                firstName = admFaker.name().firstName().replaceAll("'", "");
-                lastName = admFaker.name().lastName().replaceAll("'", "");
+                firstName = fakerAdmin.name().firstName().replaceAll("'", "");
+                lastName = fakerAdmin.name().lastName().replaceAll("'", "");
                 name = firstName + " " + lastName;
-                username = firstName.toLowerCase() + "." + lastName.toLowerCase();
+                userName = firstName.toLowerCase() + "." + lastName.toLowerCase();
                 
-                e1 = e.getEmployeeDirectory().createEmployee(name);
-                e1.setRole("Head Role");
-                u = e.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new AdminRole());
-                u.setEmployee(e1);
-                System.out.println("Head: " + username);
+                emp1 = e.getEmployeeDirectory().postEmployee(name);
+                emp1.setRole("Head Role");
+                user1 = e.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new AdminRole());
+                user1.setEmployee(emp1);
+                System.out.println("Head: " + userName);
                 
                     System.out.println("Pathology Organization");
                     o = e.getOrganizationDirectory().createOrganization(Organization.Type.Pathology);
@@ -680,33 +679,33 @@ public class ConfigureASystem {
                         firstName = faker.name().firstName().replaceAll("'", "");
                         lastName = faker.name().lastName().replaceAll("'", "");
                         name = firstName + " " + lastName;
-                        username = firstName.toLowerCase() + "." + lastName.toLowerCase();
-                        String email = "avinash.raikesh@gmail.com";
-                        String phone = faker.phoneNumber().phoneNumber().replaceAll("\\(","").replaceAll("\\)","")
+                        userName = firstName.toLowerCase() + "." + lastName.toLowerCase();
+                        String emailVar = "mithaarshi78@gmail.com";
+                        String phoneVar = faker.phoneNumber().phoneNumber().replaceAll("\\(","").replaceAll("\\)","")
                     .   replaceAll(" ","").replaceAll("-","").replaceAll("\\.","").replaceAll("x", "").substring(0, 10);
                         //int officeNo = faker.number().numberBetween(1, 999);
                         
                         if(i<74)
                         {
-                            System.out.println("Lab Technician: " + username);
-                            e1 =  o.getEmployeeDirectory().createEmployee(name);
-                            e1.setRole((new LabTechnicianRole()).roleValue());
-                            e1.setSpecialization(Employee.SpecializationType.Physician);
-                            e1.setVisitingCharge(20);
-                            u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new LabTechnicianRole());
+                            System.out.println("Lab Technician: " + userName);
+                            emp1 =  o.getEmployeeDirectory().postEmployee(name);
+                            emp1.setRole((new LabTechnicianRole()).roleValue());
+                            emp1.setSpecialization(Employee.TypeSpecialization.Physician);
+                            emp1.setVisitCharge(20);
+                            user1 = o.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new LabTechnicianRole());
                         }
                         else
                         {
-                            System.out.println("Receptionist: " + username);
-                            e1 =  o.getEmployeeDirectory().createEmployee(name);
-                            e1.setRole((new ReceptionistRole()).roleValue());
-                            u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new ReceptionistRole());
+                            System.out.println("Receptionist: " + userName);
+                            emp1 =  o.getEmployeeDirectory().postEmployee(name);
+                            emp1.setRole((new ReceptionistRole()).roleValue());
+                            user1 = o.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new ReceptionistRole());
                         }
 
-                        u.setEmployee(e1);
-                        e1.setEmailID(email);
-                        e1.setPhoneNum("8574246269");
-                        e1.setCarrier("@tmomail.net");
+                        user1.setEmployee(emp1);
+                        emp1.setEmail(emailVar);
+                        emp1.setPhone("5085099183");
+                        emp1.setMobileCarrier("@tmomail.net");
                         
                     }
                     System.out.println();
@@ -723,55 +722,55 @@ public class ConfigureASystem {
                         firstName = faker.name().firstName().replaceAll("'", "");
                         lastName = faker.name().lastName().replaceAll("'", "");
                         name = firstName + " " + lastName;
-                        username = firstName.toLowerCase() + "." + lastName.toLowerCase();
-                        String email = "avinash.raikesh@gmail.com";
-                        String phone = faker.phoneNumber().phoneNumber().replaceAll("\\(","").replaceAll("\\)","")
+                        userName = firstName.toLowerCase() + "." + lastName.toLowerCase();
+                        String emailVar = "mithaarshi78@gmail.com";
+                        String phoneVar = faker.phoneNumber().phoneNumber().replaceAll("\\(","").replaceAll("\\)","")
                     .   replaceAll(" ","").replaceAll("-","").replaceAll("\\.","").replaceAll("x", "").substring(0, 10);
                         //int officeNo = faker.number().numberBetween(1, 999);
                     
                         if(i<79)
                         {
-                            System.out.println("Lab Technician: " + username);
-                            e1 =  o.getEmployeeDirectory().createEmployee(name);
-                            e1.setRole((new LabTechnicianRole()).roleValue());
-                            e1.setSpecialization(Employee.SpecializationType.Physician);
-                            e1.setVisitingCharge(20);
-                            u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new LabTechnicianRole());
+                            System.out.println("Lab Technician: " + userName);
+                            emp1 =  o.getEmployeeDirectory().postEmployee(name);
+                            emp1.setRole((new LabTechnicianRole()).roleValue());
+                            emp1.setSpecialization(Employee.TypeSpecialization.Physician);
+                            emp1.setVisitCharge(20);
+                            user1 = o.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new LabTechnicianRole());
                         }
                         else
                         {
-                            System.out.println("Receptionist: " + username);
-                            e1 =  o.getEmployeeDirectory().createEmployee(name);
-                            e1.setRole((new ReceptionistRole()).roleValue());
-                            u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new ReceptionistRole());
+                            System.out.println("Receptionist: " + userName);
+                            emp1 =  o.getEmployeeDirectory().postEmployee(name);
+                            emp1.setRole((new ReceptionistRole()).roleValue());
+                            user1 = o.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new ReceptionistRole());
                         }
                     
-                        u.setEmployee(e1);
-                        e1.setEmailID(email);
-                        e1.setPhoneNum("8574246269");
-                        e1.setCarrier("@tmomail.net");
+                        user1.setEmployee(emp1);
+                        emp1.setEmail(emailVar);
+                        emp1.setPhone("5085099183");
+                        emp1.setMobileCarrier("@tmomail.net");
                         
                     }
             System.out.println();
         
-            system.getNetworkList().get(1).getEnterpriseDirectory().getEnterpriseList().add(e) ;
+            system.getNetworkArray().get(1).getEnterpriseDirectory().getEnterpriseList().add(e) ;
         
             // Seattle Pharmacy - Enterprise
             System.err.println("Seattle Walgreens Pharmacy");
             e = new Pharmacy("Seattle Walgreens Pharmacy");
             
-                admFaker = new Faker(Locale.US, new Random(80));
+                fakerAdmin = new Faker(Locale.US, new Random(80));
                 
-                firstName = admFaker.name().firstName().replaceAll("'", "");
-                lastName = admFaker.name().lastName().replaceAll("'", "");
+                firstName = fakerAdmin.name().firstName().replaceAll("'", "");
+                lastName = fakerAdmin.name().lastName().replaceAll("'", "");
                 name = firstName + " " + lastName;
-                username = firstName.toLowerCase() + "." + lastName.toLowerCase();
+                userName = firstName.toLowerCase() + "." + lastName.toLowerCase();
                 
-                e1 = e.getEmployeeDirectory().createEmployee(name);
-                e1.setRole("Head Role");
-                u = e.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new AdminRole());
-                u.setEmployee(e1);
-                System.out.println("Head: " + username);
+                emp1 = e.getEmployeeDirectory().postEmployee(name);
+                emp1.setRole("Head Role");
+                user1 = e.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new AdminRole());
+                user1.setEmployee(emp1);
+                System.out.println("Head: " + userName);
             
                 System.out.println("Medical Store Organization");
                 o = e.getOrganizationDirectory().createOrganization(Organization.Type.MedicalStore);
@@ -784,27 +783,27 @@ public class ConfigureASystem {
                         firstName = faker.name().firstName().replaceAll("'", "");
                         lastName = faker.name().lastName().replaceAll("'", "");
                         name = firstName + " " + lastName;
-                        username = firstName.toLowerCase() + "." + lastName.toLowerCase();
-                        String email = "avinash.raikesh@gmail.com";
-                        String phone = faker.phoneNumber().phoneNumber().replaceAll("\\(","").replaceAll("\\)","")
+                        userName = firstName.toLowerCase() + "." + lastName.toLowerCase();
+                        String emailVar = "mithaarshi78@gmail.com";
+                        String phoneVar = faker.phoneNumber().phoneNumber().replaceAll("\\(","").replaceAll("\\)","")
                     .   replaceAll(" ","").replaceAll("-","").replaceAll("\\.","").replaceAll("x", "").substring(0, 10);
                         //int officeNo = faker.number().numberBetween(1, 999);
                     
-                        System.out.println("Pharmacy Worker: " + username);
-                        e1 =  o.getEmployeeDirectory().createEmployee(name);
-                        e1.setRole((new PharmacyWorkerRole()).roleValue());
-                        e1.setSpecialization(Employee.SpecializationType.Physician);
-                        e1.setVisitingCharge(20);
-                        u = o.getUserAccountDirectory().createUserAccount(username, "Sam123!!", employee, new PharmacyWorkerRole());
+                        System.out.println("Pharmacy Worker: " + userName);
+                        emp1 =  o.getEmployeeDirectory().postEmployee(name);
+                        emp1.setRole((new PharmacyWorkerRole()).roleValue());
+                        emp1.setSpecialization(Employee.TypeSpecialization.Physician);
+                        emp1.setVisitCharge(20);
+                        user1 = o.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", employee, new PharmacyWorkerRole());
                         
-                        u.setEmployee(e1);
-                        e1.setEmailID(email);
-                        e1.setPhoneNum("8574246269");
-                        e1.setCarrier("@tmomail.net");
+                        user1.setEmployee(emp1);
+                        emp1.setEmail(emailVar);
+                        emp1.setPhone("5085099183");
+                        emp1.setMobileCarrier("@tmomail.net");
                         
                     }
             System.out.println();
-            system.getNetworkList().get(1).getEnterpriseDirectory().getEnterpriseList().add(e) ;
+            system.getNetworkArray().get(1).getEnterpriseDirectory().getEnterpriseList().add(e) ;
 
         return system;
     }

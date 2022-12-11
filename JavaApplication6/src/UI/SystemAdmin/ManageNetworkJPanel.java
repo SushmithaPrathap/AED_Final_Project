@@ -43,7 +43,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) networkJTable.getModel();
 
         model.setRowCount(0);
-        for (Network network : system.getNetworkList()) {
+        for (Network network : system.getNetworkArray()) {
             Object[] row = new Object[1];
             row[0] = network;
             model.addRow(row);
@@ -267,14 +267,14 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         String name = nameJTextField.getText();
 
         //check network unique
-        for (Network net : system.getNetworkList()) {
+        for (Network net : system.getNetworkArray()) {
             if (net.getName().equalsIgnoreCase(name)) {
                 JOptionPane.showMessageDialog(null, "Network already exists!");
                 return;
             }
         }
 
-        Network network = system.createAndAddNetwork();
+        Network network = system.createAddNetwork();
         network.setName(name);
         nameJTextField.setText("");
         populateNetworkTable();

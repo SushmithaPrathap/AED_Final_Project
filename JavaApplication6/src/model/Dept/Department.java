@@ -3,18 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model.Department;
-
-import model.Person.EmployeeDirectory;
+package model.Dept;
 
 /**
  *
  * @author Suprith
  */
 public class Department {
-    int id;
-    String name;
-    String departmentType;  //dental, billing, etc
-//    EmployeeDirectory employeeList;
-    
+
+    int deptId;
+    String nameVar;
+    String deptType;  //Type should be --> dental, billing, radiolgy, pathology etc
+
 }

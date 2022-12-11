@@ -53,7 +53,7 @@ public class BedManagementDepartment extends Organization {
     }
 
     public void addBedInBedList(int count) {
-        this.bedList.addBeds(count);
+        this.bedList.CreateBeds(count);
     }
 
     public BedManagementDepartment() {
@@ -157,7 +157,7 @@ public class BedManagementDepartment extends Organization {
 //       return assignedLaundryBedMap;
 //    }
     @Override
-    public ArrayList<Role> getSupportedRole() {
+    public ArrayList<Role> getRoleSupported() {
         ArrayList<Role> roles = new ArrayList();
         roles.add(new NurseRole());
         return roles;

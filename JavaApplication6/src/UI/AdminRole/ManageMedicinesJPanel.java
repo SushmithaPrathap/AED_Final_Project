@@ -65,7 +65,7 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
     public void populateOrganizationEmpComboBox() {
         cmbMedicineType.removeAllItems();
         Organization organization = (Organization) cmbMainMedicineType.getSelectedItem();
-        List<Role> rolesList = organization.getSupportedRole();
+        List<Role> rolesList = organization.getRoleSupported();
 
         for (Role role : rolesList) {
 

@@ -67,13 +67,13 @@ public class InsuranceDWorkAreaJPanel extends javax.swing.JPanel {
         txtEnterprise.setEditable(false);
         txtEnterprise.setText(bill.getEnterprise().getName() == null ? " " : bill.getEnterprise().getName());
 
-        double amt = bill.getTotalCharges() == 0.0 ? 1000.00 : bill.getTotalCharges();
+        double amt = bill.getChargeTotal() == 0.0 ? 1000.00 : bill.getChargeTotal();
         txtRequestedAmt.setText(String.valueOf(amt));
         txtApprovedAmt.setText(String.valueOf(amt));
 
         txtRequestedAmt.setEditable(false);
         txtApprovedAmt.setEditable(true);
-        txtPatientName.setText(patient.getName());
+        txtPatientName.setText(patient.getNameVar());
 
         Date date = new Date();
         // String timeFormatString = "hh:mm:ss a";
@@ -299,7 +299,7 @@ public class InsuranceDWorkAreaJPanel extends javax.swing.JPanel {
 
                 request.setStatus("Close");
 
-                Validation.sendEmailMessage(patient.getEmailID(), "Insurance Approval Report",
+                Validation.sendEmailMessage(patient.getEmail(), "Insurance Approval Report",
                         "Insurance is not approved, please pay amount! ");
                 return;
 
@@ -333,7 +333,7 @@ public class InsuranceDWorkAreaJPanel extends javax.swing.JPanel {
 //            JOptionPane.showMessageDialog(null, "Please enter approved amount properly!");
 //            return;
 //        }
-            Double reqAmtDouble = bill.getTotalCharges();
+            Double reqAmtDouble = bill.getChargeTotal();
             Double appAmtDouble = appAmt;
 
             if (appAmtDouble > reqAmtDouble) {
@@ -357,7 +357,7 @@ public class InsuranceDWorkAreaJPanel extends javax.swing.JPanel {
             request.setStatus("Close");
 
             //send report to doctor email
-            Validation.sendEmailMessage(patient.getEmailID(), "Insurance Approval Report",
+            Validation.sendEmailMessage(patient.getEmail(), "Insurance Approval Report",
                     "Insurance is approved, please pay remaining amount: " + remaingAmt);
             DB4OUtil.getInstance().storeSystem(business);
 

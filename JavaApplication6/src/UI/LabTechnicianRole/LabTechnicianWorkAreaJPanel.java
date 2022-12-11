@@ -70,7 +70,7 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
         testNameTxt.setText(labTest.getName());
         testNameTxt.setEditable(false);
         technicianNameTxt.setEditable(false);
-        technicianNameTxt.setText(userAccount.getEmployee().getName());
+        technicianNameTxt.setText(userAccount.getEmployee().getNameVar());
         testDateTxt.setText(new Date().toString());
 
         Date date = new Date();
@@ -100,9 +100,9 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
             row[0] = labTest.getName();
             row[1] = labTest.getTestCharge();
             row[2] = currentDate;
-            row[3] = labTest.getLabTechnician().getName();
+            row[3] = labTest.getLabTechnician().getNameVar();
             row[4] = cmbStatusType.getSelectedItem();
-            row[5] = appointment.getPatient().getName();
+            row[5] = appointment.getPatient().getNameVar();
             dtm.addRow(row);
         }
 
@@ -543,14 +543,14 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
             row[0] = labTest.getName();
             row[1] = labTest.getTestCharge();
             row[2] = currentDate;
-            row[3] = labTest.getLabTechnician().getName();
+            row[3] = labTest.getLabTechnician().getNameVar();
             row[4] = cmbStatusType.getSelectedItem();
-            row[5] = appointment.getPatient().getName();
+            row[5] = appointment.getPatient().getNameVar();
             dtm.addRow(row);
             //}
 
             //send report to doctor email
-            Validation.sendEmailAttachment(request.getSender().getEmployee().getEmailID(), "Reports for patient",
+            Validation.sendEmailAttachment(request.getSender().getEmployee().getEmail(), "Reports for patient",
                     "Please find reports attached", lblFileUpload.getText());
 
         } catch (Exception e) {

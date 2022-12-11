@@ -109,12 +109,12 @@ public class AssignBedJPanel extends javax.swing.JPanel {
     }
 
     void populateDetails() {
-        viewPatientNametxt.setText(patient.getName());
+        viewPatientNametxt.setText(patient.getNameVar());
         viewAppnmtID.setText(String.valueOf(appointment.getAppointmentId()));
-        viewDrTxt.setText(doctor.getEmployee().getName());
-        viewpatientIdTxt.setText(String.valueOf(patient.getId()));
-        emailIDTxt.setText(patient.getEmailID());
-        phoneNumberTxt.setText(patient.getPhoneNum());
+        viewDrTxt.setText(doctor.getEmployee().getNameVar());
+        viewpatientIdTxt.setText(String.valueOf(patient.getID()));
+        emailIDTxt.setText(patient.getEmail());
+        phoneNumberTxt.setText(patient.getPhone());
         viewStatusCmb.setSelectedItem(appointment.getStatus());
 
         Date sDate = (workrequest.getRequestDate().equals("") == true) ? new Date() : workrequest.getRequestDate();
@@ -130,8 +130,8 @@ public class AssignBedJPanel extends javax.swing.JPanel {
         Operation oprtn = appointment.getOperation();
         if (oprtn != null && oprtn.getBedAssigned() != null) {
             Bed bed = oprtn.getBedAssigned();
-            txtBedId.setText(String.valueOf(bed.getBedID()));
-            txtBedIPrice.setText(String.valueOf(bed.getPrice()));
+            txtBedId.setText(String.valueOf(bed.getBedId()));
+            txtBedIPrice.setText(String.valueOf(bed.getAmount()));
             txtBedType.setText(bed.getBedType().toString());
             txtBedAssignDate.setText(oprtn.getOperationDate());
             btnviewBed.setEnabled(false);
@@ -617,7 +617,7 @@ public class AssignBedJPanel extends javax.swing.JPanel {
             SimpleDateFormat formatter1 = new SimpleDateFormat("yyyy-MM-dd");
             Date date1 = formatter1.parse(dateString);
 
-            List<Bed> bedList = bedorg.getBedList().getBedList();
+            List<Bed> bedList = bedorg.getBedList().getListBed();
             DefaultTableModel model = (DefaultTableModel) bedJTable.getModel();
 
             model.setRowCount(0);
@@ -625,7 +625,7 @@ public class AssignBedJPanel extends javax.swing.JPanel {
 //            boolean checkBedAvalibility = bedorg.checkIfBedAvailbleOnDate(date1, bed);
 
                 if (bed.getBedType().getBedType().equals(bedType)
-                        && (bed.getStatus().getStatus().equals(Bed.BedStatus.Available.getStatus()))) {
+                        && (bed.getBedStatus().getStatus().equals(Bed.BedStatus.Available.getStatus()))) {
 
                     //String bedStatus = (String)bedStatusCmb.getSelectedItem();
                     Object[] row = new Object[2];
@@ -703,9 +703,9 @@ public class AssignBedJPanel extends javax.swing.JPanel {
         Date date1;
         try {
             date1 = formatter1.parse(dateString);
-            selectedBed.setPatient(patient);
+            selectedBed.setPat(patient);
             selectedBed.setAppointment(appointment);
-            selectedBed.setStatus(Bed.BedStatus.Occupied);
+            selectedBed.setBedStatus(Bed.BedStatus.Occupied);
 //            bedorg.assignBedToPatientOnDate(patient,date1, selectedBed);
             //selectedBed.setStatus(Bed.BedStatus.Occupied);
             JOptionPane.showMessageDialog(null, "Bed Assigned Successfully!", "Information", JOptionPane.INFORMATION_MESSAGE);
@@ -728,7 +728,7 @@ public class AssignBedJPanel extends javax.swing.JPanel {
         //change appoitnment status
         txtBedId.setText(selectedBed.toString());
         txtBedType.setText(selectedBed.getBedType().getBedType());
-        txtBedIPrice.setText(String.valueOf(selectedBed.getPrice()));
+        txtBedIPrice.setText(String.valueOf(selectedBed.getAmount()));
         txtBedAssignDate.setText(txtBedDate.getText() == null ? " " : txtBedDate.getText());
         assignJPanel.setVisible(false);
         btnAssignBed.setEnabled(false);

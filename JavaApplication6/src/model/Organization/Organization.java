@@ -71,14 +71,14 @@ public abstract class Organization {
             patientDirectory.setPatientList(new ArrayList<Patient>());
         }
         billDirectory = new BillDirectory();
-        if(billDirectory.getBillList() == null){
-            billDirectory.setBillList(new ArrayList<Bill>());
+        if(billDirectory.getListBill() == null){
+            billDirectory.setListBill(new ArrayList<Bill>());
         }
         organizationID = counter;
         ++counter;
     }
 
-    public abstract ArrayList<Role> getSupportedRole();
+    public abstract ArrayList<Role> getRoleSupported();
     
     public UserAccountDirectory getUserAccountDirectory() {
         return userAccountDirectory;
@@ -108,11 +108,11 @@ public abstract class Organization {
         this.workQueue = workQueue;
     }
 
-    public PatientDirectory getPatientDirectory() {
+    public PatientDirectory getPatDirectory() {
         return patientDirectory;
     }
 
-    public void setPatientDirectory(PatientDirectory patientDirectory) {
+    public void setPatDirectory(PatientDirectory patientDirectory) {
         this.patientDirectory = patientDirectory;
     }
 
@@ -139,9 +139,9 @@ public abstract class Organization {
     } 
     
     public void removeAllEmployee(){
-                 for(Employee ua : employeeDirectory.getEmployeeList())
+                 for(Employee ua : employeeDirectory.getEmployeeArray())
         {
-            this.employeeDirectory.removeEmployee(ua);
+            this.employeeDirectory.deleteEmployee(ua);
         }    
                 }
     

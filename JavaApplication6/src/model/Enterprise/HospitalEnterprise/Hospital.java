@@ -33,7 +33,7 @@ public class Hospital extends Enterprise {
         super(name,EnterpriseType.Hospital);
     }
     @Override
-    public ArrayList<Role> getSupportedRole() {
+    public ArrayList<Role> getRoleSupported() {
         return null;
     }
     

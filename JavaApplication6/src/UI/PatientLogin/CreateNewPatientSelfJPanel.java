@@ -48,15 +48,15 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
             DB4OUtil dB4OUtil 
             ,EcoSystem ecosystem) {
         initComponents();
-        if(ecosystem.getPatientDirectory() == null){
+        if(ecosystem.getPatDirectory() == null){
             PatientDirectory patientDirectory = new PatientDirectory();
             patientDirectory.setPatientList(new ArrayList<Patient>());
-            ecosystem.setPatientDirectory(patientDirectory);
+            ecosystem.setPatDirectory(patientDirectory);
         }
         
-        if(ecosystem.getPatientDirectory().getPatientList() == null){
+        if(ecosystem.getPatDirectory().getPatientList() == null){
             
-            ecosystem.getPatientDirectory().setPatientList(new ArrayList<Patient>());
+            ecosystem.getPatDirectory().setPatientList(new ArrayList<Patient>());
            // ecosystem.setPatientDirectory(patientDirectory);
         }
        this.userProcessContainer = userProcessContainer;
@@ -343,7 +343,7 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
     
     void populateCmbInsurance(){
          cmbInsuranceCompany.removeAllItems();;
-        for(Network network : ecosystem.getNetworkList()){
+        for(Network network : ecosystem.getNetworkArray()){
         List<Enterprise> enterprsList = network.getEnterpriseDirectory().getEnterpriseList();
         if (enterprsList == null || enterprsList.isEmpty()) {
             //nothing
@@ -428,7 +428,7 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
         UserAccount account = ecosystem.getUserAccountDirectory().createUserAccount(txtUserName.getText(), txtPassword.getText(), null, new PatientRole());
        
        
-        Employee emp= ecosystem.getPatientDirectory().createPatient(txtPatientName.getText(), phoneNumberString, txtGender.getSelectedItem().toString(),
+        Employee emp= ecosystem.getPatDirectory().createPatient(txtPatientName.getText(), phoneNumberString, txtGender.getSelectedItem().toString(),
                 txtBloodGroup.getSelectedItem().toString(), account, locationPoint, txtEmail.getText(),insuranceE,insuranceId , ssnString);
         account.setEmployee(emp);
        
@@ -441,7 +441,7 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
         } else if (contactCarrier.getSelectedItem().equals("TMobile")) {
             phoneNumberString = "@tmomail.net";
         }
-        emp.setCarrier(phoneNumberString);
+        emp.setMobileCarrier(phoneNumberString);
         
         JOptionPane.showMessageDialog(null, "Registered successfully!","Information", JOptionPane.INFORMATION_MESSAGE);
         

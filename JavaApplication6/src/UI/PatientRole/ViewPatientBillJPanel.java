@@ -62,17 +62,17 @@ public class ViewPatientBillJPanel extends javax.swing.JPanel {
     public void populatePatientData(){
         
         SimpleDateFormat formatter1=new SimpleDateFormat("yyyy-MM-dd");
-        txtPatientName.setText(patient.getName());
+        txtPatientName.setText(patient.getNameVar());
         if(appointment.getDoctor().getSpecialization() == null){
-            txtDoctor.setText(appointment.getDoctor().getName() + " - Lab Technician");
+            txtDoctor.setText(appointment.getDoctor().getNameVar() + " - Lab Technician");
         }else{
-            txtDoctor.setText(appointment.getDoctor().getName() + " - " + appointment.getDoctor().getSpecialization().getValue());
+            txtDoctor.setText(appointment.getDoctor().getNameVar() + " - " + appointment.getDoctor().getSpecialization().getValue());
         }
         
         txtAppointmetId.setText(String.valueOf(appointment.getAppointmentId()));
         txtAppointmetDate.setText(formatter1.format(appointment.getDate()));
         txtAppointmentType.setText(appointment.getType());
-        double visitingCharge = appointment.getDoctor().getVisitingCharge();
+        double visitingCharge = appointment.getDoctor().getVisitCharge();
         Double operationCharge = 0d;
         if(appointment.getOperation() != null){
             operationCharge = appointment.getOperation().getOperationCharge();

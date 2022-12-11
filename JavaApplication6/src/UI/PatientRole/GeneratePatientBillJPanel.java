@@ -72,17 +72,17 @@ public class GeneratePatientBillJPanel extends javax.swing.JPanel {
     public void populatePatientData(){
         
         SimpleDateFormat formatter1=new SimpleDateFormat("yyyy-MM-dd");
-        txtPatientName.setText(patient.getName());
+        txtPatientName.setText(patient.getNameVar());
         if(appointment.getDoctor().getSpecialization() == null){
-            txtDoctor.setText(appointment.getDoctor().getName() + " - Lab Technician");
+            txtDoctor.setText(appointment.getDoctor().getNameVar() + " - Lab Technician");
         }else{
-            txtDoctor.setText(appointment.getDoctor().getName() + " - " + appointment.getDoctor().getSpecialization().getValue());
+            txtDoctor.setText(appointment.getDoctor().getNameVar() + " - " + appointment.getDoctor().getSpecialization().getValue());
         }
         
         txtAppointmetId.setText(String.valueOf(appointment.getAppointmentId()));
         txtAppointmetDate.setText(formatter1.format(appointment.getDate()));
         txtAppointmentType.setText(appointment.getType());
-        double visitingCharge = appointment.getDoctor().getVisitingCharge();
+        double visitingCharge = appointment.getDoctor().getVisitCharge();
         Double operationCharge = 0d;
         if((appointment.getOperation() != null)){
             operationCharge = appointment.getOperation().getOperationCharge();
@@ -359,15 +359,15 @@ public class GeneratePatientBillJPanel extends javax.swing.JPanel {
         
         if(enterprise.getBillDirectory() == null){
             enterprise.setBillDirectory(new BillDirectory());
-            enterprise.getBillDirectory().setBillList(new ArrayList<>());
+            enterprise.getBillDirectory().setListBill(new ArrayList<>());
         }
-        List<Bill> bills =  enterprise.getBillDirectory().getBillList();
+        List<Bill> bills =  enterprise.getBillDirectory().getListBill();
         Bill bill = new Bill();
         bill.setAppointment(appointment);
-        bill.setPatient(patient);
-        bill.setDoctor(appointment.getDoctor());
+        bill.setPat(patient);
+        bill.setDoc(appointment.getDoctor());
         bill.setStatus("Pending approval from Insurance");
-        bill.setTotalCharges(Double.valueOf(txtTotalCharge.getText()));
+        bill.setChargeTotal(Double.valueOf(txtTotalCharge.getText()));
         bill.setEnterprise(enterprise);
         bills.add(bill);
         appointment.setHospitalbill(bill);

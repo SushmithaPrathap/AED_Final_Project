@@ -5,7 +5,7 @@
  */
 package model.Enterprise.LabEnterprise;
 
-import model.Department.Receptionist;
+import model.Dept.Receptionist;
 import model.Enterprise.Enterprise;
 import model.Patient.PatientDirectory;
 import model.Role.Role;
@@ -27,7 +27,7 @@ public class Lab extends Enterprise {
         super(name,Enterprise.EnterpriseType.Lab);
     }
     @Override
-    public ArrayList<Role> getSupportedRole() {
+    public ArrayList<Role> getRoleSupported() {
         return null;
     }
     

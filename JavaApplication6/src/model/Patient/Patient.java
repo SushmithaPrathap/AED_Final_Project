@@ -160,6 +160,6 @@ public class Patient extends Employee {
 
     @Override
     public String toString() {
-        return this.getName();
+        return this.getNameVar();
     }
 }

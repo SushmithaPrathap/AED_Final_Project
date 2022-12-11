@@ -101,13 +101,13 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
         for(Appointment appointment : appointments){
             if(appointment.getStatus().equals(status)){
                 Object[] row = new Object[7];
-                row[0] = patient.getId();
+                row[0] = patient.getID();
                 row[1] = patient;//.getName();
                 row[2] = appointment.getAppointmentId();
                 if(appointment.getDoctor().getSpecialization() != null){
-                    row[3] = appointment.getDoctor().getName() + "-" + appointment.getDoctor().getSpecialization().getValue();
+                    row[3] = appointment.getDoctor().getNameVar() + "-" + appointment.getDoctor().getSpecialization().getValue();
                 }else{
-                    row[3] = appointment.getDoctor().getName();
+                    row[3] = appointment.getDoctor().getNameVar();
                 }
                 row[4] = appointment;//formatter1.format(appointment.getDate());
                 row[5] = appointment.getType();
@@ -134,13 +134,13 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
         SimpleDateFormat formatter1=new SimpleDateFormat("yyyy-MM-dd");
         for(Appointment appointment : appointments){
                 Object[] row = new Object[7];
-                row[0] = patient.getId();
+                row[0] = patient.getID();
                 row[1] = patient;//.getName();
                 row[2] = appointment.getAppointmentId();
                 if(appointment.getDoctor().getSpecialization() != null){
-                    row[3] = appointment.getDoctor().getName() + "-" + appointment.getDoctor().getSpecialization().getValue();
+                    row[3] = appointment.getDoctor().getNameVar() + "-" + appointment.getDoctor().getSpecialization().getValue();
                 }else{
-                    row[3] = appointment.getDoctor().getName();
+                    row[3] = appointment.getDoctor().getNameVar();
                 }
                 row[4] = appointment;//formatter1.format(appointment.getDate());
                 row[5] = appointment.getType();
@@ -446,12 +446,12 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
             appointment = (Appointment)viewAppointmentJTable.getValueAt(selectedRow, 4);
             
           
-            txtPatientId.setText(String.valueOf(appointment.getPatient().getId()));
-            txtPatientName.setText(appointment.getPatient().getName());
+            txtPatientId.setText(String.valueOf(appointment.getPatient().getID()));
+            txtPatientName.setText(appointment.getPatient().getNameVar());
             if(appointment.getDoctor().getSpecialization() != null){
-                txtDoctor.setText(appointment.getDoctor().getName() + " - " + appointment.getDoctor().getSpecialization().getValue());
+                txtDoctor.setText(appointment.getDoctor().getNameVar() + " - " + appointment.getDoctor().getSpecialization().getValue());
             }else{
-                txtDoctor.setText(appointment.getDoctor().getName());
+                txtDoctor.setText(appointment.getDoctor().getNameVar());
             }
             SimpleDateFormat formatter1=new SimpleDateFormat("yyyy-MM-dd");
             txtAppointmetDate.setText(formatter1.format(appointment.getDate()));

@@ -39,7 +39,7 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
         //viewDetailsJPanel.setVisible(false);
         //searchJPanel.setVisible(false);
         enterpriseLabel.setText(enterprise.getName());
-        jLabel5.setText("Welcome " + ua.getEmployee().getName());
+        jLabel5.setText("Welcome " + ua.getEmployee().getNameVar());
         // requestTestJButton.setVisible(false);
     }
 

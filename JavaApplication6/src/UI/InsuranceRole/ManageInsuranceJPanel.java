@@ -57,7 +57,7 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
         this.organizationDir = organizationDir;
         this.enterprise= enterprise;
         this.useraccount= useraccount;
-        this.patientDir= ((Insurance)enterprise).getPatientDirectory();  //system.getPatientDirectory();//
+        this.patientDir= ((Insurance)enterprise).getPatDirectory();  //system.getPatientDirectory();//
         //populateMainMedicinesComboBox();
         //populateOrganizationEmpComboBox();
         populateOrganizationComboBox();
@@ -73,7 +73,7 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
         if(patientDir==null)
         {
             PatientDirectory d = new PatientDirectory();
-            enterprise.setPatientDirectory(patientDir);
+            enterprise.setPatDirectory(patientDir);
         }
         for ( Patient p: patientDir.getPatientList()){
             cmbSSN.addItem(p.getSSN());
@@ -106,8 +106,8 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
             
             Object[] row = new Object[7];
             row[0] = med;//.getId();
-            row[1] = med.getInsuranceDealer().getName();
-            row[2] = med.getPatient().getName();
+            row[1] = med.getInsuranceDealer().getNameVar();
+            row[2] = med.getPatient().getNameVar();
             row[3] = med.getType();
             row[4] = med.getPrice();
             row[5] = med.getValidity();
@@ -142,8 +142,8 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
             
             Object[] row = new Object[7];
             row[0] = med;//.getId();
-            row[1] = med.getInsuranceDealer().getName();
-            row[2] = med.getPatient().getName();
+            row[1] = med.getInsuranceDealer().getNameVar();
+            row[2] = med.getPatient().getNameVar();
             row[3] = med.getType();
             row[4] = med.getPrice();
             row[5] = med.getValidity();
@@ -605,9 +605,9 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
             Logger.getLogger(ManageInsuranceJPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
         Patient patient = new Patient();
-        enterprise.getPatientDirectory().getPatientList().add(patient);
+        enterprise.getPatDirectory().getPatientList().add(patient);
         //system.getPatientDirectory().getPatientList().add(patient);
-        patient.setName(custName);
+        patient.setNameVar(custName);
         patient.setSSN(ssnString);
         //patient.set
         InsuranceDetails insrdtl = new InsuranceDetails();
@@ -799,9 +799,9 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
             Logger.getLogger(ManageInsuranceJPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
         Patient patient = new Patient();
-        enterprise.getPatientDirectory().getPatientList().add(patient);
+        enterprise.getPatDirectory().getPatientList().add(patient);
         
-        patient.setName(name);
+        patient.setNameVar(name);
         patient.setSSN(ssnString);
         //patient.set
         int row = organizationJTable.getSelectedRow();
@@ -857,7 +857,7 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
         addMedicineJPanel.setVisible(true);
-        nameJTextField.setText(useraccount.getEmployee().getName());
+        nameJTextField.setText(useraccount.getEmployee().getNameVar());
         nameJTextField.setEditable(false);
         populateInsuranceType();
     }//GEN-LAST:event_btnAddActionPerformed
@@ -929,8 +929,8 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
     
     void populateDetails(InsuranceDetails med){
         
-        nameJTextField1.setText(med.getInsuranceDealer().getName());
-        customerJTextField1.setText(med.getPatient().getName());
+        nameJTextField1.setText(med.getInsuranceDealer().getNameVar());
+        customerJTextField1.setText(med.getPatient().getNameVar());
       //availableQtyTxt1.setText(String.valueOf(med.getQuantity()));
        cmbInsuranceType1.setSelectedItem(med.getType());
        txtSSN1.setText(med.getSSN());

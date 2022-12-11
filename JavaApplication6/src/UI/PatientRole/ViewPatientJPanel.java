@@ -60,17 +60,17 @@ public class ViewPatientJPanel extends javax.swing.JPanel {
         txtEmail.setEditable(false);
         txtUserName.setEditable(false);
         txtPassword.setEditable(false);
-        txtPatientName.setText(patient.getName());
+        txtPatientName.setText(patient.getNameVar());
         txtGender.setSelectedItem(patient.getPatientSex());
-        txtPhoneNumber.setText(patient.getPhoneNum());
+        txtPhoneNumber.setText(patient.getPhone());
         txtUserName.setText(patient.getUserAccount().getUsername());
         txtPassword.setText(patient.getUserAccount().getPassword());
         txtBloodGroup.setSelectedItem(patient.getBloodGroup());
-        txtEmail.setText(patient.getEmailID());
+        txtEmail.setText(patient.getEmail());
         txtAddrStreet.setText(patient.getAddress().getStreet());
         txtAddrState.setText(patient.getAddress().getState());
         txtAddrCity.setText(patient.getAddress().getCity());
-        contactCarrier.setSelectedItem(patient.getCarrier() == null ? "TMobile" :patient.getCarrier() );
+        contactCarrier.setSelectedItem(patient.getMobileCarrier() == null ? "TMobile" :patient.getMobileCarrier() );
     }
 
     
@@ -345,7 +345,7 @@ public class ViewPatientJPanel extends javax.swing.JPanel {
         locationPoint.setState(txtAddrState.getText());
         locationPoint.setCity(txtAddrCity.getText());
         
-        enterprise.getPatientDirectory().updatePatient(patient.getId(), txtPatientName.getText(), txtPhoneNumber.getText(),
+        enterprise.getPatDirectory().updatePatient(patient.getID(), txtPatientName.getText(), txtPhoneNumber.getText(),
                 txtGender.getSelectedItem().toString(), txtBloodGroup.getSelectedItem().toString(), locationPoint, txtEmail.getText());
 
         JOptionPane.showMessageDialog(null, "Patient updated successfully!", "Warning", JOptionPane.INFORMATION_MESSAGE);

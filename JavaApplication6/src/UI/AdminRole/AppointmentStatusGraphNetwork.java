@@ -59,7 +59,7 @@ public class AppointmentStatusGraphNetwork extends javax.swing.JPanel {
         {
             if (enterprise instanceof Hospital) 
             {
-                for (Patient p : enterprise.getPatientDirectory().getPatientList()) 
+                for (Patient p : enterprise.getPatDirectory().getPatientList()) 
                 {
                     workReqList.addAll(p.getAppointmentDirectory().getAppointmentList());
                 }

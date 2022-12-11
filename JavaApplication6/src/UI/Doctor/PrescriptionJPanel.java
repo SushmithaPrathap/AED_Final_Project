@@ -62,8 +62,8 @@ public class PrescriptionJPanel extends javax.swing.JPanel {
         this.medicineList = medicineList;
         this.enterprise= enterprise;
         this.userAccount = userAccount;
-        patientNameTxt.setText(patient.getName());
-        doctorNameTxt.setText(doctor.getName());
+        patientNameTxt.setText(patient.getNameVar());
+        doctorNameTxt.setText(doctor.getNameVar());
         //docotr
         //appointment.
         //appointment.setPrescription(prescription);
@@ -73,7 +73,7 @@ public class PrescriptionJPanel extends javax.swing.JPanel {
 
     
     void populatePharmacy(){
-        ArrayList<Network> networkList=ecosystem.getNetworkList();
+        ArrayList<Network> networkList=ecosystem.getNetworkArray();
         Network network=null;
         //network
         cmbPharmacy.removeAllItems();

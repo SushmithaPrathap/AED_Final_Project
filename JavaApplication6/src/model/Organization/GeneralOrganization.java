@@ -22,7 +22,7 @@ public class GeneralOrganization extends Organization {
     }
 
     //@Override
-    public ArrayList<Role> getSupportedRole() {
+    public ArrayList<Role> getRoleSupported() {
         ArrayList<Role> roles = new ArrayList();
         roles.add(new DoctorRole());
         roles.add(new NurseRole());

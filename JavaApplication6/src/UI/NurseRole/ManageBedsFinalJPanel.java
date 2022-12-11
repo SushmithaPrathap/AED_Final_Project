@@ -321,7 +321,7 @@ public class ManageBedsFinalJPanel extends javax.swing.JPanel {
        //
 //        List<Bed> bedList = null;//bedorg.getBedList().getBedList();
         
-        List<Bed> bedList = bedorg.getBedList().getBedList();
+        List<Bed> bedList = bedorg.getBedList().getListBed();
         
 //        if(status.equals(Bed.BedStatus.AssignedLaundry.getStatus()))
 //        {
@@ -353,7 +353,7 @@ public class ManageBedsFinalJPanel extends javax.swing.JPanel {
         for(Bed bed: bedList)
         {
             if((bed.getBedType().getBedType().equals(bedType)) && 
-                    bed.getStatus().getStatus().equals(status))
+                    bed.getBedStatus().getStatus().equals(status))
             {
         
         //String bedStatus = (String)bedStatusCmb.getSelectedItem();
@@ -455,7 +455,7 @@ public class ManageBedsFinalJPanel extends javax.swing.JPanel {
                 if(currentBedStatus.equals(Bed.BedStatus.AssignedLaundry.getStatus()))
                 {
                     //selectedBed.getPatient().
-                    selectedBed.setStatus(Bed.BedStatus.Available);
+                    selectedBed.setBedStatus(Bed.BedStatus.Available);
                     JOptionPane.showMessageDialog(null, "Bed status changed Successfully!", "Information", JOptionPane.INFORMATION_MESSAGE);
                     return;
                 }
@@ -480,9 +480,9 @@ public class ManageBedsFinalJPanel extends javax.swing.JPanel {
                 {
                     //selectedBed.getPatient().
                     //free patient
-                    Patient pat= selectedBed.getPatient();
+                    Patient pat= selectedBed.getPat();
                     Appointment appointment = selectedBed.getAppointment();
-                    selectedBed.setStatus(Bed.BedStatus.AssignedLaundry);
+                    selectedBed.setBedStatus(Bed.BedStatus.AssignedLaundry);
                     appointment.getOperation().setStatus(Operation.OperationStatus.Completed.getValue());
                     JOptionPane.showMessageDialog(null, "Bed status changed Successfully!", "Information", JOptionPane.INFORMATION_MESSAGE);
 //                    Patient pat= bedorg.getPatientByBedNDate(selectedBed,date1);

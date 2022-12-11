@@ -15,15 +15,14 @@ import java.util.Map;
  */
 public class Employee {
 
-    private String name;
-    private int id;
-    private static int count = 1;
-    private double visitingCharge;
-    private String phoneNum;
-    private String emailID;
+    private String nameVar;
+    private int ID;
+    private static int cnt = 1;
+    private double visitCharge;
+    private String phone;
+    private String email;
     private String role;
-    private String carrier;
-    // private Integer[] time;
+    private String mobileCarrier;  //to send the welcome message to mobile number
 
     public Map<Date, ArrayList<Integer>> getSchedule() {
         return schedule;
@@ -34,23 +33,22 @@ public class Employee {
     }
     private Map<Date, ArrayList<Integer>> schedule;
 
-    //private double visitingCharge;
-    private SpecializationType specialization;
+    private TypeSpecialization specialization;
 
-    public SpecializationType getSpecialization() {
+    public TypeSpecialization getSpecialization() {
         return specialization;
     }
 
-    public void setSpecialization(SpecializationType specialization) {
+    public void setSpecialization(TypeSpecialization specialization) {
         this.specialization = specialization;
     }
 
-    public String getCarrier() {
-        return carrier;
+    public String getMobileCarrier() {
+        return mobileCarrier;
     }
 
-    public void setCarrier(String carrier) {
-        this.carrier = carrier;
+    public void setMobileCarrier(String mobileCarrier) {
+        this.mobileCarrier = mobileCarrier;
     }
 
     public String getRole() {
@@ -61,58 +59,54 @@ public class Employee {
         this.role = role;
     }
 
-    public String getPhoneNum() {
-        return phoneNum;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setPhoneNum(String phoneNum) {
-        this.phoneNum = phoneNum;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public String getEmailID() {
-        return emailID;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmailID(String emailID) {
-        this.emailID = emailID;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public double getVisitingCharge() {
-        return visitingCharge;
+    public double getVisitCharge() {
+        return visitCharge;
     }
 
-    public void setVisitingCharge(double visitingCharge) {
-        this.visitingCharge = visitingCharge;
+    public void setVisitCharge(double visitCharge) {
+        this.visitCharge = visitCharge;
     }
 
     public Employee() {
-        id = count;
-        count++;
-        //time = new Integer[6];
+        ID = cnt;
+        cnt++;
         schedule = new HashMap<>();
-        //schedule.
-        //schedule.
-
     }
 
-    public int getId() {
-        return id;
+    public int getID() {
+        return ID;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNameVar(String nameVar) {
+        this.nameVar = nameVar;
     }
 
-    public String getName() {
-        return name;
+    public String getNameVar() {
+        return nameVar;
     }
 
     @Override
     public String toString() {
-        return name;
+        return nameVar;
     }
 
-    public enum SpecializationType {
+    public enum TypeSpecialization {
         MBBS("MBBS"),
         Surgeon("Surgeon"),
         MD("MD"),
@@ -120,53 +114,44 @@ public class Employee {
 
         private String value;
 
-        private SpecializationType(String value) {
+        private TypeSpecialization(String value) {
             this.value = value;
         }
 
         public String getValue() {
             return value;
         }
-
         @Override
         public String toString() {
             return value;
         }
     }
 
-    public void addSchedule(Date date, Integer time) {
-        Map<Date, ArrayList<Integer>> schedules = this.getSchedule();
+    public void postSchedule(Date date, Integer time) {
+        Map<Date, ArrayList<Integer>> scheduleArray = this.getSchedule();
+        for (Map.Entry<Date, ArrayList<Integer>> schedule : scheduleArray.entrySet()) {
 
-        for (Map.Entry<Date, ArrayList<Integer>> sch : schedules.entrySet()) {
-
-            if (sch.getKey().equals(date)) {
-                sch.getValue().add(time);
+            if (schedule.getKey().equals(date)) {
+                schedule.getValue().add(time);
                 return;
             }
         }
-
-        ArrayList<Integer> arr = new ArrayList<>();
-        arr.add(time);
-        schedules.put(date, arr);
-
+        ArrayList<Integer> array = new ArrayList<>();
+        array.add(time);
+        scheduleArray.put(date, array);
     }
 
-    public boolean checkScheduleIsAvaible(Date date, Integer time) {
+    public boolean checkAvailableSchedule(Date date, Integer time) {
         Map<Date, ArrayList<Integer>> schedules = this.getSchedule();
-
         for (Map.Entry<Date, ArrayList<Integer>> sch : schedules.entrySet()) {
-
             if (sch.getKey().equals(date)) {
                 ArrayList<Integer> arr = sch.getValue();
 
                 if (arr.contains(time)) {
                     return false;
                 }
-
             }
         }
-
         return true;
     }
-
 }

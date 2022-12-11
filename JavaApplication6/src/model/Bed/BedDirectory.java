@@ -13,100 +13,75 @@ import java.util.List;
  * @author Suprith
  */
 public class BedDirectory {
-    List<Bed> bedList;
 
-    public List<Bed> getBedList() {
-        return bedList;
+    List<Bed> listBed;
+
+    public List<Bed> getListBed() {
+        return listBed;
     }
 
-    public void setBedList(List<Bed> bedList) {
-        this.bedList = bedList;
+    public void setListBed(List<Bed> listBed) {
+        this.listBed = listBed;
     }
-    static int count=1;
-    
-    public BedDirectory(int count){
-        bedList = new ArrayList<Bed>();
-        //create beds-->> todo
-        for(int i=0;i<count;i++){ 
-        
+    static int cnt = 1;
+
+    public BedDirectory(int count) {
+        listBed = new ArrayList<Bed>();
+        //create new beds
+        for (int i = 0; i < count; i++) {
             Bed bed = new Bed();
-            bedList.add(bed);
-        
+            listBed.add(bed);
         }
-        
-        
-        for(int i=0;i<count;i++){
-        
+
+        for (int i = 0; i < count; i++) {
             Bed bed = new Bed();
-            bed.setBedType(Bed.BedType.Delux);
-            bedList.add(bed);
-        
+            bed.setBedType(Bed.BedType.Premium);
+            listBed.add(bed);
         }
-        
     }
-    
-    public void addBeds(int count){
-        for(int i=0;i<count;i++){
-        
+
+    //add new beds
+    public void CreateBeds(int count) {
+        for (int i = 0; i < count; i++) {
             Bed bed = new Bed();
-            bedList.add(bed);
-        
+            listBed.add(bed);
         }
-        
-        
     }
-    
-    
-    //create bed
-    Bed createBed(){
-        Bed bed= new Bed();//null;
+
+    //create a new bed
+    Bed postBed() {
+        Bed bed = new Bed();//null;
         //bed.setBedID();
         return bed;
     }
-    
-    
-       
-    //update bed
-    void updateBedStatus(Bed bed,Bed.BedStatus bedStatus){
-        bed.setStatus(bedStatus);
+
+    //update the bed status
+    void updateBedStatus(Bed bed, Bed.BedStatus bedStatus) {
+        bed.setBedStatus(bedStatus);
     }
-    
-    
-    
-    
-    //search available Bed in bedlist
-    List<Bed> getAvailableBed(){
+
+    //search all the beds available in listBed
+    List<Bed> getAvailableBeds() {
         List<Bed> availableBedList = null;
-        for(Bed bed: bedList)
-        {
-            if(bed.getStatus().equals(Bed.BedStatus.Available))
-            {
+        for (Bed bed : listBed) {
+            if (bed.getBedStatus().equals(Bed.BedStatus.Available)) {
                 availableBedList.add(bed);
-                
+
             }
         }
         return availableBedList;
-       // return null;
+        // return null;
     }
-    
-    
-    //search bed by bed id
-    Bed getBedbyBedId(int id){
-        Bed bed=null;
-       for(Bed bedA: bedList)
-        {
-            if(bedA.getBedID() == id)
-            {
+
+    //search the bed by the id passed
+    Bed getBedbyID(int id) {
+        Bed bed = null;
+        for (Bed bedA : listBed) {
+            if (bedA.getBedId() == id) {
                 bed = bedA;//bedA
                 break;
             }
         }
-       return bed;
+        return bed;
     }
-    
-    
-    
-    
-    
-    //
 }

@@ -12,16 +12,14 @@ import java.util.List;
  * @author sushmithaprathap
  */
 public class BillDirectory {
-    List<Bill> billList;
-    //static int count=1;
 
-    public List<Bill> getBillList() {
-        return billList;
+    List<Bill> listBill;
+
+    public List<Bill> getListBill() {
+        return listBill;
     }
 
-    public void setBillList(List<Bill> billList) {
-        this.billList = billList;
+    public void setListBill(List<Bill> listBill) {
+        this.listBill = listBill;
     }
-    
-    
 }

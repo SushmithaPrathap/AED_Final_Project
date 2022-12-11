@@ -61,7 +61,7 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
         this.system = system;
         this.patient = patient;
         populateNetworkComboBox();
-        jLabel2.setText("Appointment Booking for " + patient.getName());
+        jLabel2.setText("Appointment Booking for " + patient.getNameVar());
         time=0;
         //populate doctor
         
@@ -74,7 +74,7 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
     private void populateNetworkComboBox(){
         networkJComboBox1.removeAllItems();
         
-        for (Network network : system.getNetworkList()){
+        for (Network network : system.getNetworkArray()){
             networkJComboBox1.addItem(network);
         }
     }
@@ -102,7 +102,7 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
            for(Organization dept : deptList)
                 {
                     if(dept instanceof model.Organization.GeneralOrganization){
-                    for(Employee emp : dept.getEmployeeDirectory().getEmployeeList()){
+                    for(Employee emp : dept.getEmployeeDirectory().getEmployeeArray()){
                         if(emp.getRole()!= null && (emp.getRole().equals("Doctor Role")))
                         {
                             empList.add(emp);
@@ -528,14 +528,14 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
         Employee doctor = (Employee)cmbDoctor.getSelectedItem();
         if(enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Hospital.getValue())){
             for(Appointment appointment : patient.getAppointmentDirectory().getAppointmentList()){
-                if((appointment.getDate().compareTo(date1) == 0) && (appointment.getDoctor().getId() == doctor.getId())&& !appointment.getStatus().equalsIgnoreCase(Appointment.AppointmentStatus.Cancel.getValue())){
+                if((appointment.getDate().compareTo(date1) == 0) && (appointment.getDoctor().getID() == doctor.getID())&& !appointment.getStatus().equalsIgnoreCase(Appointment.AppointmentStatus.Cancel.getValue())){
                     JOptionPane.showMessageDialog(null, "Patient has already booked appointment!", "Warning", JOptionPane.WARNING_MESSAGE);
                     return;
                 }
             }
         }else if(enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())){
             for(Appointment appointment : patient.getLabAppointmentDirectory().getAppointmentList()){
-                if((appointment.getDate().compareTo(date1) == 0) && (appointment.getDoctor().getId() == doctor.getId()) &&  !appointment.getStatus().equalsIgnoreCase(Appointment.AppointmentStatus.Cancel.getValue())){
+                if((appointment.getDate().compareTo(date1) == 0) && (appointment.getDoctor().getID() == doctor.getID()) &&  !appointment.getStatus().equalsIgnoreCase(Appointment.AppointmentStatus.Cancel.getValue())){
                     JOptionPane.showMessageDialog(null, "Patient has already booked appointment!", "Warning", JOptionPane.WARNING_MESSAGE);
                     return;
                 }
@@ -544,7 +544,7 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
         
         
        
-        boolean check = doctor.checkScheduleIsAvaible(date1, time);
+        boolean check = doctor.checkAvailableSchedule(date1, time);
         if(check ==false)
         {
                 JOptionPane.showMessageDialog(null, "Doctor has other appointment already, please select other time!", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -561,11 +561,11 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
             appoint.setTime(time);
         }
         Patient pt=null;
-        List<Patient> patList=enterprise.getPatientDirectory().getPatientList();
+        List<Patient> patList=enterprise.getPatDirectory().getPatientList();
         for(Patient p: patList)
         {
             //if()
-            if(p.getSSN()!=null && p.getInsuranceId() !=null &&p.getSSN().equals(patient.getSSN()) && p.getInsuranceId().equalsIgnoreCase(patient.getInsuranceId()) && p.getId() == patient.getId()){
+            if(p.getSSN()!=null && p.getInsuranceId() !=null &&p.getSSN().equals(patient.getSSN()) && p.getInsuranceId().equalsIgnoreCase(patient.getInsuranceId()) && p.getID() == patient.getID()){
                 pt=p;
                 
                 break;
@@ -573,7 +573,7 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
         }
         
         if(pt==null)
-        {enterprise.getPatientDirectory().getPatientList().add(patient);
+        {enterprise.getPatDirectory().getPatientList().add(patient);
             
         }
         
@@ -600,7 +600,7 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
        
        
        
-        doctor.addSchedule(date1, time);
+        doctor.postSchedule(date1, time);
         //txtPatientName.setText("");
         cmbDoctor.setSelectedIndex(0);
         txtAppointmetDate.setText("");
@@ -656,12 +656,12 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
                 
           //send email and sms
 
-        String statusString = "Hello! Your appointment is booked! Date: "+ date1 + "Doctor: "+ doctor.getName();
+        String statusString = "Hello! Your appointment is booked! Date: "+ date1 + "Doctor: "+ doctor.getNameVar();
         
 
-        String uEmail= patient.getEmailID();
+        String uEmail= patient.getEmail();
         UserAccount account = patient.getUserAccount();
-        String phonecontact = patient.getPhoneNum()+patient.getCarrier();
+        String phonecontact = patient.getPhone()+patient.getMobileCarrier();
         //registrationRequest.setContactCarrierName(contact);
         sendEmailMessageAppointment(uEmail, account, statusString);//.getText());
         sendTextMessageAppointment(phonecontact, account, statusString);      

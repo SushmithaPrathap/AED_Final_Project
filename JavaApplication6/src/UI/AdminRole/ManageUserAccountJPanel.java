@@ -115,7 +115,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     
     private void populateRoleComboBox(Organization organization){
         roleJComboBox.removeAllItems();
-        for (Role role : organization.getSupportedRole()){
+        for (Role role : organization.getRoleSupported()){
             roleJComboBox.addItem(role); //.roleValue()
         }
     }
@@ -123,7 +123,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     
     private void populateRoleComboBox2(Organization organization){
         roleJComboBox2.removeAllItems();
-        for (Role role : organization.getSupportedRole()){
+        for (Role role : organization.getRoleSupported()){
             roleJComboBox2.addItem(role);
         }
     }
@@ -799,10 +799,10 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         
         //Employee employee = (Employee) employeeJComboBox.getSelectedItem();
         
-        Employee employee =organization.getEmployeeDirectory().createEmployee(name);
+        Employee employee =organization.getEmployeeDirectory().postEmployee(name);
         //UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee,role);// new AdmRole());
-        employee.setEmailID(uEmail);
-        employee.setPhoneNum(phoneNo);
+        employee.setEmail(uEmail);
+        employee.setPhone(phoneNo);
         String phoneNumberString = null;
         if (contactCarrier.getSelectedItem().equals("ATT")) {
              phoneNumberString="@txt.att.net";
@@ -813,7 +813,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         } else if (contactCarrier.getSelectedItem().equals("TMobile")) {
             phoneNumberString = "@tmomail.net";
         }
-        employee.setCarrier(phoneNumberString);
+        employee.setMobileCarrier(phoneNumberString);
         
         
         
@@ -823,8 +823,8 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         
         if(role.roleValue().equals("Doctor Role"))
         {
-            employee.setVisitingCharge(Double.parseDouble(visitingChargeTxt.getText()));
-            employee.setSpecialization((Employee.SpecializationType)cmbSpecialization.getSelectedItem());
+            employee.setVisitCharge(Double.parseDouble(visitingChargeTxt.getText()));
+            employee.setSpecialization((Employee.TypeSpecialization)cmbSpecialization.getSelectedItem());
         }
         
         employee.setRole(role.roleValue());
@@ -876,7 +876,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     
     public void populateSpecializationCMB(){
         cmbSpecialization.removeAllItems();;
-        for(Employee.SpecializationType type:Employee.SpecializationType.values() )
+        for(Employee.TypeSpecialization type:Employee.TypeSpecialization.values() )
         {
             cmbSpecialization.addItem(type);
         }
@@ -884,7 +884,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     
     public void populateSpecializationCMB1(){
         cmbSpecialization1.removeAllItems();;
-        for(Employee.SpecializationType type:Employee.SpecializationType.values() )
+        for(Employee.TypeSpecialization type:Employee.TypeSpecialization.values() )
         {
             cmbSpecialization1.addItem(type);
         }
@@ -1085,11 +1085,11 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         Role uaRole= selectedUsrAcc.getRole();
         organizationJComboBox2.setSelectedItem((Organization)userJTable.getValueAt(row, 2));  //department at 2nd index
         roleJComboBox2.getModel().setSelectedItem(uaRole);
-        empNameJTextField2.setText(selectedUsrAcc.getEmployee().getName());
+        empNameJTextField2.setText(selectedUsrAcc.getEmployee().getNameVar());
         nameJTextField2.setText(selectedUsrAcc.getUsername());//username
         passwordJTextField2.setText(selectedUsrAcc.getPassword());
-        uEmailTxt1.setText(selectedUsrAcc.getEmployee().getEmailID());
-        phoneNumberTxt1.setText(selectedUsrAcc.getEmployee().getPhoneNum());
+        uEmailTxt1.setText(selectedUsrAcc.getEmployee().getEmail());
+        phoneNumberTxt1.setText(selectedUsrAcc.getEmployee().getPhone());
         organizationJComboBox2.setEditable(false);
         roleJComboBox2.setEditable(false);
         empNameJTextField2.setEditable(false);
@@ -1104,7 +1104,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             visitingChargeTxt2.setVisible(true);
             //visitingChargeLbl2.setEditable(false);
             visitingChargeTxt2.setEditable(false);
-            visitingChargeTxt2.setText(String.valueOf(selectedUsrAcc.getEmployee().getVisitingCharge()));
+            visitingChargeTxt2.setText(String.valueOf(selectedUsrAcc.getEmployee().getVisitCharge()));
         
         specializationlbl1.setEnabled(true);
         cmbSpecialization1.setEnabled(false);
@@ -1195,13 +1195,13 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         
         //update properrty
         selectedStaff.setPassword(password);
-        selectedStaff.getEmployee().setName(staffName);
-        selectedStaff.getEmployee().setEmailID(emailId);
-        selectedStaff.getEmployee().setPhoneNum(phonenum);
+        selectedStaff.getEmployee().setNameVar(staffName);
+        selectedStaff.getEmployee().setEmail(emailId);
+        selectedStaff.getEmployee().setPhone(phonenum);
         if(selectedStaff.getRole().roleValue().equals("Doctor Role"))
         {
-            selectedStaff.getEmployee().setVisitingCharge(visitingChgr);
-            Employee.SpecializationType type=(Employee.SpecializationType) cmbSpecialization1.getSelectedItem();
+            selectedStaff.getEmployee().setVisitCharge(visitingChgr);
+            Employee.TypeSpecialization type=(Employee.TypeSpecialization) cmbSpecialization1.getSelectedItem();
             selectedStaff.getEmployee().setSpecialization(type);
         }
         //show message success
@@ -1252,7 +1252,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
                 if(org.equals(organization)){
                 organization.getUserAccountDirectory().removeUserAccount(selectedUsrAcc);
                 
-                organization.getEmployeeDirectory().removeEmployee(selectedUsrAcc.getEmployee());
+                organization.getEmployeeDirectory().deleteEmployee(selectedUsrAcc.getEmployee());
                 
                  popData();
                  JOptionPane.showMessageDialog(null, "Deleted successfully!!");

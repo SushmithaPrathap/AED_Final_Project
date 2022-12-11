@@ -48,7 +48,7 @@ public class Pharmacy extends Enterprise{
         
     }
     @Override
-    public ArrayList<Role> getSupportedRole() {
+    public ArrayList<Role> getRoleSupported() {
         return null;
     }
     

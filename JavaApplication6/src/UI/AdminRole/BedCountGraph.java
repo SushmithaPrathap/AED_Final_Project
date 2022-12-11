@@ -57,16 +57,16 @@ public class BedCountGraph extends javax.swing.JPanel {
         for (Organization org : enterprise.getOrganizationDirectory().getOrganizationList()) 
         {
             if (org instanceof BedManagementDepartment) {
-                List<Bed> bedList = ((BedManagementDepartment) org).getBedList().getBedList();
+                List<Bed> bedList = ((BedManagementDepartment) org).getBedList().getListBed();
                 for (Bed b : bedList) {
-                    if (b.getStatus().getStatus().equals(Bed.BedStatus.Available.getStatus())) {
+                    if (b.getBedStatus().getStatus().equals(Bed.BedStatus.Available.getStatus())) {
                         workReqMap.put("Available", workReqMap.getOrDefault("Available", 0) + 1);
 
-                    } else if (b.getStatus().getStatus().equals(Bed.BedStatus.Occupied.getStatus())) {
+                    } else if (b.getBedStatus().getStatus().equals(Bed.BedStatus.Occupied.getStatus())) {
                         workReqMap.put("Occupied", workReqMap.getOrDefault("Occupied", 0) + 1);
 
                     }
-                    if (b.getStatus().getStatus().equals(Bed.BedStatus.AssignedLaundry.getStatus())) {
+                    if (b.getBedStatus().getStatus().equals(Bed.BedStatus.AssignedLaundry.getStatus())) {
                         workReqMap.put("Laundry", workReqMap.getOrDefault("Laundry", 0) + 1);
 
                     }

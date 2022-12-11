@@ -63,11 +63,11 @@ public class AssignLabTestJPanel extends javax.swing.JPanel {
 
     void populateNetworkLabs() {
         cmbLabs.removeAllItems();;
-        if(system.getNetworkList() == null)
+        if(system.getNetworkArray() == null)
         {
             return;
         }
-        for(Network network1: system.getNetworkList())
+        for(Network network1: system.getNetworkArray())
         {
          
 

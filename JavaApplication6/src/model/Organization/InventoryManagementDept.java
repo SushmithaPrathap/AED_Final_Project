@@ -5,7 +5,7 @@
  */
 package model.Organization;
 
-import model.Department.Inventory;
+import model.Dept.Inventory;
 
 /**
  *

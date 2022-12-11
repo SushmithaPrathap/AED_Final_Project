@@ -13,20 +13,21 @@ import model.Patient.Patient;
  * @author Suprith
  */
 public class Bed {
-    private int bedID;
+
+    private int bedId;
     private BedType bedType;
-    private Double price;
-    private BedStatus status;
-    private static int count =1;
-    private Patient patient;
+    private Double amount;
+    private BedStatus bedStatus;
+    private static int cnt = 1;
+    private Patient pat;
     private Appointment appointment;
 
-    public static int getCount() {
-        return count;
+    public static int getCnt() {
+        return cnt;
     }
 
-    public static void setCount(int count) {
-        Bed.count = count;
+    public static void setCnt(int cnt) {
+        Bed.cnt = cnt;
     }
 
     public Appointment getAppointment() {
@@ -36,32 +37,29 @@ public class Bed {
     public void setAppointment(Appointment appointment) {
         this.appointment = appointment;
     }
-    
-    
 
-    public Patient getPatient() {
-        return patient;
+    public Patient getPat() {
+        return pat;
     }
 
-    public void setPatient(Patient patient) {
-        this.patient = patient;
+    public void setPat(Patient pat) {
+        this.pat = pat;
     }
-    
-    public Bed(){
-        this.bedID = count++;
-        this.status = BedStatus.Available;
+
+    public Bed() {
+        this.bedId = cnt++;
+        this.bedStatus = BedStatus.Available;
         this.bedType = BedType.Normal;
-        this.price = 1000.00;
-        this.patient = null;
-    }
-    
-    
-    public int getBedID() {
-        return bedID;
+        this.amount = 1000.00;
+        this.pat = null;
     }
 
-    public void setBedID(int bedID) {
-        this.bedID = bedID;
+    public int getBedId() {
+        return bedId;
+    }
+
+    public void setBedId(int bedId) {
+        this.bedId = bedId;
     }
 
     public BedType getBedType() {
@@ -72,28 +70,27 @@ public class Bed {
         this.bedType = bedType;
     }
 
-    public Double getPrice() {
-        return price;
+    public Double getAmount() {
+        return amount;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setAmount(Double amount) {
+        this.amount = amount;
     }
 
-    public BedStatus getStatus() {
-        return status;
+    public BedStatus getBedStatus() {
+        return bedStatus;
     }
 
-    public void setStatus(BedStatus status) {
-        this.status = status;
+    public void setBedStatus(BedStatus bedStatus) {
+        this.bedStatus = bedStatus;
     }
-    
-            
-    public enum BedStatus{
+
+    public enum BedStatus {
         Available("Available"),
         Occupied("Occupied"),
         AssignedLaundry("Assigned Laundry");
-        
+
         private String status;
 
         private BedStatus(String status) {
@@ -110,19 +107,18 @@ public class Bed {
 
         @Override
         public String toString() {
-            return status ;
+            return status;
         }
-        
-        
+
     }
-    
-    public enum BedType{
-        Delux("Delux"),
+
+    public enum BedType {
+        Premium("Premium"),
         Normal("Normal");
-        
+
         private String bedType;
-        
-        private BedType(String bedType){
+
+        private BedType(String bedType) {
             this.bedType = bedType;
         }
 
@@ -136,31 +132,20 @@ public class Bed {
 
         @Override
         public String toString() {
-            return bedType ;
+            return bedType;
         }
-        
-    }
-    
-    @Override
-        public String toString() {
-            return "Bed"+String.valueOf(this.bedID) ;
-            
-        }
-    
-    
-      @Override
-    public boolean equals(Object o) { 
-  
 
-        // typecast o to Complex so that we can compare data members  
-        Bed c = (Bed) o; 
-          
-        // Compare the data members and return accordingly  
-        //return Double.compare(re, c.re) == 0
-        //        && Double.compare(im, c.im) == 0; 
-        
-        return (this.bedID==(c.bedID)&&  this.bedType.equals(c.bedType));
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Bed" + String.valueOf(this.bedId);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        Bed c = (Bed) o;
+        return (this.bedId == (c.bedId) && this.bedType.equals(c.bedType));
+    }
+
 }

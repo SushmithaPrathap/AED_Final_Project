@@ -21,7 +21,7 @@ public class LabOrganization extends Organization
     }
 
     //@Override
-    public ArrayList<Role> getSupportedRole() {
+    public ArrayList<Role> getRoleSupported() {
         ArrayList<Role> roles = new ArrayList();
         //roles.add(new LabTechnicianRole());
         //roles.add(new ReceptionistRole());

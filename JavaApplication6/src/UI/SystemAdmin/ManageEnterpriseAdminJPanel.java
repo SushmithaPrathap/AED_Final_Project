@@ -49,7 +49,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) enterpriseJTable.getModel();
 
         model.setRowCount(0);
-        for (Network network : system.getNetworkList()) {
+        for (Network network : system.getNetworkArray()) {
             for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
                 for (UserAccount userAccount : enterprise.getUserAccountDirectory().getUserAccountList()) {
                     if(userAccount.getRole().roleValue().equals("Admin Role")){
@@ -68,7 +68,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     private void populateNetworkComboBox(){
         networkJComboBox.removeAllItems();
         
-        for (Network network : system.getNetworkList()){
+        for (Network network : system.getNetworkArray()){
             networkJComboBox.addItem(network);
         }
     }
@@ -536,7 +536,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             return;
         }
 
-        Employee employee = enterprise.getEmployeeDirectory().createEmployee(name);
+        Employee employee = enterprise.getEmployeeDirectory().postEmployee(name);
         employee.setRole("Head Role");
         UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new AdminRole());
         populateTable();

@@ -14,15 +14,16 @@ import model.Patient.Patient;
  * @author sushmithaprathap
  */
 public class Bill {
-    //cumulative charges->> labs, medicine, consultation, hospital charges
-    int billId;
-    Patient patient;
-    Employee doctor;
+
+    //All the bill charges to all these classes cummaltively ---> labs, medicine, consultation, hospital charges
+    int billID;
+    Patient pat;
+    Employee doc;
     Appointment appointment;
-    double totalCharges;
-    String status;//paid, unpaid
+    double chargeTotal;
+    String status; // available status should be - paid & unpaid
     //int invoiceNumber;
-    private static int count = 1;
+    private static int cnt = 1;
     private Enterprise enterprise;
 
     public Enterprise getEnterprise() {
@@ -32,34 +33,34 @@ public class Bill {
     public void setEnterprise(Enterprise enterprise) {
         this.enterprise = enterprise;
     }
-    
+
     public Bill() {
-        billId = count;
-        count++;
+        billID = cnt;
+        cnt++;
     }
 
-    public int getBillId() {
-        return billId;
+    public int getBillID() {
+        return billID;
     }
 
-    public void setBillId(int billId) {
-        this.billId = billId;
+    public void setBillID(int billID) {
+        this.billID = billID;
     }
 
-    public Patient getPatient() {
-        return patient;
+    public Patient getPat() {
+        return pat;
     }
 
-    public void setPatient(Patient patient) {
-        this.patient = patient;
+    public void setPat(Patient pat) {
+        this.pat = pat;
     }
 
-    public Employee getDoctor() {
-        return doctor;
+    public Employee getDoc() {
+        return doc;
     }
 
-    public void setDoctor(Employee doctor) {
-        this.doctor = doctor;
+    public void setDoc(Employee doc) {
+        this.doc = doc;
     }
 
     public Appointment getAppointment() {
@@ -70,12 +71,12 @@ public class Bill {
         this.appointment = appointment;
     }
 
-    public double getTotalCharges() {
-        return totalCharges;
+    public double getChargeTotal() {
+        return chargeTotal;
     }
 
-    public void setTotalCharges(double totalCharges) {
-        this.totalCharges = totalCharges;
+    public void setChargeTotal(double chargeTotal) {
+        this.chargeTotal = chargeTotal;
     }
 
     public String getStatus() {
@@ -85,13 +86,10 @@ public class Bill {
     public void setStatus(String status) {
         this.status = status;
     }
-    
-    
-    
-    @Override 
-    public String toString(){
-        return ("Bill" + this.getBillId());
-    } 
-    
-    
+
+    @Override
+    public String toString() {
+        return ("Bill" + this.getBillID());
+    }
+
 }

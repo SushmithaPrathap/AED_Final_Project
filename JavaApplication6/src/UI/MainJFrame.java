@@ -11,7 +11,6 @@ import model.Network.Network;
 import model.Organization.Organization;
 import model.UserAccount.UserAccount;
 import java.awt.CardLayout;
-import java.awt.GraphicsEnvironment;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -21,7 +20,7 @@ import UI.PatientLogin.CreateNewPatientSelfJPanel;
  *
  * @author sushmithaprathap
  */
-public class MainJFrame extends javax.swing.JFrame {
+public class MainJFrame extends JFrame {
 
     /**
      * Creates new form MainJFrame
@@ -35,7 +34,7 @@ public class MainJFrame extends javax.swing.JFrame {
     public MainJFrame() {
         initComponents();
         system = dB4OUtil.retrieveSystem();
-        this.setSize(1300, 700);
+        this.setSize(2300, 700);
     }
 
     /**
@@ -56,8 +55,6 @@ public class MainJFrame extends javax.swing.JFrame {
         lblPassword = new javax.swing.JLabel();
         loginJLabel = new javax.swing.JLabel();
         btnLogout = new javax.swing.JButton();
-        close = new javax.swing.JLabel();
-        maximizer = new javax.swing.JLabel();
         SideSubHeading = new javax.swing.JLabel();
         btnRegister = new javax.swing.JButton();
         container = new javax.swing.JPanel();
@@ -67,9 +64,9 @@ public class MainJFrame extends javax.swing.JFrame {
         setUndecorated(true);
 
         jSplitPane1.setBackground(new java.awt.Color(255, 255, 255));
-        jSplitPane1.setDividerLocation(200);
+        jSplitPane1.setDividerLocation(250);
 
-        jPanel1.setBackground(new java.awt.Color(137, 207, 225));
+        jPanel1.setBackground(new java.awt.Color(102, 204, 255));
         jPanel1.setToolTipText("");
         jPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
@@ -93,7 +90,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 btnLoginActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 140, 35));
+        jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, 140, 35));
 
         txtUsername.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         txtUsername.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 2, 1, new java.awt.Color(255, 255, 255)));
@@ -102,21 +99,21 @@ public class MainJFrame extends javax.swing.JFrame {
                 txtUsernameActionPerformed(evt);
             }
         });
-        jPanel1.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 160, 30));
+        jPanel1.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 210, 35));
 
         txtPasswordField.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         txtPasswordField.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 2, 1, new java.awt.Color(255, 255, 255)));
-        jPanel1.add(txtPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 160, 30));
+        jPanel1.add(txtPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 210, 35));
 
         lblUsername.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblUsername.setForeground(new java.awt.Color(255, 255, 255));
         lblUsername.setText("User Name:");
-        jPanel1.add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, 30));
+        jPanel1.add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, 30));
 
         lblPassword.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblPassword.setForeground(new java.awt.Color(255, 255, 255));
         lblPassword.setText("Password:");
-        jPanel1.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, -1, -1));
+        jPanel1.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, -1));
         jPanel1.add(loginJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(157, 210, -1, -1));
 
         btnLogout.setFont(new java.awt.Font("Cochin", 1, 12)); // NOI18N
@@ -128,29 +125,12 @@ public class MainJFrame extends javax.swing.JFrame {
                 btnLogoutActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 140, 35));
-
-        close.setBackground(new java.awt.Color(255, 255, 255));
-        close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/cancel.png"))); // NOI18N
-        close.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                closeMouseClicked(evt);
-            }
-        });
-        jPanel1.add(close, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 13, 29, 28));
-
-        maximizer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/maximize.png"))); // NOI18N
-        maximizer.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                maximizerMouseClicked(evt);
-            }
-        });
-        jPanel1.add(maximizer, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 13, 29, 28));
+        jPanel1.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 600, 140, 35));
 
         SideSubHeading.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         SideSubHeading.setForeground(new java.awt.Color(255, 255, 255));
         SideSubHeading.setText("Please Login!");
-        jPanel1.add(SideSubHeading, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, 40));
+        jPanel1.add(SideSubHeading, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, -1, 40));
 
         btnRegister.setFont(new java.awt.Font("Cochin", 1, 12)); // NOI18N
         btnRegister.setText("REGISTER");
@@ -160,11 +140,11 @@ public class MainJFrame extends javax.swing.JFrame {
                 btnRegisterActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 140, 35));
+        jPanel1.add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 540, 140, 35));
 
         jSplitPane1.setLeftComponent(jPanel1);
 
-        container.setBackground(new java.awt.Color(0, 204, 255));
+        container.setBackground(new java.awt.Color(255, 255, 255));
         container.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 containerMouseDragged(evt);
@@ -198,7 +178,7 @@ public class MainJFrame extends javax.swing.JFrame {
         Network assignedNetwork = null;
         if (userAccount == null) {
             //Step 2: Go inside each network and check each enterprise
-            for (Network network : system.getNetworkList()) {
+            for (Network network : system.getNetworkArray()) {
                 //Step 2.a: check against each enterprise
                 for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
                     userAccount = enterprise.getUserAccountDirectory().authenticateUser(userName, password);
@@ -263,31 +243,6 @@ public class MainJFrame extends javax.swing.JFrame {
         crdLyt.next(container);
         dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_btnLogoutActionPerformed
-
-    private void closeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseClicked
-        // TODO add your handling code here:
-//        System.exit(0);
-    }//GEN-LAST:event_closeMouseClicked
-
-    private void maximizerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_maximizerMouseClicked
-        // TODO add your handling code here:
-
-//        if (maximized) {
-//            //handle fullscreen - taskbar
-//            MainJFrame.this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-//            GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
-//            MainJFrame.this.setMaximizedBounds(env.getMaximumWindowBounds());
-//            ii = new ImageIcon(getClass().getResource("minimize.png"));
-//            maximizer.setIcon(ii);
-//            maximized = false;
-//        } else {
-//
-//            setExtendedState(JFrame.NORMAL);
-//            ii = new ImageIcon(getClass().getResource("maximize.png"));
-//            maximizer.setIcon(ii);
-//            maximized = true;
-//        }
-    }//GEN-LAST:event_maximizerMouseClicked
     int xy;
     int xx;
     //private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {                                     
@@ -388,14 +343,12 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnRegister;
-    private javax.swing.JLabel close;
     private javax.swing.JPanel container;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblUsername;
     private javax.swing.JLabel loginJLabel;
-    private javax.swing.JLabel maximizer;
     private javax.swing.JPasswordField txtPasswordField;
     private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables

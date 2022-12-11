@@ -33,7 +33,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         this.organization = organization;
         this.system = system;
         lblEnterprise.setText(enterprise.getName());
-        jLabel5.setText("Welcome " + account.getEmployee().getName());
+        jLabel5.setText("Welcome " + account.getEmployee().getNameVar());
         String enterpriseType= enterprise.getEnterpriseType().toString();
         if(enterpriseType.equals("Hospital"))
         {

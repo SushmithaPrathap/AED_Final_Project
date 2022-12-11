@@ -12,61 +12,52 @@ import java.util.List;
  * @author Suprith
  */
 public class PersonDirectory {
-    
-    private ArrayList<Employee> employeeList;
+
+    private ArrayList<Employee> employeeArray;
 
     public PersonDirectory() {
-        employeeList = new ArrayList();
+        employeeArray = new ArrayList();
     }
 
-    public ArrayList<Employee> getEmployeeList() {
-        return employeeList;
+    public ArrayList<Employee> getEmployeeArray() {
+        return employeeArray;
     }
-    
-    public Employee createEmployee(String name){
+
+    public Employee postEmployee(String name) {
         Employee employee = new Employee();
-        employee.setName(name);
-        employeeList.add(employee);
+        employee.setNameVar(name);
+        employeeArray.add(employee);
         return employee;
     }
-    
-    public void removeEmployee(Employee e)
-    {
-        employeeList.remove(e);
+
+    public void deleteEmployee(Employee e) {
+        employeeArray.remove(e);
     }
-    
-    
-    public List<Employee> getDoctorList(){
-        List<Employee> doctorList= null;
-        if(employeeList != null || !(employeeList.isEmpty()) )
-        {
-           for(Employee emp : employeeList){
-           //match a doctor role
-           if(emp.getRole().equals("Doctor Role")){
-               doctorList.add(emp);
-           }
-           
-       }
-            
+
+    public List<Employee> getDoctorList() {
+        List<Employee> doctorArray = null;
+        if (employeeArray != null || !(employeeArray.isEmpty())) {
+            for (Employee emp : employeeArray) {
+                //match a doctor role
+                if (emp.getRole().equals("Doctor Role")) {
+                    doctorArray.add(emp);
+                }
+
+            }
         }
-        return doctorList;
+        return doctorArray;
     }
-    
-    
-    public List<Employee> getNurseList(){
-        List<Employee> nurseList= null;
-        if(employeeList != null || !(employeeList.isEmpty()) )
-        {
-           for(Employee emp : employeeList){
-           //match a doctor role
-           if(emp.getRole().equals("Nurse Role")){
-               nurseList.add(emp);
-           }
-           
-       }
-            
+
+    public List<Employee> getNurseList() {
+        List<Employee> nurseArray = null;
+        if (employeeArray != null || !(employeeArray.isEmpty())) {
+            for (Employee emp : employeeArray) {
+                //match a doctor role
+                if (emp.getRole().equals("Nurse Role")) {
+                    nurseArray.add(emp);
+                }
+            }
         }
-        return nurseList;
+        return nurseArray;
     }
-    
 }

@@ -6,7 +6,7 @@ package model.Enterprise.InsuranceEnterprise;
 
 import model.Enterprise.Enterprise;
 import model.Patient.PatientDirectory;
-import model.Department.Receptionist;
+import model.Dept.Receptionist;
 import model.Person.EmployeeDirectory;
 import model.Role.Role;
 import java.util.ArrayList;
@@ -71,7 +71,7 @@ public class Insurance extends Enterprise {
         indir= new InsuranceDirectory();
     }
     @Override
-    public ArrayList<Role> getSupportedRole() {
+    public ArrayList<Role> getRoleSupported() {
         return null;
     }
     

@@ -33,15 +33,15 @@ public class PatientDirectory {
     public Patient createPatient(String patientName, String phoneNumber, String gender, String bloodGroup, UserAccount userAccount, Location locationPoint, String email,
             Insurance insuranceE, String insuranceId, String SSN) {
         Patient patient = new Patient();
-        patient.setName(patientName);
-        patient.setPhoneNum(phoneNumber);
+        patient.setNameVar(patientName);
+        patient.setPhone(phoneNumber);
         patient.setPatientSex(gender);
         //patient.setAddress(address);
         patient.setBloodGroup(bloodGroup);
         patient.setUserAccount(userAccount);
         patient.setAddress(locationPoint);
         patient.setRole("Patient Role");
-        patient.setEmailID(email);
+        patient.setEmail(email);
         patientList.add(patient);
         patient.createNewAppointmentDirectory();
         patient.setInsuranceId(insuranceId);
@@ -52,20 +52,20 @@ public class PatientDirectory {
 
     public void updatePatient(int patientID, String name, String phoneNumber, String gender, String bloodGroup, Location locationPoint, String email) {
         for (Patient patient : patientList) {
-            if (patient.getId() == patientID) {
-                patient.setName(name);
+            if (patient.getID() == patientID) {
+                patient.setNameVar(name);
                 patient.setAddress(locationPoint);
                 patient.setPatientSex(gender);
-                patient.setPhoneNum(phoneNumber);
+                patient.setPhone(phoneNumber);
                 patient.setBloodGroup(bloodGroup);
-                patient.setEmailID(name);
+                patient.setEmail(name);
             }
         }
     }
 
     public Patient findPatientById(int patientId) {
         for (Patient patient : patientList) {
-            if (patient.getId() == patientId) {
+            if (patient.getID() == patientId) {
                 return patient;
             }
         }
