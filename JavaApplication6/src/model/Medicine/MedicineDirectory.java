@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  *
- * @author sushmithaprathap
+ * @author yash
  */
 public class MedicineDirectory {
 

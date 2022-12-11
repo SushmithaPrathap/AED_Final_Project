@@ -10,7 +10,7 @@ import model.Patient.Patient;
 
 /**
  *
- * @author Suprith
+ * @author yash
  */
 public class Bed {
 

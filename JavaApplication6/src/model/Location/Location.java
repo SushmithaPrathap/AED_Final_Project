@@ -6,7 +6,7 @@ package model.Location;
 
 /**
  *
- * @author sushmithaprathap
+ * @author yash
  */
 
 public class Location {
