@@ -1,13 +1,76 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
  */
 package model.WorkQueue;
 
+import model.appointment.Appointment;
+import model.Employee.Employee;
+import model.Medicine.Medicine;
+import model.Patient.Patient;
+import java.util.Map;
+
 /**
  *
- * @author sushmithaprathap
+ * @author Suprith
  */
-public class PharmacyWorkRequest {
+public class PharmacyWorkRequest extends WorkRequest{
+        /* inherited
+    
+    private String message;
+    private UserAccount sender;
+    private UserAccount receiver;
+    private String status;
+    private Date requestDate;
+    private Date resolveDate;
+    
+    
+    
+    */
+    private Appointment appointment;
+    private Patient patient;
+    private Employee doctor;
+    private Map<Medicine,Double> medicineMap;
+
+    public Patient getPatient() {
+        return patient;
+    }
+
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+    }
+
+    public Employee getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(Employee doctor) {
+        this.doctor = doctor;
+    }
+
+    public Map<Medicine,Double> getMedicineMap() {
+        return medicineMap;
+    }
+
+    public void setMedicineMap(Map<Medicine,Double> medicineMap) {
+        this.medicineMap = medicineMap;
+    }
+
+    public static int getCount() {
+        return count;
+    }
+
+    public static void setCount(int count) {
+        WorkRequest.count = count;
+    }
+
+    public Appointment getAppointment() {
+        return appointment;
+    }
+
+    public void setAppointment(Appointment appointment) {
+        this.appointment = appointment;
+    }
+    
     
 }
