@@ -1,4 +1,4 @@
- /*
+/*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -9,13 +9,12 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-
 /**
  *
  * @author Suprith
  */
 public class Employee {
-    
+
     private String name;
     private int id;
     private static int count = 1;
@@ -24,7 +23,7 @@ public class Employee {
     private String emailID;
     private String role;
     private String carrier;
-   // private Integer[] time;
+    // private Integer[] time;
 
     public Map<Date, ArrayList<Integer>> getSchedule() {
         return schedule;
@@ -34,8 +33,7 @@ public class Employee {
         this.schedule = schedule;
     }
     private Map<Date, ArrayList<Integer>> schedule;
-    
-   
+
     //private double visitingCharge;
     private SpecializationType specialization;
 
@@ -47,15 +45,14 @@ public class Employee {
         this.specialization = specialization;
     }
 
-    
-     public String getCarrier() {
+    public String getCarrier() {
         return carrier;
     }
 
     public void setCarrier(String carrier) {
         this.carrier = carrier;
     }
-    
+
     public String getRole() {
         return role;
     }
@@ -95,7 +92,7 @@ public class Employee {
         schedule = new HashMap<>();
         //schedule.
         //schedule.
-                
+
     }
 
     public int getId() {
@@ -106,7 +103,6 @@ public class Employee {
         this.name = name;
     }
 
-    
     public String getName() {
         return name;
     }
@@ -115,16 +111,16 @@ public class Employee {
     public String toString() {
         return name;
     }
-    
-    
-    public enum SpecializationType{
+
+    public enum SpecializationType {
         MBBS("MBBS"),
         Surgeon("Surgeon"),
         MD("MD"),
         Physician("Physician");
-        
+
         private String value;
-        private SpecializationType(String value){
+
+        private SpecializationType(String value) {
             this.value = value;
         }
 
@@ -137,51 +133,40 @@ public class Employee {
             return value;
         }
     }
-    
-    
-   public  void addSchedule(Date date, Integer time){
-        Map<Date,ArrayList<Integer>> schedules = this.getSchedule();
-      
-        
-        for(Map.Entry<Date,ArrayList<Integer>> sch : schedules.entrySet()){
-           
-            
-            if(sch.getKey().equals(date) )
-            {
+
+    public void addSchedule(Date date, Integer time) {
+        Map<Date, ArrayList<Integer>> schedules = this.getSchedule();
+
+        for (Map.Entry<Date, ArrayList<Integer>> sch : schedules.entrySet()) {
+
+            if (sch.getKey().equals(date)) {
                 sch.getValue().add(time);
                 return;
-                    }
-        }
-        
-        ArrayList<Integer> arr = new ArrayList<>();
-        arr.add(time);
-        schedules.put(date,arr);
-        
-        
-    }
-    
-    
-   public  boolean checkScheduleIsAvaible(Date date, Integer time){
-        Map<Date,ArrayList<Integer>> schedules = this.getSchedule();
-        
-        for(Map.Entry<Date,ArrayList<Integer>> sch : schedules.entrySet()){
-            
-            
-            
-            if(sch.getKey().equals(date) )
-            {
-                ArrayList<Integer> arr= sch.getValue();
-                    
-                if(arr.contains(time))
-                {
-                    return false;
-                }
-            
             }
         }
-        
+
+        ArrayList<Integer> arr = new ArrayList<>();
+        arr.add(time);
+        schedules.put(date, arr);
+
+    }
+
+    public boolean checkScheduleIsAvaible(Date date, Integer time) {
+        Map<Date, ArrayList<Integer>> schedules = this.getSchedule();
+
+        for (Map.Entry<Date, ArrayList<Integer>> sch : schedules.entrySet()) {
+
+            if (sch.getKey().equals(date)) {
+                ArrayList<Integer> arr = sch.getValue();
+
+                if (arr.contains(time)) {
+                    return false;
+                }
+
+            }
+        }
+
         return true;
     }
- 
-   
+
 }
