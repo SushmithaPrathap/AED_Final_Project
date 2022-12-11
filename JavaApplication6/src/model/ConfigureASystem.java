@@ -5,7 +5,7 @@ import model.Enterprise.Enterprise;
 import model.Enterprise.HospitalEnterprise.Hospital;
 import model.Enterprise.InsuranceEnterprise.Insurance;
 import model.Enterprise.LabEnterprise.Lab;
-import model.Enterprise.PharmacyEnterprise.Pharmacy;
+import model.Enterprise.Pharmacy.Pharmacy;
 import model.Location.Location;
 import model.Organization.BedManagementDepartment;
 import model.Organization.Organization;

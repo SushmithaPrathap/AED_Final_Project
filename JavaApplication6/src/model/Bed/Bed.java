@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business.Bed;
+package model.Bed;
 
-import Business.Appointment.Appointment;
-import Business.Patient.Patient;
+import model.Appointment.Appointment;
+import model.Patient.Patient;
 
 /**
  *
