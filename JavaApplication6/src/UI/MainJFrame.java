@@ -257,8 +257,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
         container.removeAll();
         //JPanel blankJP = new JPanel();
-        //KGradientPanel blankJP = new KGradientPanel();
-        container.add("blank", kGradientPanel1);
+        KGradientPanel blankJP = new KGradientPanel();
+        container.add("blank", blankJP);
         CardLayout crdLyt = (CardLayout) container.getLayout();
         crdLyt.next(container);
         dB4OUtil.storeSystem(system);
