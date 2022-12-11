@@ -39,7 +39,7 @@ public class EmailClass {
 
         properties.put("mail.smtp.ssl.trust", host);
         properties.put("mail.smtp.user", from);
-// properties.put("mail.smtp.password", pass);
+        properties.put("mail.smtp.password", pass);
         properties.put("mail.smtp.port", "587");
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
@@ -47,8 +47,8 @@ public class EmailClass {
         properties.put("mail.smtp.ssl.protocols", "TLSv1.2");
 
 // Setup mail server
-// properties.setProperty("mail.smtp.host", host);
-// properties.put("mail.smtp.starttls.enable", "true");
+        properties.setProperty("mail.smtp.host", host);
+        properties.put("mail.smtp.starttls.enable", "true");
 // Get the default Session object.
         Session session = Session.getDefaultInstance(properties);
 
@@ -82,8 +82,8 @@ public class EmailClass {
     public static void sendEmailMessageAppointment(String emailId, UserAccount ua, String status) {
 // Recipient's email ID needs to be mentioned.
         String to = emailId;
-        String from = "aed.project.fall.2021@gmail.com";
-        String pass = "2021@AED";
+        String from = "aedhealthcare413@gmail.com";
+        String pass = "ksmqagaoljqplihs";
 // Assuming you are sending email from localhost
 // String host = "192.168.0.16";
 
@@ -95,7 +95,7 @@ public class EmailClass {
 
         properties.put("mail.smtp.ssl.trust", host);
         properties.put("mail.smtp.user", from);
-// properties.put("mail.smtp.password", pass);
+        properties.put("mail.smtp.password", pass);
         properties.put("mail.smtp.port", "587");
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
@@ -103,8 +103,8 @@ public class EmailClass {
         properties.put("mail.smtp.ssl.protocols", "TLSv1.2");
 
 // Setup mail server
-// properties.setProperty("mail.smtp.host", host);
-// properties.put("mail.smtp.starttls.enable", "true");
+       properties.setProperty("mail.smtp.host", host);
+       properties.put("mail.smtp.starttls.enable", "true");
 // Get the default Session object.
         Session session = Session.getDefaultInstance(properties);
 
@@ -139,8 +139,8 @@ public class EmailClass {
         // Recipient's email ID needs to be mentioned.
         String to = contact;
         System.out.println(contact);
-        String from = "aed.project.fall.2021@gmail.com";
-        String pass = "2021@AED";
+        String from = "aedhealthcare413@gmail.com";
+        String pass = "ksmqagaoljqplihs";
         // Assuming you are sending email from localhost
         // String host = "192.168.0.16";
         // Get system properties
@@ -149,16 +149,16 @@ public class EmailClass {
         properties.put("mail.smtp.starttls.enable", "true");
         properties.put("mail.smtp.ssl.trust", host);
         properties.put("mail.smtp.user", from);
-        // properties.put("mail.smtp.password", pass);
+        properties.put("mail.smtp.password", pass);
         properties.put("mail.smtp.port", "587");
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
         properties.put("mail.smtp.starttls.required", "true");
         properties.put("mail.smtp.ssl.protocols", "TLSv1.2");
         // Setup mail server
-        // properties.setProperty("mail.smtp.host", host);
+        properties.setProperty("mail.smtp.host", host);
         //was comented starttls
-        //properties.put("mail.smtp.starttls.enable", "true");
+        properties.put("mail.smtp.starttls.enable", "true");
         // Get the default Session object.
         Session session = Session.getDefaultInstance(properties);
 
@@ -191,8 +191,8 @@ public class EmailClass {
         // Recipient's email ID needs to be mentioned.
         String to = contact;
         System.out.println(contact);
-        String from = "aed.project.fall.2021@gmail.com";
-        String pass = "2021@AED";
+        String from = "aedhealthcare413@gmail.com";
+        String pass = "ksmqagaoljqplihs";
         // Assuming you are sending email from localhost
         // String host = "192.168.0.16";
         // Get system properties
@@ -201,16 +201,16 @@ public class EmailClass {
         properties.put("mail.smtp.starttls.enable", "true");
         properties.put("mail.smtp.ssl.trust", host);
         properties.put("mail.smtp.user", from);
-        // properties.put("mail.smtp.password", pass);
+        properties.put("mail.smtp.password", pass);
         properties.put("mail.smtp.port", "587");
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
         properties.put("mail.smtp.starttls.required", "true");
         properties.put("mail.smtp.ssl.protocols", "TLSv1.2");
         // Setup mail server
-        // properties.setProperty("mail.smtp.host", host);
+        properties.setProperty("mail.smtp.host", host);
         //was comented starttls
-        //properties.put("mail.smtp.starttls.enable", "true");
+        properties.put("mail.smtp.starttls.enable", "true");
         // Get the default Session object.
         Session session = Session.getDefaultInstance(properties);
 
