@@ -7,7 +7,7 @@ package model.appointment;
 import model.Bill.Bill;
 import model.Employee.Employee;
 import model.Enterprise.LabEnterprise.LabTestDirectory;
-import model.Enterprise.PharmacyEnterprise.Pharmacy;
+import model.Enterprise.Pharmacy.Pharmacy;
 import model.Operation.Operation;
 import model.Patient.Patient;
 

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model.Enterprise.PharmacyEnterprise;
+package model.Enterprise.Pharmacy;
 
 import java.util.List;
 

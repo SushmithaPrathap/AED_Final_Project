@@ -7,7 +7,7 @@ package model.Organization;
 
 
 import model.Medicine.MedicineDirectory;
-import model.Appointment.Prescription;
+import model.appointment.Prescription;
 import model.Role.PharmacyWorkerRole;
 import model.Role.Role;
 import java.util.ArrayList;

@@ -11,7 +11,7 @@ import model.Enterprise.Enterprise;
 //import model.Patient.PatientDirectory;
 //import model.Department.Receptionist;
 //import model.Person.EmployeeDirectory;
-import Business.Role.Role;
+import model.Role.Role;
 import java.util.ArrayList;
 
 /**

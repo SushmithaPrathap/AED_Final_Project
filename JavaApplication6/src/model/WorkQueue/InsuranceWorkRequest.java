@@ -4,7 +4,7 @@
  */
 package model.WorkQueue;
 
-import model.Appointment.Appointment;
+import model.appointment.Appointment;
 import model.Bill.Bill;
 import model.Patient.Patient;
 

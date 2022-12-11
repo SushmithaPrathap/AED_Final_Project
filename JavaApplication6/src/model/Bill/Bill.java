@@ -4,7 +4,7 @@
  */
 package model.Bill;
 
-import model.Appointment.Appointment;
+import model.appointment.Appointment;
 import model.Employee.Employee;
 import model.Enterprise.Enterprise;
 import model.Patient.Patient;

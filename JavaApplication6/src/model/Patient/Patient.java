@@ -4,9 +4,9 @@
  */
 package model.Patient;
 
-import model.Appointment.Appointment;
-import model.Appointment.AppointmentDirectory;
-import model.Appointment.PatientHistoryDetails;
+import model.appointment.Appointment;
+import model.appointment.AppointmentDirectory;
+import model.appointment.PatientHistoryDetails;
 import model.Bill.Bill;
 import model.Employee.Employee;
 import model.Enterprise.InsuranceEnterprise.Insurance;

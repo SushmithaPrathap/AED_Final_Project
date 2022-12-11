@@ -5,7 +5,7 @@
  */
 package model.Bed;
 
-import model.Appointment.Appointment;
+import model.appointment.Appointment;
 import model.Patient.Patient;
 
 /**

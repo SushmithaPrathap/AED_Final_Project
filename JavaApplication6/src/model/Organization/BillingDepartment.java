@@ -8,7 +8,7 @@ package model.Organization;
  *
  * @author sushmithaprathap
  */
-import model.Appointment.Appointment;
+import model.appointment.Appointment;
 import model.Bill.Bill;
 import model.Employee.Employee;
 import model.Patient.Patient;
