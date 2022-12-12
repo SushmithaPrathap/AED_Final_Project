@@ -93,8 +93,6 @@ public class CreateNewPatientJPanel extends javax.swing.JPanel {
         txtInsuranceID = new javax.swing.JTextField();
         lblGender1 = new javax.swing.JLabel();
         cmbInsuranceCompany = new javax.swing.JComboBox();
-        jPanel14 = new javax.swing.JPanel();
-        jPanel13 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         lblUserName2 = new javax.swing.JLabel();
         txtSSN = new javax.swing.JTextField();
@@ -109,7 +107,6 @@ public class CreateNewPatientJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(102, 147, 255));
         jButton1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jButton1.setLabel("Back");
         jButton1.setPreferredSize(new java.awt.Dimension(100, 40));
@@ -118,7 +115,7 @@ public class CreateNewPatientJPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, -1, -1));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         lblPatientName.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblPatientName.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -126,10 +123,10 @@ public class CreateNewPatientJPanel extends javax.swing.JPanel {
         add(lblPatientName, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 124, -1));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(68, 145, 157));
+        jLabel2.setForeground(new java.awt.Color(9, 87, 136));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Create Patient");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, 199, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 20, 230, 50));
 
         txtPatientName.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtPatientName.addActionListener(new java.awt.event.ActionListener() {
@@ -221,7 +218,7 @@ public class CreateNewPatientJPanel extends javax.swing.JPanel {
         add(contactCarrier, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 165, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/CreatePatient.jpg"))); // NOI18N
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 80, 299, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 90, 299, -1));
 
         lblUserName1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblUserName1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -240,38 +237,8 @@ public class CreateNewPatientJPanel extends javax.swing.JPanel {
         cmbInsuranceCompany.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "--Select--", "Male", "Female", "Other" }));
         add(cmbInsuranceCompany, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 670, 160, -1));
 
-        jPanel14.setBackground(new java.awt.Color(196, 224, 229));
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 230, Short.MAX_VALUE)
-        );
-
-        add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 230));
-
-        jPanel13.setBackground(new java.awt.Color(68, 145, 157));
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 230, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 230, -1));
-
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/createPatient2.png"))); // NOI18N
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 340, 500, 340));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 320, 500, 340));
 
         lblUserName2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblUserName2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -518,8 +485,6 @@ public class CreateNewPatientJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JLabel lblGender;
     private javax.swing.JLabel lblGender1;
     private javax.swing.JLabel lblPatientName;
