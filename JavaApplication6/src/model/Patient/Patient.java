@@ -19,7 +19,7 @@ import java.util.ArrayList;
  */
 public class Patient extends Employee {
 
-    AppointmentDirectory appointmentDir;
+    AppointmentDirectory apptDir;
     AppointmentDirectory labApptDir;
     LabTestDirectory labTestDir;
     String patSex;
@@ -50,7 +50,7 @@ public class Patient extends Employee {
     public Patient() {
         super();
         this.patHistoryDetails = new ArrayList<>();
-        this.appointmentDir = new AppointmentDirectory();
+        this.apptDir = new AppointmentDirectory();
         this.labApptDir = new AppointmentDirectory();
         this.labTestDir = new LabTestDirectory();
     }
@@ -90,7 +90,7 @@ public class Patient extends Employee {
     }
 
     public void createNewApptDir() {
-        appointmentDir = new AppointmentDirectory();
+        apptDir = new AppointmentDirectory();
     }
 
     public String getBloodGrp() {
@@ -109,12 +109,12 @@ public class Patient extends Employee {
         this.addressVar = addressVar;
     }
 
-    public AppointmentDirectory getAppointmentDir() {
-        return appointmentDir;
+    public AppointmentDirectory getApptDir() {
+        return apptDir;
     }
 
-    public void setAppointmentDir(AppointmentDirectory appointmentDir) {
-        this.appointmentDir = appointmentDir;
+    public void setApptDir(AppointmentDirectory apptDir) {
+        this.apptDir = apptDir;
     }
 
     public LabTestDirectory getLabTestDir() {

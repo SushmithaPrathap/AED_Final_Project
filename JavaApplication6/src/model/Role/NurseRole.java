@@ -12,21 +12,19 @@ import model.UserAccount.UserAccount;
 import javax.swing.JPanel;
 import UI.NurseRole.NurseWorkAreaJPanel;
 
-
 /**
  *
  * @author Suprith
  */
-public class NurseRole extends Role{
+public class NurseRole extends Role {
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system) {
+    public JPanel postWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system) {
         return new NurseWorkAreaJPanel(userProcessContainer, enterprise, account);
     }
-    
+
     @Override
-    public String roleValue()
-    {
+    public String roleValue() {
         return "Nurse Role";
     }
 }

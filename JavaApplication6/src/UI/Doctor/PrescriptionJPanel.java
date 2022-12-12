@@ -354,7 +354,7 @@ public class PrescriptionJPanel extends javax.swing.JPanel {
         prescription.setPatient(patient);
         prescription.setDoctor(doctor);
         
-        patient.getAppointmentDir().getPrescriptionList().add(prescription);
+        patient.getApptDir().getPrescriptionList().add(prescription);
         
         //pharmacy work request created--todo
         PharmacyWorkRequest phWr = new PharmacyWorkRequest();

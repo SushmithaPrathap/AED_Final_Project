@@ -213,7 +213,7 @@ public class MainJFrame extends JFrame {
             return;
         } else {
             CardLayout layout = (CardLayout) container.getLayout();
-            container.add("workArea", userAccount.getRole().createWorkArea(container, userAccount, inOrganization, inEnterprise, system));
+            container.add("workArea", userAccount.getRole().postWorkArea(container, userAccount, inOrganization, inEnterprise, system));
             //System.out.println("In network-> "+ assignedNetwork.getName());
             layout.next(container);
         }
@@ -290,7 +290,7 @@ public class MainJFrame extends JFrame {
         // registerBtn.setEnabled(false);
         CardLayout layout = (CardLayout) container.getLayout();
         container.add(new CreateNewPatientSelfJPanel(container, dB4OUtil, system));
-        // container.add("workArea",userAccount.getRole().createWorkArea(container, userAccount, inOrganization, inEnterprise, system));
+        // container.add("workArea",userAccount.getRole().postWorkArea(container, userAccount, inOrganization, inEnterprise, system));
         //System.out.println("In network-> "+ assignedNetwork.getName());
         layout.next(container);
 

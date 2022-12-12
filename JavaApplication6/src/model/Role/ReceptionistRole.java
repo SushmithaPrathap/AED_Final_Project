@@ -19,14 +19,13 @@ import UI.ReceptionistRole.ReceptionistWorkAreaJPanel;
 public class ReceptionistRole extends Role {
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account,
+    public JPanel postWorkArea(JPanel userProcessContainer, UserAccount account,
             Organization organization, Enterprise enterprise, EcoSystem business) {
         return new ReceptionistWorkAreaJPanel(userProcessContainer, account, organization, enterprise, business);
     }
-    
+
     @Override
-    public String roleValue()
-    {
+    public String roleValue() {
         return "Receptionist Role";
     }
 }

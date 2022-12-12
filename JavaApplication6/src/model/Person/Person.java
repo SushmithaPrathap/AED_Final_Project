@@ -12,29 +12,29 @@ public class Person {  //dont use
 
     private String name;
     private int id;
-    private static int count = 1;
-    private String phoneNum;
-    private String emailID;
+    private static int cnt = 1;
+    private String phone;
+    private String email;
 
-    public String getPhoneNum() {
-        return phoneNum;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setPhoneNum(String phoneNum) {
-        this.phoneNum = phoneNum;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public String getEmailID() {
-        return emailID;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmailID(String emailID) {
-        this.emailID = emailID;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Person() {
-        id = count;
-        count++;
+        id = cnt;
+        cnt++;
     }
 
     public int getId() {
@@ -57,5 +57,4 @@ public class Person {  //dont use
     public String toString() {
         return name;
     }
-
 }

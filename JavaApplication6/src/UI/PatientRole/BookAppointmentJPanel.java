@@ -506,7 +506,7 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
         }
         Employee doctor = (Employee)cmbDoctor.getSelectedItem();
         if(enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Hospital.getValue())){
-            for(Appointment appointment : patient.getAppointmentDir().getAppointmentList()){
+            for(Appointment appointment : patient.getApptDir().getAppointmentList()){
                 if((appointment.getDate().compareTo(date1) == 0) && (appointment.getDoctor().getID() == doctor.getID()) && !appointment.getStatus().equalsIgnoreCase(Appointment.AppointmentStatus.Cancel.getValue())){
                     JOptionPane.showMessageDialog(null, "Patient has already booked appointment!", "Warning", JOptionPane.WARNING_MESSAGE);
                     return;
@@ -533,7 +533,7 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
         
         Appointment appoint = null;
         if(enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Hospital.getValue())){
-            appoint = patient.getAppointmentDir().createAppointment(patient, doctor, date1 , (String)txtAppointmentType.getSelectedItem());
+            appoint = patient.getApptDir().createAppointment(patient, doctor, date1 , (String)txtAppointmentType.getSelectedItem());
             appoint.setTime(time);
         }else if(enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())){
             appoint = patient.getLabApptDir().createLabAppointment(patient, doctor, date1 , (String)txtAppointmentType.getSelectedItem());

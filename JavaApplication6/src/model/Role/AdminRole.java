@@ -15,19 +15,16 @@ import javax.swing.JPanel;
  *
  * @author Suprith
  */
-public class AdminRole extends Role{
+public class AdminRole extends Role {
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
+    public JPanel postWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
         return new AdminWorkAreaJPanel(userProcessContainer, enterprise, account, organization, business);
     }
 
     @Override
-    public String roleValue()
-    {
+    public String roleValue() {
         return "Admin Role";
     }
 
-   
-    
 }

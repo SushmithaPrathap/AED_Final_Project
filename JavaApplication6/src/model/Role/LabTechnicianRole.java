@@ -18,14 +18,13 @@ import javax.swing.JPanel;
 public class LabTechnicianRole extends Role {
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
+    public JPanel postWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
         return new LabAssistantMainAreaJPanel(userProcessContainer, account, organization, business, enterprise);
     }
-    
+
     @Override
-    public String roleValue()
-    {
+    public String roleValue() {
         return "Lab Technician Role";
     }
-    
+
 }

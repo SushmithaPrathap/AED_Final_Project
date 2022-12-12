@@ -7,7 +7,7 @@ package model.Organization;
 import model.Bill.Bill;
 import model.Bill.BillDirectory;
 import model.Employee.Employee;
-import model.Employee.PersonDirectory;
+import model.Employee.EmployeeDirectory;
 import model.Patient.Patient;
 import model.Patient.PatientDirectory;
 import model.Role.Role;
@@ -25,7 +25,7 @@ public abstract class Organization {
     private String orgName;
     private String orgLocation;
     private WorkQueue orgWq;
-    private PersonDirectory empDir;
+    private EmployeeDirectory empDir;
     private UserAccountDirectory userAcctDir;
     private PatientDirectory patientDir;
     private BillDirectory billDirectory;
@@ -65,7 +65,7 @@ public abstract class Organization {
     public Organization(String name) {
         this.orgName = name;
         orgWq = new WorkQueue();
-        empDir = new PersonDirectory();
+        empDir = new EmployeeDirectory();
         userAcctDir = new UserAccountDirectory();
         patientDir = new PatientDirectory();
         if (patientDir.getPatientArray() == null) {
@@ -89,7 +89,7 @@ public abstract class Organization {
         return orgId;
     }
 
-    public PersonDirectory getEmpDir() {
+    public EmployeeDirectory getEmpDir() {
         return empDir;
     }
 

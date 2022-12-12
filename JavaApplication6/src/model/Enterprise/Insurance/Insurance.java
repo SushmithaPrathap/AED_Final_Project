@@ -7,7 +7,7 @@ package model.Enterprise.Insurance;
 import model.Enterprise.Enterprise;
 import model.Patient.PatientDirectory;
 import model.Dept.Receptionist;
-import model.Person.EmployeeDirectory;
+import model.Person.PersonDirectory;
 import model.Role.Role;
 import java.util.ArrayList;
 
@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class Insurance extends Enterprise {
 
     int insId;
-    EmployeeDirectory docList;
+    PersonDirectory docList;
     //NurseDirectory nurseList;
     PatientDirectory patList;
     Receptionist receptionist;
@@ -32,11 +32,11 @@ public class Insurance extends Enterprise {
         this.insId = insId;
     }
 
-    public EmployeeDirectory getDocList() {
+    public PersonDirectory getDocList() {
         return docList;
     }
 
-    public void setDocList(EmployeeDirectory docList) {
+    public void setDocList(PersonDirectory docList) {
         this.docList = docList;
     }
 

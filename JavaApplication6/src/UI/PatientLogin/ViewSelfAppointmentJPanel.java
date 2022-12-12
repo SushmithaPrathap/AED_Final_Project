@@ -87,7 +87,7 @@ public class ViewSelfAppointmentJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) viewAppointmentJTable.getModel();
         model.setRowCount(0);
         List<Appointment> appointments = null;
-            appointments = patient.getAppointmentDir().getAppointmentList();
+            appointments = patient.getApptDir().getAppointmentList();
       
         SimpleDateFormat formatter1=new SimpleDateFormat("yyyy-MM-dd");
         for(Appointment appointment : appointments){
@@ -114,7 +114,7 @@ public class ViewSelfAppointmentJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) viewAppointmentJTable.getModel();
         model.setRowCount(0);
         List<Appointment> appointments = null;
-            appointments = patient.getAppointmentDir().getAppointmentList();
+            appointments = patient.getApptDir().getAppointmentList();
       
         SimpleDateFormat formatter1=new SimpleDateFormat("yyyy-MM-dd");
         for(Appointment appointment : appointments){

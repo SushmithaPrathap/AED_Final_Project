@@ -12,7 +12,6 @@ import model.UserAccount.UserAccount;
 import javax.swing.JPanel;
 import UI.PatientLogin.PatientMainWorkAreaJPanel;
 
-
 /**
  *
  * @author Suprith
@@ -20,16 +19,14 @@ import UI.PatientLogin.PatientMainWorkAreaJPanel;
 public class PatientRole extends Role {
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, 
+    public JPanel postWorkArea(JPanel userProcessContainer, UserAccount account,
             Organization organization, Enterprise enterprise, EcoSystem business) {
         return new PatientMainWorkAreaJPanel(userProcessContainer, account, organization, enterprise, business);
     }
-    
+
     @Override
-    public String roleValue()
-    {
+    public String roleValue() {
         return "Patient Role";
     }
-    
-    
+
 }

@@ -18,15 +18,14 @@ import javax.swing.JPanel;
 public class PharmacyWorkerRole extends Role {
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new PharmacyManageAreaJPanel( userProcessContainer,account,organization,  enterprise ,business);
-        
+    public JPanel postWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
+        return new PharmacyManageAreaJPanel(userProcessContainer, account, organization, enterprise, business);
+
     }
-    
+
     @Override
-    public String roleValue()
-    {
+    public String roleValue() {
         return "Pharmacy Worker Role";
     }
-    
+
 }

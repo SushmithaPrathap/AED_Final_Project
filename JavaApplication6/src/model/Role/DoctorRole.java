@@ -15,19 +15,18 @@ import javax.swing.JPanel;
  *
  * @author Suprith
  */
-public class DoctorRole extends Role{
+public class DoctorRole extends Role {
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-       return new DoctorWorkAreaJPanel(userProcessContainer,organization, account, enterprise, business);
-    //return new DoctorWorkAreaJPanel(userProcessContainer, account, organization, enterprise);
-    
+    public JPanel postWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
+        return new DoctorWorkAreaJPanel(userProcessContainer, organization, account, enterprise, business);
+        //return new DoctorWorkAreaJPanel(userProcessContainer, account, organization, enterprise);
+
     }
-    
+
     @Override
-    public String roleValue()
-    {
+    public String roleValue() {
         return "Doctor Role";
     }
-    
+
 }

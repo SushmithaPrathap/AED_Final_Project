@@ -85,7 +85,7 @@ public class AppointmentDirectory {
         appointment.setType(appointmentType);
         appointment.setPatient(patient);
         appointment.setStatus(Appointment.AppointmentStatus.New.getValue());
-        patient.getAppointmentDir().getAppointmentList().add(appointment);
+        patient.getApptDir().getAppointmentList().add(appointment);
         return appointment;
     }
 

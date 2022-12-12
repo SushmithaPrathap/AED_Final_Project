@@ -88,8 +88,8 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         List<Appointment> appointments = null;
         if(enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Hospital.getValue())){
-            if(patient.getAppointmentDir() != null && patient.getAppointmentDir().getAppointmentList() != null){
-                appointments = patient.getAppointmentDir().getAppointmentList();
+            if(patient.getApptDir() != null && patient.getApptDir().getAppointmentList() != null){
+                appointments = patient.getApptDir().getAppointmentList();
             }
         }else if(enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())){
             if(patient.getLabApptDir()!= null && patient.getLabApptDir().getAppointmentList() != null){
@@ -122,8 +122,8 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         List<Appointment> appointments = null;
         if(enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Hospital.getValue())){
-            if(patient.getAppointmentDir() != null && patient.getAppointmentDir().getAppointmentList() != null){
-                appointments = patient.getAppointmentDir().getAppointmentList();
+            if(patient.getApptDir() != null && patient.getApptDir().getAppointmentList() != null){
+                appointments = patient.getApptDir().getAppointmentList();
             }
         }else if(enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())){
             if(patient.getLabApptDir()!= null && patient.getLabApptDir().getAppointmentList() != null){
