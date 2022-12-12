@@ -5,7 +5,7 @@
  */
 package model.Organization;
 
-import model.Medicine.MedicineDirectory;
+import model.Medicine.MedicineDir;
 
 /**
  *
@@ -13,9 +13,9 @@ import model.Medicine.MedicineDirectory;
  */
 public class PharmacyOrganization {
 
-    MedicineDirectory medicineDir;
+    MedicineDir medicineDir;
 
     public PharmacyOrganization() {
-        medicineDir = new MedicineDirectory();
+        medicineDir = new MedicineDir();
     }
 }

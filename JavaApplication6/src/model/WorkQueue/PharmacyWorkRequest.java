@@ -14,23 +14,12 @@ import java.util.Map;
  *
  * @author Suprith
  */
-public class PharmacyWorkRequest extends WorkRequest{
-        /* inherited
-    
-    private String message;
-    private UserAccount sender;
-    private UserAccount receiver;
-    private String status;
-    private Date requestDate;
-    private Date resolveDate;
-    
-    
-    
-    */
-    private Appointment appointment;
+public class PharmacyWorkRequest extends WorkRequest {
+
+    private Appointment appt;
     private Patient patient;
     private Employee doctor;
-    private Map<Medicine,Double> medicineMap;
+    private Map<Medicine, Double> medMap;
 
     public Patient getPatient() {
         return patient;
@@ -48,29 +37,27 @@ public class PharmacyWorkRequest extends WorkRequest{
         this.doctor = doctor;
     }
 
-    public Map<Medicine,Double> getMedicineMap() {
-        return medicineMap;
+    public Map<Medicine, Double> getMedMap() {
+        return medMap;
     }
 
-    public void setMedicineMap(Map<Medicine,Double> medicineMap) {
-        this.medicineMap = medicineMap;
+    public void setMedMap(Map<Medicine, Double> medMap) {
+        this.medMap = medMap;
     }
 
     public static int getCount() {
-        return count;
+        return cnt;
     }
 
-    public static void setCount(int count) {
-        WorkRequest.count = count;
+    public static void setCount(int cnt) {
+        WorkRequest.cnt = cnt;
     }
 
-    public Appointment getAppointment() {
-        return appointment;
+    public Appointment getAppt() {
+        return appt;
     }
 
-    public void setAppointment(Appointment appointment) {
-        this.appointment = appointment;
+    public void setAppt(Appointment appt) {
+        this.appt = appt;
     }
-    
-    
 }

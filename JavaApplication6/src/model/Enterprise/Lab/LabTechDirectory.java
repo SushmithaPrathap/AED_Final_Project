@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author Suprith
  */
-public class LabTechnicianDirectory {
-    List<LabTechnician> labTechArray;
+public class LabTechDirectory {
+    List<LabTech> labTechArray;
     
 }

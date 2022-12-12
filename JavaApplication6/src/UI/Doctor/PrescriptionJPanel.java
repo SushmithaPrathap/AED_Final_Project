@@ -14,7 +14,7 @@ import model.Employee.Employee;
 import model.Enterprise.Enterprise;
 import model.Enterprise.Pharmacy.Pharmacy;
 import model.Medicine.Medicine;
-import model.Medicine.MedicineDirectory;
+import model.Medicine.MedicineDir;
 import model.Network.Network;
 import model.Patient.Patient;
 import model.UserAccount.UserAccount;
@@ -45,14 +45,14 @@ public class PrescriptionJPanel extends javax.swing.JPanel {
     private Patient patient;
     private Employee doctor;
     private Appointment appointment;
-    private MedicineDirectory medicineList;
+    private MedicineDir medicineList;
     private AppointmentDirectory prescriptionList;
     private Enterprise enterprise;
     private EcoSystem ecosystem;
     
 
    public PrescriptionJPanel(JPanel userProcessContainer, Patient patient, Appointment appointment, Employee doctor,
-            MedicineDirectory medicineList,EcoSystem ecosystem, Enterprise enterprise, UserAccount userAccount) {
+            MedicineDir medicineList,EcoSystem ecosystem, Enterprise enterprise, UserAccount userAccount) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.appointment = appointment;
@@ -115,7 +115,7 @@ public class PrescriptionJPanel extends javax.swing.JPanel {
           Pharmacy pharEnterprise =(Pharmacy) cmbPharmacy.getSelectedItem();
           if(pharEnterprise != null)  // added because on page loading null pointer exception is coming
           {
-          MedicineDirectory medicineList1 =pharEnterprise.getMedicineArray();
+          MedicineDir medicineList1 =pharEnterprise.getMedicineArray();
           
           
           if(medicineList1 != null){
@@ -360,16 +360,16 @@ public class PrescriptionJPanel extends javax.swing.JPanel {
         PharmacyWorkRequest phWr = new PharmacyWorkRequest();
          phWr.setStatus("New");
                 //appointment.setStatus(Appointment.AppointmentStatus.New.getValue());
-                phWr.setMessage("Please provide the Prescribed medicines for this Patient");
+                phWr.setMsg("Please provide the Prescribed medicines for this Patient");
                 phWr.setSender(userAccount);
-                phWr.setAppointment(appointment);
+                phWr.setAppt(appointment);
                 phWr.setDoctor(doctor);
                 phWr.setPatient(patient);
-                phWr.setMedicineMap(appointment.getPrescription().getMedPrescribed());
+                phWr.setMedMap(appointment.getPrescription().getMedPrescribed());
                 //phWr.setReceiver(receptionist);
                 //Appointment appointment = (Appointment) 
                 Pharmacy pharEnterprise =(Pharmacy) cmbPharmacy.getSelectedItem();
-                pharEnterprise.getOrgWq().getWorkRequestList().add(phWr);
+                pharEnterprise.getOrgWq().getWorkRequestArray().add(phWr);
                 prescription.setPharm(pharEnterprise);
                 //UserAccount recepUseracc = null;
                 //List<UserAccount> userAccDir=  organization.getUserAccountDirectory().getUserAccountList();

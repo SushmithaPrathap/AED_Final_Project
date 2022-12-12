@@ -47,7 +47,7 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
 
         model.setRowCount(0);
-        for (WorkRequest request : enterprise.getOrgWq().getWorkRequestList()) {
+        for (WorkRequest request : enterprise.getOrgWq().getWorkRequestArray()) {
 
             if (request instanceof NurseWorkRequest) {
                 Object[] row = new Object[11];
@@ -55,10 +55,10 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
                 row[1] = request.getReceiver();
                 row[2] = ((NurseWorkRequest) request).getPatient();
                 row[3] = request.getStatus();
-                Appointment app = ((NurseWorkRequest) request).getAppointment();
+                Appointment app = ((NurseWorkRequest) request).getAppt();
                 row[4] = app;//request.getMessage() == null ? " " : request.getMessage() ;
                 row[5] = request;
-                row[6] = request.getMessage();
+                row[6] = request.getMsg();
                 row[7] = app.getStatus();
                 Operation opr = app.getOp() == null ? null : app.getOp();
                 row[8] = opr.getStatus() == null ? "" : opr.getStatus();
@@ -263,7 +263,7 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
     private void viewReqBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewReqBtnActionPerformed
         // TODO add your handling code here:
         //show all new request
-        if (enterprise.getOrgWq().getWorkRequestList().isEmpty()) {
+        if (enterprise.getOrgWq().getWorkRequestArray().isEmpty()) {
             JOptionPane.showMessageDialog(null, "No request!");
             return;
 
@@ -272,7 +272,7 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
 
         model.setRowCount(0);
-        for (WorkRequest request : enterprise.getOrgWq().getWorkRequestList()) {
+        for (WorkRequest request : enterprise.getOrgWq().getWorkRequestArray()) {
             if ((request.getStatus().equals("New")) && (request instanceof NurseWorkRequest)) {
 
                 //sender, receiver, pateint,status, message
@@ -284,10 +284,10 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
 
                 //String result = ((LabTestWorkRequest) request).getTestResult();
                 //row[3] = result == null ? "Waiting" : result;
-                Appointment app = ((NurseWorkRequest) request).getAppointment();
+                Appointment app = ((NurseWorkRequest) request).getAppt();
                 row[4] = app;//request.getMessage() == null ? " " : request.getMessage() ;
                 row[5] = request;
-                row[6] = request.getMessage();
+                row[6] = request.getMsg();
                 row[7] = app.getStatus();
                 Operation opr = app.getOp() == null ? null : app.getOp();
                 row[8] = opr.getStatus() == null ? "" : opr.getStatus();

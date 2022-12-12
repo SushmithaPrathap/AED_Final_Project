@@ -55,7 +55,7 @@ public class InsuranceDWorkAreaJPanel extends javax.swing.JPanel {
         //this.labOrganization = (LabOrganization)organization;
 
         //this.insurnceAprrover = insurnceAprrover;
-        this.appointment = ((InsuranceWorkRequest) request).getAppointment();
+        this.appointment = ((InsuranceWorkRequest) request).getAppt();
         this.patient = appointment.getPatient();
         this.request = request;
         this.enterprise = enterprise;

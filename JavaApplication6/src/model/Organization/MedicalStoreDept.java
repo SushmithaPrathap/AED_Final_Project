@@ -5,7 +5,7 @@
  */
 package model.Organization;
 
-import model.Medicine.MedicineDirectory;
+import model.Medicine.MedicineDir;
 import model.appointment.Prescription;
 import model.Role.PharmacyWorkerRole;
 import model.Role.Role;
@@ -17,7 +17,7 @@ import java.util.ArrayList;
  */
 public class MedicalStoreDept extends Organization {
 
-    MedicineDirectory medicineArray;
+    MedicineDir medicineArray;
     String pharmacyPaersonName;
     Prescription prescriptionVar;
 

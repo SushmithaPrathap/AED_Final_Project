@@ -385,11 +385,11 @@ public class GeneratePatientBillJPanel extends javax.swing.JPanel {
         InsuranceWorkRequest workreq = new InsuranceWorkRequest();
                 workreq.setStatus("New");
                 appointment.setStatus(Appointment.AppointmentStatus.MarkForInsurance.getValue());
-                workreq.setMessage("Patient requested insurance amount, please approve");
+                workreq.setMsg("Patient requested insurance amount, please approve");
                 workreq.setStatus("New");
-                workreq.setAppointment(appointment);
+                workreq.setAppt(appointment);
                // workreq.setMessage("Please conduct lab test!");
-                workreq.setRequestDate(new Date());
+                workreq.setReqDate(new Date());
                 //workreq.setDoctorUserAccount(userAccount);
                 workreq.setSender(useraccount);
                 workreq.setPatient(patient);
@@ -398,7 +398,7 @@ public class GeneratePatientBillJPanel extends javax.swing.JPanel {
                 //workreq.setDoctor(doctor);
                 //workreq.setReceiver(userAccount);
                 Insurance lab = patient.getInsVar();
-                lab.getOrgWq().getWorkRequestList().add(workreq);
+                lab.getOrgWq().getWorkRequestArray().add(workreq);
                 //LabTest labTest= new LabTest();
                 //labTest.setLab(lab);
                 //labTest.setLabTechnician(null);

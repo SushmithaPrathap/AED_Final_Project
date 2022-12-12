@@ -12,21 +12,10 @@ import model.Patient.Patient;
  *
  * @author Suprith
  */
-public class InsuranceWorkRequest extends WorkRequest{
-        /* inherited
-    
-    private String message;
-    private UserAccount sender;
-    private UserAccount receiver;
-    private String status;
-    private Date requestDate;
-    private Date resolveDate;
-    
-    
-    
-    */
+public class InsuranceWorkRequest extends WorkRequest {
+
     private Patient patient;
-    private Appointment appointment;
+    private Appointment appt;
 
     public Bill getHospitalBill() {
         return hospitalBill;
@@ -48,7 +37,6 @@ public class InsuranceWorkRequest extends WorkRequest{
         this.amount = amount;
     }
 
-
     public Patient getPatient() {
         return patient;
     }
@@ -57,22 +45,20 @@ public class InsuranceWorkRequest extends WorkRequest{
         this.patient = patient;
     }
 
-    public Appointment getAppointment() {
-        return appointment;
+    public Appointment getAppt() {
+        return appt;
     }
 
-    public void setAppointment(Appointment appointment) {
-        this.appointment = appointment;
+    public void setAppt(Appointment appt) {
+        this.appt = appt;
     }
 
     public static int getCount() {
-        return count;
+        return cnt;
     }
 
-    public static void setCount(int count) {
-        WorkRequest.count = count;
+    public static void setCount(int cnt) {
+        WorkRequest.cnt = cnt;
     }
 
-    
-    
 }

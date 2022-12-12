@@ -57,7 +57,7 @@ public class PharmacyWorkerWorkAreaJPanel extends javax.swing.JPanel {
         //this.labOrganization = (LabOrganization)organization;
        // this.labTest = labTest;
         //this.labTechnician = labTechnician;
-        this.appointment = ((PharmacyWorkRequest)request).getAppointment();
+        this.appointment = ((PharmacyWorkRequest)request).getAppt();
         this.request=request;
         this.enterprise = enterprise;
         populatecbox();
@@ -347,7 +347,7 @@ public class PharmacyWorkerWorkAreaJPanel extends javax.swing.JPanel {
        
         //ReceptionistWorkRequest lwr = ((PharmacyWorkRequest)(request));//.getPatient()
         
-        request.setResolveDate(date1);
+        request.setResDate(date1);
         //drWorkReq.setPatient(lwr.getPatient());
         //drWorkReq.setAppointment(lwr.getAppointment());
        // drWorkReq.setRequestDate(new Date());

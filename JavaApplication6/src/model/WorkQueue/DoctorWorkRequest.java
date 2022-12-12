@@ -12,20 +12,9 @@ import model.Patient.Patient;
  * @author Suprith
  */
 public class DoctorWorkRequest extends WorkRequest{
-    /* inherited
-    
-    private String message;
-    private UserAccount sender;  -- nurse useraccount
-    private UserAccount receiver;  -- docrtor user account
-    private String status;
-    private Date requestDate;
-    private Date resolveDate;
-    
-    
-    
-    */
+
     //private String testResult;
-     private Appointment appointment;
+     private Appointment appt;
 
     private Patient patient;
 
@@ -37,15 +26,13 @@ public class DoctorWorkRequest extends WorkRequest{
         this.patient = patient;
     }
 
-    public Appointment getAppointment() {
-        return appointment;
+    public Appointment getAppt() {
+        return appt;
     }
 
-    public void setAppointment(Appointment appointment) {
-        this.appointment = appointment;
+    public void setAppt(Appointment appt) {
+        this.appt = appt;
     }
-   
-   
     
     public DoctorWorkRequest(){
         //appointment = new Appointment();

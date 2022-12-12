@@ -13,25 +13,16 @@ import model.Patient.Patient;
  */
 public class NurseWorkRequest extends WorkRequest {
 
-    /* 
-    inherited->
-    private String message;
-    private UserAccount sender;--> from doctor
-    private UserAccount receiver; -->> to nurse
-    private String status;  -> new, schduled, on-going, success
-    private Date requestDate;
-    private Date resolveDate;
-     */
-    private Appointment appointment;
-    //private Operation operation;
+    private Appointment appt;
+
     private Patient patient;
 
-    public Appointment getAppointment() {
-        return appointment;
+    public Appointment getAppt() {
+        return appt;
     }
 
-    public void setAppointment(Appointment appointment) {
-        this.appointment = appointment;
+    public void setAppt(Appointment appt) {
+        this.appt = appt;
     }
 
     public Patient getPatient() {
@@ -41,5 +32,4 @@ public class NurseWorkRequest extends WorkRequest {
     public void setPatient(Patient patient) {
         this.patient = patient;
     }
-
 }

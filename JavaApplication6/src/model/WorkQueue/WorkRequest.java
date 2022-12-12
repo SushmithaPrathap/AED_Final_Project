@@ -13,35 +13,35 @@ import java.util.Date;
  */
 public class WorkRequest {
 
-    private int workRequestId;    
-    private String message;
+    private int wReqId;    
+    private String msg;
     private UserAccount sender;
     private UserAccount receiver;
     private String status;
-    private Date requestDate;
-    private Date resolveDate;
-    static int count =1;
+    private Date reqDate;
+    private Date resDate;
+    static int cnt =1;
     
     public WorkRequest(){
-        requestDate = new Date();
-        workRequestId=count++;
+        reqDate = new Date();
+        wReqId=cnt++;
     }
 
     
-    public int getWorkRequestId() {
-        return workRequestId;
+    public int getwReqId() {
+        return wReqId;
     }
 
-    public void setWorkRequestId(int workRequestId) {
-        this.workRequestId = workRequestId;
+    public void setwReqId(int wReqId) {
+        this.wReqId = wReqId;
     }
     
-    public String getMessage() {
-        return message;
+    public String getMsg() {
+        return msg;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 
     public UserAccount getSender() {
@@ -68,25 +68,25 @@ public class WorkRequest {
         this.status = status;
     }
 
-    public Date getRequestDate() {
-        return requestDate;
+    public Date getReqDate() {
+        return reqDate;
     }
 
-    public void setRequestDate(Date requestDate) {
-        this.requestDate = requestDate;
+    public void setReqDate(Date reqDate) {
+        this.reqDate = reqDate;
     }
 
-    public Date getResolveDate() {
-        return resolveDate;
+    public Date getResDate() {
+        return resDate;
     }
 
-    public void setResolveDate(Date resolveDate) {
-        this.resolveDate = resolveDate;
+    public void setResDate(Date resDate) {
+        this.resDate = resDate;
     }
     
     @Override 
     public String toString(){
-        return String.valueOf(this.workRequestId);
+        return String.valueOf(this.wReqId);
     }
     
 }

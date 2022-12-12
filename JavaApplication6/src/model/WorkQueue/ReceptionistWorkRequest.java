@@ -12,31 +12,18 @@ import model.Patient.Patient;
  *
  * @author sushmithaprathap
  */
-public class ReceptionistWorkRequest extends WorkRequest{
-        /* inherited
-    
-    private String message;
-    private UserAccount sender;
-    private UserAccount receiver;
-    private String status;
-    private Date requestDate;
-    private Date resolveDate;
-    
-    
-    
-    */
-    
-    //set its parameter
-    private Appointment app;
-    private Patient patient;
- private Employee doctor;
+public class ReceptionistWorkRequest extends WorkRequest {
 
-    public Appointment getApp() {
-        return app;
+    private Appointment appt;
+    private Patient patient;
+    private Employee doc;
+
+    public Appointment getAppt() {
+        return appt;
     }
 
-    public void setApp(Appointment app) {
-        this.app = app;
+    public void setAppt(Appointment appt) {
+        this.appt = appt;
     }
 
     public Patient getPatient() {
@@ -47,17 +34,12 @@ public class ReceptionistWorkRequest extends WorkRequest{
         this.patient = patient;
     }
 
-    public Employee getDoctor() {
-        return doctor;
+    public Employee getDoc() {
+        return doc;
     }
 
-    public void setDoctor(Employee doctor) {
-        this.doctor = doctor;
+    public void setDoc(Employee doc) {
+        this.doc = doc;
     }
-   
-    
-    
-   
-    
-    
+
 }

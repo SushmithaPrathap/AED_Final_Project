@@ -10,9 +10,9 @@ import model.EcoSystem;
 import model.Employee.Employee;
 import model.Enterprise.Enterprise;
 import model.Enterprise.Pharmacy.Pharmacy;
-import model.Enterprise.Pharmacy.PharmacyDirectory;
+import model.Enterprise.Pharmacy.PharmacyDir;
 import model.Medicine.Medicine;
-import model.Medicine.MedicineDirectory;
+import model.Medicine.MedicineDir;
 import model.Network.Network;
 import model.Operation.Operation;
 import model.Organization.Organization;
@@ -43,13 +43,13 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
     private Appointment appointment;
     private Employee doctor;
     private Patient patient;
-    private MedicineDirectory medicineList;
+    private MedicineDir medicineList;
     private EcoSystem ecosystem;
    // private LabTestDirectory labTestList;
     private UserAccount receptionist;
     private Network network;
     private Medicine medicine;
-    private PharmacyDirectory pharmacyList;
+    private PharmacyDir pharmacyList;
     private Pharmacy pharmacy;
  
     //private EcoSystem ecosystem;
@@ -81,13 +81,13 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) DoctorWorkAreaTable.getModel();
         
         model.setRowCount(0);
-        for (WorkRequest request : userAccount.getWq().getWorkRequestList()){
-            if(!((DoctorWorkRequest)request).getAppointment().getStatus().equals("Cancel")){
+        for (WorkRequest request : userAccount.getWq().getWorkRequestArray()){
+            if(!((DoctorWorkRequest)request).getAppt().getStatus().equals("Cancel")){
             Object[] row = new Object[6];
             row[0] = ((DoctorWorkRequest)request).getPatient();//request.getMessage();
-            row[1] = ((DoctorWorkRequest)request).getAppointment();
+            row[1] = ((DoctorWorkRequest)request).getAppt();
             row[2] = ((DoctorWorkRequest)request).getSender();
-            row[3] = ((DoctorWorkRequest)request).getAppointment().getStatus();//getReceiver();
+            row[3] = ((DoctorWorkRequest)request).getAppt().getStatus();//getReceiver();
             row[4] = ((DoctorWorkRequest)request);//getReceiver();
             row[5] = ((DoctorWorkRequest)request).getStatus();//getReceiver();
             //row[2] = request.getStatus();
@@ -565,8 +565,8 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 //changed next line status
                 appointment.setStatus(Appointment.AppointmentStatus.Markforsurgery.getValue());
                 NurseWorkRequest workreq = new NurseWorkRequest();
-                workreq.setAppointment(appointment);
-                workreq.setMessage("New Patient for Operation, please confirm an operation Date.");
+                workreq.setAppt(appointment);
+                workreq.setMsg("New Patient for Operation, please confirm an operation Date.");
                 
                 workreq.setSender(userAccount);
                 workreq.setPatient(patient);
@@ -574,8 +574,8 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 
                 //get today's Date->
                 Date date= new Date();
-                workreq.setRequestDate(date);
-                workreq.setResolveDate(date);
+                workreq.setReqDate(date);
+                workreq.setResDate(date);
                 workreq.setStatus("New");
                 UserAccount nurseUserAcc =null;
                 //need employee list of the doctor's department -> organization
@@ -586,7 +586,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 //    if(account.getRole().roleValue().equals("Nurse Role"))
                 //    {
                         workreq.setReceiver(null);
-                        enterprise.getOrgWq().getWorkRequestList().add(workreq);
+                        enterprise.getOrgWq().getWorkRequestArray().add(workreq);
               //      }
                     
               //  }
@@ -810,13 +810,13 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                ReceptionistWorkRequest workreq = new ReceptionistWorkRequest();
                 workreq.setStatus("New");
                 appointment.setStatus(Appointment.AppointmentStatus.Markforbilling.getValue());
-                workreq.setMessage("Prepare Bill for this Patient");
+                workreq.setMsg("Prepare Bill for this Patient");
                 workreq.setSender(userAccount);
                 workreq.setPatient(patient);
-                workreq.setDoctor(doctor);
+                workreq.setDoc(doctor);
                 workreq.setReceiver(receptionist);
                 //Appointment appointment = (Appointment) 
-                receptionist.getWq().getWorkRequestList().add(workreq);
+                receptionist.getWq().getWorkRequestArray().add(workreq);
                 //UserAccount recepUseracc = null;
                 //List<UserAccount> userAccDir=  organization.getUserAccountDirectory().getUserAccountList();
                 //List<UserAccount> nurseList = enterprise.getUserAccountDirectory().getUserAccountList();

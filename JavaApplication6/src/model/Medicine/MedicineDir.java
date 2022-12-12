@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author yash
  */
-public class MedicineDirectory {
+public class MedicineDir {
 
     List<Medicine> medsArray;
 
@@ -23,7 +23,7 @@ public class MedicineDirectory {
         this.medsArray = medsArray;
     }
 
-    public MedicineDirectory() {
+    public MedicineDir() {
         medsArray = new ArrayList<>();
     }
 

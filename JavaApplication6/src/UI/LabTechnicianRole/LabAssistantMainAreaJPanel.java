@@ -10,7 +10,7 @@ import model.Enterprise.Enterprise;
 import model.Enterprise.Lab.LabTest;
 import model.Organization.Organization;
 import model.UserAccount.UserAccount;
-import model.WorkQueue.LabTechnicianWorkRequest;
+import model.WorkQueue.LabTechWorkRequest;
 import model.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
@@ -53,9 +53,9 @@ public class LabAssistantMainAreaJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
         //enterprise.getWorkQueue().getWorkRequestList();//.add(request);
-        for (WorkRequest request : enterprise.getOrgWq().getWorkRequestList()) {
-            // List<LabTest> labTestList = ((LabTechnicianWorkRequest)request).getAppointment().getLabTestList().getLabTestList();
-            if (request instanceof LabTechnicianWorkRequest && (request.getReceiver() == null || request.getReceiver() == userAccount)) {
+        for (WorkRequest request : enterprise.getOrgWq().getWorkRequestArray()) {
+            // List<LabTest> labTestList = ((LabTechWorkRequest)request).getAppointment().getLabTestList().getLabTestList();
+            if (request instanceof LabTechWorkRequest && (request.getReceiver() == null || request.getReceiver() == userAccount)) {
                 //for(LabTest labTest : labTestList)
                 // {
 
@@ -63,13 +63,13 @@ public class LabAssistantMainAreaJPanel extends javax.swing.JPanel {
                 row[0] = request.getSender();
                 //row[1] = request.getSender().getEmployee().getName();
                 row[1] = request.getReceiver() == null ? null : request.getReceiver().getEmp().getNameVar();
-                row[2] = ((LabTechnicianWorkRequest) request).getPatient();
+                row[2] = ((LabTechWorkRequest) request).getPatient();
 
                 row[3] = request.getStatus();
-                LabTest lt = ((LabTechnicianWorkRequest) request).getLabTest();
+                LabTest lt = ((LabTechWorkRequest) request).getLabTest();
                 row[4] = lt == null ? " Test " : lt;//.getName();
                 row[5] = (lt == null || lt.getStatusVar() == null) ? "New" : lt.getStatusVar();
-                row[6] = request.getMessage();
+                row[6] = request.getMsg();
                 row[7] = request;
                 model.addRow(row);
                 // }//inner for

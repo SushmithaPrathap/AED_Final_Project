@@ -15,7 +15,7 @@ import model.Organization.Organization;
 import model.Patient.Patient;
 import model.UserAccount.UserAccount;
 import model.WorkQueue.DoctorWorkRequest;
-import model.WorkQueue.LabTechnicianWorkRequest;
+import model.WorkQueue.LabTechWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.text.ParseException;
@@ -571,21 +571,21 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
         
         //add in work queue for assigned doctor
         if(enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())){
-            LabTechnicianWorkRequest workreq = new LabTechnicianWorkRequest();
+            LabTechWorkRequest workreq = new LabTechWorkRequest();
                 workreq.setStatus("New");
                 appoint.setStatus(Appointment.AppointmentStatus.MarkforTest.getValue());
-                workreq.setMessage("New Patient for Lab test, please confirm a Test Date");
+                workreq.setMsg("New Patient for Lab test, please confirm a Test Date");
                 workreq.setStatus("New");
-                workreq.setAppointment(appoint);
-                workreq.setMessage("Please conduct lab test!");
-                workreq.setRequestDate(date1 == null ? new Date() : date1);
+                workreq.setAppt(appoint);
+                workreq.setMsg("Please conduct lab test!");
+                workreq.setReqDate(date1 == null ? new Date() : date1);
                 //workreq.setDoctorUserAccount(userAccount);
                 workreq.setSender(userAccount);
                 workreq.setPatient(patient);
                 //workreq.setDoctor(doctor);
                 //workreq.setReceiver(userAccount);
                 Lab lab = (Lab) enterprise;
-                lab.getOrgWq().getWorkRequestList().add(workreq);
+                lab.getOrgWq().getWorkRequestArray().add(workreq);
                 LabTest labTest= new LabTest();
                 labTest.setLab(lab);
                 labTest.setLabTech(null);
@@ -599,15 +599,15 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
                 appoint.setStatus(Appointment.AppointmentStatus.MarkforTest.getValue());
         }else if(enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Hospital.getValue())){
             DoctorWorkRequest drWorkReq = new DoctorWorkRequest();
-            drWorkReq.setMessage("New Appointment");
+            drWorkReq.setMsg("New Appointment");
             drWorkReq.setReceiver(drUserAcc);
             drWorkReq.setSender(userAccount);
             drWorkReq.setStatus("New");
             drWorkReq.setPatient(patient);
-            drWorkReq.setAppointment(appoint);
-            drWorkReq.setRequestDate(new Date());
-            drWorkReq.setResolveDate(new Date());
-            drUserAcc.getWq().getWorkRequestList().add(drWorkReq);
+            drWorkReq.setAppt(appoint);
+            drWorkReq.setReqDate(new Date());
+            drWorkReq.setResDate(new Date());
+            drUserAcc.getWq().getWorkRequestArray().add(drWorkReq);
         }
         if(txtTestName.isEnabled()){
             txtTestName.setText("");

@@ -117,7 +117,7 @@ public class AssignBedJPanel extends javax.swing.JPanel {
         phoneNumberTxt.setText(patient.getPhone());
         viewStatusCmb.setSelectedItem(appointment.getStatus());
 
-        Date sDate = (workrequest.getRequestDate().equals("") == true) ? new Date() : workrequest.getRequestDate();
+        Date sDate = (workrequest.getReqDate().equals("") == true) ? new Date() : workrequest.getReqDate();
         Date date1 = null;
         //String  = txtAppointmetDate.getText();
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -126,7 +126,7 @@ public class AssignBedJPanel extends javax.swing.JPanel {
         viewRequestDateTxt.setText(strDate);
 
         // viewRequestDateTxt.setText(workrequest.getRequestDate().toString() == null ? "" : workrequest.getRequestDate().toString());
-        txtAreaMessage.setText(workrequest.getMessage());
+        txtAreaMessage.setText(workrequest.getMsg());
         Operation oprtn = appointment.getOp();
         if (oprtn != null && oprtn.getAssignedBed() != null) {
             Bed bed = oprtn.getAssignedBed();
@@ -718,7 +718,7 @@ public class AssignBedJPanel extends javax.swing.JPanel {
             appointment.setStatus(Appointment.AppointmentStatus.BedAssigned.getValue());
             //appointment.setStatus(Appointment.AppointmentStatus.);
             workrequest.setStatus("Handled- bed assigned sucessfully");
-            workrequest.setMessage("Bed is assigned for Date: " + dateString + ". Surgery date is confirmed!");
+            workrequest.setMsg("Bed is assigned for Date: " + dateString + ". Surgery date is confirmed!");
         } catch (ParseException ex) {
             Logger.getLogger(AssignBedJPanel.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Exception occured in string to date conversion !!!!!! : method-> btnAssignBedActionPerformed");

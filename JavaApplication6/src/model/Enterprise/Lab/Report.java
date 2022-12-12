@@ -18,7 +18,7 @@ public class Report {
     Date date;
     Patient patient;
     Employee doc;
-    LabTechnician labTech;
+    LabTech labTech;
     Lab lab;
     
 }

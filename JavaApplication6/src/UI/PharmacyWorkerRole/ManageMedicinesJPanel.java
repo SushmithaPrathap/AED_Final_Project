@@ -7,7 +7,7 @@ package UI.PharmacyWorkerRole;
 import model.Enterprise.Enterprise;
 import model.Enterprise.Pharmacy.Pharmacy;
 import model.Medicine.Medicine;
-import model.Medicine.MedicineDirectory;
+import model.Medicine.MedicineDir;
 import model.Organization.Organization;
 import model.Organization.OrganizationDirectory;
 import model.Role.DoctorRole;
@@ -37,7 +37,7 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
     private OrganizationDirectory organizationDir;
     private JPanel userProcessContainer;
     private Enterprise enterprise;
-    private MedicineDirectory medicineDir;
+    private MedicineDir medicineDir;
     
     /**
      * Creates new form ManageOrganizationJPanel

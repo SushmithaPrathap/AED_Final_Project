@@ -95,14 +95,14 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) PatientDataJTable.getModel();
         model.setRowCount(0);
         if(enterprise.getOrgWq() != null ){
-            List<WorkRequest> wrList = enterprise.getOrgWq().getWorkRequestList();
+            List<WorkRequest> wrList = enterprise.getOrgWq().getWorkRequestArray();
             for (WorkRequest wr : wrList) {
                 if(wr instanceof ReceptionistWorkRequest)
                 {
-                    Appointment app = ((ReceptionistWorkRequest) wr).getApp();
+                    Appointment app = ((ReceptionistWorkRequest) wr).getAppt();
                 Patient patient = ((ReceptionistWorkRequest)wr).getPatient();
                 if(patient == null && app !=null){
-                    patient= ((ReceptionistWorkRequest) wr).getApp().getPatient();
+                    patient= ((ReceptionistWorkRequest) wr).getAppt().getPatient();
                             
                 }
                 
@@ -127,7 +127,7 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) PatientDataJTable.getModel();
         model.setRowCount(0);
         if(enterprise.getOrgWq() != null ){
-            List<WorkRequest> wrList = enterprise.getOrgWq().getWorkRequestList();
+            List<WorkRequest> wrList = enterprise.getOrgWq().getWorkRequestArray();
             for (WorkRequest wr : wrList) {
                 if(wr instanceof ReceptionistWorkRequest)
                 {

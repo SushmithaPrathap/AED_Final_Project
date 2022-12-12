@@ -7,7 +7,7 @@ package model.Enterprise.Pharmacy;
 
 import model.Enterprise.Enterprise;
 import model.Medicine.Medicine;
-import model.Medicine.MedicineDirectory;
+import model.Medicine.MedicineDir;
 import model.Role.Role;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -23,13 +23,13 @@ public class Pharmacy extends Enterprise {
     //int id;
     //String name;
     Map<Medicine, Integer> medicineInventory;   /// medicine,quantity
-    MedicineDirectory medicineArray;
+    MedicineDir medicineArray;
 
-    public MedicineDirectory getMedicineArray() {
+    public MedicineDir getMedicineArray() {
         return medicineArray;
     }
 
-    public void setMedicineArray(MedicineDirectory medicineArray) {
+    public void setMedicineArray(MedicineDir medicineArray) {
         this.medicineArray = medicineArray;
     }
 
@@ -43,7 +43,7 @@ public class Pharmacy extends Enterprise {
 
     public Pharmacy(String name) {
         super(name, EnterpriseType.Pharmacy);
-        medicineArray = new MedicineDirectory();
+        medicineArray = new MedicineDir();
         popMedicineListForNewPharmacy();
     }
 

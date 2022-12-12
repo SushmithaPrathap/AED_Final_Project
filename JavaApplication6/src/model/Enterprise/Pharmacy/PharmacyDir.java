@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author Suprith
  */
-public class PharmacyDirectory {
+public class PharmacyDir {
 
     List<Pharmacy> pharmacyArray;
     // pharmacy - CRUD operations

@@ -17,7 +17,7 @@ import model.Organization.Organization;
 import model.Patient.Patient;
 import model.Person.Person;
 import model.UserAccount.UserAccount;
-import model.WorkQueue.LabTechnicianWorkRequest;
+import model.WorkQueue.LabTechWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
 import java.util.Date;
@@ -304,21 +304,21 @@ public class AssignLabTestJPanel extends javax.swing.JPanel {
         if (testType.equals("")) {
             JOptionPane.showMessageDialog(null, "Test Name cannot be empty");
         }   else
-        { LabTechnicianWorkRequest workreq = new LabTechnicianWorkRequest();
+        { LabTechWorkRequest workreq = new LabTechWorkRequest();
                 workreq.setStatus("New");
                 appointment.setStatus(Appointment.AppointmentStatus.MarkforTest.getValue());
-                workreq.setMessage("New Patient for Lab test, please confirm a Test Date");
+                workreq.setMsg("New Patient for Lab test, please confirm a Test Date");
                 workreq.setStatus("New");
-                workreq.setAppointment(appointment);
-                workreq.setMessage("Please conduct lab test!");
-                workreq.setRequestDate(createdOn == null ? new Date() : createdOn);
+                workreq.setAppt(appointment);
+                workreq.setMsg("Please conduct lab test!");
+                workreq.setReqDate(createdOn == null ? new Date() : createdOn);
                 //workreq.setDoctorUserAccount(userAccount);
                 workreq.setSender(userAccount);
                 workreq.setPatient(patient);
                 //workreq.setDoctor(doctor);
                 //workreq.setReceiver(userAccount);
                 Lab lab = (Lab) cmbLabs.getSelectedItem();
-                lab.getOrgWq().getWorkRequestList().add(workreq);
+                lab.getOrgWq().getWorkRequestArray().add(workreq);
                 LabTest labTest= new LabTest();
                 labTest.setLab(lab);
                 labTest.setLabTech(null);

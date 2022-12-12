@@ -11,6 +11,6 @@ import model.Person.Person;
  *
  * @author Suprith
  */
-public class LabTechnician extends Person{
+public class LabTech extends Person{
     
 }

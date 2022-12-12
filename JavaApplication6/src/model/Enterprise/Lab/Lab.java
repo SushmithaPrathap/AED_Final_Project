@@ -20,7 +20,7 @@ public class Lab extends Enterprise {
     int labId;
     PatientDirectory patientArray;
     Receptionist receptionist;
-    LabTechnicianDirectory labTechArray;
+    LabTechDirectory labTechArray;
     
     //String enterpriseType;
     public Lab(String name){

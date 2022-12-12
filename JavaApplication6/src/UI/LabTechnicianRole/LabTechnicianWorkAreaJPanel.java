@@ -17,7 +17,7 @@ import model.Patient.Patient;
 import model.UserAccount.UserAccount;
 import model.Utility.Validation;
 import model.WorkQueue.DoctorWorkRequest;
-import model.WorkQueue.LabTechnicianWorkRequest;
+import model.WorkQueue.LabTechWorkRequest;
 import model.WorkQueue.ReceptionistWorkRequest;
 import model.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
@@ -61,7 +61,7 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
         //this.labOrganization = (LabOrganization)organization;
         this.labTest = labTest;
         //this.labTechnician = labTechnician;
-        this.appointment = ((LabTechnicianWorkRequest) request).getAppointment();
+        this.appointment = ((LabTechWorkRequest) request).getAppt();
         this.request = request;
         this.enterprise = enterprise;
         this.patient = appointment.getPatient();
@@ -88,7 +88,7 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
             cmbStatusType.setSelectedIndex(1);
             cmbStatusType.setEnabled(false);
         }
-        txtDrRemarks.setText(request.getMessage());
+        txtDrRemarks.setText(request.getMsg());
 
         testChargeTxt.setText(labTest.getTestAmount() == 0d ? "" : String.valueOf(labTest.getTestAmount()));
 
@@ -412,15 +412,15 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
             ReceptionistWorkRequest workreq = new ReceptionistWorkRequest();
             workreq.setStatus(Appointment.AppointmentStatus.Markforbilling.getValue());
             labAppointment.setStatus(Appointment.AppointmentStatus.Markforbilling.getValue());
-            workreq.setMessage("Test completed for Patient, make bill");
-            workreq.setApp(labAppointment);
+            workreq.setMsg("Test completed for Patient, make bill");
+            workreq.setAppt(labAppointment);
             // workreq.setPatient(patient);
             workreq.setSender(userAccount);
             workreq.setPatient(patient);
-            workreq.setDoctor(userAccount.getEmp());
+            workreq.setDoc(userAccount.getEmp());
             //workreq.setReceiver(userAccount);
             Lab lab = (Lab) enterprise;
-            lab.getOrgWq().getWorkRequestList().add(workreq);
+            lab.getOrgWq().getWorkRequestArray().add(workreq);
             request.setStatus("Close");
             DB4OUtil.getInstance().storeSystem(business);
 
@@ -510,7 +510,7 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
             //to do work request to send to doctor
             //add in work queue for assigned doctor
             DoctorWorkRequest drWorkReq = new DoctorWorkRequest();
-            drWorkReq.setMessage("Test Completed, please analyse reports");
+            drWorkReq.setMsg("Test Completed, please analyse reports");
 
             UserAccount drUserAcc = request.getSender();
 
@@ -518,12 +518,12 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
             drWorkReq.setSender(userAccount);
             drWorkReq.setStatus("New");
             app.setStatus(Appointment.AppointmentStatus.GeneratedReport.getValue());
-            LabTechnicianWorkRequest lwr = ((LabTechnicianWorkRequest) (request));//.getPatient()
+            LabTechWorkRequest lwr = ((LabTechWorkRequest) (request));//.getPatient()
 
-            lwr.setResolveDate(date1);
+            lwr.setResDate(date1);
             drWorkReq.setPatient(lwr.getPatient());
-            drWorkReq.setAppointment(lwr.getAppointment());
-            drWorkReq.setRequestDate(new Date());
+            drWorkReq.setAppt(lwr.getAppt());
+            drWorkReq.setReqDate(new Date());
             //drWorkReq.setResolveDate(new Date());
             //drUserAcc.getWorkQueue().getWorkRequestList().add(drWorkReq);
             JOptionPane.showMessageDialog(null, "Lab Test reports submitted, sending reports through email.", "Information", JOptionPane.INFORMATION_MESSAGE);

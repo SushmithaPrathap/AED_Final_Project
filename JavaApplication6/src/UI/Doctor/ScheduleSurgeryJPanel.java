@@ -11,7 +11,7 @@ import model.DB4OUtil.DB4OUtil;
 import model.EcoSystem;
 import model.Employee.Employee;
 import model.Enterprise.Enterprise;
-import model.Medicine.MedicineDirectory;
+import model.Medicine.MedicineDir;
 import model.Operation.Operation;
 import model.Patient.Patient;
 import model.UserAccount.UserAccount;
@@ -43,7 +43,7 @@ public class ScheduleSurgeryJPanel extends javax.swing.JPanel {
     private Patient patient;
     private Employee doctor;
     private Appointment appointment;
-    private MedicineDirectory medicineList;
+    private MedicineDir medicineList;
     private AppointmentDirectory prescriptionList;
     private Enterprise enterprise;
     private EcoSystem ecosystem;
@@ -52,7 +52,7 @@ public class ScheduleSurgeryJPanel extends javax.swing.JPanel {
      * Creates new form ScheduleSurgeryJPanel
      */
     public ScheduleSurgeryJPanel(JPanel userProcessContainer, Patient patient, Appointment appointment, Employee doctor,
-            MedicineDirectory medicineList,EcoSystem ecosystem, Enterprise enterprise, UserAccount userAccount) {
+            MedicineDir medicineList,EcoSystem ecosystem, Enterprise enterprise, UserAccount userAccount) {
        initComponents();
         this.userProcessContainer = userProcessContainer;
         this.appointment = appointment;
@@ -422,16 +422,16 @@ jLabel6.setIcon(profilePic);
                 //changed next line status
                 appointment.setStatus(Appointment.AppointmentStatus.Markforsurgery.getValue());
                 NurseWorkRequest workreq = new NurseWorkRequest();
-                workreq.setAppointment(appointment);
-                workreq.setMessage("New Patient for Operation, please confirm an operation Date.");
+                workreq.setAppt(appointment);
+                workreq.setMsg("New Patient for Operation, please confirm an operation Date.");
 
                 workreq.setSender(userAccount);
                 workreq.setPatient(patient);
 
                 //get today's Date->
                 Date date= new Date();
-                workreq.setRequestDate(date);
-                workreq.setResolveDate(date);
+                workreq.setReqDate(date);
+                workreq.setResDate(date);
                 workreq.setStatus("New");
                 UserAccount nurseUserAcc =null;
                 //need employee list of the doctor's department -> organization
@@ -442,7 +442,7 @@ jLabel6.setIcon(profilePic);
                     //    if(account.getRole().roleValue().equals("Nurse Role"))
                     //    {
                         workreq.setReceiver(null);
-                        enterprise.getOrgWq().getWorkRequestList().add(workreq);
+                        enterprise.getOrgWq().getWorkRequestArray().add(workreq);
                         //      }
 
                     //  }
