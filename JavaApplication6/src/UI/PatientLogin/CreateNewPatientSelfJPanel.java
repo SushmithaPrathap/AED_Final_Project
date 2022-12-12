@@ -377,7 +377,7 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
         }
         
         String ssnString = txtSSN.getText();
-        boolean checkSSN = Validation.checkSNNValidAndUnique(ssnString);
+        boolean checkSSN = Validation.checkSNNValidUniqueFunc(ssnString);
         if(checkSSN == false)
         {
             JOptionPane.showMessageDialog(null, "SSN is invalid", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -385,7 +385,7 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
         }
         
         String emailid= txtEmail.getText();
-        boolean valid = Validation.emailValidator(emailid);
+        boolean valid = Validation.validateEmail(emailid);
         if(valid == false)
         {
             JOptionPane.showMessageDialog(null, "Email ID invalid", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -403,7 +403,7 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
         
         
         //check if username is unique
-         boolean isUserNameUnique = Validation.checkIfUserNameIsUniqueAcrossNetworks(ecosystem,userName);
+         boolean isUserNameUnique = Validation.checkUserNameUniqueAcrossNetworksFunc(ecosystem,userName);
         System.out.println("isUserNameUnique: "+ isUserNameUnique);
          if(isUserNameUnique== false)
               {

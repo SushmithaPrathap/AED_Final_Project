@@ -550,7 +550,7 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
             //}
 
             //send report to doctor email
-            Validation.sendEmailAttachment(request.getSender().getEmp().getEmail(), "Reports for patient",
+            Validation.sendEmailAttachmentFunc(request.getSender().getEmp().getEmail(), "Reports for patient",
                     "Please find reports attached", lblFileUpload.getText());
 
         } catch (Exception e) {

@@ -18,8 +18,6 @@ import model.Network.Network;
 import model.Organization.Organization;
 import model.Patient.Patient;
 import model.UserAccount.UserAccount;
-import static model.Utility.EmailClass.sendEmailMessageAppointment;
-import static model.Utility.EmailClass.sendTextMessageAppointment;
 import model.WorkQueue.DoctorWorkRequest;
 import model.WorkQueue.LabTechnicianWorkRequest;
 import java.awt.CardLayout;
@@ -35,6 +33,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import static model.Utility.EmailClass.sendEmailAppointmentFunc;
+import static model.Utility.EmailClass.sendTextAppointmentFunc;
 
 /**
  *
@@ -663,8 +663,8 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
         UserAccount account = patient.getUserAcc();
         String phonecontact = patient.getPhone()+patient.getMobileCarrier();
         //registrationRequest.setContactCarrierName(contact);
-        sendEmailMessageAppointment(uEmail, account, statusString);//.getText());
-        sendTextMessageAppointment(phonecontact, account, statusString);      
+        sendEmailAppointmentFunc(uEmail, account, statusString);//.getText());
+        sendTextAppointmentFunc(phonecontact, account, statusString);      
         setPanelTime();
         DB4OUtil.getInstance().storeSystem(system);
         

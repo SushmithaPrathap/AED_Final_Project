@@ -1,9 +1,8 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt sendTo change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java sendTo edit this template
  */
 package model.Utility;
-
 
 import model.EcoSystem;
 import model.Enterprise.Enterprise;
@@ -34,65 +33,64 @@ import javax.swing.JOptionPane;
  */
 public class Validation {
 
-    public static boolean nameValidator(String name) {
-        Pattern pattern;
+    public static boolean validateName(String name) {
+        Pattern pat;
         Matcher matcher;
-        String NAME_PATTERN = "^[A-Za-z]{1,}[\\s]{0,1}[A-Za-z]{0,}$";
-        pattern = Pattern.compile(NAME_PATTERN);
-        matcher = pattern.matcher(name);
+        String PATTERN_NAME = "^[A-Za-z]{1,}[\\s]{0,1}[A-Za-z]{0,}$";
+        pat = Pattern.compile(PATTERN_NAME);
+        matcher = pat.matcher(name);
         return matcher.matches();
     }
 
     public static boolean validateDate(String currentDate) {
-        Pattern pattern;
+        Pattern pat;
         Matcher matcher;
-        String NAME_PATTERN = "^\\d{4}[\\-\\/\\s]?((((0[13578])|(1[02]))[\\-\\/\\s]?(([0-2][0-9])|(3[01])))|(((0[469])|(11))[\\-\\/\\s]?(([0-2][0-9])|(30)))|(02[\\-\\/\\s]?[0-2][0-9]))$";
+        String PATTERN_NAME = "^\\d{4}[\\-\\/\\s]?((((0[13578])|(1[02]))[\\-\\/\\s]?(([0-2][0-9])|(3[01])))|(((0[469])|(11))[\\-\\/\\s]?(([0-2][0-9])|(30)))|(02[\\-\\/\\s]?[0-2][0-9]))$";
         ;
-        pattern = Pattern.compile(NAME_PATTERN);
-        matcher = pattern.matcher(currentDate);
-        // System.out.println(matcher.matches());
+        pat = Pattern.compile(PATTERN_NAME);
+        matcher = pat.matcher(currentDate);
         return matcher.matches();
     }
 
-    public static boolean userNameValidator(String name) {
-        Pattern pattern;
+    public static boolean ValidateUserName(String name) {
+        Pattern pat;
         Matcher matcher;
-        String NAME_PATTERN = "^[A-Za-z0-9\\s]+$";
-        pattern = Pattern.compile(NAME_PATTERN);
-        matcher = pattern.matcher(name);
+        String PATTERN_NAME = "^[A-Za-z0-9\\s]+$";
+        pat = Pattern.compile(PATTERN_NAME);
+        matcher = pat.matcher(name);
         return matcher.matches();
     }
 
-    public static boolean emailValidator(String email) {
+    public static boolean validateEmail(String email) {
         Pattern pattern;
         Matcher matcher;
-        String EMAIL_PATTERN
+        String PATTERN_EMAIL
                 = "^[\\w!#$%&’*+/=?`{|}~^-]+(?:\\.[\\w!#$%&’*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
-        pattern = Pattern.compile(EMAIL_PATTERN);
+        pattern = Pattern.compile(PATTERN_EMAIL);
         matcher = pattern.matcher(email);
         return matcher.matches();
     }
 
-    public static boolean passwordValidator(String passwordValue) {
+    public static boolean validatePassword(String passwordValue) {
         Pattern pattern;
         Matcher matcher;
-        String PASSWORD_PATTERN
+        String PATTERN_PASSWORD
                 = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&+=~|?])(?=\\S+$).{6,}$";
-        pattern = Pattern.compile(PASSWORD_PATTERN);
+        pattern = Pattern.compile(PATTERN_PASSWORD);
         matcher = pattern.matcher(passwordValue);
         return matcher.matches();
     }
 
-    public static boolean phoneNumberValidator(String contact) {
+    public static boolean validatePhone(String contact) {
         Pattern pattern;
         Matcher matcher;
-        String PHONE_PATTERN = "^[0-9]{10}$";
-        pattern = Pattern.compile(PHONE_PATTERN);
+        String PATTERN_PHONE = "^[0-9]{10}$";
+        pattern = Pattern.compile(PATTERN_PHONE);
         matcher = pattern.matcher(contact);
         return matcher.matches();
     }
 
-    public Boolean phoneNumberValidity(String customerContact) {
+    public Boolean phoneNumValidity(String customerContact) {
         String regex = "^\\(?([0-9]{3})\\)?[-.\\s]?([0-9]{3})[-.\\s]?([0-9]{4})$";
         Pattern pattern = Pattern.compile(regex);
 
@@ -103,31 +101,20 @@ public class Validation {
         return false;
     }
 
-    /*public static void stringValidator(KeyEvent evt, JTextField field) {
-        char c = evt.getKeyChar();
-        if (!((c >= 'A') && (c <= 'Z') || (c >= 'a') && (c <= 'z') || (c == evt.VK_SPACE)
-                || (c == evt.VK_BACK_SPACE)
-                || (c == evt.VK_DELETE))) {
-
-            JOptionPane.showMessageDialog(null, "Enter Alphabets only");
-            field.setText(field.getText().substring(0, field.getText().length()-1));
-        }
-    }*/
-
-    public static boolean integerValidator(String number) {
+    public static boolean validateInt(String number) {
         Pattern pattern;
         Matcher matcher;
-        String integer_pattern = "^[0-9]$";
-        pattern = Pattern.compile(integer_pattern);
+        String PATTERN_INT = "^[0-9]$";
+        pattern = Pattern.compile(PATTERN_INT);
         matcher = pattern.matcher(number);
         return matcher.matches();
     }
 
-    public static boolean stringValidator(String number) {
+    public static boolean validatorForString(String number) {
         Pattern pattern;
         Matcher matcher;
-        String integer_pattern = "^[A-Za-z\\s]$";
-        pattern = Pattern.compile(integer_pattern);
+        String PATTERN_STRING = "^[A-Za-z\\s]$";
+        pattern = Pattern.compile(PATTERN_STRING);
         matcher = pattern.matcher(number);
         boolean match = number.matches("[a-zA-Z\\s]+");
         //return matcher.matches();
@@ -135,52 +122,38 @@ public class Validation {
     }
 
     public static boolean validateString(String s) {
-        boolean match = s.matches("[a-zA-Z\\s]+");
-
-        return match;
+        boolean value = s.matches("[a-zA-Z\\s]+");
+        return value;
     }
 
     public static boolean validateAplhaNumeric(String s) {
-        boolean match = match = s.matches("[a-zA-Z0-9]+");
-
-        return match;
+        boolean value = value = s.matches("[a-zA-Z0-9]+");
+        return value;
     }
 
     public static boolean validateNumeric(String s) {
-        boolean match = match = s.matches("[0-9]+");
-
-        return match;
+        boolean value = value = s.matches("[0-9]+");
+        return value;
     }
 
     public static boolean validateDouble(String s) {
-        boolean match = match = s.matches("^(-?)(0|([1-9][0-9]*))(\\\\.[0-9]+)?$");//"[0-9]+.[0-9][0-9]");
+        boolean value = value = s.matches("^(-?)(0|([1-9][0-9]*))(\\\\.[0-9]+)?$");//"[0-9]+.[0-9][0-9]");
 
-        return match;
+        return value;
     }
 
-    /*public static void integerValidator(KeyEvent evt, JTextField field) {
-        char c = evt.getKeyChar();
-        if (!((c >= '0') && (c <= '9')
-                || (c == evt.VK_BACK_SPACE)
-                || (c == evt.VK_DELETE))) {
-
-            JOptionPane.showMessageDialog(null, "Enter Integers only");
-            //field.setText("");
-            field.setText(field.getText().substring(0, field.getText().length()-1));
-        }
-    }*/
-    public static void sendEmailMessage(String emailId, String subject, String text) {
-        String to = emailId;
-        String from = "aed.project.fall.2021@gmail.com";
-        String pass = "2021@AED";
+    public static void sendEmailMessageFunc(String email, String sub, String txt) {
+        String sendTo = email;
+        String sendFrom = "aedhealthcare413@gmail.com";
+        String password = "ksmqagaoljqplihs";
 
         Properties properties = System.getProperties();
-        String host = "smtp.gmail.com";
+        String hostname = "smtp.gmail.com";
 
         properties.put("mail.smtp.starttls.enable", "true");
 
-        properties.put("mail.smtp.ssl.trust", host);
-        properties.put("mail.smtp.user", from);
+        properties.put("mail.smtp.ssl.trust", hostname);
+        properties.put("mail.smtp.user", sendFrom);
         properties.put("mail.smtp.port", "587");
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
@@ -191,36 +164,36 @@ public class Validation {
 
         try {
             MimeMessage message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(from));
-            //message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-            message.addRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
-            message.setSubject(subject);
-            message.setText(text);
+            message.setFrom(new InternetAddress(sendFrom));
+            //message.addRecipient(Message.RecipientType.TO, new InternetAddress(sendTo));
+            message.addRecipients(Message.RecipientType.TO, InternetAddress.parse(sendTo));
+            message.setSubject(sub);
+            message.setText(txt);
 
             Transport transport = session.getTransport("smtp");
-            transport.connect(host, from, pass);
+            transport.connect(hostname, sendFrom, password);
             transport.sendMessage(message, message.getAllRecipients());
             transport.close();
-            System.out.println("Sent message successfully....");
+            System.out.println("Message sent successfully!!");
         } catch (MessagingException mex) {
             mex.printStackTrace();
             JOptionPane.showMessageDialog(null, "Invalid email id");
         }
     }
 
-    public static void sendEmailAttachment(String emailId, String subject,
-            String text, String inputfilepath) {
-        String to = emailId;
-        String from = "aed.project.fall.2021@gmail.com";
-        String pass = "2021@AED";
+    public static void sendEmailAttachmentFunc(String emailId, String sub,
+            String txt, String filepath) {
+        String sendTo = emailId;
+        String sendFrom = "aedhealthcare413@gmail.com";
+        String password = "ksmqagaoljqplihs";
 
         Properties properties = System.getProperties();
-        String host = "smtp.gmail.com";
+        String hostname = "smtp.gmail.com";
 
         properties.put("mail.smtp.starttls.enable", "true");
 
-        properties.put("mail.smtp.ssl.trust", host);
-        properties.put("mail.smtp.user", from);
+        properties.put("mail.smtp.ssl.trust", hostname);
+        properties.put("mail.smtp.user", sendFrom);
         properties.put("mail.smtp.port", "587");
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
@@ -231,16 +204,16 @@ public class Validation {
 
         try {
             MimeMessage message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(from));
-            //message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-            message.addRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
-            message.setSubject(subject);
-            message.setText(text);
+            message.setFrom(new InternetAddress(sendFrom));
+            //message.addRecipient(Message.RecipientType.TO, new InternetAddress(sendTo));
+            message.addRecipients(Message.RecipientType.TO, InternetAddress.parse(sendTo));
+            message.setSubject(sub);
+            message.setText(txt);
             MimeBodyPart messageBodyPart = new MimeBodyPart();
 
             Multipart multipart = new MimeMultipart();
 
-            String file = inputfilepath;//"path of file to be attached";
+            String file = filepath;//"path of file sendTo be attached";
 
             DataSource source = new FileDataSource(file) {
                 @Override
@@ -256,26 +229,26 @@ public class Validation {
             message.setContent(multipart);
 
             Transport transport = session.getTransport("smtp");
-            transport.connect(host, from, pass);
+            transport.connect(hostname, sendFrom, password);
             transport.sendMessage(message, message.getAllRecipients());
             transport.close();
-            System.out.println("Sent message successfully....");
+            System.out.println("Message sent successfully....");
         } catch (MessagingException mex) {
             mex.printStackTrace();
             JOptionPane.showMessageDialog(null, "Invalid email id");
         }
     }
 
-    public static void sendTextMessage(String contact, String subject, String text) {
-        String to = contact;
-        System.out.println(contact + subject + text);
-        String from = "aed.project.fall.2021@gmail.com";
-        String pass = "2021@AED";
+    public static void sendTextMessageFunc(String contact, String sub, String txt) {
+        String sendTo = contact;
+        System.out.println(contact + sub + txt);
+        String sendFrom = "aedhealthcare413@gmail.com";
+        String password = "ksmqagaoljqplihs";
         Properties properties = System.getProperties();
         String host = "smtp.gmail.com";
         properties.put("mail.smtp.starttls.enable", "true");
         properties.put("mail.smtp.ssl.trust", host);
-        properties.put("mail.smtp.user", from);
+        properties.put("mail.smtp.user", sendFrom);
         properties.put("mail.smtp.port", "587");
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
@@ -285,49 +258,42 @@ public class Validation {
         Session session = Session.getDefaultInstance(properties);
         try {
             MimeMessage message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(from));
-            message.addRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
-            message.setSubject(subject);
-            message.setText(text);
+            message.setFrom(new InternetAddress(sendFrom));
+            message.addRecipients(Message.RecipientType.TO, InternetAddress.parse(sendTo));
+            message.setSubject(sub);
+            message.setText(txt);
             Transport transport = session.getTransport("smtp");
-            transport.connect(host, from, pass);
+            transport.connect(host, sendFrom, password);
             transport.sendMessage(message, message.getAllRecipients());
             transport.close();
-            System.out.println("Sent message successfully....");
+            System.out.println("Message sent successfully....");
         } catch (MessagingException mex) {
             mex.printStackTrace();
             JOptionPane.showMessageDialog(null, "Invalid email id");
         }
     }
 
-    public static boolean checkIfUserNameIsUniqueAcrossNetworks(EcoSystem system, String username) {
-        //check if username is unique
-        boolean isUserNameUnique = true;
+    public static boolean checkUserNameUniqueAcrossNetworksFunc(EcoSystem sys, String userName) {
+        //check if userName is unique
+        boolean uNameUnique = true;
         //boolean flag = false;
-        for (Network net : system.getNetworkArray()) {
-            List<Enterprise> entrList = net.getEnterpriseDir().getEnterpriseArray();
-            for (Enterprise entpr : entrList) {
-                isUserNameUnique = entpr.getUserAcctDir().checkIfUserNameIsUnique(username);
-                if (isUserNameUnique == false) {
-
+        for (Network net : sys.getNetworkArray()) {
+            List<Enterprise> enterpriseList = net.getEnterpriseDir().getEnterpriseArray();
+            for (Enterprise entpr : enterpriseList) {
+                uNameUnique = entpr.getUserAcctDir().checkIfUserNameIsUnique(userName);
+                if (uNameUnique == false) {
                     //  JOptionPane.showMessageDialog(null, "Username already exists, try another name!");
                     return false;
                 }
-
             }
-
         }
-
         return true;
     }
 
-    public static boolean checkSNNValidAndUnique(String ssn) {
+    public static boolean checkSNNValidUniqueFunc(String ssn) {
         if (ssn.length() != 9) {
             return false;
         }
-
         return (validateNumeric(ssn));
-
     }
-
 }

@@ -5,7 +5,6 @@
  */
 package model.Utility;
 
-
 import java.awt.Component;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;

@@ -299,7 +299,7 @@ public class InsuranceDWorkAreaJPanel extends javax.swing.JPanel {
 
                 request.setStatus("Close");
 
-                Validation.sendEmailMessage(patient.getEmail(), "Insurance Approval Report",
+                Validation.sendEmailMessageFunc(patient.getEmail(), "Insurance Approval Report",
                         "Insurance is not approved, please pay amount! ");
                 return;
 
@@ -357,7 +357,7 @@ public class InsuranceDWorkAreaJPanel extends javax.swing.JPanel {
             request.setStatus("Close");
 
             //send report to doctor email
-            Validation.sendEmailMessage(patient.getEmail(), "Insurance Approval Report",
+            Validation.sendEmailMessageFunc(patient.getEmail(), "Insurance Approval Report",
                     "Insurance is approved, please pay remaining amount: " + remaingAmt);
             DB4OUtil.getInstance().storeSystem(business);
 

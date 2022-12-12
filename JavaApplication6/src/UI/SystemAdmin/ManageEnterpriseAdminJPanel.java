@@ -11,8 +11,6 @@ import model.Enterprise.Enterprise;
 import model.Network.Network;
 import model.Role.AdminRole;
 import model.UserAccount.UserAccount;
-import static model.Utility.EmailClass.sendEmailMessage;
-import static model.Utility.EmailClass.sendTextMessage;
 import model.Utility.Validation;
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -21,6 +19,8 @@ import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import static model.Utility.EmailClass.sendEmailFunc;
+import static model.Utility.EmailClass.sendTextMessageFunc;
 
 /**
  *
@@ -498,7 +498,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         String uEmail = uEmailTxt.getText();//"aditijain2025@gmail.com";
 
         //check if username is unique
-        boolean isUserNameUnique = Validation.checkIfUserNameIsUniqueAcrossNetworks(system,username);
+        boolean isUserNameUnique = Validation.checkUserNameUniqueAcrossNetworksFunc(system,username);
 
         System.out.println("isUserNameUnique:" + isUserNameUnique);
         if (isUserNameUnique == false) {
@@ -507,18 +507,18 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             return;
         }
 
-        boolean isUserNameCorrect = Validation.userNameValidator(username);
+        boolean isUserNameCorrect = Validation.ValidateUserName(username);
         if(isUserNameCorrect == false)
         {
             JOptionPane.showMessageDialog(null, "Enter username properly: only alphabets and numbers allowed!");
             return;
         }
-        boolean isValid=Validation.emailValidator(uEmail);
+        boolean isValid=Validation.validateEmail(uEmail);
         if(isValid == false){
             JOptionPane.showMessageDialog(null, "Enter email correctly");
             return;
         }
-        boolean isPasswordCorrect = Validation.passwordValidator(password);
+        boolean isPasswordCorrect = Validation.validatePassword(password);
         if(isPasswordCorrect == false)
         {
             JOptionPane.showMessageDialog(null, "Enter password properly!");
@@ -554,8 +554,8 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             contact = phoneNumberTxt.getText() + "@tmomail.net";
         }
         //registrationRequest.setContactCarrierName(contact);
-        sendEmailMessage(uEmail, account);//.getText());
-        sendTextMessage(contact);
+        sendEmailFunc(uEmail, account);//.getText());
+        sendTextMessageFunc(contact);
 
         JOptionPane.showMessageDialog(null, "User added successfully");
         // return;

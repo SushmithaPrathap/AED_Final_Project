@@ -16,8 +16,6 @@ import model.Role.PatientRole;
 import model.Role.ReceptionistRole;
 import model.Role.Role;
 import model.UserAccount.UserAccount;
-import static model.Utility.EmailClass.sendEmailMessage;
-import static model.Utility.EmailClass.sendTextMessage;
 import model.Utility.Validation;
 import java.awt.CardLayout;
 import java.util.regex.Matcher;
@@ -25,6 +23,8 @@ import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import static model.Utility.EmailClass.sendEmailFunc;
+import static model.Utility.EmailClass.sendTextMessageFunc;
 
 /**
  *
@@ -746,27 +746,27 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             return;
         }
         
-        boolean isUserNameCorrect = Validation.userNameValidator(userName);
+        boolean isUserNameCorrect = Validation.ValidateUserName(userName);
         if(isUserNameCorrect == false)
         {
             JOptionPane.showMessageDialog(null, "Enter username properly: only alphabets and numbers allowed!");
             return;
         }
         
-        boolean isPasswordCorrect = Validation.passwordValidator(password);
+        boolean isPasswordCorrect = Validation.validatePassword(password);
         if(isPasswordCorrect == false)
         {
             JOptionPane.showMessageDialog(null, "Enter password properly!");
             return;
         }
-        boolean isNameCorrect = Validation.nameValidator(name);
+        boolean isNameCorrect = Validation.validateName(name);
         if(isNameCorrect == false)
         {
             JOptionPane.showMessageDialog(null, "Enter name properly!");
             return;
         }
         
-        boolean isValid=Validation.emailValidator(uEmail);
+        boolean isValid=Validation.validateEmail(uEmail);
         if(isValid == false){
              JOptionPane.showMessageDialog(null, "Enter email correctly");
             return;
@@ -786,7 +786,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         
         
         //check if username is unique
-        boolean isUserNameUnique = Validation.checkIfUserNameIsUniqueAcrossNetworks(system,userName);
+        boolean isUserNameUnique = Validation.checkUserNameUniqueAcrossNetworksFunc(system,userName);
         System.out.println("isUserNameUnique: "+ isUserNameUnique);
         
         
@@ -847,8 +847,8 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
                 contact = phoneNumberTxt.getText() + "@tmomail.net";
             }
             //registrationRequest.setContactCarrierName(contact);
-            sendEmailMessage(uEmail, account);//.getText());
-            sendTextMessage(contact);
+            sendEmailFunc(uEmail, account);//.getText());
+            sendTextMessageFunc(contact);
         
              //JOptionPane.showMessageDialog(null, "User added successfully");
         
@@ -1146,14 +1146,14 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         String password = passwordJTextField2.getText();
         String phonenum= phoneNumberTxt1.getText();
         String emailId = uEmailTxt1.getText();
-        boolean result = Validation.nameValidator(staffName);
+        boolean result = Validation.validateName(staffName);
         if(result == false){
             JOptionPane.showMessageDialog(null, "Enter name properly!");
             return;
         }
         
         
-        result = Validation.passwordValidator(password);
+        result = Validation.validatePassword(password);
         if(result == false){
             JOptionPane.showMessageDialog(null, "Enter password properly!");
             return;
@@ -1171,7 +1171,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         }
         
         
-        boolean isValid=Validation.emailValidator(emailId);
+        boolean isValid=Validation.validateEmail(emailId);
         if(isValid == false){
              JOptionPane.showMessageDialog(null, "Enter email correctly");
             return;
@@ -1321,7 +1321,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
 
     private void uEmailTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_uEmailTxtKeyTyped
         // TODO add your handling code here:
-        /* if (!validation.emailValidator(uEmailTxt.getText())) {
+        /* if (!validation.validateEmail(uEmailTxt.getText())) {
             emailValidateMessage.setVisible(true);
             emailValid = false;
         } else {

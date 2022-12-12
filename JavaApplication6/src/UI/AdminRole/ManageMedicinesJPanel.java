@@ -602,7 +602,7 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
         }
 
         //validation on data
-        boolean valid = Validation.stringValidator(name);
+        boolean valid = Validation.validatorForString(name);
         if (valid == false) {
             JOptionPane.showMessageDialog(null, "Please enter name correctly", "Warning", JOptionPane.WARNING_MESSAGE);
             return;

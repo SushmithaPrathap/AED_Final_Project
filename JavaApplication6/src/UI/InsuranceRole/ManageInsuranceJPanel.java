@@ -575,7 +575,7 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
        }
        
        String ssnString = txtSSN.getText();
-        boolean checkSSN = Validation.checkSNNValidAndUnique(ssnString);
+        boolean checkSSN = Validation.checkSNNValidUniqueFunc(ssnString);
         if(checkSSN == false)
         {
             JOptionPane.showMessageDialog(null, "SSN is invalid", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -769,7 +769,7 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
        }
        
        String ssnString = txtSSN1.getText();
-        boolean checkSSN = Validation.checkSNNValidAndUnique(ssnString);
+        boolean checkSSN = Validation.checkSNNValidUniqueFunc(ssnString);
         if(checkSSN == false)
         {
             JOptionPane.showMessageDialog(null, "SSN is invalid", "Warning", JOptionPane.WARNING_MESSAGE);
