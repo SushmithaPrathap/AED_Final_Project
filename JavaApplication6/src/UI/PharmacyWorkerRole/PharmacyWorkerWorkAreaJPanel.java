@@ -96,9 +96,9 @@ public class PharmacyWorkerWorkAreaJPanel extends javax.swing.JPanel {
             row[0] = entry.getKey();
             row[1] = entry.getValue();
             Medicine medicine = null;
-            for(Medicine med : ((Pharmacy) enterprise).getMedicineArray().getMedicineList()){
+            for(Medicine med : ((Pharmacy) enterprise).getMedicineArray().getMedsArray()){
                 if(med.equals(entry.getKey())){
-            row[2] = med.getPrice();       
+            row[2] = med.getAmount();       
                medicine = med;
                     break;
                 }
@@ -106,8 +106,8 @@ public class PharmacyWorkerWorkAreaJPanel extends javax.swing.JPanel {
             if(medicine == null){   
             }
             else{
-            row[3] = entry.getValue() * medicine.getPrice();
-            totalPrice += entry.getValue() * medicine.getPrice();
+            row[3] = entry.getValue() * medicine.getAmount();
+            totalPrice += entry.getValue() * medicine.getAmount();
             }
             row[4] = appointment.getPrescription().getPhmacy().getName();
             model.addRow(row);

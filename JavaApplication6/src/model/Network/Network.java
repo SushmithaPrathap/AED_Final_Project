@@ -4,7 +4,7 @@
  */
 package model.Network;
 
-import model.Enterprise.EnterpriseDirectory;
+import model.Enterprise.EnterpriseDir;
 
 /**
  *
@@ -13,10 +13,10 @@ import model.Enterprise.EnterpriseDirectory;
 public class Network {
 
     private String name;
-    private EnterpriseDirectory enterpriseDirectory;
+    private EnterpriseDir enterpriseDir;
 
     public Network() {
-        enterpriseDirectory = new EnterpriseDirectory();
+        enterpriseDir = new EnterpriseDir();
     }
 
     public String getName() {
@@ -27,8 +27,8 @@ public class Network {
         this.name = name;
     }
 
-    public EnterpriseDirectory getEnterpriseDirectory() {
-        return enterpriseDirectory;
+    public EnterpriseDir getEnterpriseDir() {
+        return enterpriseDir;
     }
 
     @Override
@@ -41,11 +41,6 @@ public class Network {
 
         // typecast o to Complex so that we can compare data members  
         Network c = (Network) o;
-
-        // Compare the data members and return accordingly  
-        //return Double.compare(re, c.re) == 0
-        //        && Double.compare(im, c.im) == 0; 
         return (this.name.equals(c.name));
     }
-
 }

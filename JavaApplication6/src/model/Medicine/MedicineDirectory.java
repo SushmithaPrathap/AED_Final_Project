@@ -13,18 +13,18 @@ import java.util.List;
  */
 public class MedicineDirectory {
 
-    List<Medicine> medicineList;
+    List<Medicine> medsArray;
 
-    public List<Medicine> getMedicineList() {
-        return medicineList;
+    public List<Medicine> getMedsArray() {
+        return medsArray;
     }
 
-    public void setMedicineList(List<Medicine> medicineList) {
-        this.medicineList = medicineList;
+    public void setMedsArray(List<Medicine> medsArray) {
+        this.medsArray = medsArray;
     }
 
     public MedicineDirectory() {
-        medicineList = new ArrayList<>();
+        medsArray = new ArrayList<>();
     }
 
 }

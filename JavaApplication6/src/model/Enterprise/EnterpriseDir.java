@@ -15,7 +15,7 @@ import java.util.ArrayList;
  *
  * @author sushmithaprathap
  */
-public class EnterpriseDirectory {
+public class EnterpriseDir {
 
     private ArrayList<Enterprise> enterpriseArray;
 
@@ -27,7 +27,7 @@ public class EnterpriseDirectory {
         this.enterpriseArray = enterpriseArray;
     }
 
-    public EnterpriseDirectory() {
+    public EnterpriseDir() {
         enterpriseArray = new ArrayList<Enterprise>();
     }
 

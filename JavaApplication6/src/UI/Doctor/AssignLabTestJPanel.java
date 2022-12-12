@@ -71,7 +71,7 @@ public class AssignLabTestJPanel extends javax.swing.JPanel {
         {
          
 
-        List<Enterprise> enterprsList = network1.getEnterpriseDirectory().getEnterpriseArray();
+        List<Enterprise> enterprsList = network1.getEnterpriseDir().getEnterpriseArray();
         if (enterprsList == null || enterprsList.isEmpty()) {
             //nothing
         } else {

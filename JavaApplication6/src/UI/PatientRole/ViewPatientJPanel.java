@@ -67,7 +67,7 @@ public class ViewPatientJPanel extends javax.swing.JPanel {
         txtPassword.setText(patient.getUserAcc().getPassword());
         txtBloodGroup.setSelectedItem(patient.getBloodGrp());
         txtEmail.setText(patient.getEmail());
-        txtAddrStreet.setText(patient.getAddressVar().getStreet());
+        txtAddrStreet.setText(patient.getAddressVar().getStt());
         txtAddrState.setText(patient.getAddressVar().getState());
         txtAddrCity.setText(patient.getAddressVar().getCity());
         contactCarrier.setSelectedItem(patient.getMobileCarrier() == null ? "TMobile" :patient.getMobileCarrier() );
@@ -341,7 +341,7 @@ public class ViewPatientJPanel extends javax.swing.JPanel {
         }
         
         locationPoint = new Location();
-        locationPoint.setStreet(txtAddrStreet.getText());
+        locationPoint.setStt(txtAddrStreet.getText());
         locationPoint.setState(txtAddrState.getText());
         locationPoint.setCity(txtAddrCity.getText());
         

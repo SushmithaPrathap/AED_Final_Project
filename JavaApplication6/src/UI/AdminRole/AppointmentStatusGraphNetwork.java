@@ -55,7 +55,7 @@ public class AppointmentStatusGraphNetwork extends javax.swing.JPanel {
         Map<String, Integer> workReqMap = new HashMap<>();
         ArrayList<Appointment> workReqList = new ArrayList<>();
 
-        for (Enterprise enterprise : selectedNetwork.getEnterpriseDirectory().getEnterpriseArray()) 
+        for (Enterprise enterprise : selectedNetwork.getEnterpriseDir().getEnterpriseArray()) 
         {
             if (enterprise instanceof Hospital) 
             {

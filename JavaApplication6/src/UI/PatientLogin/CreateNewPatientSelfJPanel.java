@@ -344,7 +344,7 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
     void populateCmbInsurance(){
          cmbInsuranceCompany.removeAllItems();;
         for(Network network : ecosystem.getNetworkArray()){
-        List<Enterprise> enterprsList = network.getEnterpriseDirectory().getEnterpriseArray();
+        List<Enterprise> enterprsList = network.getEnterpriseDir().getEnterpriseArray();
         if (enterprsList == null || enterprsList.isEmpty()) {
             //nothing
         } else {
@@ -419,7 +419,7 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
         }
         
         locationPoint = new Location();
-        locationPoint.setStreet(txtAddrStreet.getText());
+        locationPoint.setStt(txtAddrStreet.getText());
         locationPoint.setState(txtAddrState.getText());
         locationPoint.setCity(txtAddrCity.getText());
         

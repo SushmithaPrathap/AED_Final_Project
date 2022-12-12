@@ -50,7 +50,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
         for (Network network : system.getNetworkArray()) {
-            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseArray()) {
+            for (Enterprise enterprise : network.getEnterpriseDir().getEnterpriseArray()) {
                 for (UserAccount userAccount : enterprise.getUserAccountDirectory().getUserAccountList()) {
                     if(userAccount.getRole().roleValue().equals("Admin Role")){
                         Object[] row = new Object[3];
@@ -76,7 +76,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     private void populateEnterpriseComboBox(Network network){
         enterpriseJComboBox.removeAllItems();
         //enterpeirse-> bostonHospital!
-        for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseArray()){
+        for (Enterprise enterprise : network.getEnterpriseDir().getEnterpriseArray()){
             enterpriseJComboBox.addItem(enterprise);
         }
         

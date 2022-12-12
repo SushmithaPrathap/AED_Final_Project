@@ -8,7 +8,7 @@ import model.Employee.Employee;
 
 /**
  *
- * @author sushmithaprathap
+ * @author yash
  */
 public class Nurse extends Employee{
     

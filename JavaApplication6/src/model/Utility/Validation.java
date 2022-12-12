@@ -305,7 +305,7 @@ public class Validation {
         boolean isUserNameUnique = true;
         //boolean flag = false;
         for (Network net : system.getNetworkArray()) {
-            List<Enterprise> entrList = net.getEnterpriseDirectory().getEnterpriseArray();
+            List<Enterprise> entrList = net.getEnterpriseDir().getEnterpriseArray();
             for (Enterprise entpr : entrList) {
                 isUserNameUnique = entpr.getUserAccountDirectory().checkIfUsernameIsUnique(username);
                 if (isUserNameUnique == false) {

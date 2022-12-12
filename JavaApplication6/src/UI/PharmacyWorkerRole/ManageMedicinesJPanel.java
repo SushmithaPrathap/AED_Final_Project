@@ -80,7 +80,7 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         String date1=null;
         SimpleDateFormat formatter1=new SimpleDateFormat("yyyy-MM-dd");
-        for (Medicine med : medicineDir.getMedicineList()){
+        for (Medicine med : medicineDir.getMedsArray()){
             if(med.getType().equals(medType))
             {
             
@@ -88,12 +88,12 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
             row[0] = med;//.getId();
             row[1] = med.getName();
             row[2] = med.getDosage();
-            row[3] = med.getQuantity();
+            row[3] = med.getQuan();
             row[4] = med.getType();
             
             
             try {
-               date1 =formatter1.format(med.getExpiryDate());
+               date1 =formatter1.format(med.getDateExpiry());
             } catch (Exception ex) {
                 System.out.println("Error in ManageMedicineJPanel view panel for date paring");
                 Logger.getLogger(ManageMedicinesJPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -653,13 +653,13 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
         }
         Medicine medicine = new Medicine();
         medicine.setDosage(dosage);
-        medicine.setExpiryDate(date1);
+        medicine.setDateExpiry(date1);
         medicine.setName(name);
-        medicine.setPrice(price);
-        medicine.setQuantity(quantity);
+        medicine.setAmount(price);
+        medicine.setQuan(quantity);
         medicine.setType(type);
         //Add to dir           
-        medicineDir.getMedicineList().add(medicine);
+        medicineDir.getMedsArray().add(medicine);
         
         
         JOptionPane.showMessageDialog(null, "Added successfully","Information",JOptionPane.INFORMATION_MESSAGE);
@@ -726,7 +726,7 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
 
     private void cmbMainMedicineTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMainMedicineTypeActionPerformed
         String medType = (String) cmbMainMedicineType.getSelectedItem();
-        if (medicineDir != null && !medicineDir.getMedicineList().isEmpty()){
+        if (medicineDir != null && !medicineDir.getMedsArray().isEmpty()){
             populateTable(medType);
             //populateOrganizationEmpComboBox();  //based on organization seleted, get the supported roles only
         }
@@ -838,10 +838,10 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
         }
         Medicine medicine= (Medicine)  organizationJTable.getValueAt(row,0);
         medicine.setDosage(dosage);
-        medicine.setExpiryDate(date1);
+        medicine.setDateExpiry(date1);
         medicine.setName(name);
-        medicine.setPrice(price);
-        medicine.setQuantity(quantity);
+        medicine.setAmount(price);
+        medicine.setQuan(quantity);
         medicine.setType(type);
                  
        // medicineDir.getMedicineList().add(medicine);
@@ -911,13 +911,13 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
         
         nameJTextField1.setText(med.getName());
         dosageJTextField1.setText(med.getDosage());
-      availableQtyTxt1.setText(String.valueOf(med.getQuantity()));
+      availableQtyTxt1.setText(String.valueOf(med.getQuan()));
        cmbMedicineType1.setSelectedItem(med.getType());
        
        String date1=null;
         SimpleDateFormat formatter1=new SimpleDateFormat("yyyy-MM-dd");
         try {
-           date1 =formatter1.format(med.getExpiryDate());
+           date1 =formatter1.format(med.getDateExpiry());
         } catch (Exception ex) {
             System.out.println("Error in ManageMedicineJPanel for date paring");
             Logger.getLogger(ManageMedicinesJPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -925,7 +925,7 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
        
        
         expDate1.setText(date1);       
-         priceTxt1.setText(String.valueOf(med.getPrice()));
+         priceTxt1.setText(String.valueOf(med.getAmount()));
         
         cmbMedicineType1.setEnabled(false);
         nameJTextField1.setEditable(false);

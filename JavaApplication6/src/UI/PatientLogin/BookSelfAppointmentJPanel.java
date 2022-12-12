@@ -82,7 +82,7 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
     private void populateEnterpriseComboBox(Network network){
         enterpriseJComboBox1.removeAllItems();
         //enterpeirse-> bostonHospital!
-        for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseArray()){
+        for (Enterprise enterprise : network.getEnterpriseDir().getEnterpriseArray()){
             if(enterprise instanceof Hospital)
             {
                 enterpriseJComboBox1.addItem(enterprise);

@@ -8,19 +8,18 @@ package model.Location;
  *
  * @author yash
  */
-
 public class Location {
 
-    private String street;
+    private String stt;
     private String city;
     private String state;
 
-    public String getStreet() {
-        return street;
+    public String getStt() {
+        return stt;
     }
 
-    public void setStreet(String street) {
-        this.street = street;
+    public void setStt(String stt) {
+        this.stt = stt;
     }
 
     public String getCity() {
@@ -39,11 +38,8 @@ public class Location {
         this.state = state;
     }
 
-    
-
     @Override
     public String toString() {
-        return street + ", " + state + ", " + state;
+        return stt + ", " + state + ", " + state;
     }
-
 }

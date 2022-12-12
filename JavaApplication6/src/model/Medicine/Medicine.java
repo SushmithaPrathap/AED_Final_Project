@@ -11,34 +11,34 @@ import java.util.Date;
  * @author yash
  */
 public class Medicine {
-    int id;
+
+    int medId;
     String name;
-    Date expiryDate;
+    Date dateExpiry;
     String dosage;
-    double price;
-    int quantity;
-    String type;//liquid, tablet, gel
-    static int count =1;
-    
-    public Medicine(){
-        this.id= count++;
+    double amount;
+    int quan;
+    String type; //tyoe should --> liquid, tablet, gel
+    static int cnt = 1;
+
+    public Medicine() {
+        this.medId = cnt++;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public int getQuan() {
+        return quan;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-    
-
-    public int getId() {
-        return id;
+    public void setQuan(int quan) {
+        this.quan = quan;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getMedId() {
+        return medId;
+    }
+
+    public void setMedId(int medId) {
+        this.medId = medId;
     }
 
     public String getName() {
@@ -49,12 +49,12 @@ public class Medicine {
         this.name = name;
     }
 
-    public Date getExpiryDate() {
-        return expiryDate;
+    public Date getDateExpiry() {
+        return dateExpiry;
     }
 
-    public void setExpiryDate(Date expiryDate) {
-        this.expiryDate = expiryDate;
+    public void setDateExpiry(Date dateExpiry) {
+        this.dateExpiry = dateExpiry;
     }
 
     public String getDosage() {
@@ -65,12 +65,12 @@ public class Medicine {
         this.dosage = dosage;
     }
 
-    public double getPrice() {
-        return price;
+    public double getAmount() {
+        return amount;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setAmount(double amount) {
+        this.amount = amount;
     }
 
     public String getType() {
@@ -81,23 +81,19 @@ public class Medicine {
         this.type = type;
     }
 
-    public void setValues(String name, Date date1, String dosage, double price, int quantity, String type) {
+    public void setAllValues(String name, Date date1, String dosage, double price, int quantity, String type) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         this.setDosage(dosage);
-        this.setExpiryDate(date1);
+        this.setDateExpiry(date1);
         this.setName(name);
-        this.setPrice(price);
-        this.setQuantity(quantity);
+        this.setAmount(price);
+        this.setQuan(quantity);
         this.setType(type);
-    
-    
     }
-    
-    
+
     @Override
-    public String toString(){
-        return "Med " +String.valueOf(this.getId()) +  " "+this.getName();
+    public String toString() {
+        return "Med " + String.valueOf(this.getMedId()) + " " + this.getName();
     }
-    
-    
+
 }

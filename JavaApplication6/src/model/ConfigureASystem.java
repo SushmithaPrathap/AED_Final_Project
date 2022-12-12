@@ -107,7 +107,7 @@ public class ConfigureASystem {
                         
                     }
 //            System.out.println();
-            system.getNetworkArray().get(0).getEnterpriseDirectory().getEnterpriseArray().add(Ie) ;
+            system.getNetworkArray().get(0).getEnterpriseDir().getEnterpriseArray().add(Ie) ;
 
         
             // Boston Hospital - Enterprise
@@ -177,7 +177,7 @@ public class ConfigureASystem {
                         insID = "BST" + String.valueOf(faker.number().numberBetween(12345678l, 99999999l));
                         System.out.println("Patient: " + userName);
                         Location locationPoint = new Location();
-                        locationPoint.setStreet(faker.address().streetAddress());
+                        locationPoint.setStt(faker.address().streetAddress());
                         locationPoint.setState(faker.address().state());
                         locationPoint.setCity(faker.address().cityName());
                         user1 = system.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", null, new PatientRole());
@@ -241,7 +241,7 @@ public class ConfigureASystem {
                         
                         System.out.println("Patient: " + userName);
                         Location locationPoint = new Location();
-                        locationPoint.setStreet(faker.address().streetAddress());
+                        locationPoint.setStt(faker.address().streetAddress());
                         locationPoint.setState(faker.address().state());
                         locationPoint.setCity(faker.address().cityName());
                         user1 = system.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", null, new PatientRole());
@@ -269,7 +269,7 @@ public class ConfigureASystem {
                 //((BillingDepartment)o).generateInvoice(date, patient);
                 
          
-            system.getNetworkArray().get(0).getEnterpriseDirectory().getEnterpriseArray().add(e) ;
+            system.getNetworkArray().get(0).getEnterpriseDir().getEnterpriseArray().add(e) ;
         
         
             // Boston Lab - Enterprise
@@ -379,7 +379,7 @@ public class ConfigureASystem {
                     
                     System.out.println();
         
-            system.getNetworkArray().get(0).getEnterpriseDirectory().getEnterpriseArray().add(e) ;
+            system.getNetworkArray().get(0).getEnterpriseDir().getEnterpriseArray().add(e) ;
         
             // Boston Pharmacy - Enterprise
             System.err.println("Boston CVS Pharmacy");
@@ -429,7 +429,7 @@ public class ConfigureASystem {
                     
                     System.out.println();
         
-            system.getNetworkArray().get(0).getEnterpriseDirectory().getEnterpriseArray().add(e) ;
+            system.getNetworkArray().get(0).getEnterpriseDir().getEnterpriseArray().add(e) ;
              
             
         
@@ -489,7 +489,7 @@ public class ConfigureASystem {
                     }
         
             System.out.println();
-            system.getNetworkArray().get(1).getEnterpriseDirectory().getEnterpriseArray().add(Ie) ;
+            system.getNetworkArray().get(1).getEnterpriseDir().getEnterpriseArray().add(Ie) ;
         
             // Boston Hospital - Enterprise
             System.err.println("Seattle Grey-Sloan Hospital");
@@ -558,7 +558,7 @@ public class ConfigureASystem {
                         
                         System.out.println("Patient: " + userName);
                         Location locationPoint = new Location();
-                        locationPoint.setStreet(faker.address().streetAddress());
+                        locationPoint.setStt(faker.address().streetAddress());
                         locationPoint.setState(faker.address().state());
                         locationPoint.setCity(faker.address().cityName());
                         user1 = system.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", null, new PatientRole());
@@ -622,7 +622,7 @@ public class ConfigureASystem {
                         
                         System.out.println("Patient: " + userName);
                         Location locationPoint = new Location();
-                        locationPoint.setStreet(faker.address().streetAddress());
+                        locationPoint.setStt(faker.address().streetAddress());
                         locationPoint.setState(faker.address().state());
                         locationPoint.setCity(faker.address().cityName());
                         user1 = system.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", null, new PatientRole());
@@ -648,7 +648,7 @@ public class ConfigureASystem {
                 o = e.getOrgDir().createOrganization(Organization.Type.Billing);
                 
             
-            system.getNetworkArray().get(1).getEnterpriseDirectory().getEnterpriseArray().add(e) ;
+            system.getNetworkArray().get(1).getEnterpriseDir().getEnterpriseArray().add(e) ;
         
         
             // Seattle Lab - Enterprise
@@ -753,7 +753,7 @@ public class ConfigureASystem {
                     }
             System.out.println();
         
-            system.getNetworkArray().get(1).getEnterpriseDirectory().getEnterpriseArray().add(e) ;
+            system.getNetworkArray().get(1).getEnterpriseDir().getEnterpriseArray().add(e) ;
         
             // Seattle Pharmacy - Enterprise
             System.err.println("Seattle Walgreens Pharmacy");
@@ -803,7 +803,7 @@ public class ConfigureASystem {
                         
                     }
             System.out.println();
-            system.getNetworkArray().get(1).getEnterpriseDirectory().getEnterpriseArray().add(e) ;
+            system.getNetworkArray().get(1).getEnterpriseDir().getEnterpriseArray().add(e) ;
 
         return system;
     }

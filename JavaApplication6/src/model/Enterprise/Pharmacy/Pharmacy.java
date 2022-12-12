@@ -54,26 +54,26 @@ public class Pharmacy extends Enterprise {
 
     void popMedicineListForNewPharmacy() {
         try {
-            if (medicineArray.getMedicineList().isEmpty()) {
+            if (medicineArray.getMedsArray().isEmpty()) {
                 //add preloaded medicines
 
                 Medicine medVar = new Medicine();
-                medicineArray.getMedicineList().add(medVar);
+                medicineArray.getMedsArray().add(medVar);
 
                 String storeDate = "2024-12-30";
                 SimpleDateFormat formatterVar = new SimpleDateFormat("yyyy-MM-dd");
                 Date date1 = formatterVar.parse(storeDate);
                 //Select --> form --> Liquid, Tablet, Gel, Injection, Other
-                medVar.setValues("Benadryl", date1, "2", 300.00, 550, "Liquid");
+                medVar.setAllValues("Benadryl", date1, "2", 300.00, 550, "Liquid");
                 medVar = new Medicine();
-                medicineArray.getMedicineList().add(medVar);
-                medVar.setValues("Multi Vitamin", date1, "4", 300.00, 350, "Tablet");
+                medicineArray.getMedsArray().add(medVar);
+                medVar.setAllValues("Multi Vitamin", date1, "4", 300.00, 350, "Tablet");
                 medVar = new Medicine();
-                medicineArray.getMedicineList().add(medVar);
-                medVar.setValues("Flu Injection", date1, "5", 300.00, 400, "Injection");
+                medicineArray.getMedsArray().add(medVar);
+                medVar.setAllValues("Flu Injection", date1, "5", 300.00, 400, "Injection");
                 medVar = new Medicine();
-                medicineArray.getMedicineList().add(medVar);
-                medVar.setValues("ABC Gel", date1, "1", 320.00, 40, "Gel");
+                medicineArray.getMedsArray().add(medVar);
+                medVar.setAllValues("ABC Gel", date1, "1", 320.00, 40, "Gel");
 
             }
 
