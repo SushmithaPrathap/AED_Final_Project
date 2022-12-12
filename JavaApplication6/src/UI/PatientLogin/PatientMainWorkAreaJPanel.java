@@ -36,7 +36,7 @@ public class PatientMainWorkAreaJPanel extends javax.swing.JPanel {
         this.userAccount = account;
         this.system = business;
 
-        jLabel5.setText("Welcome " + userAccount.getEmployee().getNameVar() + "!");
+        jLabel5.setText("Welcome " + userAccount.getEmp().getNameVar() + "!");
 
     }
 
@@ -95,7 +95,7 @@ public class PatientMainWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnBookAppointmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookAppointmentActionPerformed
 
-        BookSelfAppointmentJPanel appointmentJPanel = new BookSelfAppointmentJPanel(userProcessContainer, userAccount, organization, enterprise, system, (Patient) (userAccount.getEmployee()));
+        BookSelfAppointmentJPanel appointmentJPanel = new BookSelfAppointmentJPanel(userProcessContainer, userAccount, organization, enterprise, system, (Patient) (userAccount.getEmp()));
         userProcessContainer.add("BookSelfAppointmentJPanel", appointmentJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -105,7 +105,7 @@ public class PatientMainWorkAreaJPanel extends javax.swing.JPanel {
     private void btnViewAppointmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewAppointmentActionPerformed
         // TODO add your handling code here:
 
-        UI.PatientLogin.ViewSelfAppointmentJPanel viewAppointmentJPanel = new ViewSelfAppointmentJPanel(userProcessContainer, userAccount, organization, enterprise, system, (Patient) userAccount.getEmployee());
+        UI.PatientLogin.ViewSelfAppointmentJPanel viewAppointmentJPanel = new ViewSelfAppointmentJPanel(userProcessContainer, userAccount, organization, enterprise, system, (Patient) userAccount.getEmp());
         userProcessContainer.add("ViewSelfAppointmentJPanel", viewAppointmentJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);

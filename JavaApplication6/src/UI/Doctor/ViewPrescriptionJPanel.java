@@ -146,13 +146,13 @@ public class ViewPrescriptionJPanel extends javax.swing.JPanel {
         Prescription prelist = appointment.getPrescription();
         
         
-        for (Map.Entry<Medicine, Double> entry : appointment.getPrescription().getMedicinePrescribed().entrySet()){
+        for (Map.Entry<Medicine, Double> entry : appointment.getPrescription().getMedPrescribed().entrySet()){
          Object[] row = new Object[5];
             row[0] = patient.getNameVar();
             row[1] = doctor.getNameVar();
             row[2] = entry.getKey();
             row[3] = entry.getValue();
-            row[4] = prelist.getPhmacy().getOrgName();
+            row[4] = prelist.getPharm().getOrgName();
             model.addRow(row);
     }
         }

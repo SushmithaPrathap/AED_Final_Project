@@ -14,25 +14,25 @@ import model.WorkQueue.WorkQueue;
  */
 public class UserAccount {
 
-    protected String username;
+    protected String userName;
     protected String password;
     protected String name;
     protected String email;
     protected Role role;
-    protected long contactNumber;
-    private Employee employee;
-    private WorkQueue workQueue;
+    protected long phone;
+    private Employee emp;
+    private WorkQueue wq;
 
     public UserAccount() {
-        workQueue = new WorkQueue();
+        wq = new WorkQueue();
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -47,25 +47,25 @@ public class UserAccount {
         return role;
     }
 
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
+    public void setEmp(Employee emp) {
+        this.emp = emp;
     }
 
     public void setRole(Role role) {
         this.role = role;
     }
 
-    public Employee getEmployee() {
-        return employee;
+    public Employee getEmp() {
+        return emp;
     }
 
-    public WorkQueue getWorkQueue() {
-        return workQueue;
+    public WorkQueue getWq() {
+        return wq;
     }
 
     @Override
     public String toString() {
-        return username;
+        return userName;
     }
 
 }

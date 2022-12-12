@@ -60,7 +60,7 @@ public class AppointmentTypeGraph extends javax.swing.JPanel {
         for (Enterprise enterprise : selectedNetwork.getEnterpriseDir().getEnterpriseArray()) {
             if (enterprise instanceof Hospital) {
                 for (Patient p : enterprise.getPatDirectory().getPatientArray()) {
-                    workReqList.addAll(p.getApptDir().getAppointmentList());
+                    workReqList.addAll(p.getApptDir().getApptList());
                 }
             }
         }

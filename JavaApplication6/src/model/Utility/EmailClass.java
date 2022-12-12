@@ -65,7 +65,7 @@ public class EmailClass {
 // Set Subject: header field
             message.setSubject("User Account Registration");
             message.setText("Congratulation! Your account is created. Username: "
-                    + ua.getUsername() + " Password: " + ua.getPassword()
+                    + ua.getUserName() + " Password: " + ua.getPassword()
                     + " Please login to your account.");
 // Send message
             Transport transport = session.getTransport("smtp");
@@ -121,7 +121,7 @@ public class EmailClass {
 // Set Subject: header field
             message.setSubject("Appointment Booking Successful");
             message.setText(status + " Username: "
-                    + ua.getUsername() + " Password: " + ua.getPassword()
+                    + ua.getUserName() + " Password: " + ua.getPassword()
                     + " Please login to your account.");
 // Send message
             Transport transport = session.getTransport("smtp");
@@ -227,7 +227,7 @@ public class EmailClass {
             // Set Subject: header field
             message.setSubject("Appointment Booking Successful");
             message.setText(status + " Username: "
-                    + ua.getUsername() + " Password: " + ua.getPassword()
+                    + ua.getUserName() + " Password: " + ua.getPassword()
                     + " Please login to your account.");
             // Send message
             Transport transport = session.getTransport("smtp");

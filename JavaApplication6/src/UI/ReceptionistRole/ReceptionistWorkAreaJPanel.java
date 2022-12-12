@@ -46,7 +46,7 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
         this.userAccount = account;
         this.system = business;
         
-        jLabel5.setText("Welcome " + account.getEmployee().getNameVar());
+        jLabel5.setText("Welcome " + account.getEmp().getNameVar());
         
         if(enterprise.getTypeEnterprise().getValue().equals("Hospital"))
         {

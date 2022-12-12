@@ -393,7 +393,7 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
         }
         
         String userName = txtUserName.getText();
-       // valid = enterprise.getUserAccountDirectory().checkIfUsernameIsUnique(userName);
+       // valid = enterprise.getUserAccountDirectory().checkIfUserNameIsUnique(userName);
         
         //if(valid == false)
         //{
@@ -425,12 +425,12 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
         
         Insurance insuranceE =(Insurance)cmbInsuranceCompany.getSelectedItem();
         String insuranceId = txtInsuranceID.getText();
-        UserAccount account = ecosystem.getUserAcctDir().createUserAccount(txtUserName.getText(), txtPassword.getText(), null, new PatientRole());
+        UserAccount account = ecosystem.getUserAcctDir().postUserAcc(txtUserName.getText(), txtPassword.getText(), null, new PatientRole());
        
        
         Employee emp= ecosystem.getPatDirectory().createPatient(txtPatientName.getText(), phoneNumberString, txtGender.getSelectedItem().toString(),
                 txtBloodGroup.getSelectedItem().toString(), account, locationPoint, txtEmail.getText(),insuranceE,insuranceId , ssnString);
-        account.setEmployee(emp);
+        account.setEmp(emp);
        
         if (contactCarrier.getSelectedItem().equals("ATT")) {
              phoneNumberString="@txt.att.net";

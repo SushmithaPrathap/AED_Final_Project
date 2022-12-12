@@ -73,19 +73,19 @@ public class GeneratePatientBillJPanel extends javax.swing.JPanel {
         
         SimpleDateFormat formatter1=new SimpleDateFormat("yyyy-MM-dd");
         txtPatientName.setText(patient.getNameVar());
-        if(appointment.getDoctor().getSpecialization() == null){
-            txtDoctor.setText(appointment.getDoctor().getNameVar() + " - Lab Technician");
+        if(appointment.getDoc().getSpecialization() == null){
+            txtDoctor.setText(appointment.getDoc().getNameVar() + " - Lab Technician");
         }else{
-            txtDoctor.setText(appointment.getDoctor().getNameVar() + " - " + appointment.getDoctor().getSpecialization().getValue());
+            txtDoctor.setText(appointment.getDoc().getNameVar() + " - " + appointment.getDoc().getSpecialization().getValue());
         }
         
-        txtAppointmetId.setText(String.valueOf(appointment.getAppointmentId()));
+        txtAppointmetId.setText(String.valueOf(appointment.getApptId()));
         txtAppointmetDate.setText(formatter1.format(appointment.getDate()));
         txtAppointmentType.setText(appointment.getType());
-        double visitingCharge = appointment.getDoctor().getVisitCharge();
+        double visitingCharge = appointment.getDoc().getVisitCharge();
         Double operationCharge = 0d;
-        if((appointment.getOperation() != null)){
-            operationCharge = appointment.getOperation().getOpAmount();
+        if((appointment.getOp() != null)){
+            operationCharge = appointment.getOp().getOpAmount();
         }
         
         txtVisingCharge.setText(String.valueOf(visitingCharge));
@@ -93,8 +93,8 @@ public class GeneratePatientBillJPanel extends javax.swing.JPanel {
         
         txtOperationCharge.setText(String.valueOf(operationCharge));
         Double labtestCharge = 0d;
-        if(appointment.getLabTestList() != null && appointment.getLabTestList().getLabTestArray() != null){
-            for(LabTest labTest : appointment.getLabTestList().getLabTestArray()){
+        if(appointment.getLabTestArray() != null && appointment.getLabTestArray().getLabTestArray() != null){
+            for(LabTest labTest : appointment.getLabTestArray().getLabTestArray()){
                 labtestCharge += labTest.getTestAmount();
             }
         }
@@ -365,12 +365,12 @@ public class GeneratePatientBillJPanel extends javax.swing.JPanel {
         Bill bill = new Bill();
         bill.setAppointment(appointment);
         bill.setPat(patient);
-        bill.setDoc(appointment.getDoctor());
+        bill.setDoc(appointment.getDoc());
         bill.setStatus("Pending approval from Insurance");
         bill.setChargeTotal(Double.valueOf(txtTotalCharge.getText()));
         bill.setEnterprise(enterprise);
         bills.add(bill);
-        appointment.setHospitalbill(bill);
+        appointment.setHospBill(bill);
         appointment.setStatus(Appointment.AppointmentStatus.MarkForInsurance.getValue());
        // for(Appointment appointment : patient.getAppointmentDirectory().getAppointmentList()){
          //   if(appointment.getAppointmentId() == this.appointment.getAppointmentId()){

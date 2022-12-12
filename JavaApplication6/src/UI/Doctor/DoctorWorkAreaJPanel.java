@@ -66,7 +66,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         this.userAccount = userAccount;
         this.network=enterprise.getNetwork();
         enterpriseLabel.setText(enterprise.getOrgName());
-        this.doctor=userAccount.getEmployee();
+        this.doctor=userAccount.getEmp();
         populateRequestTable();
         scheduleSurgeryJPanel.setVisible(false);
         //viewPrescriptionPanel.setVisible(false);
@@ -81,7 +81,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) DoctorWorkAreaTable.getModel();
         
         model.setRowCount(0);
-        for (WorkRequest request : userAccount.getWorkQueue().getWorkRequestList()){
+        for (WorkRequest request : userAccount.getWq().getWorkRequestList()){
             if(!((DoctorWorkRequest)request).getAppointment().getStatus().equals("Cancel")){
             Object[] row = new Object[6];
             row[0] = ((DoctorWorkRequest)request).getPatient();//request.getMessage();
@@ -561,7 +561,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 operation.setStatus(Operation.OperationStatus.WaitingConfirmation.getStatValue());
                 operation.setOprType((String)cmbOperationType.getSelectedItem());
                 //set operation
-                appointment.setOperation(operation);
+                appointment.setOp(operation);
                 //changed next line status
                 appointment.setStatus(Appointment.AppointmentStatus.Markforsurgery.getValue());
                 NurseWorkRequest workreq = new NurseWorkRequest();
@@ -816,7 +816,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 workreq.setDoctor(doctor);
                 workreq.setReceiver(receptionist);
                 //Appointment appointment = (Appointment) 
-                receptionist.getWorkQueue().getWorkRequestList().add(workreq);
+                receptionist.getWq().getWorkRequestList().add(workreq);
                 //UserAccount recepUseracc = null;
                 //List<UserAccount> userAccDir=  organization.getUserAccountDirectory().getUserAccountList();
                 //List<UserAccount> nurseList = enterprise.getUserAccountDirectory().getUserAccountList();

@@ -527,15 +527,15 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
         }
         Employee doctor = (Employee)cmbDoctor.getSelectedItem();
         if(enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Hospital.getValue())){
-            for(Appointment appointment : patient.getApptDir().getAppointmentList()){
-                if((appointment.getDate().compareTo(date1) == 0) && (appointment.getDoctor().getID() == doctor.getID())&& !appointment.getStatus().equalsIgnoreCase(Appointment.AppointmentStatus.Cancel.getValue())){
+            for(Appointment appointment : patient.getApptDir().getApptList()){
+                if((appointment.getDate().compareTo(date1) == 0) && (appointment.getDoc().getID() == doctor.getID())&& !appointment.getStatus().equalsIgnoreCase(Appointment.AppointmentStatus.Cancel.getValue())){
                     JOptionPane.showMessageDialog(null, "Patient has already booked appointment!", "Warning", JOptionPane.WARNING_MESSAGE);
                     return;
                 }
             }
         }else if(enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())){
-            for(Appointment appointment : patient.getLabApptDir().getAppointmentList()){
-                if((appointment.getDate().compareTo(date1) == 0) && (appointment.getDoctor().getID() == doctor.getID()) &&  !appointment.getStatus().equalsIgnoreCase(Appointment.AppointmentStatus.Cancel.getValue())){
+            for(Appointment appointment : patient.getLabApptDir().getApptList()){
+                if((appointment.getDate().compareTo(date1) == 0) && (appointment.getDoc().getID() == doctor.getID()) &&  !appointment.getStatus().equalsIgnoreCase(Appointment.AppointmentStatus.Cancel.getValue())){
                     JOptionPane.showMessageDialog(null, "Patient has already booked appointment!", "Warning", JOptionPane.WARNING_MESSAGE);
                     return;
                 }
@@ -554,10 +554,10 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
         
         Appointment appoint = null;
         if(enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Hospital.getValue())){
-            appoint = patient.getApptDir().createAppointment(patient, doctor, date1 , (String)txtAppointmentType.getSelectedItem());
+            appoint = patient.getApptDir().postAppointment(patient, doctor, date1 , (String)txtAppointmentType.getSelectedItem());
             appoint.setTime(time);
         }else if(enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())){
-            appoint = patient.getLabApptDir().createLabAppointment(patient, doctor, date1 , (String)txtAppointmentType.getSelectedItem());
+            appoint = patient.getLabApptDir().postLabAppointment(patient, doctor, date1 , (String)txtAppointmentType.getSelectedItem());
             appoint.setTime(time);
         }
         Patient pt=null;
@@ -586,13 +586,13 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
        for(Organization dept : deptList)
        {
            if(dept instanceof model.Organization.GeneralOrganization){
-                drUserAcc = dept.getUserAcctDir().getUserAccByEMployee(doctor);
+                drUserAcc = dept.getUserAcctDir().getUserAccByEmp(doctor);
               if(drUserAcc!=null ) {break;}
            }else if(dept instanceof model.Organization.PathologyOrganization){
-               drUserAcc = dept.getUserAcctDir().getUserAccByEMployee(doctor);
+               drUserAcc = dept.getUserAcctDir().getUserAccByEmp(doctor);
               if(drUserAcc!=null ) {break;}
            }else if(dept instanceof model.Organization.RadiologyOrganization){
-               drUserAcc = dept.getUserAcctDir().getUserAccByEMployee(doctor);
+               drUserAcc = dept.getUserAcctDir().getUserAccByEmp(doctor);
              if(drUserAcc!=null ) {break;}
            }
        }
@@ -628,11 +628,11 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
                 labTest.setLabTech(null);
                 labTest.setPatient(patient);
                 labTest.setNameVar("none");
-                labTest.setDoc(appoint.getDoctor());
+                labTest.setDoc(appoint.getDoc());
                 labTest.setStatusVar("New");
                 //labTest.setType(testType);
                 workreq.setLabTest(labTest);
-                appoint.getLabTestList().addLabTest(labTest);
+                appoint.getLabTestArray().addLabTest(labTest);
                 appoint.setStatus(Appointment.AppointmentStatus.MarkforTest.getValue());
         }else if(enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Hospital.getValue())){
             DoctorWorkRequest drWorkReq = new DoctorWorkRequest();
@@ -644,7 +644,7 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
             drWorkReq.setAppointment(appoint);
             drWorkReq.setRequestDate(new Date());
             drWorkReq.setResolveDate(new Date());
-            drUserAcc.getWorkQueue().getWorkRequestList().add(drWorkReq);
+            drUserAcc.getWq().getWorkRequestList().add(drWorkReq);
         }
         
         JOptionPane.showMessageDialog(null, "Appointment booked successfully!", "Information", JOptionPane.INFORMATION_MESSAGE);

@@ -97,12 +97,12 @@ jLabel6.setIcon(profilePic);
     void populateSurgery(){
            DefaultTableModel model = (DefaultTableModel) tblSurgeyDetails.getModel();
         model.setRowCount(0);
-        Operation operatn = appointment.getOperation();
-        if(appointment.getOperation() == null)
+        Operation operatn = appointment.getOp();
+        if(appointment.getOp() == null)
         {
             scheduleSurgeryJPanel.setVisible(true);
             patientNameTxt.setText(patient.getNameVar());
-            appoinmtntDTxt.setText(String.valueOf(appointment.getAppointmentId()));
+            appoinmtntDTxt.setText(String.valueOf(appointment.getApptId()));
             appoinmtntDTxt.setEditable(false);
             patientNameTxt.setEditable(false);
             return;
@@ -418,7 +418,7 @@ jLabel6.setIcon(profilePic);
                 operation.setStatus(Operation.OperationStatus.WaitingConfirmation.getStatValue());
                 operation.setOprType((String)cmbOperationType.getSelectedItem());
                 //set operation
-                appointment.setOperation(operation);
+                appointment.setOp(operation);
                 //changed next line status
                 appointment.setStatus(Appointment.AppointmentStatus.Markforsurgery.getValue());
                 NurseWorkRequest workreq = new NurseWorkRequest();

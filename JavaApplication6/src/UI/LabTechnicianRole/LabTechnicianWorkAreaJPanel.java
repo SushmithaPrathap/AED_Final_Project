@@ -70,7 +70,7 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
         testNameTxt.setText(labTest.getNameVar());
         testNameTxt.setEditable(false);
         technicianNameTxt.setEditable(false);
-        technicianNameTxt.setText(userAccount.getEmployee().getNameVar());
+        technicianNameTxt.setText(userAccount.getEmp().getNameVar());
         testDateTxt.setText(new Date().toString());
 
         Date date = new Date();
@@ -399,9 +399,9 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
             }
 
             Appointment labAppointment = null;
-            if (request.getSender().getEmployee().getRole().equals("Doctor Role")) {
-                labAppointment = patient.getLabApptDir().createLabAppointment(patient, userAccount.getEmployee(), appointment.getDate(), appointment.getType());
-                labAppointment.getLabTestList().addLabTest(labTest);
+            if (request.getSender().getEmp().getRole().equals("Doctor Role")) {
+                labAppointment = patient.getLabApptDir().postLabAppointment(patient, userAccount.getEmp(), appointment.getDate(), appointment.getType());
+                labAppointment.getLabTestArray().addLabTest(labTest);
 //                patient.getLabAppointmentDirectory().getAppointmentList().add(labAppointment);
                 appointment.setStatus(Appointment.AppointmentStatus.GeneratedReport.getValue());
 //                labAppointment.setStatus(Appointment.AppointmentStatus.Markforbilling.getValue());
@@ -417,7 +417,7 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
             // workreq.setPatient(patient);
             workreq.setSender(userAccount);
             workreq.setPatient(patient);
-            workreq.setDoctor(userAccount.getEmployee());
+            workreq.setDoctor(userAccount.getEmp());
             //workreq.setReceiver(userAccount);
             Lab lab = (Lab) enterprise;
             lab.getOrgWq().getWorkRequestList().add(workreq);
@@ -550,7 +550,7 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
             //}
 
             //send report to doctor email
-            Validation.sendEmailAttachment(request.getSender().getEmployee().getEmail(), "Reports for patient",
+            Validation.sendEmailAttachment(request.getSender().getEmp().getEmail(), "Reports for patient",
                     "Please find reports attached", lblFileUpload.getText());
 
         } catch (Exception e) {

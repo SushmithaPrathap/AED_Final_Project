@@ -44,7 +44,7 @@ public class LabAssistantMainAreaJPanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         //this.business = business;
         this.organization = organization;
-        jLabel5.setText("Welcome " + account.getEmployee().getNameVar());
+        jLabel5.setText("Welcome " + account.getEmp().getNameVar());
         populateTable();
     }
 
@@ -62,7 +62,7 @@ public class LabAssistantMainAreaJPanel extends javax.swing.JPanel {
                 Object[] row = new Object[8];
                 row[0] = request.getSender();
                 //row[1] = request.getSender().getEmployee().getName();
-                row[1] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getNameVar();
+                row[1] = request.getReceiver() == null ? null : request.getReceiver().getEmp().getNameVar();
                 row[2] = ((LabTechnicianWorkRequest) request).getPatient();
 
                 row[3] = request.getStatus();
@@ -225,7 +225,7 @@ public class LabAssistantMainAreaJPanel extends javax.swing.JPanel {
             return;
         }
         LabTest lt = (LabTest) workRequestJTable.getValueAt(selectedRow, 4);
-        lt.setLabTech(userAccount.getEmployee());
+        lt.setLabTech(userAccount.getEmp());
         lt.setStatusVar("In Process");
         request.setReceiver(userAccount);
         request.setStatus("Pending");

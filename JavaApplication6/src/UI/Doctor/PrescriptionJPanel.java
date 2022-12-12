@@ -349,12 +349,12 @@ public class PrescriptionJPanel extends javax.swing.JPanel {
            JOptionPane.showMessageDialog(null, "Fields cannot be empty"); 
         }
         else
-        {Prescription prescription = appointment.getPrescription();//prescriptionList.addPrescription();
+        {Prescription prescription = appointment.getPrescription();//prescriptionList.postPrescription();
         //prescription.setDate(date);
         prescription.setPatient(patient);
-        prescription.setDoctor(doctor);
+        prescription.setDoc(doctor);
         
-        patient.getApptDir().getPrescriptionList().add(prescription);
+        patient.getApptDir().getPrescriptionArary().add(prescription);
         
         //pharmacy work request created--todo
         PharmacyWorkRequest phWr = new PharmacyWorkRequest();
@@ -365,12 +365,12 @@ public class PrescriptionJPanel extends javax.swing.JPanel {
                 phWr.setAppointment(appointment);
                 phWr.setDoctor(doctor);
                 phWr.setPatient(patient);
-                phWr.setMedicineMap(appointment.getPrescription().getMedicinePrescribed());
+                phWr.setMedicineMap(appointment.getPrescription().getMedPrescribed());
                 //phWr.setReceiver(receptionist);
                 //Appointment appointment = (Appointment) 
                 Pharmacy pharEnterprise =(Pharmacy) cmbPharmacy.getSelectedItem();
                 pharEnterprise.getOrgWq().getWorkRequestList().add(phWr);
-                prescription.setPhmacy(pharEnterprise);
+                prescription.setPharm(pharEnterprise);
                 //UserAccount recepUseracc = null;
                 //List<UserAccount> userAccDir=  organization.getUserAccountDirectory().getUserAccountList();
                 //List<UserAccount> nurseList = enterprise.getUserAccountDirectory().getUserAccountList();
@@ -402,7 +402,7 @@ public class PrescriptionJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         Prescription prescription = appointment.getPrescription();
         
-        prescription.getMedicinePrescribed().clear();
+        prescription.getMedPrescribed().clear();
     }//GEN-LAST:event_cmbPharmacyActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -435,19 +435,19 @@ public class PrescriptionJPanel extends javax.swing.JPanel {
         
         Prescription prescription = appointment.getPrescription();
         
-        if(prescription.getMedicinePrescribed() == null){
+        if(prescription.getMedPrescribed() == null){
            Map<Medicine, Double>  medicinePrescribed = new HashMap<>();
-           prescription.setMedicinePrescribed(medicinePrescribed);
+           prescription.setMedPrescribed(medicinePrescribed);
         }
-        prescription.getMedicinePrescribed().put(med, dosage);
+        prescription.getMedPrescribed().put(med, dosage);
         
-        if(prescription.getMedicineListquanity() == null){
+        if(prescription.getMedicineListQuan() == null){
            Map<Medicine, Integer>  medicinePrescribed = new HashMap<>();
-           prescription.setMedicineListquanity(medicinePrescribed);
+           prescription.setMedicineListQuan(medicinePrescribed);
         }
         
         
-        prescription.getMedicineListquanity().put(med, quantity);
+        prescription.getMedicineListQuan().put(med, quantity);
         
         
         

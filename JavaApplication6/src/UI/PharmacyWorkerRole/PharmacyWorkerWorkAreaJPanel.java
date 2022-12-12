@@ -65,7 +65,7 @@ public class PharmacyWorkerWorkAreaJPanel extends javax.swing.JPanel {
         //populateTable();
         
         technicianNameTxt.setEditable(false);
-        technicianNameTxt.setText(userAccount.getEmployee().getNameVar());
+        technicianNameTxt.setText(userAccount.getEmp().getNameVar());
         totalPriceTxt.setEditable(false);
         Date date = new Date();
      // String timeFormatString = "hh:mm:ss a";
@@ -91,7 +91,7 @@ public class PharmacyWorkerWorkAreaJPanel extends javax.swing.JPanel {
          DefaultTableModel model = (DefaultTableModel) medicineQuantityTbl.getModel();
         model.setRowCount(0);
         Double totalPrice = 0.0;
-        for (Map.Entry<Medicine, Integer> entry : appointment.getPrescription().getMedicineListquanity().entrySet()){
+        for (Map.Entry<Medicine, Integer> entry : appointment.getPrescription().getMedicineListQuan().entrySet()){
          Object[] row = new Object[5];
             row[0] = entry.getKey();
             row[1] = entry.getValue();
@@ -109,7 +109,7 @@ public class PharmacyWorkerWorkAreaJPanel extends javax.swing.JPanel {
             row[3] = entry.getValue() * medicine.getAmount();
             totalPrice += entry.getValue() * medicine.getAmount();
             }
-            row[4] = appointment.getPrescription().getPhmacy().getOrgName();
+            row[4] = appointment.getPrescription().getPharm().getOrgName();
             model.addRow(row);
             
     }

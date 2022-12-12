@@ -6,7 +6,6 @@
 package model.appointment;
 
 import model.Employee.Employee;
-//import static model.Enterprise.Enterprise.EnterpriseType.Pharmacy;
 import model.Enterprise.Lab.LabTestDirectory;
 import model.Enterprise.Pharmacy.Pharmacy;
 import model.Medicine.Medicine;
@@ -21,11 +20,11 @@ import java.util.Map;
  */
 public class Prescription {
 
-    LabTestDirectory labTestList;
+    LabTestDirectory labTestArray;
     //MedicineDirectory medicineList;
-    Map<Medicine, Double> medicinePrescribed;
-    Map<Medicine, Integer> medicineListquanity;
-    private Pharmacy phmacy;
+    Map<Medicine, Double> medPrescribed;
+    Map<Medicine, Integer> medicineListQuan;
+    private Pharmacy pharm;
     private String status;
     private double amount;
 
@@ -45,58 +44,58 @@ public class Prescription {
         this.status = status;
     }
 
-    public Pharmacy getPhmacy() {
-        return phmacy;
+    public Pharmacy getPharm() {
+        return pharm;
     }
 
-    public void setPhmacy(Pharmacy phmacy) {
-        this.phmacy = phmacy;
+    public void setPharm(Pharmacy pharm) {
+        this.pharm = pharm;
     }
-    private Date createdOn;
-    Employee doctor;
+    private Date createdDate;
+    Employee doc;
     Patient patient;
     private String history;
 
     public Prescription() {
-        this.createdOn = new Date();
-        medicinePrescribed = new HashMap<>();
-        medicineListquanity = new HashMap<>();
+        this.createdDate = new Date();
+        medPrescribed = new HashMap<>();
+        medicineListQuan = new HashMap<>();
     }
 
-    public LabTestDirectory getLabTestList() {
-        return labTestList;
+    public LabTestDirectory getLabTestArray() {
+        return labTestArray;
     }
 
-    public void setLabTestList(LabTestDirectory labTestList) {
-        this.labTestList = labTestList;
+    public void setLabTestArray(LabTestDirectory labTestArray) {
+        this.labTestArray = labTestArray;
     }
 
-    public Map<Medicine, Double> getMedicinePrescribed() {
-        return medicinePrescribed;
+    public Map<Medicine, Double> getMedPrescribed() {
+        return medPrescribed;
     }
 
-    public void setMedicinePrescribed(Map<Medicine, Double> medicinePrescribed) {
-        this.medicinePrescribed = medicinePrescribed;
+    public void setMedPrescribed(Map<Medicine, Double> medPrescribed) {
+        this.medPrescribed = medPrescribed;
     }
 
-    public Map<Medicine, Integer> getMedicineListquanity() {
-        return medicineListquanity;
+    public Map<Medicine, Integer> getMedicineListQuan() {
+        return medicineListQuan;
     }
 
-    public void setMedicineListquanity(Map<Medicine, Integer> medicineListquanity) {
-        this.medicineListquanity = medicineListquanity;
+    public void setMedicineListQuan(Map<Medicine, Integer> medicineListQuan) {
+        this.medicineListQuan = medicineListQuan;
     }
 
-    public Date getCreatedOn() {
-        return createdOn;
+    public Date getCreatedDate() {
+        return createdDate;
     }
 
-    public Employee getDoctor() {
-        return doctor;
+    public Employee getDoc() {
+        return doc;
     }
 
-    public void setDoctor(Employee doctor) {
-        this.doctor = doctor;
+    public void setDoc(Employee doc) {
+        this.doc = doc;
     }
 
     public Patient getPatient() {
@@ -114,5 +113,4 @@ public class Prescription {
     public void setHistory(String history) {
         this.history = history;
     }
-
 }

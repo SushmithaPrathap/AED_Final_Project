@@ -617,7 +617,7 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
         insrdtl.setType(type);
         insrdtl.setValidDate(date1);
         insrdtl.setSSNVar(ssnString);
-        insrdtl.setInsDealer(useraccount.getEmployee());
+        insrdtl.setInsDealer(useraccount.getEmp());
         
         if(((Insurance)enterprise).getInsdir() == null)
         {
@@ -816,7 +816,7 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
         insrdtl.setType(type);
         insrdtl.setValidDate(date1);
         insrdtl.setSSNVar(ssnString);
-        insrdtl.setInsDealer(useraccount.getEmployee());
+        insrdtl.setInsDealer(useraccount.getEmp());
         //((Insurance)enterprise).getIndir().getInsuranceDir().add(insrdtl);
         
         
@@ -857,7 +857,7 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
         addMedicineJPanel.setVisible(true);
-        nameJTextField.setText(useraccount.getEmployee().getNameVar());
+        nameJTextField.setText(useraccount.getEmp().getNameVar());
         nameJTextField.setEditable(false);
         populateInsuranceType();
     }//GEN-LAST:event_btnAddActionPerformed

@@ -88,12 +88,12 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         List<Appointment> appointments = null;
         if(enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Hospital.getValue())){
-            if(patient.getApptDir() != null && patient.getApptDir().getAppointmentList() != null){
-                appointments = patient.getApptDir().getAppointmentList();
+            if(patient.getApptDir() != null && patient.getApptDir().getApptList() != null){
+                appointments = patient.getApptDir().getApptList();
             }
         }else if(enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())){
-            if(patient.getLabApptDir()!= null && patient.getLabApptDir().getAppointmentList() != null){
-                appointments = patient.getLabApptDir().getAppointmentList();
+            if(patient.getLabApptDir()!= null && patient.getLabApptDir().getApptList() != null){
+                appointments = patient.getLabApptDir().getApptList();
             }
         }
            
@@ -103,11 +103,11 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
                 Object[] row = new Object[7];
                 row[0] = patient.getID();
                 row[1] = patient;//.getName();
-                row[2] = appointment.getAppointmentId();
-                if(appointment.getDoctor().getSpecialization() != null){
-                    row[3] = appointment.getDoctor().getNameVar() + "-" + appointment.getDoctor().getSpecialization().getValue();
+                row[2] = appointment.getApptId();
+                if(appointment.getDoc().getSpecialization() != null){
+                    row[3] = appointment.getDoc().getNameVar() + "-" + appointment.getDoc().getSpecialization().getValue();
                 }else{
-                    row[3] = appointment.getDoctor().getNameVar();
+                    row[3] = appointment.getDoc().getNameVar();
                 }
                 row[4] = appointment;//formatter1.format(appointment.getDate());
                 row[5] = appointment.getType();
@@ -122,12 +122,12 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         List<Appointment> appointments = null;
         if(enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Hospital.getValue())){
-            if(patient.getApptDir() != null && patient.getApptDir().getAppointmentList() != null){
-                appointments = patient.getApptDir().getAppointmentList();
+            if(patient.getApptDir() != null && patient.getApptDir().getApptList() != null){
+                appointments = patient.getApptDir().getApptList();
             }
         }else if(enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())){
-            if(patient.getLabApptDir()!= null && patient.getLabApptDir().getAppointmentList() != null){
-                appointments = patient.getLabApptDir().getAppointmentList();
+            if(patient.getLabApptDir()!= null && patient.getLabApptDir().getApptList() != null){
+                appointments = patient.getLabApptDir().getApptList();
             }
         }
            
@@ -136,11 +136,11 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
                 Object[] row = new Object[7];
                 row[0] = patient.getID();
                 row[1] = patient;//.getName();
-                row[2] = appointment.getAppointmentId();
-                if(appointment.getDoctor().getSpecialization() != null){
-                    row[3] = appointment.getDoctor().getNameVar() + "-" + appointment.getDoctor().getSpecialization().getValue();
+                row[2] = appointment.getApptId();
+                if(appointment.getDoc().getSpecialization() != null){
+                    row[3] = appointment.getDoc().getNameVar() + "-" + appointment.getDoc().getSpecialization().getValue();
                 }else{
-                    row[3] = appointment.getDoctor().getNameVar();
+                    row[3] = appointment.getDoc().getNameVar();
                 }
                 row[4] = appointment;//formatter1.format(appointment.getDate());
                 row[5] = appointment.getType();
@@ -448,10 +448,10 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
           
             txtPatientId.setText(String.valueOf(appointment.getPatient().getID()));
             txtPatientName.setText(appointment.getPatient().getNameVar());
-            if(appointment.getDoctor().getSpecialization() != null){
-                txtDoctor.setText(appointment.getDoctor().getNameVar() + " - " + appointment.getDoctor().getSpecialization().getValue());
+            if(appointment.getDoc().getSpecialization() != null){
+                txtDoctor.setText(appointment.getDoc().getNameVar() + " - " + appointment.getDoc().getSpecialization().getValue());
             }else{
-                txtDoctor.setText(appointment.getDoctor().getNameVar());
+                txtDoctor.setText(appointment.getDoc().getNameVar());
             }
             SimpleDateFormat formatter1=new SimpleDateFormat("yyyy-MM-dd");
             txtAppointmetDate.setText(formatter1.format(appointment.getDate()));
@@ -461,7 +461,7 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
             txtInsuranceId.setText(patient.getInsId());
             
             String insuranceStatus="Pending";
-            if(appointment.getHospitalbill() == null)
+            if(appointment.getHospBill() == null)
             {
                 insuranceStatus = "Not claimed";
                 
@@ -494,7 +494,7 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Appointment Cancelled", "Info", JOptionPane.WARNING_MESSAGE);
                 populatePatientVisits(AppointmentStatus.Cancel.getValue());
                 
-                ArrayList<Integer> arrlistime=appointment.getDoctor().getSchedule().get(appointment.getDate());
+                ArrayList<Integer> arrlistime=appointment.getDoc().getSchedule().get(appointment.getDate());
                 arrlistime.remove(appointment.getTime());
                 DB4OUtil.getInstance().storeSystem(system);
                 
@@ -527,7 +527,7 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
             return;
         }
         
-        if(appointment != null && appointment.getHospitalbill() != null && appointment.getHospitalbill().getStatus().equals("Pending approval from Insurance"))
+        if(appointment != null && appointment.getHospBill() != null && appointment.getHospBill().getStatus().equals("Pending approval from Insurance"))
         {
             JOptionPane.showMessageDialog(null, "Bill is already generated", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
@@ -553,7 +553,7 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
             return;
         }
         
-        if(appointment != null && appointment.getHospitalbill() == null)
+        if(appointment != null && appointment.getHospBill() == null)
         {
             JOptionPane.showMessageDialog(null, "Bill is not generated", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
@@ -568,7 +568,7 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
         
         
         appointment.setStatus(Appointment.AppointmentStatus.Close.getValue());
-        appointment.getHospitalbill().setStatus("Close");
+        appointment.getHospBill().setStatus("Close");
         txtAppointmentStatus.setText("Close");
         populatePatientVisits("Close");
     }//GEN-LAST:event_btnCloseActionPerformed
@@ -583,7 +583,7 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
             return;
         }
         
-        if(appointment != null && appointment.getHospitalbill() == null)
+        if(appointment != null && appointment.getHospBill() == null)
         {
             JOptionPane.showMessageDialog(null, "Bill not generated, please generate bill.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;

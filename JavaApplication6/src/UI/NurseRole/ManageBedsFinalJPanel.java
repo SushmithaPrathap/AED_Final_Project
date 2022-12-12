@@ -483,7 +483,7 @@ public class ManageBedsFinalJPanel extends javax.swing.JPanel {
                     Patient pat= selectedBed.getPat();
                     Appointment appointment = selectedBed.getAppointment();
                     selectedBed.setBedStatus(Bed.BedStatus.AssignedLaundry);
-                    appointment.getOperation().setStatus(Operation.OperationStatus.Completed.getStatValue());
+                    appointment.getOp().setStatus(Operation.OperationStatus.Completed.getStatValue());
                     JOptionPane.showMessageDialog(null, "Bed status changed Successfully!", "Information", JOptionPane.INFORMATION_MESSAGE);
 //                    Patient pat= bedorg.getPatientByBedNDate(selectedBed,date1);
 //                    List<Appointment> appnmtList = pat.getAppointmentDirectory().getAppointmentList();

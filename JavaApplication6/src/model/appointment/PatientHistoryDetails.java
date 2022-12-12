@@ -14,23 +14,23 @@ import java.util.Date;
  */
 public class PatientHistoryDetails {
 
-    private String medAlergies;
+    private String medAllergies;
     private Patient patient;
-    private String previousDiagnosis;
+    private String prevDiagnosis;
     private Person person;
-    private Date createdOn;
+    private Date created;
     private String surgeryHistory;
     private String familyHistory;
-    private String alergy;
+    private String allergy;
     private int id;
-    private static int count = 10;
+    private static int cnt = 10;
 
     public int getId() {
         return id;
     }
 
     public PatientHistoryDetails() {
-        this.id = id + ++count;
+        this.id = id + ++cnt;
     }
 
     @Override
@@ -38,12 +38,12 @@ public class PatientHistoryDetails {
         return String.valueOf(this.id);
     }
 
-    public String getAlergy() {
-        return alergy;
+    public String getAllergy() {
+        return allergy;
     }
 
-    public void setAlergy(String alergy) {
-        this.alergy = alergy;
+    public void setAllergy(String allergy) {
+        this.allergy = allergy;
     }
 
     public String getSurgeryHistory() {
@@ -62,16 +62,16 @@ public class PatientHistoryDetails {
         this.familyHistory = familyHistory;
     }
 
-    public Date getCreatedOn() {
-        return createdOn;
+    public Date getCreated() {
+        return created;
     }
 
-    public String getMedAlergies() {
-        return medAlergies;
+    public String getMedAllergies() {
+        return medAllergies;
     }
 
-    public void setMedAlergies(String medAlergies) {
-        this.medAlergies = medAlergies;
+    public void setMedAllergies(String medAllergies) {
+        this.medAllergies = medAllergies;
     }
 
     public Patient getPatient() {
@@ -82,12 +82,12 @@ public class PatientHistoryDetails {
         this.patient = patient;
     }
 
-    public String getPreviousDiagnosis() {
-        return previousDiagnosis;
+    public String getPrevDiagnosis() {
+        return prevDiagnosis;
     }
 
-    public void setPreviousDiagnosis(String previousDiagnosis) {
-        this.previousDiagnosis = previousDiagnosis;
+    public void setPrevDiagnosis(String prevDiagnosis) {
+        this.prevDiagnosis = prevDiagnosis;
     }
 
     public Person getPerson() {

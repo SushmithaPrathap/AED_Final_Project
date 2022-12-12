@@ -131,8 +131,8 @@ public abstract class Organization {
     }
 
     public void deleteUserAccount() {
-        for (UserAccount userAcc : userAcctDir.getUserAccountList()) {
-            this.userAcctDir.removeUserAccount(userAcc);
+        for (UserAccount userAcc : userAcctDir.getUserAccountArray()) {
+            this.userAcctDir.deleteUserAccount(userAcc);
         }
 
     }

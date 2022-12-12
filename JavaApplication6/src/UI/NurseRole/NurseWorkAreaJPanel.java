@@ -39,7 +39,7 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
         //viewDetailsJPanel.setVisible(false);
         //searchJPanel.setVisible(false);
         enterpriseLabel.setText(enterprise.getOrgName());
-        jLabel5.setText("Welcome " + ua.getEmployee().getNameVar());
+        jLabel5.setText("Welcome " + ua.getEmp().getNameVar());
         // requestTestJButton.setVisible(false);
     }
 
@@ -60,7 +60,7 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
                 row[5] = request;
                 row[6] = request.getMessage();
                 row[7] = app.getStatus();
-                Operation opr = app.getOperation() == null ? null : app.getOperation();
+                Operation opr = app.getOp() == null ? null : app.getOp();
                 row[8] = opr.getStatus() == null ? "" : opr.getStatus();
                 row[9] = opr.getOprType();
                 row[10] = opr.getOpDate() == null ? "" : opr.getOpDate();
@@ -289,7 +289,7 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
                 row[5] = request;
                 row[6] = request.getMessage();
                 row[7] = app.getStatus();
-                Operation opr = app.getOperation() == null ? null : app.getOperation();
+                Operation opr = app.getOp() == null ? null : app.getOp();
                 row[8] = opr.getStatus() == null ? "" : opr.getStatus();
                 row[9] = opr.getOprType();
                 row[10] = opr.getOpDate() == null ? "" : opr.getOpDate();

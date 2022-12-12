@@ -307,7 +307,7 @@ public class Validation {
         for (Network net : system.getNetworkArray()) {
             List<Enterprise> entrList = net.getEnterpriseDir().getEnterpriseArray();
             for (Enterprise entpr : entrList) {
-                isUserNameUnique = entpr.getUserAcctDir().checkIfUsernameIsUnique(username);
+                isUserNameUnique = entpr.getUserAcctDir().checkIfUserNameIsUnique(username);
                 if (isUserNameUnique == false) {
 
                     //  JOptionPane.showMessageDialog(null, "Username already exists, try another name!");

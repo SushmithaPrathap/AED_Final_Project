@@ -63,7 +63,7 @@ public class ViewPatientJPanel extends javax.swing.JPanel {
         txtPatientName.setText(patient.getNameVar());
         txtGender.setSelectedItem(patient.getPatSex());
         txtPhoneNumber.setText(patient.getPhone());
-        txtUserName.setText(patient.getUserAcc().getUsername());
+        txtUserName.setText(patient.getUserAcc().getUserName());
         txtPassword.setText(patient.getUserAcc().getPassword());
         txtBloodGroup.setSelectedItem(patient.getBloodGrp());
         txtEmail.setText(patient.getEmail());

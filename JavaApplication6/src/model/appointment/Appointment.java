@@ -21,25 +21,25 @@ import java.util.Date;
  */
 public class Appointment {
 
-    int appointmentId;
+    int apptId;
     String type; //online, in-person
     Date date;
-    Employee doctor;
+    Employee doc;
     Patient patient;
-    String status;  //new, booked, cancelled, rescheduled, completed , mark for billing
+    String status;  //status should be --> new, booked, cancelled, rescheduled, completed , mark for billing
     String location;
-    private Operation operation;
-    LabTestDirectory labTestList;
+    private Operation op;
+    LabTestDirectory labTestArray;
     Prescription prescription;
     Integer time;
-    Bill Hospitalbill;
+    Bill hospBill;
 
-    public Bill getHospitalbill() {
-        return Hospitalbill;
+    public Bill getHospBill() {
+        return hospBill;
     }
 
-    public void setHospitalbill(Bill bill) {
-        this.Hospitalbill = bill;
+    public void setHospBill(Bill bill) {
+        this.hospBill = bill;
     }
 
     public Integer getTime() {
@@ -49,47 +49,47 @@ public class Appointment {
     public void setTime(Integer time) {
         this.time = time;
     }
-    String appoitmentHistory;
+    String apptHistory;
 
-    public String getAppoitmentHistory() {
-        return appoitmentHistory;
+    public String getApptHistory() {
+        return apptHistory;
     }
 
-    public void setAppoitmentHistory(String appoitmentHistory) {
-        this.appoitmentHistory = appoitmentHistory;
+    public void setApptHistory(String apptHistory) {
+        this.apptHistory = apptHistory;
     }
 
-    Pharmacy pharmacy;
+    Pharmacy pharm;
 
     public Prescription getPrescription() {
         return prescription;
     }
 
-    public LabTestDirectory getLabTestList() {
-        return labTestList;
+    public LabTestDirectory getLabTestArray() {
+        return labTestArray;
     }
 
-    public void setLabTestList(LabTestDirectory labTestList) {
-        this.labTestList = labTestList;
+    public void setLabTestArray(LabTestDirectory labTestArray) {
+        this.labTestArray = labTestArray;
     }
 
     public void setPrescription(Prescription prescription) {
         this.prescription = prescription;
     }
 
-    public Appointment(int count) {
-        this.appointmentId = count;
+    public Appointment(int cnt) {
+        this.apptId = cnt;
         prescription = new Prescription();
-        labTestList = new LabTestDirectory();
-        appoitmentHistory = "";
+        labTestArray = new LabTestDirectory();
+        apptHistory = "";
     }
 
-    public int getAppointmentId() {
-        return appointmentId;
+    public int getApptId() {
+        return apptId;
     }
 
-    public void setAppointmentId(int appointmentId) {
-        this.appointmentId = appointmentId;
+    public void setApptId(int apptId) {
+        this.apptId = apptId;
     }
 
     public String getType() {
@@ -108,12 +108,12 @@ public class Appointment {
         this.date = date;
     }
 
-    public Employee getDoctor() {
-        return doctor;
+    public Employee getDoc() {
+        return doc;
     }
 
-    public void setDoctor(Employee doctor) {
-        this.doctor = doctor;
+    public void setDoc(Employee doc) {
+        this.doc = doc;
     }
 
     public Patient getPatient() {
@@ -129,8 +129,8 @@ public class Appointment {
     }
 
     public void setStatus(String status) {
-        this.status = status; //this.status + ", " +
-        this.appoitmentHistory += " " + this.status;
+        this.status = status;
+        this.apptHistory += " " + this.status;
     }
 
     public String getLocation() {
@@ -141,31 +141,30 @@ public class Appointment {
         this.location = location;
     }
 
-    public Operation getOperation() {
-        return operation;
+    public Operation getOp() {
+        return op;
     }
 
-    public void setOperation(Operation operation) {
-        this.operation = operation;
+    public void setOp(Operation op) {
+        this.op = op;
     }
 
-    public Pharmacy getPharmacy() {
-        return pharmacy;
+    public Pharmacy getPharm() {
+        return pharm;
     }
 
-    public void setPharmacy(Pharmacy pharmacy) {
-        this.pharmacy = pharmacy;
+    public void setPharm(Pharmacy pharm) {
+        this.pharm = pharm;
     }
 
     @Override
     public String toString() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String strDate = dateFormat.format(this.date);
-        //new SimpleDateFormat("yyyy-MM-dd").format(this.date);
         return strDate;
     }
 
-    // Appointment-> New, markforbilling, markforsurgery, markforTest, close
+    // Appointment status should be one of these --> New, markforbilling, markforsurgery, markforTest, close
     public enum AppointmentStatus {
         New("New"),
         Markforbilling("Mark for billing"),

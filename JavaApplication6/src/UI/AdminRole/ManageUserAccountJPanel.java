@@ -138,7 +138,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         for (Organization organization : enterprise.getOrgDir().getOrganizationArray()) {
             if(organization.equals(selectedOrganization))
             {
-                for (UserAccount ua : organization.getUserAcctDir().getUserAccountList())
+                for (UserAccount ua : organization.getUserAcctDir().getUserAccountArray())
                 {
                 Object row[] = new Object[3];
                 row[0] = ua;
@@ -160,7 +160,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         
         for (Organization organization : enterprise.getOrgDir().getOrganizationArray()) {
-            for (UserAccount ua : organization.getUserAcctDir().getUserAccountList()) {
+            for (UserAccount ua : organization.getUserAcctDir().getUserAccountArray()) {
                 Object row[] = new Object[3];
                 row[0] = ua;
                 row[1] = ua.getRole();
@@ -800,7 +800,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         //Employee employee = (Employee) employeeJComboBox.getSelectedItem();
         
         Employee employee =organization.getEmpDir().postEmployee(name);
-        //UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee,role);// new AdmRole());
+        //UserAccount account = enterprise.getUserAccountDirectory().postUserAcc(username, password, employee,role);// new AdmRole());
         employee.setEmail(uEmail);
         employee.setPhone(phoneNo);
         String phoneNumberString = null;
@@ -828,7 +828,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         }
         
         employee.setRole(role.roleValue());
-        UserAccount account= organization.getUserAcctDir().createUserAccount(userName, password, employee, role);
+        UserAccount account= organization.getUserAcctDir().postUserAcc(userName, password, employee, role);
         //organization.ge
         popData();
         
@@ -1085,11 +1085,11 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         Role uaRole= selectedUsrAcc.getRole();
         organizationJComboBox2.setSelectedItem((Organization)userJTable.getValueAt(row, 2));  //department at 2nd index
         roleJComboBox2.getModel().setSelectedItem(uaRole);
-        empNameJTextField2.setText(selectedUsrAcc.getEmployee().getNameVar());
-        nameJTextField2.setText(selectedUsrAcc.getUsername());//username
+        empNameJTextField2.setText(selectedUsrAcc.getEmp().getNameVar());
+        nameJTextField2.setText(selectedUsrAcc.getUserName());//username
         passwordJTextField2.setText(selectedUsrAcc.getPassword());
-        uEmailTxt1.setText(selectedUsrAcc.getEmployee().getEmail());
-        phoneNumberTxt1.setText(selectedUsrAcc.getEmployee().getPhone());
+        uEmailTxt1.setText(selectedUsrAcc.getEmp().getEmail());
+        phoneNumberTxt1.setText(selectedUsrAcc.getEmp().getPhone());
         organizationJComboBox2.setEditable(false);
         roleJComboBox2.setEditable(false);
         empNameJTextField2.setEditable(false);
@@ -1104,13 +1104,13 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             visitingChargeTxt2.setVisible(true);
             //visitingChargeLbl2.setEditable(false);
             visitingChargeTxt2.setEditable(false);
-            visitingChargeTxt2.setText(String.valueOf(selectedUsrAcc.getEmployee().getVisitCharge()));
+            visitingChargeTxt2.setText(String.valueOf(selectedUsrAcc.getEmp().getVisitCharge()));
         
         specializationlbl1.setEnabled(true);
         cmbSpecialization1.setEnabled(false);
         specializationlbl1.setVisible(true);
         cmbSpecialization1.setVisible(true);
-        cmbSpecialization1.setSelectedItem(selectedUsrAcc.getEmployee().getSpecialization().getValue());
+        cmbSpecialization1.setSelectedItem(selectedUsrAcc.getEmp().getSpecialization().getValue());
         
         
         }
@@ -1195,14 +1195,14 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         
         //update properrty
         selectedStaff.setPassword(password);
-        selectedStaff.getEmployee().setNameVar(staffName);
-        selectedStaff.getEmployee().setEmail(emailId);
-        selectedStaff.getEmployee().setPhone(phonenum);
+        selectedStaff.getEmp().setNameVar(staffName);
+        selectedStaff.getEmp().setEmail(emailId);
+        selectedStaff.getEmp().setPhone(phonenum);
         if(selectedStaff.getRole().roleValue().equals("Doctor Role"))
         {
-            selectedStaff.getEmployee().setVisitCharge(visitingChgr);
+            selectedStaff.getEmp().setVisitCharge(visitingChgr);
             Employee.TypeSpecialization type=(Employee.TypeSpecialization) cmbSpecialization1.getSelectedItem();
-            selectedStaff.getEmployee().setSpecialization(type);
+            selectedStaff.getEmp().setSpecialization(type);
         }
         //show message success
         JOptionPane.showMessageDialog(null, "Updated Successfully!");
@@ -1250,9 +1250,9 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             for (Organization organization : enterprise.getOrgDir().getOrganizationArray()) 
             {
                 if(org.equals(organization)){
-                organization.getUserAcctDir().removeUserAccount(selectedUsrAcc);
+                organization.getUserAcctDir().deleteUserAccount(selectedUsrAcc);
                 
-                organization.getEmpDir().deleteEmployee(selectedUsrAcc.getEmployee());
+                organization.getEmpDir().deleteEmployee(selectedUsrAcc.getEmp());
                 
                  popData();
                  JOptionPane.showMessageDialog(null, "Deleted successfully!!");

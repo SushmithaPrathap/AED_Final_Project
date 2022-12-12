@@ -52,7 +52,7 @@ public class AssignLabTestJPanel extends javax.swing.JPanel {
         this.userProcessContainer = userProcessContainer;
         this.patient = patient;
         this.appointment = appointment;
-        this.labTestList = appointment.getLabTestList();
+        this.labTestList = appointment.getLabTestArray();
         this.network = network;
         this.userAccount = userAccount;
         this.organization = organization;
@@ -324,11 +324,11 @@ public class AssignLabTestJPanel extends javax.swing.JPanel {
                 labTest.setLabTech(null);
                 labTest.setPatient(patient);
                 labTest.setNameVar(testType);
-                labTest.setDoc(appointment.getDoctor());
+                labTest.setDoc(appointment.getDoc());
                 labTest.setStatusVar("New");
                 //labTest.setType(testType);
                 workreq.setLabTest(labTest);
-                appointment.getLabTestList().addLabTest(labTest);
+                appointment.getLabTestArray().addLabTest(labTest);
                 appointment.setStatus(Appointment.AppointmentStatus.MarkforTest.getValue());
                 DB4OUtil.getInstance().storeSystem(system);
                 //UserAccount recepUseracc = null;
@@ -362,7 +362,7 @@ public class AssignLabTestJPanel extends javax.swing.JPanel {
         if(labTestList==null)
         {
             labTestList= new LabTestDirectory();
-            appointment.setLabTestList(labTestList);
+            appointment.setLabTestArray(labTestList);
         }
         if(labTestList.getLabTestArray() != null && !labTestList.getLabTestArray().isEmpty()){
         for (LabTest labTest : labTestList.getLabTestArray()) {
