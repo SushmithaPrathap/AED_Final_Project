@@ -39,7 +39,7 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
         //viewDetailsJPanel.setVisible(false);
         //searchJPanel.setVisible(false);
         enterpriseLabel.setText(enterprise.getOrgName());
-        jLabel5.setText("Welcome " + ua.getEmp().getNameVar());
+        heading.setText("Welcome " + ua.getEmp().getNameVar());
         // requestTestJButton.setVisible(false);
     }
 
@@ -86,10 +86,7 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
         viewDetailsBtn = new javax.swing.JButton();
         btnManageBedAssngmt = new javax.swing.JButton();
         btnAssignToMe = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel14 = new javax.swing.JPanel();
-        jPanel13 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
+        heading = new javax.swing.JLabel();
         enterpriseLabel = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -124,12 +121,13 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
         workRequestJTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(workRequestJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 1088, 183));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 1088, 183));
 
-        buttonPanel.setBackground(new java.awt.Color(164, 208, 215));
+        buttonPanel.setBackground(new java.awt.Color(236, 236, 236));
 
-        viewReqBtn.setBackground(new java.awt.Color(255, 155, 54));
+        viewReqBtn.setBackground(new java.awt.Color(9, 87, 136));
         viewReqBtn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        viewReqBtn.setForeground(new java.awt.Color(255, 255, 255));
         viewReqBtn.setText("View New Request");
         viewReqBtn.setPreferredSize(new java.awt.Dimension(167, 40));
         viewReqBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -138,8 +136,8 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        refreshTestJButton.setBackground(new java.awt.Color(255, 155, 54));
         refreshTestJButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        refreshTestJButton.setForeground(new java.awt.Color(9, 87, 136));
         refreshTestJButton.setText("Refresh");
         refreshTestJButton.setPreferredSize(new java.awt.Dimension(167, 40));
         refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -148,8 +146,9 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        viewDetailsBtn.setBackground(new java.awt.Color(255, 155, 54));
+        viewDetailsBtn.setBackground(new java.awt.Color(9, 87, 136));
         viewDetailsBtn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        viewDetailsBtn.setForeground(new java.awt.Color(255, 255, 255));
         viewDetailsBtn.setText("View Details");
         viewDetailsBtn.setPreferredSize(new java.awt.Dimension(167, 40));
         viewDetailsBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -158,8 +157,9 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnManageBedAssngmt.setBackground(new java.awt.Color(255, 155, 54));
+        btnManageBedAssngmt.setBackground(new java.awt.Color(9, 87, 136));
         btnManageBedAssngmt.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnManageBedAssngmt.setForeground(new java.awt.Color(255, 255, 255));
         btnManageBedAssngmt.setText("Manage Bed Assignment");
         btnManageBedAssngmt.setPreferredSize(new java.awt.Dimension(167, 40));
         btnManageBedAssngmt.addActionListener(new java.awt.event.ActionListener() {
@@ -168,8 +168,9 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnAssignToMe.setBackground(new java.awt.Color(255, 155, 54));
+        btnAssignToMe.setBackground(new java.awt.Color(9, 87, 136));
         btnAssignToMe.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnAssignToMe.setForeground(new java.awt.Color(255, 255, 255));
         btnAssignToMe.setText("Assign To Me");
         btnAssignToMe.setPreferredSize(new java.awt.Dimension(167, 40));
         btnAssignToMe.addActionListener(new java.awt.event.ActionListener() {
@@ -183,22 +184,22 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
         buttonPanelLayout.setHorizontalGroup(
             buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(buttonPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(viewReqBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addComponent(refreshTestJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
-                .addComponent(viewDetailsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61)
+                .addGap(35, 35, 35)
+                .addComponent(viewReqBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addComponent(refreshTestJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(viewDetailsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
                 .addComponent(btnManageBedAssngmt, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75)
-                .addComponent(btnAssignToMe, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(30, 30, 30)
+                .addComponent(btnAssignToMe, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
         );
         buttonPanelLayout.setVerticalGroup(
             buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(buttonPanelLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addGap(44, 44, 44)
                 .addGroup(buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(viewReqBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(refreshTestJButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -208,50 +209,17 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
                 .addGap(19, 19, 19))
         );
 
-        add(buttonPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 99, 1090, -1));
+        add(buttonPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 1090, 140));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Nurse.PNG"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 390, -1, 320));
-
-        jPanel14.setBackground(new java.awt.Color(196, 224, 229));
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 91, Short.MAX_VALUE)
-        );
-
-        add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        jPanel13.setBackground(new java.awt.Color(68, 145, 157));
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, -1, -1));
-
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(68, 145, 157));
-        jLabel5.setText("Welcome!");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 270, 37));
+        heading.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        heading.setForeground(new java.awt.Color(68, 145, 157));
+        heading.setText("Welcome!");
+        add(heading, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 420, 37));
 
         enterpriseLabel.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
         enterpriseLabel.setForeground(new java.awt.Color(68, 145, 157));
         enterpriseLabel.setText("Enterprise :");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 60, 300, 30));
+        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 50, 510, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void refreshTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshTestJButtonActionPerformed
@@ -369,10 +337,7 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnManageBedAssngmt;
     private javax.swing.JPanel buttonPanel;
     private javax.swing.JLabel enterpriseLabel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
+    private javax.swing.JLabel heading;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton refreshTestJButton;
     private javax.swing.JButton viewDetailsBtn;

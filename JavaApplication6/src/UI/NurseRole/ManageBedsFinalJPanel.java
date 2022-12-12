@@ -108,14 +108,12 @@ public class ManageBedsFinalJPanel extends javax.swing.JPanel {
         bedStatusCmb1 = new javax.swing.JComboBox();
         backJButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jPanel14 = new javax.swing.JPanel();
-        jPanel13 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        assignJPanel.setBackground(new java.awt.Color(164, 208, 215));
+        assignJPanel.setBackground(new java.awt.Color(236, 236, 236));
         assignJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Manage Bed", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 0, 14))); // NOI18N
         assignJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -132,8 +130,9 @@ public class ManageBedsFinalJPanel extends javax.swing.JPanel {
         });
         assignJPanel.add(bedStatusCmb, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 146, -1));
 
-        btnView.setBackground(new java.awt.Color(255, 155, 54));
+        btnView.setBackground(new java.awt.Color(9, 87, 136));
         btnView.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnView.setForeground(new java.awt.Color(255, 255, 255));
         btnView.setText("View");
         btnView.setPreferredSize(new java.awt.Dimension(100, 40));
         btnView.addActionListener(new java.awt.event.ActionListener() {
@@ -143,7 +142,7 @@ public class ManageBedsFinalJPanel extends javax.swing.JPanel {
         });
         assignJPanel.add(btnView, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, -1, -1));
 
-        bedJTable.setBackground(new java.awt.Color(255, 193, 131));
+        bedJTable.setBackground(new java.awt.Color(204, 204, 204));
         bedJTable.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
         bedJTable.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         bedJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -179,8 +178,9 @@ public class ManageBedsFinalJPanel extends javax.swing.JPanel {
         jLabel14.setText("Date");
         assignJPanel.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, -1));
 
-        btnAssignBed.setBackground(new java.awt.Color(255, 155, 54));
+        btnAssignBed.setBackground(new java.awt.Color(9, 87, 136));
         btnAssignBed.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnAssignBed.setForeground(new java.awt.Color(255, 255, 255));
         btnAssignBed.setText("Change Status");
         btnAssignBed.setPreferredSize(new java.awt.Dimension(167, 40));
         btnAssignBed.addActionListener(new java.awt.event.ActionListener() {
@@ -219,6 +219,7 @@ public class ManageBedsFinalJPanel extends javax.swing.JPanel {
         add(assignJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 60, 374, 540));
 
         backJButton.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        backJButton.setForeground(new java.awt.Color(9, 87, 136));
         backJButton.setText("Back");
         backJButton.setPreferredSize(new java.awt.Dimension(100, 40));
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -226,46 +227,16 @@ public class ManageBedsFinalJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 58, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/bedAssign.PNG"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, 248));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/Images/beds.jpeg"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, 360, 248));
 
-        jPanel14.setBackground(new java.awt.Color(196, 224, 229));
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 170, Short.MAX_VALUE)
-        );
-
-        add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 170));
-
-        jPanel13.setBackground(new java.awt.Color(68, 145, 157));
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 180, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 180, -1));
-
-        jLabel5.setBackground(new java.awt.Color(68, 145, 157));
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(68, 145, 157));
+        jLabel5.setForeground(new java.awt.Color(9, 87, 136));
         jLabel5.setText("Bed Management");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 270, 37));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 270, 37));
     }// </editor-fold>//GEN-END:initComponents
 
     private void bedStatusCmbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bedStatusCmbActionPerformed
@@ -574,8 +545,6 @@ public class ManageBedsFinalJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblBedStatus;
     private javax.swing.JLabel lblBedStatus1;
