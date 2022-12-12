@@ -27,7 +27,7 @@ public class Lab extends Enterprise {
         super(name,Enterprise.EnterpriseType.Lab);
     }
     @Override
-    public ArrayList<Role> getRoleSupported() {
+    public ArrayList<Role> getSupportedRole() {
         return null;
     }
     

@@ -94,8 +94,8 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
      public void populateTest() {
         DefaultTableModel model = (DefaultTableModel) PatientDataJTable.getModel();
         model.setRowCount(0);
-        if(enterprise.getWorkQueue() != null ){
-            List<WorkRequest> wrList = enterprise.getWorkQueue().getWorkRequestList();
+        if(enterprise.getOrgWq() != null ){
+            List<WorkRequest> wrList = enterprise.getOrgWq().getWorkRequestList();
             for (WorkRequest wr : wrList) {
                 if(wr instanceof ReceptionistWorkRequest)
                 {
@@ -126,8 +126,8 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
      public void populatepharmacyReceptionist() {
         DefaultTableModel model = (DefaultTableModel) PatientDataJTable.getModel();
         model.setRowCount(0);
-        if(enterprise.getWorkQueue() != null ){
-            List<WorkRequest> wrList = enterprise.getWorkQueue().getWorkRequestList();
+        if(enterprise.getOrgWq() != null ){
+            List<WorkRequest> wrList = enterprise.getOrgWq().getWorkRequestList();
             for (WorkRequest wr : wrList) {
                 if(wr instanceof ReceptionistWorkRequest)
                 {

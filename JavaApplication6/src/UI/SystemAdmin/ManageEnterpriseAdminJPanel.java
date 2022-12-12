@@ -51,10 +51,10 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         for (Network network : system.getNetworkArray()) {
             for (Enterprise enterprise : network.getEnterpriseDir().getEnterpriseArray()) {
-                for (UserAccount userAccount : enterprise.getUserAccountDirectory().getUserAccountList()) {
+                for (UserAccount userAccount : enterprise.getUserAcctDir().getUserAccountList()) {
                     if(userAccount.getRole().roleValue().equals("Admin Role")){
                         Object[] row = new Object[3];
-                        row[0] = enterprise.getName();
+                        row[0] = enterprise.getOrgName();
                         row[1] = network.getName();
                         row[2] = userAccount.getUsername();
 
@@ -536,9 +536,9 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             return;
         }
 
-        Employee employee = enterprise.getEmployeeDirectory().postEmployee(name);
+        Employee employee = enterprise.getEmpDir().postEmployee(name);
         employee.setRole("Head Role");
-        UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new AdminRole());
+        UserAccount account = enterprise.getUserAcctDir().createUserAccount(username, password, employee, new AdminRole());
         populateTable();
         //send email and sms
 

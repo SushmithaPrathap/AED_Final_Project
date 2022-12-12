@@ -200,9 +200,9 @@ public class AppointmentStatusGraphInEnterprise extends javax.swing.JPanel {
         try {
             int width = 640;    /* Width of the image */
             int height = 480;   /* Height of the image */
-            File BarChart = new File( "AppointmentsAcross"+enterprise.getName()+".jpeg" );
+            File BarChart = new File( "AppointmentsAcross"+enterprise.getOrgName()+".jpeg" );
             ChartUtilities.saveChartAsJPEG( BarChart , barChart , width , height );
-            JOptionPane.showMessageDialog(null, "A JPEG image file named AppointmentsAcross"+enterprise.getName()+".jpeg is downloaded in your current directory.");
+            JOptionPane.showMessageDialog(null, "A JPEG image file named AppointmentsAcross"+enterprise.getOrgName()+".jpeg is downloaded in your current directory.");
         } 
         catch (IOException ex) {
             Logger.getLogger(AppointmentStatusGraphInEnterprise.class.getName()).log(Level.SEVERE, null, ex);

@@ -15,11 +15,11 @@ import java.util.ArrayList;
 public class AdminOrg extends Organization {
 
     public AdminOrg() {
-        super(Type.Admin.getValue());
+        super(Type.Admin.getValueVar());
     }
 
     @Override
-    public ArrayList<Role> getRoleSupported() {
+    public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> rolesArray = new ArrayList();
         //roles.add(new AdminRole());
         return rolesArray;

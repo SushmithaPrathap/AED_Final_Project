@@ -171,7 +171,7 @@ public class MainJFrame extends JFrame {
         String password = String.valueOf(passwordCharArray);
 
         //Step1: Check in the system admin user account directory if you have the user
-        UserAccount userAccount = system.getUserAccountDirectory().authenticateUser(userName, password);
+        UserAccount userAccount = system.getUserAcctDir().authenticateUser(userName, password);
 
         Enterprise inEnterprise = null;
         Organization inOrganization = null;
@@ -181,11 +181,11 @@ public class MainJFrame extends JFrame {
             for (Network network : system.getNetworkArray()) {
                 //Step 2.a: check against each enterprise
                 for (Enterprise enterprise : network.getEnterpriseDir().getEnterpriseArray()) {
-                    userAccount = enterprise.getUserAccountDirectory().authenticateUser(userName, password);
+                    userAccount = enterprise.getUserAcctDir().authenticateUser(userName, password);
                     if (userAccount == null) {
                         //Step 3:check against each organization for each enterprise
-                        for (Organization organization : enterprise.getOrgDir().getOrganizationList()) {
-                            userAccount = organization.getUserAccountDirectory().authenticateUser(userName, password);
+                        for (Organization organization : enterprise.getOrgDir().getOrganizationArray()) {
+                            userAccount = organization.getUserAcctDir().authenticateUser(userName, password);
                             if (userAccount != null) {
                                 inEnterprise = enterprise;
                                 inOrganization = organization;

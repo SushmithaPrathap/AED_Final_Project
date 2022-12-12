@@ -22,18 +22,17 @@ import java.util.ArrayList;
  */
 public abstract class Organization {
 
-    private String name;
-    private String location;
-    private WorkQueue workQueue;
-    private PersonDirectory employeeDirectory;
-    private UserAccountDirectory userAccountDirectory;
-    private PatientDirectory patientDirectory;
+    private String orgName;
+    private String orgLocation;
+    private WorkQueue orgWq;
+    private PersonDirectory empDir;
+    private UserAccountDirectory userAcctDir;
+    private PatientDirectory patientDir;
     private BillDirectory billDirectory;
-    //private BedManagementDepartment 
-    private int organizationID;
-    private static int counter=1;
-    
-    public enum Type{
+    private int orgId;
+    private static int cnt = 1;
+
+    public enum Type {
         Admin("Admin"),
         //Doctor("Doctor"),        
         Dental("Dental Department"),
@@ -51,69 +50,71 @@ public abstract class Organization {
         Lab("Lab"),
         Insurance("Insurance"),
         Other("Other Department");
-        
-        private String value;
+
+        private String valueVar;
+
         private Type(String value) {
-            this.value = value;
+            this.valueVar = value;
         }
-        public String getValue() {
-            return value;
+
+        public String getValueVar() {
+            return valueVar;
         }
     }
 
     public Organization(String name) {
-        this.name = name;
-        workQueue = new WorkQueue();
-        employeeDirectory = new PersonDirectory();
-        userAccountDirectory = new UserAccountDirectory();
-        patientDirectory = new PatientDirectory();
-        if(patientDirectory.getPatientArray() == null){
-            patientDirectory.setPatientArray(new ArrayList<Patient>());
+        this.orgName = name;
+        orgWq = new WorkQueue();
+        empDir = new PersonDirectory();
+        userAcctDir = new UserAccountDirectory();
+        patientDir = new PatientDirectory();
+        if (patientDir.getPatientArray() == null) {
+            patientDir.setPatientArray(new ArrayList<Patient>());
         }
         billDirectory = new BillDirectory();
-        if(billDirectory.getListBill() == null){
+        if (billDirectory.getListBill() == null) {
             billDirectory.setListBill(new ArrayList<Bill>());
         }
-        organizationID = counter;
-        ++counter;
+        orgId = cnt;
+        ++cnt;
     }
 
-    public abstract ArrayList<Role> getRoleSupported();
-    
-    public UserAccountDirectory getUserAccountDirectory() {
-        return userAccountDirectory;
+    public abstract ArrayList<Role> getSupportedRole();
+
+    public UserAccountDirectory getUserAcctDir() {
+        return userAcctDir;
     }
 
-    public int getOrganizationID() {
-        return organizationID;
+    public int getOrgId() {
+        return orgId;
     }
 
-    public PersonDirectory getEmployeeDirectory() {
-        return employeeDirectory;
-    }
-    
-    public String getName() {
-        return name;
+    public PersonDirectory getEmpDir() {
+        return empDir;
     }
 
-    public WorkQueue getWorkQueue() {
-        return workQueue;
+    public String getOrgName() {
+        return orgName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public WorkQueue getOrgWq() {
+        return orgWq;
     }
 
-    public void setWorkQueue(WorkQueue workQueue) {
-        this.workQueue = workQueue;
+    public void setOrgName(String orgName) {
+        this.orgName = orgName;
+    }
+
+    public void setOrgWq(WorkQueue orgWq) {
+        this.orgWq = orgWq;
     }
 
     public PatientDirectory getPatDirectory() {
-        return patientDirectory;
+        return patientDir;
     }
 
     public void setPatDirectory(PatientDirectory patientDirectory) {
-        this.patientDirectory = patientDirectory;
+        this.patientDir = patientDirectory;
     }
 
     public BillDirectory getBillDirectory() {
@@ -123,26 +124,22 @@ public abstract class Organization {
     public void setBillDirectory(BillDirectory billDirectory) {
         this.billDirectory = billDirectory;
     }
-    
+
     @Override
     public String toString() {
-        return name;
+        return orgName;
     }
-    
-    
-    public void removeAllUserAccount(){
-        for(UserAccount ua : userAccountDirectory.getUserAccountList())
-        {
-            this.userAccountDirectory.removeUserAccount(ua);
+
+    public void deleteUserAccount() {
+        for (UserAccount userAcc : userAcctDir.getUserAccountList()) {
+            this.userAcctDir.removeUserAccount(userAcc);
         }
-        
-    } 
-    
-    public void removeAllEmployee(){
-                 for(Employee ua : employeeDirectory.getEmployeeArray())
-        {
-            this.employeeDirectory.deleteEmployee(ua);
-        }    
-                }
-    
+
+    }
+
+    public void deleteAllEmployee() {
+        for (Employee emp : empDir.getEmployeeArray()) {
+            this.empDir.deleteEmployee(emp);
+        }
+    }
 }

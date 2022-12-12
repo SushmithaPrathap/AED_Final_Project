@@ -72,7 +72,7 @@ public class Insurance extends Enterprise {
     }
 
     @Override
-    public ArrayList<Role> getRoleSupported() {
+    public ArrayList<Role> getSupportedRole() {
         return null;
     }
 }

@@ -420,7 +420,7 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
             workreq.setDoctor(userAccount.getEmployee());
             //workreq.setReceiver(userAccount);
             Lab lab = (Lab) enterprise;
-            lab.getWorkQueue().getWorkRequestList().add(workreq);
+            lab.getOrgWq().getWorkRequestList().add(workreq);
             request.setStatus("Close");
             DB4OUtil.getInstance().storeSystem(business);
 

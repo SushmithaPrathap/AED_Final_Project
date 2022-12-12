@@ -318,7 +318,7 @@ public class AssignLabTestJPanel extends javax.swing.JPanel {
                 //workreq.setDoctor(doctor);
                 //workreq.setReceiver(userAccount);
                 Lab lab = (Lab) cmbLabs.getSelectedItem();
-                lab.getWorkQueue().getWorkRequestList().add(workreq);
+                lab.getOrgWq().getWorkRequestList().add(workreq);
                 LabTest labTest= new LabTest();
                 labTest.setLab(lab);
                 labTest.setLabTech(null);

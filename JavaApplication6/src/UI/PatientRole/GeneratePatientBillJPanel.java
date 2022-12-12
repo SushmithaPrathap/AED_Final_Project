@@ -109,7 +109,7 @@ public class GeneratePatientBillJPanel extends javax.swing.JPanel {
        
         double totalCharge = visitingCharge + operationCharge + labtestCharge;
         txtTotalCharge.setText(String.valueOf(totalCharge));
-        txtInsuranceE.setText(patient.getInsVar().getName() == null ? "" : patient.getInsVar().getName());
+        txtInsuranceE.setText(patient.getInsVar().getOrgName() == null ? "" : patient.getInsVar().getOrgName());
         txtInsuranceId.setText(patient.getInsId() == null ? "" : patient.getInsId() );
         txtApptnmtStatus.setText(appointment.getStatus());
         
@@ -398,7 +398,7 @@ public class GeneratePatientBillJPanel extends javax.swing.JPanel {
                 //workreq.setDoctor(doctor);
                 //workreq.setReceiver(userAccount);
                 Insurance lab = patient.getInsVar();
-                lab.getWorkQueue().getWorkRequestList().add(workreq);
+                lab.getOrgWq().getWorkRequestList().add(workreq);
                 //LabTest labTest= new LabTest();
                 //labTest.setLab(lab);
                 //labTest.setLabTechnician(null);

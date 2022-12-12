@@ -65,7 +65,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.userAccount = userAccount;
         this.network=enterprise.getNetwork();
-        enterpriseLabel.setText(enterprise.getName());
+        enterpriseLabel.setText(enterprise.getOrgName());
         this.doctor=userAccount.getEmployee();
         populateRequestTable();
         scheduleSurgeryJPanel.setVisible(false);
@@ -586,7 +586,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 //    if(account.getRole().roleValue().equals("Nurse Role"))
                 //    {
                         workreq.setReceiver(null);
-                        enterprise.getWorkQueue().getWorkRequestList().add(workreq);
+                        enterprise.getOrgWq().getWorkRequestList().add(workreq);
               //      }
                     
               //  }

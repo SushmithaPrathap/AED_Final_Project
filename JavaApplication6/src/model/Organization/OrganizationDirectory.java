@@ -13,69 +13,64 @@ import java.util.ArrayList;
  */
 public class OrganizationDirectory {
     
-    private ArrayList<Organization> organizationList;
+    private ArrayList<Organization> organizationArray;
 
     public OrganizationDirectory() {
-        organizationList = new ArrayList();
+        organizationArray = new ArrayList();
     }
 
-    public ArrayList<Organization> getOrganizationList() {
-        return organizationList;
+    public ArrayList<Organization> getOrganizationArray() {
+        return organizationArray;
     }
     
-    public Organization createOrganization(Type type){
-        Organization organization = null;
-        if (type.getValue().equals(Type.Dental.getValue())){
-            organization = new GeneralOrganization(Type.Dental.getValue());
-            organizationList.add(organization);
+    public Organization addOrganization(Type type){
+        Organization org = null;
+        if (type.getValueVar().equals(Type.Dental.getValueVar())){
+            org = new GeneralOrganization(Type.Dental.getValueVar());
+            organizationArray.add(org);
         }
-        else if (type.getValue().equals(Type.Pathology.getValue())){
-            organization = new PathologyOrganization();//GeneralOrganization(Type.Pathology.getValue());
-            organizationList.add(organization);
+        else if (type.getValueVar().equals(Type.Pathology.getValueVar())){
+            org = new PathologyOrganization();//GeneralOrganization(Type.Pathology.getValue());
+            organizationArray.add(org);
         }
-        else if (type.getValue().equals(Type.Billing.getValue())){
-            organization = new BillingDepartment();
-            organizationList.add(organization);
+        else if (type.getValueVar().equals(Type.Billing.getValueVar())){
+            org = new BillingDepartment();
+            organizationArray.add(org);
         }
-        else if (type.getValue().equals(Type.BedManagement.getValue())){
-            organization = new BedMgmtDept();
-            organizationList.add(organization);
+        else if (type.getValueVar().equals(Type.BedManagement.getValueVar())){
+            org = new BedMgmtDept();
+            organizationArray.add(org);
         }
-        else if (type.getValue().equals(Type.Cardiology.getValue())){
-            organization = new GeneralOrganization(Type.Cardiology.getValue());
-            organizationList.add(organization);    
+        else if (type.getValueVar().equals(Type.Cardiology.getValueVar())){
+            org = new GeneralOrganization(Type.Cardiology.getValueVar());
+            organizationArray.add(org);    
         }    
-        else if (type.getValue().equals(Type.ENT.getValue())){
-            organization = new GeneralOrganization(Type.ENT.getValue());
-            organizationList.add(organization);   
+        else if (type.getValueVar().equals(Type.ENT.getValueVar())){
+            org = new GeneralOrganization(Type.ENT.getValueVar());
+            organizationArray.add(org);   
         }
-        else if (type.getValue().equals(Type.CovidCenter.getValue())){
-            organization = new GeneralOrganization(Type.CovidCenter.getValue());
-            organizationList.add(organization);   
+        else if (type.getValueVar().equals(Type.CovidCenter.getValueVar())){
+            org = new GeneralOrganization(Type.CovidCenter.getValueVar());
+            organizationArray.add(org);   
         }
-        else if (type.getValue().equals(Type.UrgentCare.getValue())){
-            organization = new GeneralOrganization(Type.UrgentCare.getValue());
-            organizationList.add(organization);   
+        else if (type.getValueVar().equals(Type.UrgentCare.getValueVar())){
+            org = new GeneralOrganization(Type.UrgentCare.getValueVar());
+            organizationArray.add(org);   
         }
-        else if (type.getValue().equals(Type.Radiology.getValue())){
-            organization = new RadiologyOrganization();//GeneralOrganization(Type.Radiology.getValue());
-            organizationList.add(organization);   
+        else if (type.getValueVar().equals(Type.Radiology.getValueVar())){
+            org = new RadiologyOrganization();//GeneralOrganization(Type.Radiology.getValue());
+            organizationArray.add(org);   
         }
-        else if (type.getValue().equals(Type.MedicalStore.getValue())){
-            organization = new MedicalStoreDept();
-            organizationList.add(organization);   
-        }
-        
-        else if (type.getValue().equals(Type.Insurance.getValue())){
-            organization = new InsuranceOrganization();
-            organizationList.add(organization);
+        else if (type.getValueVar().equals(Type.MedicalStore.getValueVar())){
+            org = new MedicalStoreDept();
+            organizationArray.add(org);   
         }
         
-        //else if (type.getValue().equals(Type.Inventory.getValue())){
-        //    organization = new InventoryManagementDept();
-       //     organizationList.add(organization);   
-        //}
+        else if (type.getValueVar().equals(Type.Insurance.getValueVar())){
+            org = new InsuranceOrganization();
+            organizationArray.add(org);
+        }
         
-        return organization;
+        return org;
     }
 }

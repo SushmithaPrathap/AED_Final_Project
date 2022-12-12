@@ -369,7 +369,7 @@ public class PrescriptionJPanel extends javax.swing.JPanel {
                 //phWr.setReceiver(receptionist);
                 //Appointment appointment = (Appointment) 
                 Pharmacy pharEnterprise =(Pharmacy) cmbPharmacy.getSelectedItem();
-                pharEnterprise.getWorkQueue().getWorkRequestList().add(phWr);
+                pharEnterprise.getOrgWq().getWorkRequestList().add(phWr);
                 prescription.setPhmacy(pharEnterprise);
                 //UserAccount recepUseracc = null;
                 //List<UserAccount> userAccDir=  organization.getUserAccountDirectory().getUserAccountList();

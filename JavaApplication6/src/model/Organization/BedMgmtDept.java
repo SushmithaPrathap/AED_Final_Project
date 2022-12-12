@@ -46,11 +46,11 @@ public class BedMgmtDept extends Organization {
     }
 
     public BedMgmtDept() {
-        super(Organization.Type.BedManagement.getValue());
+        super(Organization.Type.BedManagement.getValueVar());
     }
 
     @Override
-    public ArrayList<Role> getRoleSupported() {
+    public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
         roles.add(new NurseRole());
         return roles;

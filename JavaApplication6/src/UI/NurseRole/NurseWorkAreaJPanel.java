@@ -38,7 +38,7 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
         this.userAccount = ua;
         //viewDetailsJPanel.setVisible(false);
         //searchJPanel.setVisible(false);
-        enterpriseLabel.setText(enterprise.getName());
+        enterpriseLabel.setText(enterprise.getOrgName());
         jLabel5.setText("Welcome " + ua.getEmployee().getNameVar());
         // requestTestJButton.setVisible(false);
     }
@@ -47,7 +47,7 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
 
         model.setRowCount(0);
-        for (WorkRequest request : enterprise.getWorkQueue().getWorkRequestList()) {
+        for (WorkRequest request : enterprise.getOrgWq().getWorkRequestList()) {
 
             if (request instanceof NurseWorkRequest) {
                 Object[] row = new Object[11];
@@ -263,7 +263,7 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
     private void viewReqBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewReqBtnActionPerformed
         // TODO add your handling code here:
         //show all new request
-        if (enterprise.getWorkQueue().getWorkRequestList().isEmpty()) {
+        if (enterprise.getOrgWq().getWorkRequestList().isEmpty()) {
             JOptionPane.showMessageDialog(null, "No request!");
             return;
 
@@ -272,7 +272,7 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
 
         model.setRowCount(0);
-        for (WorkRequest request : enterprise.getWorkQueue().getWorkRequestList()) {
+        for (WorkRequest request : enterprise.getOrgWq().getWorkRequestList()) {
             if ((request.getStatus().equals("New")) && (request instanceof NurseWorkRequest)) {
 
                 //sender, receiver, pateint,status, message

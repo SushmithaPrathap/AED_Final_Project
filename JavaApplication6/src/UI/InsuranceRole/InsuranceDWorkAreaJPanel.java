@@ -65,7 +65,7 @@ public class InsuranceDWorkAreaJPanel extends javax.swing.JPanel {
         txtInsuID.setText(patient.getInsId());
         txtInsuID.setEditable(false);
         txtEnterprise.setEditable(false);
-        txtEnterprise.setText(bill.getEnterprise().getName() == null ? " " : bill.getEnterprise().getName());
+        txtEnterprise.setText(bill.getEnterprise().getOrgName() == null ? " " : bill.getEnterprise().getOrgName());
 
         double amt = bill.getChargeTotal() == 0.0 ? 1000.00 : bill.getChargeTotal();
         txtRequestedAmt.setText(String.valueOf(amt));

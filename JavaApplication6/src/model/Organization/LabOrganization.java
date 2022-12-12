@@ -4,8 +4,6 @@
  */
 package model.Organization;
 
-//import model.Role.LabTechnicianRole;
-//import model.Role.ReceptionistRole;
 import model.Role.Role;
 import java.util.ArrayList;
 
@@ -17,15 +15,15 @@ public class LabOrganization extends Organization
 {
     
     public LabOrganization() {
-        super(Organization.Type.Lab.getValue());
+        super(Organization.Type.Lab.getValueVar());
     }
 
     //@Override
-    public ArrayList<Role> getRoleSupported() {
-        ArrayList<Role> roles = new ArrayList();
-        //roles.add(new LabTechnicianRole());
-        //roles.add(new ReceptionistRole());
-        return roles;
+    public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> rolesArray = new ArrayList();
+//        rolesArray.add(new LabTechnicianRole());
+//        rolesArray.add(new ReceptionistRole());
+        return rolesArray;
     }
      
    

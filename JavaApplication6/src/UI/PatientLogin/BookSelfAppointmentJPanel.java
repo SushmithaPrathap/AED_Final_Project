@@ -96,13 +96,13 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
        List<Employee> empList= new ArrayList<>();//enterprise.getEmployeeDirectory().getDoctorList();
        
        
-       if(enterprise !=null && enterprise.getOrgDir() != null && enterprise.getOrgDir().getOrganizationList() !=null){
-       ArrayList<Organization> deptList = enterprise.getOrgDir().getOrganizationList();
+       if(enterprise !=null && enterprise.getOrgDir() != null && enterprise.getOrgDir().getOrganizationArray() !=null){
+       ArrayList<Organization> deptList = enterprise.getOrgDir().getOrganizationArray();
        if(enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Hospital.getValue())){
            for(Organization dept : deptList)
                 {
                     if(dept instanceof model.Organization.GeneralOrganization){
-                    for(Employee emp : dept.getEmployeeDirectory().getEmployeeArray()){
+                    for(Employee emp : dept.getEmpDir().getEmployeeArray()){
                         if(emp.getRole()!= null && (emp.getRole().equals("Doctor Role")))
                         {
                             empList.add(emp);
@@ -582,17 +582,17 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
        
        List<Employee> empList= new ArrayList<>();//enterprise.getEmployeeDirectory().getDoctorList();
        UserAccount drUserAcc =null;
-       ArrayList<Organization> deptList = enterprise.getOrgDir().getOrganizationList();
+       ArrayList<Organization> deptList = enterprise.getOrgDir().getOrganizationArray();
        for(Organization dept : deptList)
        {
            if(dept instanceof model.Organization.GeneralOrganization){
-                drUserAcc = dept.getUserAccountDirectory().getUserAccByEMployee(doctor);
+                drUserAcc = dept.getUserAcctDir().getUserAccByEMployee(doctor);
               if(drUserAcc!=null ) {break;}
            }else if(dept instanceof model.Organization.PathologyOrganization){
-               drUserAcc = dept.getUserAccountDirectory().getUserAccByEMployee(doctor);
+               drUserAcc = dept.getUserAcctDir().getUserAccByEMployee(doctor);
               if(drUserAcc!=null ) {break;}
            }else if(dept instanceof model.Organization.RadiologyOrganization){
-               drUserAcc = dept.getUserAccountDirectory().getUserAccByEMployee(doctor);
+               drUserAcc = dept.getUserAcctDir().getUserAccByEMployee(doctor);
              if(drUserAcc!=null ) {break;}
            }
        }
@@ -622,7 +622,7 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
                 //workreq.setDoctor(doctor);
                 //workreq.setReceiver(userAccount);
                 Lab lab = (Lab) enterprise;
-                lab.getWorkQueue().getWorkRequestList().add(workreq);
+                lab.getOrgWq().getWorkRequestList().add(workreq);
                 LabTest labTest= new LabTest();
                 labTest.setLab(lab);
                 labTest.setLabTech(null);

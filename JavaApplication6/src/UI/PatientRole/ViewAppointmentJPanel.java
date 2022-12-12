@@ -457,7 +457,7 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
             txtAppointmetDate.setText(formatter1.format(appointment.getDate()));
             txtAppointmentType.setSelectedItem(appointment.getType());
             txtAppointmentStatus.setText(appointment.getStatus());
-            txtInsuranceE.setText(patient.getInsVar().getName());
+            txtInsuranceE.setText(patient.getInsVar().getOrgName());
             txtInsuranceId.setText(patient.getInsId());
             
             String insuranceStatus="Pending";

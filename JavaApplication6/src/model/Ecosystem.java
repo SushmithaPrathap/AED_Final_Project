@@ -36,7 +36,7 @@ public class EcoSystem extends Organization{
         return network;
     }
     @Override
-    public ArrayList<Role> getRoleSupported() {
+    public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roleList=new ArrayList<>();
         roleList.add(new SystemAdminRole());
         return roleList;
@@ -55,7 +55,7 @@ public class EcoSystem extends Organization{
     }
     
     public boolean checkUserUnique(String userName){
-        if(!this.getUserAccountDirectory().checkIfUsernameIsUnique(userName)){
+        if(!this.getUserAcctDir().checkIfUsernameIsUnique(userName)){
             return false;
         }
         return true;

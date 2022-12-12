@@ -12,10 +12,8 @@ import model.Dept.Inventory;
  * @author Suprith
  */
 public class InventoryManagementDept {
-    String productID;
+
+    String prodId;
     Inventory inventory;
 
-    
-
-    
 }

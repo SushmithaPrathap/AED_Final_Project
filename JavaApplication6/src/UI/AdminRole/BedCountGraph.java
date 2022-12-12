@@ -54,7 +54,7 @@ public class BedCountGraph extends javax.swing.JPanel {
         
         Map<String, Integer> workReqMap = new HashMap<>();
 
-        for (Organization org : enterprise.getOrgDir().getOrganizationList()) 
+        for (Organization org : enterprise.getOrgDir().getOrganizationArray()) 
         {
             if (org instanceof BedMgmtDept) {
                 List<Bed> bedList = ((BedMgmtDept) org).getBedArray().getListBed();
@@ -186,9 +186,9 @@ public class BedCountGraph extends javax.swing.JPanel {
         try {
             int width = 640;    /* Width of the image */
             int height = 480;   /* Height of the image */
-            File BarChart = new File( "BedsAcross"+enterprise.getName()+".jpeg" );
+            File BarChart = new File( "BedsAcross"+enterprise.getOrgName()+".jpeg" );
             ChartUtilities.saveChartAsJPEG( BarChart , barChart , width , height );
-            JOptionPane.showMessageDialog(null, "A JPEG image file named BedsAcross"+enterprise.getName()+".jpeg is downloaded in your current directory.");
+            JOptionPane.showMessageDialog(null, "A JPEG image file named BedsAcross"+enterprise.getOrgName()+".jpeg is downloaded in your current directory.");
         } catch (IOException ex) {
             Logger.getLogger(BedCountGraph.class.getName()).log(Level.SEVERE, null, ex);
         }

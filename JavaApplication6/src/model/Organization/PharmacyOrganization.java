@@ -12,19 +12,10 @@ import model.Medicine.MedicineDirectory;
  * @author Suprith
  */
 public class PharmacyOrganization {
-    
-    
-    MedicineDirectory medicinedir;
-    
-    
-    public  PharmacyOrganization(){
-        medicinedir = new MedicineDirectory();
-                
+
+    MedicineDirectory medicineDir;
+
+    public PharmacyOrganization() {
+        medicineDir = new MedicineDirectory();
     }
-    
-    
-    
-    
-    
-    
 }

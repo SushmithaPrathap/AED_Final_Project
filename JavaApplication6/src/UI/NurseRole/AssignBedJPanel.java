@@ -83,8 +83,8 @@ public class AssignBedJPanel extends javax.swing.JPanel {
         boolean flag = false;
         BedMgmtDept bedOrg = null;
         OrganizationDirectory orgDir = enterprise.getOrgDir();
-        for (Organization org : orgDir.getOrganizationList()) {
-            if (org.getName().equals(Organization.Type.BedManagement.getValue())) {
+        for (Organization org : orgDir.getOrganizationArray()) {
+            if (org.getOrgName().equals(Organization.Type.BedManagement.getValueVar())) {
                 //if bed management departemtn is present then navigate to bed management screen
                 flag = true;
                 bedOrg = (BedMgmtDept) org;

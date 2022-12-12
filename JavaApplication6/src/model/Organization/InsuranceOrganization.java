@@ -17,14 +17,14 @@ public class InsuranceOrganization extends Organization {
 
     public InsuranceOrganization() {
         // super(Organization.Type.Dental.getValue());
-        super(Organization.Type.Insurance.getValue());
+        super(Organization.Type.Insurance.getValueVar());
     }
 
     //@Override
-    public ArrayList<Role> getRoleSupported() {
-        ArrayList<Role> roles = new ArrayList();
-        roles.add(new InsuranceDealerRole());
-        return roles;
+    public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> rolesArray = new ArrayList();
+        rolesArray.add(new InsuranceDealerRole());
+        return rolesArray;
     }
 
 }

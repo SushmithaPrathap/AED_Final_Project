@@ -442,7 +442,7 @@ jLabel6.setIcon(profilePic);
                     //    if(account.getRole().roleValue().equals("Nurse Role"))
                     //    {
                         workreq.setReceiver(null);
-                        enterprise.getWorkQueue().getWorkRequestList().add(workreq);
+                        enterprise.getOrgWq().getWorkRequestList().add(workreq);
                         //      }
 
                     //  }

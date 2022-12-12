@@ -49,25 +49,25 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
         if (enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Pharmacy.getValue())) {
             for (Type type : Organization.Type.values()) {
-                if (type.getValue().equals(Type.MedicalStore.getValue())
-                        || type.getValue().equals(Type.Billing.getValue())) {
+                if (type.getValueVar().equals(Type.MedicalStore.getValueVar())
+                        || type.getValueVar().equals(Type.Billing.getValueVar())) {
                     organizationJComboBox.addItem(type);
                 }
             }
         } //lab 
         else if (enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())) {
             for (Type type : Organization.Type.values()) {
-                if (type.getValue().equals(Type.Billing.getValue())
-                        || type.getValue().equals(Type.Pathology.getValue())
-                        || type.getValue().equals(Type.Radiology.getValue())) {
+                if (type.getValueVar().equals(Type.Billing.getValueVar())
+                        || type.getValueVar().equals(Type.Pathology.getValueVar())
+                        || type.getValueVar().equals(Type.Radiology.getValueVar())) {
                     organizationJComboBox.addItem(type);
                 }
             }
 
         } else if (enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Insurance.getValue())) {
             for (Type type : Organization.Type.values()) {
-                if (type.getValue().equals(Type.Insurance.getValue())
-                        || type.getValue().equals(Type.Billing.getValue())) {
+                if (type.getValueVar().equals(Type.Insurance.getValueVar())
+                        || type.getValueVar().equals(Type.Billing.getValueVar())) {
                     organizationJComboBox.addItem(type);
                 }
             }
@@ -75,12 +75,12 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         } //lab
         else {
             for (Type type : Organization.Type.values()) {
-                if (!type.getValue().equals(Type.Admin.getValue())
-                        && !type.getValue().equals(Type.Lab.getValue())
-                        && !type.getValue().equals(Type.Pathology.getValue())
-                        && !type.getValue().equals(Type.Radiology.getValue())
-                        && !type.getValue().equals(Type.MedicalStore.getValue())
-                        && !type.getValue().equals(Type.Insurance.getValue())) {
+                if (!type.getValueVar().equals(Type.Admin.getValueVar())
+                        && !type.getValueVar().equals(Type.Lab.getValueVar())
+                        && !type.getValueVar().equals(Type.Pathology.getValueVar())
+                        && !type.getValueVar().equals(Type.Radiology.getValueVar())
+                        && !type.getValueVar().equals(Type.MedicalStore.getValueVar())
+                        && !type.getValueVar().equals(Type.Insurance.getValueVar())) {
                     organizationJComboBox.addItem(type);
                 }
             }
@@ -92,9 +92,9 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
 
-        for (Organization organization : directory.getOrganizationList()) {
+        for (Organization organization : directory.getOrganizationArray()) {
             Object[] row = new Object[2];
-            row[0] = organization.getOrganizationID();
+            row[0] = organization.getOrgId();
             row[1] = organization;//.getName();
 
             model.addRow(row);
@@ -370,8 +370,8 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         Type type = (Type) organizationJComboBox.getSelectedItem();
 
         //check if department is already present, if so not allowed to add duplicate department
-        for (Organization org : directory.getOrganizationList()) {
-            if (org.getName().equals(type.getValue())) {
+        for (Organization org : directory.getOrganizationArray()) {
+            if (org.getOrgName().equals(type.getValueVar())) {
                 JOptionPane.showMessageDialog(null, "Department already exists, cannot create new!");
                 return;
 
@@ -379,8 +379,8 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         }
 
         //Type type= Type.valueOf(stringType);
-        Organization dept = directory.createOrganization(type);
-        if (type.getValue().equals("Bed Management Department")) {
+        Organization dept = directory.addOrganization(type);
+        if (type.getValueVar().equals("Bed Management Department")) {
             int selectedBedCount = Integer.parseInt((String) cmbBedNUmber.getSelectedItem());
             BedMgmtDept bedMngDept = (BedMgmtDept) dept;
             bedMngDept.getCreatedBedList(selectedBedCount);
@@ -402,7 +402,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         Type type = (Type) organizationJComboBox.getSelectedItem();
         if (type != null) {
-            if (type.getValue().equals(Type.BedManagement.getValue())) {
+            if (type.getValueVar().equals(Type.BedManagement.getValueVar())) {
                 lblNumofBeds.setVisible(true);
                 cmbBedNUmber.setVisible(true);
             } else {
@@ -449,14 +449,14 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
             //UserAccount selectedUsrAcc = (UserAccount) organizationJTable.getValueAt(row,0);
             Organization org = (Organization) organizationJTable.getValueAt(row, 1);
             //reomve account
-            ArrayList<Organization> orgList = enterprise.getOrgDir().getOrganizationList();
+            ArrayList<Organization> orgList = enterprise.getOrgDir().getOrganizationArray();
             // for (Organization organization : orgList) 
             // {
             ///   if(org.equals(organization)){
 
-            org.removeAllUserAccount();
-            org.removeAllEmployee();
-            //org.getEmployeeDirectory().removeAllEmployee();
+            org.deleteUserAccount();
+            org.deleteAllEmployee();
+            //org.getEmployeeDirectory().deleteAllEmployee();
             orgList.remove(org);
             populateTable();
             // populateCombo();

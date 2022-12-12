@@ -51,7 +51,7 @@ public class InsuranceDMainAreaJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
         //enterprise.getWorkQueue().getWorkRequestList();//.add(request);
-        for (WorkRequest request : enterprise.getWorkQueue().getWorkRequestList()) {
+        for (WorkRequest request : enterprise.getOrgWq().getWorkRequestList()) {
             // List<LabTest> labTestList = ((LabTechnicianWorkRequest)request).getAppointment().getLabTestList().getLabTestList();
             if (request instanceof InsuranceWorkRequest && (request.getReceiver() == null || request.getReceiver() == userAccount)) {
                 //for(LabTest labTest : labTestList)

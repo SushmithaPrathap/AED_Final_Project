@@ -68,7 +68,7 @@ public abstract class Enterprise extends Organization {
 
     @Override
     public String toString() {
-        return this.getName();
+        return this.getOrgName();
     }
 
 }

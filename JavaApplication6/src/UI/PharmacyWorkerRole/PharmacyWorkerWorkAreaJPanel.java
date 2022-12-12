@@ -109,7 +109,7 @@ public class PharmacyWorkerWorkAreaJPanel extends javax.swing.JPanel {
             row[3] = entry.getValue() * medicine.getAmount();
             totalPrice += entry.getValue() * medicine.getAmount();
             }
-            row[4] = appointment.getPrescription().getPhmacy().getName();
+            row[4] = appointment.getPrescription().getPhmacy().getOrgName();
             model.addRow(row);
             
     }

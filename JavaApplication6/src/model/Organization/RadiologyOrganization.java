@@ -13,22 +13,18 @@ import java.util.ArrayList;
  *
  * @author Suprith
  */
-public class RadiologyOrganization extends Organization
-{
-    
+public class RadiologyOrganization extends Organization {
+
     public RadiologyOrganization() {
-        super(Organization.Type.Radiology.getValue());
+        super(Organization.Type.Radiology.getValueVar());
     }
 
     //@Override
-    public ArrayList<Role> getRoleSupported() {
-        ArrayList<Role> roles = new ArrayList();
-        roles.add(new LabTechnicianRole());
-        roles.add(new ReceptionistRole());
-        return roles;
+    public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> roleArray = new ArrayList();
+        roleArray.add(new LabTechnicianRole());
+        roleArray.add(new ReceptionistRole());
+        return roleArray;
     }
-     
-   
-    
-    
+
 }

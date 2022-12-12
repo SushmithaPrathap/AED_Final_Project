@@ -152,7 +152,7 @@ public class ViewPrescriptionJPanel extends javax.swing.JPanel {
             row[1] = doctor.getNameVar();
             row[2] = entry.getKey();
             row[3] = entry.getValue();
-            row[4] = prelist.getPhmacy().getName();
+            row[4] = prelist.getPhmacy().getOrgName();
             model.addRow(row);
     }
         }

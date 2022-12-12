@@ -425,7 +425,7 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
         
         Insurance insuranceE =(Insurance)cmbInsuranceCompany.getSelectedItem();
         String insuranceId = txtInsuranceID.getText();
-        UserAccount account = ecosystem.getUserAccountDirectory().createUserAccount(txtUserName.getText(), txtPassword.getText(), null, new PatientRole());
+        UserAccount account = ecosystem.getUserAcctDir().createUserAccount(txtUserName.getText(), txtPassword.getText(), null, new PatientRole());
        
        
         Employee emp= ecosystem.getPatDirectory().createPatient(txtPatientName.getText(), phoneNumberString, txtGender.getSelectedItem().toString(),

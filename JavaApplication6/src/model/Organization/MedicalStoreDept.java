@@ -5,7 +5,6 @@
  */
 package model.Organization;
 
-
 import model.Medicine.MedicineDirectory;
 import model.appointment.Prescription;
 import model.Role.PharmacyWorkerRole;
@@ -17,28 +16,24 @@ import java.util.ArrayList;
  * @author Suprith
  */
 public class MedicalStoreDept extends Organization {
-    MedicineDirectory medicineList;
-    String pharmacistName;
-    Prescription prescription;
+
+    MedicineDirectory medicineArray;
+    String pharmacyPaersonName;
+    Prescription prescriptionVar;
 
     public MedicalStoreDept() {
-        super(Organization.Type.MedicalStore.getValue());
-        //this.medicineList= this.
-       // medicineList = new MedicineDirectory();
-      // super(type);
+        super(Organization.Type.MedicalStore.getValueVar());
     }
 
     //@Override
-    public ArrayList<Role> getRoleSupported() {
+    public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
         roles.add(new PharmacyWorkerRole());
         //roles.add(new WorkerRole());
         return roles;
-}
+    }
 
-    
-    
-    public void generateBill(Prescription prescription){
-       //generates bill for medicines bought at the store
+    public void generateBill(Prescription prescription) {
+        //generates bill for medicines bought at the store
     }
 }

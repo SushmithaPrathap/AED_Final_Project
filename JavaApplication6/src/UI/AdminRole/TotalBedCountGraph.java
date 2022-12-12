@@ -59,7 +59,7 @@ public class TotalBedCountGraph extends javax.swing.JPanel {
         
         for (Enterprise epr : selectedNetwork.getEnterpriseDir().getEnterpriseArray()) 
         {
-            for (Organization org : epr.getOrgDir().getOrganizationList()) 
+            for (Organization org : epr.getOrgDir().getOrganizationArray()) 
             {
                 if (org instanceof BedMgmtDept) 
                 {

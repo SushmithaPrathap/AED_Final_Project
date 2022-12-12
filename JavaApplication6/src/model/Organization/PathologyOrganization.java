@@ -17,11 +17,11 @@ public class PathologyOrganization extends Organization
 {
     
     public PathologyOrganization() {
-        super(Organization.Type.Pathology.getValue());
+        super(Organization.Type.Pathology.getValueVar());
     }
 
     //@Override
-    public ArrayList<Role> getRoleSupported() {
+    public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
         roles.add(new LabTechnicianRole());
         roles.add(new ReceptionistRole());

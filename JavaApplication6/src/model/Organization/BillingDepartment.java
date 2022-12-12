@@ -30,11 +30,11 @@ public class BillingDepartment extends Organization {
 //    String paymentMode;
 
     public BillingDepartment() {
-        super(Organization.Type.Billing.getValue());
+        super(Organization.Type.Billing.getValueVar());
     }
 
     @Override
-    public ArrayList<Role> getRoleSupported() {
+    public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
         roles.add(new ReceptionistRole());
         return roles;
