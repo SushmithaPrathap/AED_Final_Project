@@ -21,7 +21,7 @@ import javax.swing.JToolBar;
  *
  * @author sushmithaprathap
  */
-public class KGradientPanel extends JPanel {
+public class SomePanel extends JPanel {
 
 //    public Color kStartColor = Color.MAGENTA;
     public Color kStartColor = Color.decode("#A1EDF6");
@@ -61,7 +61,7 @@ public class KGradientPanel extends JPanel {
         this.kGradientFocus = kGradientFocus;
     }
 
-    public KGradientPanel() {
+    public SomePanel() {
 
         if (kTransparentControls) {
             setBg(true);

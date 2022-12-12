@@ -233,10 +233,8 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         addStaffBtn = new javax.swing.JButton();
         viewStaff = new javax.swing.JButton();
         deleteStaffBtn = new javax.swing.JButton();
-        backjButton1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jPanel13 = new javax.swing.JPanel();
-        jPanel14 = new javax.swing.JPanel();
+        btnBack = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setForeground(new java.awt.Color(255, 255, 255));
@@ -271,9 +269,8 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         createStaffPanel.setAutoscrolls(true);
         createStaffPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        closebtn.setBackground(new java.awt.Color(68, 145, 157));
         closebtn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        closebtn.setForeground(new java.awt.Color(255, 255, 255));
+        closebtn.setForeground(new java.awt.Color(9, 87, 136));
         closebtn.setText("Close");
         closebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -299,7 +296,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         visitingChargeTxt.setEnabled(false);
         createStaffPanel.add(visitingChargeTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 372, 180, -1));
 
-        createUserJButton.setBackground(new java.awt.Color(68, 145, 157));
+        createUserJButton.setBackground(new java.awt.Color(9, 87, 136));
         createUserJButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         createUserJButton.setForeground(new java.awt.Color(255, 255, 255));
         createUserJButton.setText("Create Staff");
@@ -435,9 +432,8 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         viewStaffPanel.setAutoscrolls(true);
         viewStaffPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        closebtn1.setBackground(new java.awt.Color(68, 145, 157));
         closebtn1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        closebtn1.setForeground(new java.awt.Color(255, 255, 255));
+        closebtn1.setForeground(new java.awt.Color(9, 87, 136));
         closebtn1.setText("Close");
         closebtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -463,7 +459,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         visitingChargeTxt2.setEnabled(false);
         viewStaffPanel.add(visitingChargeTxt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(121, 337, 175, -1));
 
-        updateUserBtn.setBackground(new java.awt.Color(68, 145, 157));
+        updateUserBtn.setBackground(new java.awt.Color(9, 87, 136));
         updateUserBtn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         updateUserBtn.setForeground(new java.awt.Color(255, 255, 255));
         updateUserBtn.setText("Update Staff");
@@ -515,7 +511,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         });
         viewStaffPanel.add(roleJComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(116, 59, 180, -1));
 
-        saveBtn2.setBackground(new java.awt.Color(68, 145, 157));
+        saveBtn2.setBackground(new java.awt.Color(9, 87, 136));
         saveBtn2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         saveBtn2.setForeground(new java.awt.Color(255, 255, 255));
         saveBtn2.setText("Save ");
@@ -583,7 +579,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
 
         add(viewStaffPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 250, 330, 455));
 
-        viewStaff1.setBackground(new java.awt.Color(68, 145, 157));
+        viewStaff1.setBackground(new java.awt.Color(9, 87, 136));
         viewStaff1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         viewStaff1.setForeground(new java.awt.Color(255, 255, 255));
         viewStaff1.setText("View Department Staff");
@@ -604,15 +600,15 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         add(selectDeptCmb, new org.netbeans.lib.awtextra.AbsoluteConstraints(395, 28, 240, -1));
 
         jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(68, 145, 157));
+        jLabel16.setForeground(new java.awt.Color(9, 87, 136));
         jLabel16.setText("Select Department");
-        add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 30, -1, -1));
+        add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(164, 208, 215));
 
-        addStaffBtn.setBackground(new java.awt.Color(255, 155, 54));
+        addStaffBtn.setBackground(new java.awt.Color(9, 87, 136));
         addStaffBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        addStaffBtn.setForeground(new java.awt.Color(102, 102, 102));
+        addStaffBtn.setForeground(new java.awt.Color(255, 255, 255));
         addStaffBtn.setText("Add  Staff");
         addStaffBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -620,9 +616,9 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             }
         });
 
-        viewStaff.setBackground(new java.awt.Color(255, 155, 54));
+        viewStaff.setBackground(new java.awt.Color(9, 87, 136));
         viewStaff.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        viewStaff.setForeground(new java.awt.Color(102, 102, 102));
+        viewStaff.setForeground(new java.awt.Color(255, 255, 255));
         viewStaff.setText("View Staff");
         viewStaff.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -630,9 +626,9 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             }
         });
 
-        deleteStaffBtn.setBackground(new java.awt.Color(255, 155, 54));
+        deleteStaffBtn.setBackground(new java.awt.Color(9, 87, 136));
         deleteStaffBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        deleteStaffBtn.setForeground(new java.awt.Color(102, 102, 102));
+        deleteStaffBtn.setForeground(new java.awt.Color(255, 255, 255));
         deleteStaffBtn.setText("Delete Staff");
         deleteStaffBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -640,79 +636,45 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             }
         });
 
-        backjButton1.setBackground(new java.awt.Color(102, 147, 255));
-        backjButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        backjButton1.setForeground(new java.awt.Color(102, 102, 102));
-        backjButton1.setText("Back");
-        backjButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backjButton1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(17, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(backjButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(viewStaff, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(addStaffBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(deleteStaffBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(addStaffBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(deleteStaffBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
+                        .addComponent(viewStaff, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(15, 15, 15))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
-                .addComponent(backjButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(addStaffBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(28, 28, 28)
+                .addComponent(addStaffBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addComponent(viewStaff, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(deleteStaffBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(45, 45, 45)
+                .addComponent(deleteStaffBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31))
         );
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 180, 290));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/StaffImage.png"))); // NOI18N
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, 154, 230));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/Images/staff.jpeg"))); // NOI18N
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 200, 280));
 
-        jPanel13.setBackground(new java.awt.Color(68, 145, 157));
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 170, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 170, -1));
-
-        jPanel14.setBackground(new java.awt.Color(196, 224, 229));
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 140, Short.MAX_VALUE)
-        );
-
-        add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 140));
+        btnBack.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(9, 87, 136));
+        btnBack.setText("Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 90, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void createUserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserJButtonActionPerformed
@@ -926,12 +888,12 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     }
     
     
-    private void backjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backjButton1ActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         container.remove(this);
         CardLayout layout = (CardLayout) container.getLayout();
         layout.previous(container);
-    }//GEN-LAST:event_backjButton1ActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
     private void organizationJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationJComboBoxActionPerformed
         Organization organization = (Organization) organizationJComboBox.getSelectedItem();
@@ -1368,7 +1330,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addStaffBtn;
-    private javax.swing.JButton backjButton1;
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton closebtn;
     private javax.swing.JButton closebtn1;
     private javax.swing.JComboBox cmbSpecialization;
@@ -1397,8 +1359,6 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameJTextField;
     private javax.swing.JTextField nameJTextField2;

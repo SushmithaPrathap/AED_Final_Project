@@ -58,6 +58,9 @@ public class MainJFrame extends JFrame {
         SideSubHeading = new javax.swing.JLabel();
         btnRegister = new javax.swing.JButton();
         container = new javax.swing.JPanel();
+        lblHeading = new javax.swing.JLabel();
+        lblSubHeading = new javax.swing.JLabel();
+        lblBg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -66,7 +69,7 @@ public class MainJFrame extends JFrame {
         jSplitPane1.setBackground(new java.awt.Color(255, 255, 255));
         jSplitPane1.setDividerLocation(250);
 
-        jPanel1.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(9, 87, 136));
         jPanel1.setToolTipText("");
         jPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
@@ -155,7 +158,24 @@ public class MainJFrame extends JFrame {
                 containerMousePressed(evt);
             }
         });
-        container.setLayout(new java.awt.CardLayout());
+        container.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblHeading.setBackground(new java.awt.Color(255, 255, 255));
+        lblHeading.setFont(new java.awt.Font("Arial Black", 1, 36)); // NOI18N
+        lblHeading.setForeground(new java.awt.Color(9, 87, 136));
+        lblHeading.setText("Welcome To Effective Healthcare");
+        container.add(lblHeading, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, -1, -1));
+
+        lblSubHeading.setBackground(new java.awt.Color(255, 255, 255));
+        lblSubHeading.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        lblSubHeading.setForeground(new java.awt.Color(9, 87, 136));
+        lblSubHeading.setText("Effective system for your care!!");
+        container.add(lblSubHeading, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 100, -1, -1));
+
+        lblBg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/Images/bg.jpeg"))); // NOI18N
+        lblBg.setToolTipText("");
+        container.add(lblBg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1110, 830));
+
         jSplitPane1.setRightComponent(container);
 
         getContentPane().add(jSplitPane1, java.awt.BorderLayout.CENTER);
@@ -237,7 +257,7 @@ public class MainJFrame extends JFrame {
 
         container.removeAll();
         //JPanel blankJP = new JPanel();
-        KGradientPanel blankJP = new KGradientPanel();
+        SomePanel blankJP = new SomePanel();
         container.add("blank", blankJP);
         CardLayout crdLyt = (CardLayout) container.getLayout();
         crdLyt.next(container);
@@ -346,7 +366,10 @@ public class MainJFrame extends JFrame {
     private javax.swing.JPanel container;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JLabel lblBg;
+    private javax.swing.JLabel lblHeading;
     private javax.swing.JLabel lblPassword;
+    private javax.swing.JLabel lblSubHeading;
     private javax.swing.JLabel lblUsername;
     private javax.swing.JLabel loginJLabel;
     private javax.swing.JPasswordField txtPasswordField;
