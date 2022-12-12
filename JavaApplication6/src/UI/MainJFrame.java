@@ -18,7 +18,7 @@ import UI.PatientLogin.CreateNewPatientSelfJPanel;
 
 /**
  *
- * @author sushmithaprathap
+ * @author sushmitamaity
  */
 public class MainJFrame extends JFrame {
 
@@ -34,7 +34,7 @@ public class MainJFrame extends JFrame {
     public MainJFrame() {
         initComponents();
         system = dB4OUtil.retrieveSystem();
-        this.setSize(2300, 700);
+        this.setSize(1300, 700);
     }
 
     /**
@@ -55,19 +55,19 @@ public class MainJFrame extends JFrame {
         lblPassword = new javax.swing.JLabel();
         loginJLabel = new javax.swing.JLabel();
         btnLogout = new javax.swing.JButton();
+        close = new javax.swing.JLabel();
+        maximizer = new javax.swing.JLabel();
         SideSubHeading = new javax.swing.JLabel();
         btnRegister = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         container = new javax.swing.JPanel();
-        lblHeading = new javax.swing.JLabel();
-        lblSubHeading = new javax.swing.JLabel();
-        lblBg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setUndecorated(true);
 
         jSplitPane1.setBackground(new java.awt.Color(255, 255, 255));
-        jSplitPane1.setDividerLocation(250);
+        jSplitPane1.setDividerLocation(200);
 
         jPanel1.setBackground(new java.awt.Color(9, 87, 136));
         jPanel1.setToolTipText("");
@@ -93,7 +93,7 @@ public class MainJFrame extends JFrame {
                 btnLoginActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, 140, 35));
+        jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 140, 35));
 
         txtUsername.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         txtUsername.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 2, 1, new java.awt.Color(255, 255, 255)));
@@ -102,21 +102,21 @@ public class MainJFrame extends JFrame {
                 txtUsernameActionPerformed(evt);
             }
         });
-        jPanel1.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 210, 35));
+        jPanel1.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 160, 30));
 
         txtPasswordField.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         txtPasswordField.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 2, 1, new java.awt.Color(255, 255, 255)));
-        jPanel1.add(txtPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 210, 35));
+        jPanel1.add(txtPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 160, 30));
 
         lblUsername.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblUsername.setForeground(new java.awt.Color(255, 255, 255));
         lblUsername.setText("User Name:");
-        jPanel1.add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, 30));
+        jPanel1.add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, 30));
 
         lblPassword.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblPassword.setForeground(new java.awt.Color(255, 255, 255));
         lblPassword.setText("Password:");
-        jPanel1.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, -1));
+        jPanel1.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, -1, -1));
         jPanel1.add(loginJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(157, 210, -1, -1));
 
         btnLogout.setFont(new java.awt.Font("Cochin", 1, 12)); // NOI18N
@@ -128,12 +128,29 @@ public class MainJFrame extends JFrame {
                 btnLogoutActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 600, 140, 35));
+        jPanel1.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 140, 35));
+
+        close.setBackground(new java.awt.Color(255, 255, 255));
+        close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/cancel.png"))); // NOI18N
+        close.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                closeMouseClicked(evt);
+            }
+        });
+        jPanel1.add(close, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 13, 29, 28));
+
+        maximizer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/maximize.png"))); // NOI18N
+        maximizer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                maximizerMouseClicked(evt);
+            }
+        });
+        jPanel1.add(maximizer, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 13, 29, 28));
 
         SideSubHeading.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         SideSubHeading.setForeground(new java.awt.Color(255, 255, 255));
         SideSubHeading.setText("Please Login!");
-        jPanel1.add(SideSubHeading, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, -1, 40));
+        jPanel1.add(SideSubHeading, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, 40));
 
         btnRegister.setFont(new java.awt.Font("Cochin", 1, 12)); // NOI18N
         btnRegister.setText("REGISTER");
@@ -143,11 +160,16 @@ public class MainJFrame extends JFrame {
                 btnRegisterActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 540, 140, 35));
+        jPanel1.add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 140, 35));
+
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Effective Healthcare!");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
 
         jSplitPane1.setLeftComponent(jPanel1);
 
-        container.setBackground(new java.awt.Color(255, 255, 255));
+        container.setBackground(new java.awt.Color(236, 236, 236));
         container.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 containerMouseDragged(evt);
@@ -158,27 +180,10 @@ public class MainJFrame extends JFrame {
                 containerMousePressed(evt);
             }
         });
-        container.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblHeading.setBackground(new java.awt.Color(255, 255, 255));
-        lblHeading.setFont(new java.awt.Font("Arial Black", 1, 36)); // NOI18N
-        lblHeading.setForeground(new java.awt.Color(9, 87, 136));
-        lblHeading.setText("Welcome To Effective Healthcare");
-        container.add(lblHeading, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, -1, -1));
-
-        lblSubHeading.setBackground(new java.awt.Color(255, 255, 255));
-        lblSubHeading.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        lblSubHeading.setForeground(new java.awt.Color(9, 87, 136));
-        lblSubHeading.setText("Effective system for your care!!");
-        container.add(lblSubHeading, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 100, -1, -1));
-
-        lblBg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/Images/bg.jpeg"))); // NOI18N
-        lblBg.setToolTipText("");
-        container.add(lblBg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1110, 830));
-
+        container.setLayout(new java.awt.CardLayout());
         jSplitPane1.setRightComponent(container);
 
-        getContentPane().add(jSplitPane1, java.awt.BorderLayout.CENTER);
+        getContentPane().add(jSplitPane1, java.awt.BorderLayout.PAGE_START);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -257,12 +262,37 @@ public class MainJFrame extends JFrame {
 
         container.removeAll();
         //JPanel blankJP = new JPanel();
-        SomePanel blankJP = new SomePanel();
-        container.add("blank", blankJP);
+        //KGradientPanel blankJP = new KGradientPanel();
+//        container.add("blank", kGradientPanel1);
         CardLayout crdLyt = (CardLayout) container.getLayout();
         crdLyt.next(container);
         dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_btnLogoutActionPerformed
+
+    private void closeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseClicked
+        // TODO add your handling code here:
+//        System.exit(0);
+    }//GEN-LAST:event_closeMouseClicked
+
+    private void maximizerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_maximizerMouseClicked
+        // TODO add your handling code here:
+
+//        if (maximized) {
+//            //handle fullscreen - taskbar
+//            MainJFrame.this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+//            GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
+//            MainJFrame.this.setMaximizedBounds(env.getMaximumWindowBounds());
+//            ii = new ImageIcon(getClass().getResource("minimize.png"));
+//            maximizer.setIcon(ii);
+//            maximized = false;
+//        } else {
+//
+//            setExtendedState(JFrame.NORMAL);
+//            ii = new ImageIcon(getClass().getResource("maximize.png"));
+//            maximizer.setIcon(ii);
+//            maximized = true;
+//        }
+    }//GEN-LAST:event_maximizerMouseClicked
     int xy;
     int xx;
     //private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {                                     
@@ -310,7 +340,7 @@ public class MainJFrame extends JFrame {
         // registerBtn.setEnabled(false);
         CardLayout layout = (CardLayout) container.getLayout();
         container.add(new CreateNewPatientSelfJPanel(container, dB4OUtil, system));
-        // container.add("workArea",userAccount.getRole().postWorkArea(container, userAccount, inOrganization, inEnterprise, system));
+        // container.add("workArea",userAccount.getRole().createWorkArea(container, userAccount, inOrganization, inEnterprise, system));
         //System.out.println("In network-> "+ assignedNetwork.getName());
         layout.next(container);
 
@@ -363,15 +393,15 @@ public class MainJFrame extends JFrame {
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnRegister;
+    private javax.swing.JLabel close;
     private javax.swing.JPanel container;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JLabel lblBg;
-    private javax.swing.JLabel lblHeading;
     private javax.swing.JLabel lblPassword;
-    private javax.swing.JLabel lblSubHeading;
     private javax.swing.JLabel lblUsername;
     private javax.swing.JLabel loginJLabel;
+    private javax.swing.JLabel maximizer;
     private javax.swing.JPasswordField txtPasswordField;
     private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
