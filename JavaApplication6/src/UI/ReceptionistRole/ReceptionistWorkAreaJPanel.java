@@ -168,8 +168,6 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
         btnBookAppointment = new javax.swing.JButton();
         btnViewAppointment = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jPanel14 = new javax.swing.JPanel();
-        jPanel13 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -177,7 +175,7 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
 
         jScrollPane1.setViewportBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
 
-        PatientDataJTable.setBackground(new java.awt.Color(255, 193, 131));
+        PatientDataJTable.setBackground(new java.awt.Color(236, 236, 236));
         PatientDataJTable.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         PatientDataJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -198,13 +196,14 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
         PatientDataJTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(PatientDataJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 876, 362));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 876, 362));
 
-        jPanel1.setBackground(new java.awt.Color(164, 208, 215));
+        jPanel1.setBackground(new java.awt.Color(236, 236, 236));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnManagePatient.setBackground(new java.awt.Color(255, 155, 54));
+        btnManagePatient.setBackground(new java.awt.Color(9, 87, 136));
         btnManagePatient.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnManagePatient.setForeground(new java.awt.Color(255, 255, 255));
         btnManagePatient.setText("Create New Patient");
         btnManagePatient.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         btnManagePatient.addActionListener(new java.awt.event.ActionListener() {
@@ -212,10 +211,11 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
                 btnManagePatientActionPerformed(evt);
             }
         });
-        jPanel1.add(btnManagePatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 13, 153, 30));
+        jPanel1.add(btnManagePatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 280, 50));
 
-        jButton2.setBackground(new java.awt.Color(255, 155, 54));
+        jButton2.setBackground(new java.awt.Color(9, 87, 136));
         jButton2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("View Patient");
         jButton2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -223,10 +223,11 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 153, 30));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, 250, 50));
 
-        btnBookAppointment.setBackground(new java.awt.Color(255, 155, 54));
+        btnBookAppointment.setBackground(new java.awt.Color(9, 87, 136));
         btnBookAppointment.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnBookAppointment.setForeground(new java.awt.Color(255, 255, 255));
         btnBookAppointment.setText("Book Appointment");
         btnBookAppointment.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         btnBookAppointment.addActionListener(new java.awt.event.ActionListener() {
@@ -234,10 +235,11 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
                 btnBookAppointmentActionPerformed(evt);
             }
         });
-        jPanel1.add(btnBookAppointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 153, 38));
+        jPanel1.add(btnBookAppointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 280, 50));
 
-        btnViewAppointment.setBackground(new java.awt.Color(255, 155, 54));
+        btnViewAppointment.setBackground(new java.awt.Color(9, 87, 136));
         btnViewAppointment.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnViewAppointment.setForeground(new java.awt.Color(255, 255, 255));
         btnViewAppointment.setText("View Appointment");
         btnViewAppointment.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         btnViewAppointment.addActionListener(new java.awt.event.ActionListener() {
@@ -245,47 +247,17 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
                 btnViewAppointmentActionPerformed(evt);
             }
         });
-        jPanel1.add(btnViewAppointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, 153, 38));
+        jPanel1.add(btnViewAppointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, 250, 50));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 550, 130));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 650, 190));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/receptionist.jpg"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 20, -1, 230));
-
-        jPanel14.setBackground(new java.awt.Color(196, 224, 229));
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 190, Short.MAX_VALUE)
-        );
-
-        add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 190));
-
-        jPanel13.setBackground(new java.awt.Color(68, 145, 157));
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 200, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 50, -1, 230));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(68, 145, 157));
+        jLabel5.setForeground(new java.awt.Color(9, 87, 136));
         jLabel5.setText("Welcome!");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 350, 37));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 430, 50));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnManagePatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManagePatientActionPerformed
@@ -353,8 +325,6 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 

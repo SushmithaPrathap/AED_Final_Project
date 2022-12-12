@@ -151,15 +151,13 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
         closebtn1 = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         expDate1 = new javax.swing.JTextField();
-        jPanel14 = new javax.swing.JPanel();
-        jPanel13 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         backJButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        organizationJTable.setBackground(new java.awt.Color(255, 193, 131));
+        organizationJTable.setBackground(new java.awt.Color(236, 236, 236));
         organizationJTable.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
         organizationJTable.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         organizationJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -233,8 +231,9 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
 
         availableQtyTxt.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
 
-        btnSave.setBackground(new java.awt.Color(102, 147, 255));
+        btnSave.setBackground(new java.awt.Color(9, 87, 136));
         btnSave.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        btnSave.setForeground(new java.awt.Color(255, 255, 255));
         btnSave.setText("Save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -242,7 +241,6 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
             }
         });
 
-        closebtn.setBackground(new java.awt.Color(102, 147, 255));
         closebtn.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         closebtn.setText("Close");
         closebtn.addActionListener(new java.awt.event.ActionListener() {
@@ -261,34 +259,41 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
         addMedicineJPanelLayout.setHorizontalGroup(
             addMedicineJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addMedicineJPanelLayout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(addMedicineJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(addMedicineJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(addMedicineJPanelLayout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addGroup(addMedicineJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(addMedicineJPanelLayout.createSequentialGroup()
+                                .addGroup(addMedicineJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7))
+                                .addGap(33, 33, 33)
+                                .addGroup(addMedicineJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(availableQtyTxt)
+                                    .addComponent(priceTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addMedicineJPanelLayout.createSequentialGroup()
+                                .addGroup(addMedicineJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel5))
+                                .addGap(68, 68, 68)
+                                .addGroup(addMedicineJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(nameJTextField, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(dosageJTextField, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cmbMedicineType, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(addMedicineJPanelLayout.createSequentialGroup()
                         .addGroup(addMedicineJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7))
-                        .addGap(33, 33, 33)
-                        .addGroup(addMedicineJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(availableQtyTxt)
-                            .addComponent(priceTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addMedicineJPanelLayout.createSequentialGroup()
-                        .addGroup(addMedicineJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel5))
-                        .addGap(68, 68, 68)
-                        .addGroup(addMedicineJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(nameJTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(dosageJTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cmbMedicineType, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addMedicineJPanelLayout.createSequentialGroup()
+                            .addGroup(addMedicineJPanelLayout.createSequentialGroup()
+                                .addGap(36, 36, 36)
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addMedicineJPanelLayout.createSequentialGroup()
+                                .addContainerGap(30, Short.MAX_VALUE)
+                                .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)))
                         .addGroup(addMedicineJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel8)
-                            .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(addMedicineJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(closebtn)
-                            .addComponent(expDate, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(expDate, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(closebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(0, 36, Short.MAX_VALUE))
         );
         addMedicineJPanelLayout.setVerticalGroup(
@@ -322,17 +327,18 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel8))
                 .addGap(18, 18, 18)
                 .addGroup(addMedicineJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(closebtn)
-                    .addComponent(btnSave))
+                    .addComponent(closebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         add(addMedicineJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 310, -1, 370));
 
-        jPanel1.setBackground(new java.awt.Color(196, 224, 229));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
-        btnAdd.setBackground(new java.awt.Color(255, 155, 54));
+        btnAdd.setBackground(new java.awt.Color(9, 87, 136));
         btnAdd.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnAdd.setForeground(new java.awt.Color(255, 255, 255));
         btnAdd.setText("Add Medicine");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -340,8 +346,9 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnView.setBackground(new java.awt.Color(255, 155, 54));
+        btnView.setBackground(new java.awt.Color(9, 87, 136));
         btnView.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnView.setForeground(new java.awt.Color(255, 255, 255));
         btnView.setText("View Details");
         btnView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -353,24 +360,24 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 18, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53)
+                .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
-                .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45))
+                .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(58, 58, 58))
         );
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 170, 170, 220));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 110, 210, 280));
 
         viewMedicineJPanel.setBackground(new java.awt.Color(255, 255, 255));
         viewMedicineJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "View Medicine", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 14), new java.awt.Color(68, 145, 157))); // NOI18N
@@ -406,8 +413,9 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
 
         availableQtyTxt1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
 
-        btnSave1.setBackground(new java.awt.Color(102, 147, 255));
+        btnSave1.setBackground(new java.awt.Color(9, 87, 136));
         btnSave1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        btnSave1.setForeground(new java.awt.Color(255, 255, 255));
         btnSave1.setText("Save");
         btnSave1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -415,8 +423,9 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnUpdate1.setBackground(new java.awt.Color(102, 147, 255));
+        btnUpdate1.setBackground(new java.awt.Color(9, 87, 136));
         btnUpdate1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        btnUpdate1.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate1.setText("Update Details");
         btnUpdate1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -424,7 +433,6 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
             }
         });
 
-        closebtn1.setBackground(new java.awt.Color(102, 147, 255));
         closebtn1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         closebtn1.setText("Close");
         closebtn1.addActionListener(new java.awt.event.ActionListener() {
@@ -470,12 +478,12 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(expDate1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(viewMedicineJPanelLayout.createSequentialGroup()
-                                .addComponent(btnSave1)
-                                .addGap(45, 45, 45)
+                                .addComponent(btnSave1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnUpdate1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(viewMedicineJPanelLayout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addComponent(closebtn1)))
+                        .addGap(97, 97, 97)
+                        .addComponent(closebtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 36, Short.MAX_VALUE))
         );
         viewMedicineJPanelLayout.setVerticalGroup(
@@ -509,51 +517,20 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel14))
                 .addGap(14, 14, 14)
                 .addGroup(viewMedicineJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSave1)
-                    .addComponent(btnUpdate1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
-                .addComponent(closebtn1)
-                .addContainerGap())
+                    .addComponent(btnSave1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnUpdate1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(closebtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         add(viewMedicineJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 310, -1, 370));
 
-        jPanel14.setBackground(new java.awt.Color(196, 224, 229));
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-
-        add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 200));
-
-        jPanel13.setBackground(new java.awt.Color(68, 145, 157));
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 210, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 210, -1));
-
         jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(68, 145, 157));
+        jLabel15.setForeground(new java.awt.Color(9, 87, 136));
         jLabel15.setText("Manage Medicine Inventory");
         add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, 310, 37));
 
-        backJButton.setBackground(new java.awt.Color(102, 147, 255));
         backJButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         backJButton.setText("Back");
         backJButton.setPreferredSize(new java.awt.Dimension(100, 40));
@@ -562,7 +539,7 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 103, 39));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 103, 39));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
@@ -972,8 +949,6 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameJTextField;
     private javax.swing.JTextField nameJTextField1;

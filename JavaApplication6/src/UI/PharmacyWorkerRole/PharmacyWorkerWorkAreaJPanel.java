@@ -165,8 +165,6 @@ public class PharmacyWorkerWorkAreaJPanel extends javax.swing.JPanel {
         medicineQuantityTbl = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
         totalPriceTxt = new javax.swing.JTextField();
-        jPanel14 = new javax.swing.JPanel();
-        jPanel13 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -175,8 +173,8 @@ public class PharmacyWorkerWorkAreaJPanel extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, -1, -1));
 
-        backJButton.setBackground(new java.awt.Color(102, 147, 255));
         backJButton.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        backJButton.setForeground(new java.awt.Color(9, 87, 136));
         backJButton.setText("Back");
         backJButton.setPreferredSize(new java.awt.Dimension(100, 40));
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -184,17 +182,18 @@ public class PharmacyWorkerWorkAreaJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel5.setText("Status :");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 440, -1, 20));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 440, -1, 20));
 
         technicianNameTxt.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        add(technicianNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 370, 160, 30));
+        add(technicianNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 380, 160, 30));
 
-        btnSubmit.setBackground(new java.awt.Color(102, 147, 255));
+        btnSubmit.setBackground(new java.awt.Color(9, 87, 136));
         btnSubmit.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
         btnSubmit.setText("Submit");
         btnSubmit.setPreferredSize(new java.awt.Dimension(100, 40));
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -211,14 +210,14 @@ public class PharmacyWorkerWorkAreaJPanel extends javax.swing.JPanel {
                 cmbStatusTypeActionPerformed(evt);
             }
         });
-        add(cmbStatusType, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 440, 160, 30));
+        add(cmbStatusType, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 430, 160, 30));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/BillingPayment.PNG"))); // NOI18N
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 380, 290, 180));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 350, 290, 180));
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel9.setText("Worker Name :");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 370, -1, 20));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 380, -1, 20));
 
         medicineQuantityTbl.setBackground(new java.awt.Color(255, 193, 131));
         medicineQuantityTbl.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
@@ -242,11 +241,11 @@ public class PharmacyWorkerWorkAreaJPanel extends javax.swing.JPanel {
         medicineQuantityTbl.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane3.setViewportView(medicineQuantityTbl);
 
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 720, 180));
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 800, 210));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel6.setText("Total Price :");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 510, 110, 20));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 500, 110, 20));
 
         totalPriceTxt.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         totalPriceTxt.addActionListener(new java.awt.event.ActionListener() {
@@ -256,39 +255,10 @@ public class PharmacyWorkerWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(totalPriceTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 500, 160, -1));
 
-        jPanel14.setBackground(new java.awt.Color(196, 224, 229));
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 220, Short.MAX_VALUE)
-        );
-
-        add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 220));
-
-        jPanel13.setBackground(new java.awt.Color(68, 145, 157));
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 230, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 230, -1));
-
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(9, 87, 136));
         jLabel2.setText("Order Completion");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 0, 270, 30));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 40, 270, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -423,8 +393,6 @@ public class PharmacyWorkerWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable medicineQuantityTbl;
     private javax.swing.JTextField technicianNameTxt;
