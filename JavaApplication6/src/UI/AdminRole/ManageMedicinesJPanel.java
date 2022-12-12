@@ -47,7 +47,7 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
         this.userProcessContainer = userProcessContainer;
         this.organizationDir = organizationDir;
         this.enterprise = enterprise;
-        this.medicineDir = ((Pharmacy) enterprise).getMedicineList();
+        this.medicineDir = ((Pharmacy) enterprise).getMedicineArray();
         //populateMainMedicineComboBox();
         //populateOrganizationEmpComboBox();
         viewMedicineJPanel.setVisible(false);

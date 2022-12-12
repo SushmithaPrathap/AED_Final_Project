@@ -9,7 +9,7 @@ import model.appointment.Appointment;
 import model.EcoSystem;
 import model.Enterprise.Enterprise;
 import model.Enterprise.Hospital.Hospital;
-import model.Enterprise.LabEnterprise.LabTest;
+import model.Enterprise.Lab.LabTest;
 import model.Organization.Organization;
 import model.Patient.Patient;
 import model.UserAccount.UserAccount;
@@ -82,9 +82,9 @@ public class ViewPatientBillJPanel extends javax.swing.JPanel {
         txtOperationCharge.setText(String.valueOf(operationCharge));
         
         Double labtestCharge = 0d;
-        if(appointment.getLabTestList() != null && appointment.getLabTestList().getLabTestList() != null){
-            for(LabTest labTest : appointment.getLabTestList().getLabTestList()){
-                labtestCharge += labTest.getTestCharge();
+        if(appointment.getLabTestList() != null && appointment.getLabTestList().getLabTestArray() != null){
+            for(LabTest labTest : appointment.getLabTestList().getLabTestArray()){
+                labtestCharge += labTest.getTestAmount();
             }
         }
         txtLabTestCharge.setText(String.valueOf(labtestCharge));

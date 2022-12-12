@@ -9,9 +9,9 @@ import model.appointment.Appointment;
 import model.DB4OUtil.DB4OUtil;
 import model.EcoSystem;
 import model.Enterprise.Enterprise;
-import model.Enterprise.LabEnterprise.Lab;
-import model.Enterprise.LabEnterprise.LabTest;
-import model.Enterprise.LabEnterprise.LabTestDirectory;
+import model.Enterprise.Lab.Lab;
+import model.Enterprise.Lab.LabTest;
+import model.Enterprise.Lab.LabTestDirectory;
 import model.Network.Network;
 import model.Organization.Organization;
 import model.Patient.Patient;
@@ -321,11 +321,11 @@ public class AssignLabTestJPanel extends javax.swing.JPanel {
                 lab.getWorkQueue().getWorkRequestList().add(workreq);
                 LabTest labTest= new LabTest();
                 labTest.setLab(lab);
-                labTest.setLabTechnician(null);
+                labTest.setLabTech(null);
                 labTest.setPatient(patient);
-                labTest.setName(testType);
-                labTest.setDoctor(appointment.getDoctor());
-                labTest.setStatus("New");
+                labTest.setNameVar(testType);
+                labTest.setDoc(appointment.getDoctor());
+                labTest.setStatusVar("New");
                 //labTest.setType(testType);
                 workreq.setLabTest(labTest);
                 appointment.getLabTestList().addLabTest(labTest);
@@ -364,14 +364,14 @@ public class AssignLabTestJPanel extends javax.swing.JPanel {
             labTestList= new LabTestDirectory();
             appointment.setLabTestList(labTestList);
         }
-        if(labTestList.getLabTestList() != null && !labTestList.getLabTestList().isEmpty()){
-        for (LabTest labTest : labTestList.getLabTestList()) {
+        if(labTestList.getLabTestArray() != null && !labTestList.getLabTestArray().isEmpty()){
+        for (LabTest labTest : labTestList.getLabTestArray()) {
             Object[] row = new Object[5];
             row[0] = new Date();
-            row[1] = labTest.getName();
+            row[1] = labTest.getNameVar();
             row[2] = labTest.getLab();
             row[3] = labTest.getPatient();
-            row[4] = (labTest.getStatus().equals("") ) ? "New" :labTest.getStatus() ;
+            row[4] = (labTest.getStatusVar().equals("") ) ? "New" :labTest.getStatusVar() ;
             model.addRow(row);
             
         }

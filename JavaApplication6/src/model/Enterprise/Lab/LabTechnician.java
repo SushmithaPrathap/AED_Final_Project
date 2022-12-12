@@ -3,15 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model.Enterprise.LabEnterprise;
+package model.Enterprise.Lab;
 
-import java.util.List;
+import model.Person.Person;
 
 /**
  *
  * @author Suprith
  */
-public class LabTechnicianDirectory {
-    List<LabTechnician> labTechnicianList;
+public class LabTechnician extends Person{
     
 }

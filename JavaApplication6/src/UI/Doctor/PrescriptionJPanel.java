@@ -115,7 +115,7 @@ public class PrescriptionJPanel extends javax.swing.JPanel {
           Pharmacy pharEnterprise =(Pharmacy) cmbPharmacy.getSelectedItem();
           if(pharEnterprise != null)  // added because on page loading null pointer exception is coming
           {
-          MedicineDirectory medicineList1 =pharEnterprise.getMedicineList();
+          MedicineDirectory medicineList1 =pharEnterprise.getMedicineArray();
           
           
           if(medicineList1 != null){

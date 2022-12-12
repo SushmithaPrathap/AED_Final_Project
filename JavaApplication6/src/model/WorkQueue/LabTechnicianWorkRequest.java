@@ -5,7 +5,7 @@
 package model.WorkQueue;
 
 import model.appointment.Appointment;
-import model.Enterprise.LabEnterprise.LabTest;
+import model.Enterprise.Lab.LabTest;
 import model.Patient.Patient;
 
 /**

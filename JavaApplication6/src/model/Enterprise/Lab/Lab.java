@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model.Enterprise.LabEnterprise;
+package model.Enterprise.Lab;
 
 import model.Dept.Receptionist;
 import model.Enterprise.Enterprise;
@@ -17,10 +17,10 @@ import java.util.ArrayList;
  */
 public class Lab extends Enterprise {
 
-    int id;
-    PatientDirectory patientList;
+    int labId;
+    PatientDirectory patientArray;
     Receptionist receptionist;
-    LabTechnicianDirectory labTechnicianList;
+    LabTechnicianDirectory labTechArray;
     
     //String enterpriseType;
     public Lab(String name){

@@ -9,8 +9,8 @@ import model.DB4OUtil.DB4OUtil;
 import model.EcoSystem;
 import model.Employee.Employee;
 import model.Enterprise.Enterprise;
-import model.Enterprise.LabEnterprise.Lab;
-import model.Enterprise.LabEnterprise.LabTest;
+import model.Enterprise.Lab.Lab;
+import model.Enterprise.Lab.LabTest;
 import model.Organization.LabOrganization;
 import model.Organization.Organization;
 import model.Patient.Patient;
@@ -67,7 +67,7 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
         this.patient = appointment.getPatient();
         populatecbox();
         //populateTable();
-        testNameTxt.setText(labTest.getName());
+        testNameTxt.setText(labTest.getNameVar());
         testNameTxt.setEditable(false);
         technicianNameTxt.setEditable(false);
         technicianNameTxt.setText(userAccount.getEmployee().getNameVar());
@@ -84,23 +84,23 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
         //System.out.println("Current date: "+currentDate);
         testDateTxt.setText(currentDate);
 
-        if (labTest.getStatus().equals("Completed")) {
+        if (labTest.getStatusVar().equals("Completed")) {
             cmbStatusType.setSelectedIndex(1);
             cmbStatusType.setEnabled(false);
         }
         txtDrRemarks.setText(request.getMessage());
 
-        testChargeTxt.setText(labTest.getTestCharge() == 0d ? "" : String.valueOf(labTest.getTestCharge()));
+        testChargeTxt.setText(labTest.getTestAmount() == 0d ? "" : String.valueOf(labTest.getTestAmount()));
 
-        if (labTest.getStatus().equals("Completed")) {
+        if (labTest.getStatusVar().equals("Completed")) {
             DefaultTableModel dtm = (DefaultTableModel) labTestTbl.getModel();
             dtm.setRowCount(0);
             //for (Appointment.AppointmentStatus type : Appointment.AppointmentStatus.values()){
             Object[] row = new Object[6];
-            row[0] = labTest.getName();
-            row[1] = labTest.getTestCharge();
+            row[0] = labTest.getNameVar();
+            row[1] = labTest.getTestAmount();
             row[2] = currentDate;
-            row[3] = labTest.getLabTechnician().getNameVar();
+            row[3] = labTest.getLabTech().getNameVar();
             row[4] = cmbStatusType.getSelectedItem();
             row[5] = appointment.getPatient().getNameVar();
             dtm.addRow(row);
@@ -484,7 +484,7 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Please upload file!");
                 return;
             }
-            if (labTest.getStatus() != null && labTest.getStatus().equals("Completed")) {
+            if (labTest.getStatusVar() != null && labTest.getStatusVar().equals("Completed")) {
                 JOptionPane.showMessageDialog(null, "Lab test is already completed!");
                 return;
             }
@@ -502,8 +502,8 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Please enter date properly!");
                 return;
             }
-            labTest.setStatus("Completed");
-            labTest.setTestCharge(testCharge);
+            labTest.setStatusVar("Completed");
+            labTest.setTestAmount(testCharge);
             //String technicianName = technicianNameTxt.getText();
             //if(testName.equals("") || testDate.equals("") || technicianName.equals(""))
             Appointment app = appointment; //(Appointment)cmbStatusType.getSelectedItem();
@@ -540,10 +540,10 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
             dtm.setRowCount(0);
             //for (Appointment.AppointmentStatus type : Appointment.AppointmentStatus.values()){
             Object[] row = new Object[6];
-            row[0] = labTest.getName();
-            row[1] = labTest.getTestCharge();
+            row[0] = labTest.getNameVar();
+            row[1] = labTest.getTestAmount();
             row[2] = currentDate;
-            row[3] = labTest.getLabTechnician().getNameVar();
+            row[3] = labTest.getLabTech().getNameVar();
             row[4] = cmbStatusType.getSelectedItem();
             row[5] = appointment.getPatient().getNameVar();
             dtm.addRow(row);

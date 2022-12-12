@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model.Enterprise.LabEnterprise;
+package model.Enterprise.Lab;
 
 import model.Employee.Employee;
 import model.Patient.Patient;
@@ -14,10 +14,10 @@ import java.util.Date;
  * @author Suprith
  */
 public class Report {
-    int id;
+    int reportId;
     Date date;
     Patient patient;
-    Employee doctor;
+    Employee doc;
     LabTechnician labTech;
     Lab lab;
     

@@ -18,78 +18,68 @@ import java.util.Map;
  *
  * @author Suprith
  */
-public class Pharmacy extends Enterprise{
+public class Pharmacy extends Enterprise {
+
     //int id;
     //String name;
-    Map<Medicine,Integer> medicineListInventory;   /// medicine,quantity
-    MedicineDirectory medicineList;
+    Map<Medicine, Integer> medicineInventory;   /// medicine,quantity
+    MedicineDirectory medicineArray;
 
-    public MedicineDirectory getMedicineList() {
-        return medicineList;
+    public MedicineDirectory getMedicineArray() {
+        return medicineArray;
     }
 
-    public void setMedicineList(MedicineDirectory medicineList) {
-        this.medicineList = medicineList;
+    public void setMedicineArray(MedicineDirectory medicineArray) {
+        this.medicineArray = medicineArray;
     }
 
-    public Map<Medicine, Integer> getMedicineListquanity() {
-        return medicineListInventory;
+    public Map<Medicine, Integer> getMedicineListQuanity() {
+        return medicineInventory;
     }
 
-    public void setMedicineListquanity(Map<Medicine, Integer> medicineListquanity) {
-        this.medicineListInventory = medicineListquanity;
+    public void setMedicineQuanity(Map<Medicine, Integer> medicineListquanity) {
+        this.medicineInventory = medicineListquanity;
     }
 
-    
-    public Pharmacy(String name){
-        super(name,EnterpriseType.Pharmacy);
-        medicineList = new MedicineDirectory();
-        populateMedicineListForNewPharmacy();
-        
+    public Pharmacy(String name) {
+        super(name, EnterpriseType.Pharmacy);
+        medicineArray = new MedicineDirectory();
+        popMedicineListForNewPharmacy();
     }
+
     @Override
     public ArrayList<Role> getRoleSupported() {
         return null;
     }
-    
-    
-    void populateMedicineListForNewPharmacy(){
-    try{
-    if(medicineList.getMedicineList().isEmpty())
-    {
-        //add medicines----> preloaded
-        
-        Medicine med = new Medicine();
-        medicineList.getMedicineList().add(med);
-        
-        
-        String sDate = "2022-12-30";
-        SimpleDateFormat formatter1=new SimpleDateFormat("yyyy-MM-dd");
-        Date date1=formatter1.parse(sDate);
-        //Select, Liquid, Tablet, Gel, Injection, Other
-        med.setValues("Benadryl",date1, "2",300.00,250,"Liquid");
-        med = new Medicine();
-        medicineList.getMedicineList().add(med);
-        med.setValues("Multi Vitamin",date1, "2",300.00,250,"Tablet");
-        med = new Medicine();
-        medicineList.getMedicineList().add(med);
-        med.setValues("Flu Injection",date1, "2",300.00,250,"Injection");
-        med = new Medicine();
-        medicineList.getMedicineList().add(med);
-        med.setValues("ABC Gel",date1, "2",320.00,20,"Gel");
-        
-        
-        
-    }
-        
-        
+
+    void popMedicineListForNewPharmacy() {
+        try {
+            if (medicineArray.getMedicineList().isEmpty()) {
+                //add preloaded medicines
+
+                Medicine medVar = new Medicine();
+                medicineArray.getMedicineList().add(medVar);
+
+                String storeDate = "2024-12-30";
+                SimpleDateFormat formatterVar = new SimpleDateFormat("yyyy-MM-dd");
+                Date date1 = formatterVar.parse(storeDate);
+                //Select --> form --> Liquid, Tablet, Gel, Injection, Other
+                medVar.setValues("Benadryl", date1, "2", 300.00, 550, "Liquid");
+                medVar = new Medicine();
+                medicineArray.getMedicineList().add(medVar);
+                medVar.setValues("Multi Vitamin", date1, "4", 300.00, 350, "Tablet");
+                medVar = new Medicine();
+                medicineArray.getMedicineList().add(medVar);
+                medVar.setValues("Flu Injection", date1, "5", 300.00, 400, "Injection");
+                medVar = new Medicine();
+                medicineArray.getMedicineList().add(medVar);
+                medVar.setValues("ABC Gel", date1, "1", 320.00, 40, "Gel");
+
+            }
+
+        } catch (Exception ex) {
+            System.out.println("Error occured in craeting medicine in pharmacy");
         }
-    
-    
-    catch(Exception ex)
-    {
-        System.out.println("Exception occured in medicine creation in pharmacy");
     }
-}
-    
+
 }

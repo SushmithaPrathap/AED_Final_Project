@@ -7,7 +7,7 @@ package UI.LabTechnicianRole;
 import model.DB4OUtil.DB4OUtil;
 import model.EcoSystem;
 import model.Enterprise.Enterprise;
-import model.Enterprise.LabEnterprise.LabTest;
+import model.Enterprise.Lab.LabTest;
 import model.Organization.Organization;
 import model.UserAccount.UserAccount;
 import model.WorkQueue.LabTechnicianWorkRequest;
@@ -68,7 +68,7 @@ public class LabAssistantMainAreaJPanel extends javax.swing.JPanel {
                 row[3] = request.getStatus();
                 LabTest lt = ((LabTechnicianWorkRequest) request).getLabTest();
                 row[4] = lt == null ? " Test " : lt;//.getName();
-                row[5] = (lt == null || lt.getStatus() == null) ? "New" : lt.getStatus();
+                row[5] = (lt == null || lt.getStatusVar() == null) ? "New" : lt.getStatusVar();
                 row[6] = request.getMessage();
                 row[7] = request;
                 model.addRow(row);
@@ -225,8 +225,8 @@ public class LabAssistantMainAreaJPanel extends javax.swing.JPanel {
             return;
         }
         LabTest lt = (LabTest) workRequestJTable.getValueAt(selectedRow, 4);
-        lt.setLabTechnician(userAccount.getEmployee());
-        lt.setStatus("In Process");
+        lt.setLabTech(userAccount.getEmployee());
+        lt.setStatusVar("In Process");
         request.setReceiver(userAccount);
         request.setStatus("Pending");
         JOptionPane.showMessageDialog(null, "Assigned successfully!");

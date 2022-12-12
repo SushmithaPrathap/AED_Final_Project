@@ -5,8 +5,8 @@
 package model.Enterprise;
 
 import model.Enterprise.Hospital.Hospital;
-import model.Enterprise.InsuranceEnterprise.Insurance;
-import model.Enterprise.LabEnterprise.Lab;
+import model.Enterprise.Insurance.Insurance;
+import model.Enterprise.Lab.Lab;
 import model.Enterprise.Pharmacy.Pharmacy;
 
 import java.util.ArrayList;

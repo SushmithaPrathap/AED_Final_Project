@@ -9,24 +9,18 @@ import java.util.List;
 
 /**
  *
- * @author Suprith */
+ * @author Suprith
+ */
 public class PharmacyDirectory {
-    List<Pharmacy> pharmacyList;
-    
-    
-    //create
-    
-    //search
-    
-    //view
-    
-    //update
 
-    public List<Pharmacy> getPharmacyList() {
-        return pharmacyList;
+    List<Pharmacy> pharmacyArray;
+    // pharmacy - CRUD operations
+
+    public List<Pharmacy> getPharmacyArray() {
+        return pharmacyArray;
     }
 
-    public void setPharmacyList(List<Pharmacy> pharmacyList) {
-        this.pharmacyList = pharmacyList;
+    public void setPharmacyArray(List<Pharmacy> pharmacyArray) {
+        this.pharmacyArray = pharmacyArray;
     }
 }

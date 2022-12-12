@@ -4,7 +4,7 @@
  */
 package model.Patient;
 
-import model.Enterprise.InsuranceEnterprise.Insurance;
+import model.Enterprise.Insurance.Insurance;
 import model.Location.Location;
 import model.UserAccount.UserAccount;
 import java.util.ArrayList;

@@ -6,9 +6,9 @@ package UI.InsuranceRole;
 
 import model.EcoSystem;
 import model.Enterprise.Enterprise;
-import model.Enterprise.InsuranceEnterprise.Insurance;
-import model.Enterprise.InsuranceEnterprise.InsDetails;
-import model.Enterprise.InsuranceEnterprise.InsuranceDirectory;
+import model.Enterprise.Insurance.Insurance;
+import model.Enterprise.Insurance.InsDetails;
+import model.Enterprise.Insurance.InsuranceDirectory;
 import model.Organization.OrganizationDirectory;
 import model.Patient.Patient;
 import model.Patient.PatientDirectory;
