@@ -57,12 +57,12 @@ public class PatientMainWorkAreaJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setFont(new java.awt.Font("Arial Black", 1, 48)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 51, 255));
+        jLabel5.setForeground(new java.awt.Color(9, 87, 136));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Welcome back!");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 120, 490, 90));
 
-        btnBookAppointment.setBackground(new java.awt.Color(153, 204, 255));
+        btnBookAppointment.setBackground(new java.awt.Color(9, 87, 136));
         btnBookAppointment.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
         btnBookAppointment.setForeground(new java.awt.Color(255, 255, 255));
         btnBookAppointment.setText("Book Appointment");
@@ -77,7 +77,7 @@ public class PatientMainWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(btnBookAppointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 430, 290, 160));
 
-        btnViewAppointment.setBackground(new java.awt.Color(153, 204, 255));
+        btnViewAppointment.setBackground(new java.awt.Color(9, 87, 136));
         btnViewAppointment.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
         btnViewAppointment.setForeground(new java.awt.Color(255, 255, 255));
         btnViewAppointment.setText("View Appointment");
