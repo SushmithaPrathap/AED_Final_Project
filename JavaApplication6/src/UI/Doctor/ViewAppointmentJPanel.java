@@ -107,8 +107,6 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
         DateTxt = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         doctorNameTxt = new javax.swing.JTextField();
-        jPanel14 = new javax.swing.JPanel();
-        jPanel13 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -121,11 +119,10 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(68, 145, 157));
+        jLabel7.setForeground(new java.awt.Color(9, 87, 136));
         jLabel7.setText("Appointment Details");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 230, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 230, -1));
 
-        backJButton1.setBackground(new java.awt.Color(102, 147, 255));
         backJButton1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         backJButton1.setText("Back");
         backJButton1.setPreferredSize(new java.awt.Dimension(100, 40));
@@ -134,7 +131,7 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
                 backJButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(backJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 48, -1, -1));
+        jPanel1.add(backJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         appointmentIDTxt.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         appointmentIDTxt.addActionListener(new java.awt.event.ActionListener() {
@@ -210,50 +207,21 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 11, -1, -1));
 
-        jPanel14.setBackground(new java.awt.Color(196, 224, 229));
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 91, Short.MAX_VALUE)
-        );
-
-        add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        jPanel13.setBackground(new java.awt.Color(68, 145, 157));
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, -1, -1));
-
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/view appotnmt.jpeg"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, -1, 370));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, -1, 370));
 
         jLabel15.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel15.setText("Appointment History:");
-        add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(628, 92, 160, -1));
+        add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(628, 92, 180, -1));
 
-        apptHistoryTxt.setBackground(new java.awt.Color(255, 193, 131));
+        apptHistoryTxt.setBackground(new java.awt.Color(9, 87, 136));
         apptHistoryTxt.setColumns(20);
         apptHistoryTxt.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        apptHistoryTxt.setForeground(new java.awt.Color(255, 255, 255));
         apptHistoryTxt.setRows(5);
         jScrollPane1.setViewportView(apptHistoryTxt);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 130, 310, 121));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 130, 310, 121));
     }// </editor-fold>//GEN-END:initComponents
 
     private void backJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButton1ActionPerformed
@@ -311,8 +279,6 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField patientNameTxt;
     // End of variables declaration//GEN-END:variables

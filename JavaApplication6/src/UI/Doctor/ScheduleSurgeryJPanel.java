@@ -163,14 +163,13 @@ jLabel6.setIcon(profilePic);
         jScrollPane1 = new javax.swing.JScrollPane();
         tblSurgeyDetails = new javax.swing.JTable();
         backJButton = new javax.swing.JButton();
-        jPanel13 = new javax.swing.JPanel();
-        jPanel14 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        scheduleSurgeryJPanel.setBackground(new java.awt.Color(255, 255, 255));
         scheduleSurgeryJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Add Schedule", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 0, 18), new java.awt.Color(68, 145, 157))); // NOI18N
 
         appoinmtntDTxt.addActionListener(new java.awt.event.ActionListener() {
@@ -190,7 +189,9 @@ jLabel6.setIcon(profilePic);
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel3.setText("Schedule Date:");
 
+        saveButton.setBackground(new java.awt.Color(9, 87, 136));
         saveButton.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        saveButton.setForeground(new java.awt.Color(255, 255, 255));
         saveButton.setText("Save");
         saveButton.setPreferredSize(new java.awt.Dimension(100, 40));
         saveButton.addActionListener(new java.awt.event.ActionListener() {
@@ -199,7 +200,9 @@ jLabel6.setIcon(profilePic);
             }
         });
 
+        closebtn.setBackground(new java.awt.Color(9, 87, 136));
         closebtn.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        closebtn.setForeground(new java.awt.Color(255, 255, 255));
         closebtn.setText("Close");
         closebtn.setPreferredSize(new java.awt.Dimension(100, 40));
         closebtn.addActionListener(new java.awt.event.ActionListener() {
@@ -287,7 +290,7 @@ jLabel6.setIcon(profilePic);
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        add(scheduleSurgeryJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 340, -1, -1));
+        add(scheduleSurgeryJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, -1, -1));
 
         tblSurgeyDetails.setBackground(new java.awt.Color(255, 193, 131));
         tblSurgeyDetails.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
@@ -310,9 +313,8 @@ jLabel6.setIcon(profilePic);
         tblSurgeyDetails.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(tblSurgeyDetails);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 1010, 162));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 1010, 162));
 
-        backJButton.setBackground(new java.awt.Color(102, 147, 255));
         backJButton.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         backJButton.setText("Back");
         backJButton.setPreferredSize(new java.awt.Dimension(100, 40));
@@ -321,42 +323,12 @@ jLabel6.setIcon(profilePic);
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 66, -1, -1));
-
-        jPanel13.setBackground(new java.awt.Color(68, 145, 157));
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 170, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 170, -1));
-
-        jPanel14.setBackground(new java.awt.Color(196, 224, 229));
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 170, Short.MAX_VALUE)
-        );
-
-        add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 170));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(68, 145, 157));
+        jLabel4.setForeground(new java.awt.Color(9, 87, 136));
         jLabel4.setText("Surgery Scheduling");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 212, 35));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 30, 212, 35));
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 300, 330, 290));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -496,8 +468,6 @@ jLabel6.setIcon(profilePic);
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel oprDesc;
