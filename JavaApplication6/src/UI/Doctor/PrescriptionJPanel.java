@@ -80,17 +80,17 @@ public class PrescriptionJPanel extends javax.swing.JPanel {
         for(int i=0;i<networkList.size();i++){
             network=networkList.get(i);
             
-            List<Enterprise> enterpriseList= network.getEnterpriseDirectory().getEnterpriseList();
+            List<Enterprise> enterpriseList= network.getEnterpriseDirectory().getEnterpriseArray();
         if (enterpriseList == null || enterpriseList.isEmpty()) {
             //nothing
         } 
             {
                 //boston network
                 
-                enterpriseList=network.getEnterpriseDirectory().getEnterpriseList();
+                enterpriseList=network.getEnterpriseDirectory().getEnterpriseArray();
                 
                for(Enterprise enterpri: enterpriseList){
-                   if(enterpri.getEnterpriseType().equals(Enterprise.EnterpriseType.Pharmacy))
+                   if(enterpri.getTypeEnterprise().equals(Enterprise.EnterpriseType.Pharmacy))
                    {
                        cmbPharmacy.addItem(enterpri);
                    }
@@ -354,7 +354,7 @@ public class PrescriptionJPanel extends javax.swing.JPanel {
         prescription.setPatient(patient);
         prescription.setDoctor(doctor);
         
-        patient.getAppointmentDirectory().getPrescriptionList().add(prescription);
+        patient.getAppointmentDir().getPrescriptionList().add(prescription);
         
         //pharmacy work request created--todo
         PharmacyWorkRequest phWr = new PharmacyWorkRequest();

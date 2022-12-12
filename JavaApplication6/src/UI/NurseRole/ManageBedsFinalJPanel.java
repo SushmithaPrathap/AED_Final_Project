@@ -68,7 +68,7 @@ public class ManageBedsFinalJPanel extends javax.swing.JPanel {
         
         boolean flag=false;
         BedManagementDepartment bedOrg=null;
-        OrganizationDirectory orgDir = enterprise.getOrganizationDirectory();
+        OrganizationDirectory orgDir = enterprise.getOrgDir();
         for(Organization org : orgDir.getOrganizationList() ){
             if(org.getName().equals(Organization.Type.BedManagement.getValue()))
             {

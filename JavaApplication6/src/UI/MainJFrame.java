@@ -180,11 +180,11 @@ public class MainJFrame extends JFrame {
             //Step 2: Go inside each network and check each enterprise
             for (Network network : system.getNetworkArray()) {
                 //Step 2.a: check against each enterprise
-                for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+                for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseArray()) {
                     userAccount = enterprise.getUserAccountDirectory().authenticateUser(userName, password);
                     if (userAccount == null) {
                         //Step 3:check against each organization for each enterprise
-                        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+                        for (Organization organization : enterprise.getOrgDir().getOrganizationList()) {
                             userAccount = organization.getUserAccountDirectory().authenticateUser(userName, password);
                             if (userAccount != null) {
                                 inEnterprise = enterprise;

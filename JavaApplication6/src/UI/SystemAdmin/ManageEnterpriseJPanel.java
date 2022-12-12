@@ -41,11 +41,11 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
         for (Network network : system.getNetworkArray()) {
-            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseArray()) {
                 Object[] row = new Object[3];
                 row[0] = enterprise; //enterprise.getNetwork();
                 row[1] = network;//.getName();
-                row[2] = enterprise.getEnterpriseType().getValue();
+                row[2] = enterprise.getTypeEnterprise().getValue();
 
                 model.addRow(row);
             }
@@ -264,7 +264,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Enter name!");
             return;
         }
-        Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterprise(name, type);
+        Enterprise enterprise = network.getEnterpriseDirectory().createAddEnterprise(name, type);
         enterprise.setNetwork(network);
         nameJTextField.setText("");
         populateTable();
@@ -295,7 +295,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
                 Enterprise enter = (Enterprise) enterpriseJTable.getValueAt(selectedRow, 0);
                 Network netwrk = (Network) enterpriseJTable.getValueAt(selectedRow, 1);
 
-                netwrk.getEnterpriseDirectory().getEnterpriseList().remove(enter); //.deleteAccount(account);
+                netwrk.getEnterpriseDirectory().getEnterpriseArray().remove(enter); //.deleteAccount(account);
                 populateTable();
                 dB4OUtil.storeSystem(system);
                 JOptionPane.showMessageDialog(null, "Deleted successfully");

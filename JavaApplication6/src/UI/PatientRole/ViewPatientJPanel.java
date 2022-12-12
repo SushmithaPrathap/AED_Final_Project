@@ -61,15 +61,15 @@ public class ViewPatientJPanel extends javax.swing.JPanel {
         txtUserName.setEditable(false);
         txtPassword.setEditable(false);
         txtPatientName.setText(patient.getNameVar());
-        txtGender.setSelectedItem(patient.getPatientSex());
+        txtGender.setSelectedItem(patient.getPatSex());
         txtPhoneNumber.setText(patient.getPhone());
-        txtUserName.setText(patient.getUserAccount().getUsername());
-        txtPassword.setText(patient.getUserAccount().getPassword());
-        txtBloodGroup.setSelectedItem(patient.getBloodGroup());
+        txtUserName.setText(patient.getUserAcc().getUsername());
+        txtPassword.setText(patient.getUserAcc().getPassword());
+        txtBloodGroup.setSelectedItem(patient.getBloodGrp());
         txtEmail.setText(patient.getEmail());
-        txtAddrStreet.setText(patient.getAddress().getStreet());
-        txtAddrState.setText(patient.getAddress().getState());
-        txtAddrCity.setText(patient.getAddress().getCity());
+        txtAddrStreet.setText(patient.getAddressVar().getStreet());
+        txtAddrState.setText(patient.getAddressVar().getState());
+        txtAddrCity.setText(patient.getAddressVar().getCity());
         contactCarrier.setSelectedItem(patient.getMobileCarrier() == null ? "TMobile" :patient.getMobileCarrier() );
     }
 

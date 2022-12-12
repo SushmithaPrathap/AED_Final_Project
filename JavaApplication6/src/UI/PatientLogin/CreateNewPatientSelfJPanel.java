@@ -50,13 +50,13 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
         initComponents();
         if(ecosystem.getPatDirectory() == null){
             PatientDirectory patientDirectory = new PatientDirectory();
-            patientDirectory.setPatientList(new ArrayList<Patient>());
+            patientDirectory.setPatientArray(new ArrayList<Patient>());
             ecosystem.setPatDirectory(patientDirectory);
         }
         
-        if(ecosystem.getPatDirectory().getPatientList() == null){
+        if(ecosystem.getPatDirectory().getPatientArray() == null){
             
-            ecosystem.getPatDirectory().setPatientList(new ArrayList<Patient>());
+            ecosystem.getPatDirectory().setPatientArray(new ArrayList<Patient>());
            // ecosystem.setPatientDirectory(patientDirectory);
         }
        this.userProcessContainer = userProcessContainer;
@@ -344,12 +344,12 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
     void populateCmbInsurance(){
          cmbInsuranceCompany.removeAllItems();;
         for(Network network : ecosystem.getNetworkArray()){
-        List<Enterprise> enterprsList = network.getEnterpriseDirectory().getEnterpriseList();
+        List<Enterprise> enterprsList = network.getEnterpriseDirectory().getEnterpriseArray();
         if (enterprsList == null || enterprsList.isEmpty()) {
             //nothing
         } else {
             for (Enterprise enterprise : enterprsList) {
-                if (enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Insurance.getValue())) {
+                if (enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Insurance.getValue())) {
                     {
                         cmbInsuranceCompany.addItem(enterprise);
                     }

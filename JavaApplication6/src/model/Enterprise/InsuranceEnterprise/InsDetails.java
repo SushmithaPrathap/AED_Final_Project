@@ -13,50 +13,50 @@ import java.util.Date;
  *
  * @author sushmithaprathap
  */
-public class InsuranceDetails {
+public class InsDetails {
 
-    private String id;
+    private String insDetId;
     private Patient patient;
-    private Date createdOndate;
-    private Date validity;
+    private Date createdDate;
+    private Date validDate;
     private String type;
-    private String SSN;
+    private String SSNVar;
 
-    private Employee insuranceDealer;
+    private Employee insDealer;
 
-    public Employee getInsuranceDealer() {
-        return insuranceDealer;
+    public Employee getInsDealer() {
+        return insDealer;
     }
 
-    public void setInsuranceDealer(Employee insuranceDealer) {
-        this.insuranceDealer = insuranceDealer;
+    public void setInsDealer(Employee insDealer) {
+        this.insDealer = insDealer;
     }
 
-    public String getSSN() {
-        return SSN;
+    public String getSSNVar() {
+        return SSNVar;
     }
 
-    public void setSSN(String SSN) {
-        this.SSN = SSN;
+    public void setSSNVar(String SSNVar) {
+        this.SSNVar = SSNVar;
     }
     static int count = 10020;
 
-    public InsuranceDetails() {
-        this.id = "INSUR" + count++;
-        this.createdOndate = new Date();
+    public InsDetails() {
+        this.insDetId = "INSUR" + count++;
+        this.createdDate = new Date();
     }
 
     @Override
     public String toString() {
-        return this.id;
+        return this.insDetId;
     }
 
-    public String getId() {
-        return id;
+    public String getInsDetId() {
+        return insDetId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setInsDetId(String insDetId) {
+        this.insDetId = insDetId;
     }
 
     public Patient getPatient() {
@@ -67,20 +67,20 @@ public class InsuranceDetails {
         this.patient = patient;
     }
 
-    public Date getCreatedOndate() {
-        return createdOndate;
+    public Date getCreatedDate() {
+        return createdDate;
     }
 
-    public void setCreatedOndate(Date createdOndate) {
-        this.createdOndate = createdOndate;
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
     }
 
-    public Date getValidity() {
-        return validity;
+    public Date getValidDate() {
+        return validDate;
     }
 
-    public void setValidity(Date validity) {
-        this.validity = validity;
+    public void setValidDate(Date validDate) {
+        this.validDate = validDate;
     }
 
     public String getType() {
@@ -99,5 +99,4 @@ public class InsuranceDetails {
         this.price = price;
     }
     private double price;
-
 }

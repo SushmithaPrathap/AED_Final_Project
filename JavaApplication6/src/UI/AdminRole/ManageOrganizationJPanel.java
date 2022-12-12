@@ -47,7 +47,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
     private void populateCombo() {
         organizationJComboBox.removeAllItems();
 
-        if (enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Pharmacy.getValue())) {
+        if (enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Pharmacy.getValue())) {
             for (Type type : Organization.Type.values()) {
                 if (type.getValue().equals(Type.MedicalStore.getValue())
                         || type.getValue().equals(Type.Billing.getValue())) {
@@ -55,7 +55,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
                 }
             }
         } //lab 
-        else if (enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())) {
+        else if (enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())) {
             for (Type type : Organization.Type.values()) {
                 if (type.getValue().equals(Type.Billing.getValue())
                         || type.getValue().equals(Type.Pathology.getValue())
@@ -64,7 +64,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
                 }
             }
 
-        } else if (enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Insurance.getValue())) {
+        } else if (enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Insurance.getValue())) {
             for (Type type : Organization.Type.values()) {
                 if (type.getValue().equals(Type.Insurance.getValue())
                         || type.getValue().equals(Type.Billing.getValue())) {
@@ -449,7 +449,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
             //UserAccount selectedUsrAcc = (UserAccount) organizationJTable.getValueAt(row,0);
             Organization org = (Organization) organizationJTable.getValueAt(row, 1);
             //reomve account
-            ArrayList<Organization> orgList = enterprise.getOrganizationDirectory().getOrganizationList();
+            ArrayList<Organization> orgList = enterprise.getOrgDir().getOrganizationList();
             // for (Organization organization : orgList) 
             // {
             ///   if(org.equals(organization)){

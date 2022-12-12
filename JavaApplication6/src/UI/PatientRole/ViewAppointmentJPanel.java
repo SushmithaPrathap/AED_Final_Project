@@ -87,13 +87,13 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) viewAppointmentJTable.getModel();
         model.setRowCount(0);
         List<Appointment> appointments = null;
-        if(enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Hospital.getValue())){
-            if(patient.getAppointmentDirectory() != null && patient.getAppointmentDirectory().getAppointmentList() != null){
-                appointments = patient.getAppointmentDirectory().getAppointmentList();
+        if(enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Hospital.getValue())){
+            if(patient.getAppointmentDir() != null && patient.getAppointmentDir().getAppointmentList() != null){
+                appointments = patient.getAppointmentDir().getAppointmentList();
             }
-        }else if(enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())){
-            if(patient.getLabAppointmentDirectory()!= null && patient.getLabAppointmentDirectory().getAppointmentList() != null){
-                appointments = patient.getLabAppointmentDirectory().getAppointmentList();
+        }else if(enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())){
+            if(patient.getLabApptDir()!= null && patient.getLabApptDir().getAppointmentList() != null){
+                appointments = patient.getLabApptDir().getAppointmentList();
             }
         }
            
@@ -121,13 +121,13 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) viewAppointmentJTable.getModel();
         model.setRowCount(0);
         List<Appointment> appointments = null;
-        if(enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Hospital.getValue())){
-            if(patient.getAppointmentDirectory() != null && patient.getAppointmentDirectory().getAppointmentList() != null){
-                appointments = patient.getAppointmentDirectory().getAppointmentList();
+        if(enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Hospital.getValue())){
+            if(patient.getAppointmentDir() != null && patient.getAppointmentDir().getAppointmentList() != null){
+                appointments = patient.getAppointmentDir().getAppointmentList();
             }
-        }else if(enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())){
-            if(patient.getLabAppointmentDirectory()!= null && patient.getLabAppointmentDirectory().getAppointmentList() != null){
-                appointments = patient.getLabAppointmentDirectory().getAppointmentList();
+        }else if(enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())){
+            if(patient.getLabApptDir()!= null && patient.getLabApptDir().getAppointmentList() != null){
+                appointments = patient.getLabApptDir().getAppointmentList();
             }
         }
            
@@ -457,8 +457,8 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
             txtAppointmetDate.setText(formatter1.format(appointment.getDate()));
             txtAppointmentType.setSelectedItem(appointment.getType());
             txtAppointmentStatus.setText(appointment.getStatus());
-            txtInsuranceE.setText(patient.getInsuranceE().getName());
-            txtInsuranceId.setText(patient.getInsuranceId());
+            txtInsuranceE.setText(patient.getInsVar().getName());
+            txtInsuranceId.setText(patient.getInsId());
             
             String insuranceStatus="Pending";
             if(appointment.getHospitalbill() == null)

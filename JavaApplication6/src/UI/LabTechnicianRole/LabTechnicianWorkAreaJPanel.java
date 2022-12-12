@@ -400,7 +400,7 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
 
             Appointment labAppointment = null;
             if (request.getSender().getEmployee().getRole().equals("Doctor Role")) {
-                labAppointment = patient.getLabAppointmentDirectory().createLabAppointment(patient, userAccount.getEmployee(), appointment.getDate(), appointment.getType());
+                labAppointment = patient.getLabApptDir().createLabAppointment(patient, userAccount.getEmployee(), appointment.getDate(), appointment.getType());
                 labAppointment.getLabTestList().addLabTest(labTest);
 //                patient.getLabAppointmentDirectory().getAppointmentList().add(labAppointment);
                 appointment.setStatus(Appointment.AppointmentStatus.GeneratedReport.getValue());

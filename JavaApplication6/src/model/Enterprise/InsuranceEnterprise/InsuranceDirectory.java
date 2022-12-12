@@ -4,8 +4,6 @@
  */
 package model.Enterprise.InsuranceEnterprise;
 
-import model.Enterprise.HospitalEnterprise.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,35 +12,29 @@ import java.util.List;
  * @author sushmithaprathap
  */
 public class InsuranceDirectory {
-    
-    List<InsuranceDetails> insuranceDir ;
-    
-    
-    
-    public InsuranceDirectory(){
-     insuranceDir = new ArrayList<>();
+
+    List<InsDetails> insuranceDir;
+
+    public InsuranceDirectory() {
+        insuranceDir = new ArrayList<>();
     }
-    
-    public List<InsuranceDetails> getInsuranceDetailsBySSN(String SSN){
-         List<InsuranceDetails> list = new  ArrayList<InsuranceDetails>();
-        for(InsuranceDetails indt: insuranceDir)
-        {
-            if(indt.getSSN().equals(SSN))
-            {
+
+    public List<InsDetails> getInsuranceDetailsBySSN(String SSN) {
+        List<InsDetails> list = new ArrayList<InsDetails>();
+        for (InsDetails indt : insuranceDir) {
+            if (indt.getSSNVar().equals(SSN)) {
                 list.add(indt);
             }
         }
-        
-        return list;
-    } 
 
-    public List<InsuranceDetails> getInsuranceDir() {
+        return list;
+    }
+
+    public List<InsDetails> getInsuranceDir() {
         return insuranceDir;
     }
 
-    public void setInsuranceDir(List<InsuranceDetails> insuranceDir) {
+    public void setInsuranceDir(List<InsDetails> insuranceDir) {
         this.insuranceDir = insuranceDir;
     }
-    
-    
 }

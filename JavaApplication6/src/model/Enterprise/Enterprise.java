@@ -14,12 +14,11 @@ import model.Organization.OrganizationDirectory;
  */
 public abstract class Enterprise extends Organization {
 
-    private EnterpriseType enterpriseType;
-    private OrganizationDirectory organizationDirectory;
+    private EnterpriseType typeEnterprise;
+    private OrganizationDirectory orgDir;
     private Network network;
 
     public Network getNetwork() {
-        //networkName="Boston";
         return this.network;
     }
 
@@ -27,8 +26,8 @@ public abstract class Enterprise extends Organization {
         this.network = network;
     }
 
-    public OrganizationDirectory getOrganizationDirectory() {
-        return organizationDirectory;
+    public OrganizationDirectory getOrgDir() {
+        return orgDir;
     }
 
     public enum EnterpriseType {
@@ -53,18 +52,18 @@ public abstract class Enterprise extends Organization {
         }
     }
 
-    public EnterpriseType getEnterpriseType() {
-        return enterpriseType;
+    public EnterpriseType getTypeEnterprise() {
+        return typeEnterprise;
     }
 
-    public void setEnterpriseType(EnterpriseType enterpriseType) {
-        this.enterpriseType = enterpriseType;
+    public void setTypeEnterprise(EnterpriseType typeEnterprise) {
+        this.typeEnterprise = typeEnterprise;
     }
 
     public Enterprise(String name, EnterpriseType type) {
         super(name);
-        this.enterpriseType = type;
-        organizationDirectory = new OrganizationDirectory();
+        this.typeEnterprise = type;
+        orgDir = new OrganizationDirectory();
     }
 
     @Override

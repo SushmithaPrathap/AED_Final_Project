@@ -89,8 +89,8 @@ public class ViewSelfPatientBillJPanel extends javax.swing.JPanel {
         txtLabTestCharge.setText(String.valueOf(labtestCharge));
         double totalCharge = visitingCharge + operationCharge + labtestCharge;
         txtTotalCharge.setText(String.valueOf(totalCharge));
-        txtInsuranceE.setText(patient.getInsuranceE().getName() == null ? "" : patient.getInsuranceE().getName());
-        txtInsuranceId.setText(patient.getInsuranceId() == null ? "" : patient.getInsuranceId() );
+        txtInsuranceE.setText(patient.getInsVar().getName() == null ? "" : patient.getInsVar().getName());
+        txtInsuranceId.setText(patient.getInsId() == null ? "" : patient.getInsId() );
         txtApptnmtStatus.setText(appointment.getStatus());
         
         if(appointment.getStatus().equals(Appointment.AppointmentStatus.ApprovedInsurance.getValue()) ||

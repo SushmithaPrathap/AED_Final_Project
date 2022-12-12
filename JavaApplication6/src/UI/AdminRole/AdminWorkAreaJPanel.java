@@ -34,7 +34,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         this.system = system;
         lblEnterprise.setText(enterprise.getName());
         jLabel5.setText("Welcome " + account.getEmployee().getNameVar());
-        String enterpriseType= enterprise.getEnterpriseType().toString();
+        String enterpriseType= enterprise.getTypeEnterprise().toString();
         if(enterpriseType.equals("Hospital"))
         {
             manageBedBtn.setEnabled(true);
@@ -196,7 +196,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
     private void manageMedicineInvtryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageMedicineInvtryActionPerformed
 
-        ManageMedicinesJPanel manageEmployeeJPanel = new ManageMedicinesJPanel(userProcessContainer, enterprise.getOrganizationDirectory(), enterprise);
+        ManageMedicinesJPanel manageEmployeeJPanel = new ManageMedicinesJPanel(userProcessContainer, enterprise.getOrgDir(), enterprise);
         userProcessContainer.add("ManageMedicinesJPanel", manageEmployeeJPanel);
 
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
@@ -206,7 +206,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
     private void manageOrganizationJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageOrganizationJButtonActionPerformed
 
-        ManageOrganizationJPanel manageOrganizationJPanel = new ManageOrganizationJPanel(userProcessContainer, enterprise.getOrganizationDirectory(), enterprise, system);
+        ManageOrganizationJPanel manageOrganizationJPanel = new ManageOrganizationJPanel(userProcessContainer, enterprise.getOrgDir(), enterprise, system);
         userProcessContainer.add("ManageOrganizationJPanel", manageOrganizationJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -217,7 +217,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         //check if bed management department is created or not
         boolean flag=false;
         BedManagementDepartment bedOrg=null;
-        OrganizationDirectory orgDir = enterprise.getOrganizationDirectory();
+        OrganizationDirectory orgDir = enterprise.getOrgDir();
         for(Organization org : orgDir.getOrganizationList() ){
             if(org.getName().equals(Organization.Type.BedManagement.getValue()))
             {

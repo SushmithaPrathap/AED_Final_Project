@@ -62,7 +62,7 @@ public class InsuranceDWorkAreaJPanel extends javax.swing.JPanel {
         this.bill = appointment.getHospitalbill();
         populatecbox();
         //populateTable();
-        txtInsuID.setText(patient.getInsuranceId());
+        txtInsuID.setText(patient.getInsId());
         txtInsuID.setEditable(false);
         txtEnterprise.setEditable(false);
         txtEnterprise.setText(bill.getEnterprise().getName() == null ? " " : bill.getEnterprise().getName());

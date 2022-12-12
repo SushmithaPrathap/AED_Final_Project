@@ -7,7 +7,7 @@ package UI.InsuranceRole;
 import model.EcoSystem;
 import model.Enterprise.Enterprise;
 import model.Enterprise.InsuranceEnterprise.Insurance;
-import model.Enterprise.InsuranceEnterprise.InsuranceDetails;
+import model.Enterprise.InsuranceEnterprise.InsDetails;
 import model.Enterprise.InsuranceEnterprise.InsuranceDirectory;
 import model.Organization.OrganizationDirectory;
 import model.Patient.Patient;
@@ -75,8 +75,8 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
             PatientDirectory d = new PatientDirectory();
             enterprise.setPatDirectory(patientDir);
         }
-        for ( Patient p: patientDir.getPatientList()){
-            cmbSSN.addItem(p.getSSN());
+        for ( Patient p: patientDir.getPatientArray()){
+            cmbSSN.addItem(p.getSsnVar());
         }
     }
     
@@ -86,32 +86,32 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
         
         model.setRowCount(0);
-        if(((Insurance)enterprise).getIndir()==null)
+        if(((Insurance)enterprise).getInsdir()==null)
         {
             InsuranceDirectory indr = new InsuranceDirectory();
-            ((Insurance)enterprise).setIndir(indr);
+            ((Insurance)enterprise).setInsdir(indr);
         }
         
-         List<InsuranceDetails> inList = ((Insurance)enterprise).getIndir().getInsuranceDir();
+         List<InsDetails> inList = ((Insurance)enterprise).getInsdir().getInsuranceDir();
         
          if(inList==null)
          {
-              List<InsuranceDetails> inlist1 = new ArrayList<InsuranceDetails>();
-             ((Insurance)enterprise).getIndir().setInsuranceDir(inlist1);
+              List<InsDetails> inlist1 = new ArrayList<InsDetails>();
+             ((Insurance)enterprise).getInsdir().setInsuranceDir(inlist1);
          }
          
-         for (InsuranceDetails med :inList){
+         for (InsDetails med :inList){
             //if(med.getSSN().equals(SSN))
             {
             
             Object[] row = new Object[7];
             row[0] = med;//.getId();
-            row[1] = med.getInsuranceDealer().getNameVar();
+            row[1] = med.getInsDealer().getNameVar();
             row[2] = med.getPatient().getNameVar();
             row[3] = med.getType();
             row[4] = med.getPrice();
-            row[5] = med.getValidity();
-            row[6] = med.getCreatedOndate();
+            row[5] = med.getValidDate();
+            row[6] = med.getCreatedDate();
             model.addRow(row);
         //}
         }
@@ -123,31 +123,31 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
         
         model.setRowCount(0);
-        if(((Insurance)enterprise).getIndir()==null)
+        if(((Insurance)enterprise).getInsdir()==null)
         {
             InsuranceDirectory indr = new InsuranceDirectory();
-            ((Insurance)enterprise).setIndir(indr);
+            ((Insurance)enterprise).setInsdir(indr);
         }
         
-         List<InsuranceDetails> inList = ((Insurance)enterprise).getIndir().getInsuranceDetailsBySSN(SSN);
+         List<InsDetails> inList = ((Insurance)enterprise).getInsdir().getInsuranceDetailsBySSN(SSN);
         
          if(inList==null)
          {
              return;
          }
          
-         for (InsuranceDetails med :inList){
+         for (InsDetails med :inList){
             //if(med.getSSN().equals(SSN))
             {
             
             Object[] row = new Object[7];
             row[0] = med;//.getId();
-            row[1] = med.getInsuranceDealer().getNameVar();
+            row[1] = med.getInsDealer().getNameVar();
             row[2] = med.getPatient().getNameVar();
             row[3] = med.getType();
             row[4] = med.getPrice();
-            row[5] = med.getValidity();
-            row[6] = med.getCreatedOndate();
+            row[5] = med.getValidDate();
+            row[6] = med.getCreatedDate();
             model.addRow(row);
         //}
         }
@@ -605,27 +605,27 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
             Logger.getLogger(ManageInsuranceJPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
         Patient patient = new Patient();
-        enterprise.getPatDirectory().getPatientList().add(patient);
+        enterprise.getPatDirectory().getPatientArray().add(patient);
         //system.getPatientDirectory().getPatientList().add(patient);
         patient.setNameVar(custName);
-        patient.setSSN(ssnString);
+        patient.setSsnVar(ssnString);
         //patient.set
-        InsuranceDetails insrdtl = new InsuranceDetails();
+        InsDetails insrdtl = new InsDetails();
         //insrdtl.setCreatedOndate(date1);
         insrdtl.setPatient(patient);
         insrdtl.setPrice(price);
         insrdtl.setType(type);
-        insrdtl.setValidity(date1);
-        insrdtl.setSSN(ssnString);
-        insrdtl.setInsuranceDealer(useraccount.getEmployee());
+        insrdtl.setValidDate(date1);
+        insrdtl.setSSNVar(ssnString);
+        insrdtl.setInsDealer(useraccount.getEmployee());
         
-        if(((Insurance)enterprise).getIndir() == null)
+        if(((Insurance)enterprise).getInsdir() == null)
         {
              InsuranceDirectory indr = new InsuranceDirectory();
-            ((Insurance)enterprise).setIndir(indr);
+            ((Insurance)enterprise).setInsdir(indr);
         }
         
-        ((Insurance)enterprise).getIndir().getInsuranceDir().add(insrdtl);
+        ((Insurance)enterprise).getInsdir().getInsuranceDir().add(insrdtl);
         
         
         
@@ -694,7 +694,7 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
 
     private void cmbSSNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbSSNActionPerformed
         String medType = (String) cmbSSN.getSelectedItem();
-        if (patientDir != null && !patientDir.getPatientList().isEmpty()){
+        if (patientDir != null && !patientDir.getPatientArray().isEmpty()){
             populateTable(medType);
             //populateOrganizationEmpComboBox();  //based on organization seleted, get the supported roles only
         }
@@ -799,24 +799,24 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
             Logger.getLogger(ManageInsuranceJPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
         Patient patient = new Patient();
-        enterprise.getPatDirectory().getPatientList().add(patient);
+        enterprise.getPatDirectory().getPatientArray().add(patient);
         
         patient.setNameVar(name);
-        patient.setSSN(ssnString);
+        patient.setSsnVar(ssnString);
         //patient.set
         int row = organizationJTable.getSelectedRow();
         if(row<0){
             JOptionPane.showMessageDialog(null, "Please select a row!!", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        InsuranceDetails insrdtl = (InsuranceDetails) organizationJTable.getValueAt(row,0);
+        InsDetails insrdtl = (InsDetails) organizationJTable.getValueAt(row,0);
         //insrdtl.setCreatedOndate(date1);
         insrdtl.setPatient(patient);
         insrdtl.setPrice(price);
         insrdtl.setType(type);
-        insrdtl.setValidity(date1);
-        insrdtl.setSSN(ssnString);
-        insrdtl.setInsuranceDealer(useraccount.getEmployee());
+        insrdtl.setValidDate(date1);
+        insrdtl.setSSNVar(ssnString);
+        insrdtl.setInsDealer(useraccount.getEmployee());
         //((Insurance)enterprise).getIndir().getInsuranceDir().add(insrdtl);
         
         
@@ -910,7 +910,7 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
         viewMedicineJPanel.setVisible(true);
         
         //populate 
-        InsuranceDetails med= (InsuranceDetails)  organizationJTable.getValueAt(row,0);
+        InsDetails med= (InsDetails)  organizationJTable.getValueAt(row,0);
         populateInsuranceType1();
         populateDetails(med);
         
@@ -927,15 +927,15 @@ public class ManageInsuranceJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_txtSSNActionPerformed
 
     
-    void populateDetails(InsuranceDetails med){
+    void populateDetails(InsDetails med){
         
-        nameJTextField1.setText(med.getInsuranceDealer().getNameVar());
+        nameJTextField1.setText(med.getInsDealer().getNameVar());
         customerJTextField1.setText(med.getPatient().getNameVar());
       //availableQtyTxt1.setText(String.valueOf(med.getQuantity()));
        cmbInsuranceType1.setSelectedItem(med.getType());
-       txtSSN1.setText(med.getSSN());
+       txtSSN1.setText(med.getSSNVar());
        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");  
-        String strDate = dateFormat.format(med.getValidity());
+        String strDate = dateFormat.format(med.getValidDate());
 
 
 

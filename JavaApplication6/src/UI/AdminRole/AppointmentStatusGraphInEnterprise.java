@@ -8,7 +8,7 @@ package UI.AdminRole;
 import model.appointment.Appointment;
 import model.EcoSystem;
 import model.Enterprise.Enterprise;
-import model.Enterprise.HospitalEnterprise.Hospital;
+import model.Enterprise.Hospital.Hospital;
 import model.Patient.Patient;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
@@ -54,9 +54,9 @@ public class AppointmentStatusGraphInEnterprise extends javax.swing.JPanel {
         
         if (enterprise instanceof Hospital) 
         {
-            for (Patient p : enterprise.getPatDirectory().getPatientList()) 
+            for (Patient p : enterprise.getPatDirectory().getPatientArray()) 
             {
-                workReqList.addAll(p.getAppointmentDirectory().getAppointmentList());
+                workReqList.addAll(p.getAppointmentDir().getAppointmentList());
             }
         }
 

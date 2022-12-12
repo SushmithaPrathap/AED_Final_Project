@@ -71,12 +71,12 @@ public class AssignLabTestJPanel extends javax.swing.JPanel {
         {
          
 
-        List<Enterprise> enterprsList = network1.getEnterpriseDirectory().getEnterpriseList();
+        List<Enterprise> enterprsList = network1.getEnterpriseDirectory().getEnterpriseArray();
         if (enterprsList == null || enterprsList.isEmpty()) {
             //nothing
         } else {
             for (Enterprise enterprise : enterprsList) {
-                if (enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())) {
+                if (enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())) {
                     {
                         cmbLabs.addItem(enterprise);
                     }

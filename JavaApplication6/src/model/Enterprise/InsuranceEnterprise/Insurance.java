@@ -11,41 +11,41 @@ import model.Person.EmployeeDirectory;
 import model.Role.Role;
 import java.util.ArrayList;
 
-
 /**
  *
  * @author sushmithaprathap
  */
 public class Insurance extends Enterprise {
-    int id;
-    EmployeeDirectory doctorList;
+
+    int insId;
+    EmployeeDirectory docList;
     //NurseDirectory nurseList;
-    PatientDirectory patientList;
+    PatientDirectory patList;
     Receptionist receptionist;
-    InsuranceDirectory indir;
+    InsuranceDirectory insdir;
 
-    public int getId() {
-        return id;
+    public int getInsId() {
+        return insId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setInsId(int insId) {
+        this.insId = insId;
     }
 
-    public EmployeeDirectory getDoctorList() {
-        return doctorList;
+    public EmployeeDirectory getDocList() {
+        return docList;
     }
 
-    public void setDoctorList(EmployeeDirectory doctorList) {
-        this.doctorList = doctorList;
+    public void setDocList(EmployeeDirectory docList) {
+        this.docList = docList;
     }
 
-    public PatientDirectory getPatientList() {
-        return patientList;
+    public PatientDirectory getPatList() {
+        return patList;
     }
 
-    public void setPatientList(PatientDirectory patientList) {
-        this.patientList = patientList;
+    public void setPatList(PatientDirectory patList) {
+        this.patList = patList;
     }
 
     public Receptionist getReceptionist() {
@@ -56,24 +56,23 @@ public class Insurance extends Enterprise {
         this.receptionist = receptionist;
     }
 
-    public InsuranceDirectory getIndir() {
-        return indir;
+    public InsuranceDirectory getInsdir() {
+        return insdir;
     }
 
-    public void setIndir(InsuranceDirectory indir) {
-        this.indir = indir;
+    public void setInsdir(InsuranceDirectory insdir) {
+        this.insdir = insdir;
     }
-    
-    //String enterpriseType;
-    public Insurance(String name){
-        super(name,EnterpriseType.Insurance);
-        
-        indir= new InsuranceDirectory();
+
+    // enterpriseType should be string ;
+    public Insurance(String name) {
+        super(name, EnterpriseType.Insurance);
+
+        insdir = new InsuranceDirectory();
     }
+
     @Override
     public ArrayList<Role> getRoleSupported() {
         return null;
     }
-    
-    
 }

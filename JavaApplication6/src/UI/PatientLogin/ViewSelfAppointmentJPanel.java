@@ -87,7 +87,7 @@ public class ViewSelfAppointmentJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) viewAppointmentJTable.getModel();
         model.setRowCount(0);
         List<Appointment> appointments = null;
-            appointments = patient.getAppointmentDirectory().getAppointmentList();
+            appointments = patient.getAppointmentDir().getAppointmentList();
       
         SimpleDateFormat formatter1=new SimpleDateFormat("yyyy-MM-dd");
         for(Appointment appointment : appointments){
@@ -114,7 +114,7 @@ public class ViewSelfAppointmentJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) viewAppointmentJTable.getModel();
         model.setRowCount(0);
         List<Appointment> appointments = null;
-            appointments = patient.getAppointmentDirectory().getAppointmentList();
+            appointments = patient.getAppointmentDir().getAppointmentList();
       
         SimpleDateFormat formatter1=new SimpleDateFormat("yyyy-MM-dd");
         for(Appointment appointment : appointments){
@@ -431,8 +431,8 @@ public class ViewSelfAppointmentJPanel extends javax.swing.JPanel {
             txtAppointmetDate.setText(formatter1.format(appointment.getDate()));
             txtAppointmentType.setSelectedItem(appointment.getType());
             txtAppointmentStatus.setText(appointment.getStatus());
-            txtInsuranceE.setText(patient.getInsuranceE().getName());
-            txtInsuranceId.setText(patient.getInsuranceId());
+            txtInsuranceE.setText(patient.getInsVar().getName());
+            txtInsuranceId.setText(patient.getInsId());
             
             String insuranceStatus="Pending";
             if(appointment.getHospitalbill() == null)

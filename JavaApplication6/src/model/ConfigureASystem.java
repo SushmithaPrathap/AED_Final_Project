@@ -2,7 +2,7 @@ package model;
 
 import model.Employee.Employee;
 import model.Enterprise.Enterprise;
-import model.Enterprise.HospitalEnterprise.Hospital;
+import model.Enterprise.Hospital.Hospital;
 import model.Enterprise.InsuranceEnterprise.Insurance;
 import model.Enterprise.LabEnterprise.Lab;
 import model.Enterprise.Pharmacy.Pharmacy;
@@ -77,7 +77,7 @@ public class ConfigureASystem {
                 System.out.println("Head: " + userName);
             
                 System.out.println("Insurance Organization");
-                o = Ie.getOrganizationDirectory().createOrganization(Organization.Type.Insurance);
+                o = Ie.getOrgDir().createOrganization(Organization.Type.Insurance);
                     
                     for(int i = 41; i<=45; i++) 
                     {
@@ -107,7 +107,7 @@ public class ConfigureASystem {
                         
                     }
 //            System.out.println();
-            system.getNetworkArray().get(0).getEnterpriseDirectory().getEnterpriseList().add(Ie) ;
+            system.getNetworkArray().get(0).getEnterpriseDirectory().getEnterpriseArray().add(Ie) ;
 
         
             // Boston Hospital - Enterprise
@@ -130,7 +130,7 @@ public class ConfigureASystem {
                 System.out.println("Head: " + userName);
                 
                 System.out.println("ENT Organization");
-                o = e.getOrganizationDirectory().createOrganization(Organization.Type.ENT);
+                o = e.getOrgDir().createOrganization(Organization.Type.ENT);
                 
                 for(int i = 1; i<=21; i++) 
                 {
@@ -182,8 +182,8 @@ public class ConfigureASystem {
                         locationPoint.setCity(faker.address().cityName());
                         user1 = system.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", null, new PatientRole());
                         emp1= system.getPatDirectory().createPatient(name, "5085099183", genderVar, bgVar, user1, locationPoint, "email",(Insurance)Ie,insID , ssnVar);
-                        e.getPatDirectory().getPatientList().add((Patient)emp1);
-                        Ie.getPatDirectory().getPatientList().add((Patient)emp1);
+                        e.getPatDirectory().getPatientArray().add((Patient)emp1);
+                        Ie.getPatDirectory().getPatientArray().add((Patient)emp1);
                     }
                     
                     user1.setEmployee(emp1);
@@ -195,7 +195,7 @@ public class ConfigureASystem {
                 System.out.println();
                 
                 System.out.println("Cardiology Organization");
-                o = e.getOrganizationDirectory().createOrganization(Organization.Type.Cardiology);
+                o = e.getOrgDir().createOrganization(Organization.Type.Cardiology);
                 
                 for(int i = 100; i<=121; i++) 
                 {
@@ -246,8 +246,8 @@ public class ConfigureASystem {
                         locationPoint.setCity(faker.address().cityName());
                         user1 = system.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", null, new PatientRole());
                         emp1= system.getPatDirectory().createPatient(name, "5085099183", genderVar, bgVar, user1, locationPoint, emailVar,(Insurance)Ie,insID,ssnVar);
-                        e.getPatDirectory().getPatientList().add((Patient)emp1);
-                        Ie.getPatDirectory().getPatientList().add((Patient)emp1);
+                        e.getPatDirectory().getPatientArray().add((Patient)emp1);
+                        Ie.getPatDirectory().getPatientArray().add((Patient)emp1);
                     }
                     
                     user1.setEmployee(emp1);
@@ -259,17 +259,17 @@ public class ConfigureASystem {
                 System.out.println();
                 
                 System.out.println("BedManagement Organization");
-                o = e.getOrganizationDirectory().createOrganization(Organization.Type.BedManagement);
+                o = e.getOrgDir().createOrganization(Organization.Type.BedManagement);
                 BedManagementDepartment bo = ((BedManagementDepartment)o);
                 bo.createBedList(23);
                 
                 
                 System.out.println("Billing Organization");
-                o = e.getOrganizationDirectory().createOrganization(Organization.Type.Billing);
+                o = e.getOrgDir().createOrganization(Organization.Type.Billing);
                 //((BillingDepartment)o).generateInvoice(date, patient);
                 
          
-            system.getNetworkArray().get(0).getEnterpriseDirectory().getEnterpriseList().add(e) ;
+            system.getNetworkArray().get(0).getEnterpriseDirectory().getEnterpriseArray().add(e) ;
         
         
             // Boston Lab - Enterprise
@@ -290,7 +290,7 @@ public class ConfigureASystem {
                 System.out.println("Head: " + userName);
                 
                     System.out.println("Pathology Organization");
-                    o = e.getOrganizationDirectory().createOrganization(Organization.Type.Pathology);
+                    o = e.getOrgDir().createOrganization(Organization.Type.Pathology);
                     
                     for(int i = 22; i<=26; i++) 
                     {
@@ -337,7 +337,7 @@ public class ConfigureASystem {
                         
                 
                     System.out.println("Radiology Organization");
-                    o = e.getOrganizationDirectory().createOrganization(Organization.Type.Radiology);
+                    o = e.getOrgDir().createOrganization(Organization.Type.Radiology);
                     
                     for(int i = 27; i<=32; i++) 
                     {
@@ -379,7 +379,7 @@ public class ConfigureASystem {
                     
                     System.out.println();
         
-            system.getNetworkArray().get(0).getEnterpriseDirectory().getEnterpriseList().add(e) ;
+            system.getNetworkArray().get(0).getEnterpriseDirectory().getEnterpriseArray().add(e) ;
         
             // Boston Pharmacy - Enterprise
             System.err.println("Boston CVS Pharmacy");
@@ -399,7 +399,7 @@ public class ConfigureASystem {
                 System.out.println("Head: " + userName);
             
                 System.out.println("Medical Store Organization");
-                o = e.getOrganizationDirectory().createOrganization(Organization.Type.MedicalStore);
+                o = e.getOrgDir().createOrganization(Organization.Type.MedicalStore);
                     
                     for(int i = 34; i<=39; i++) 
                     {
@@ -429,7 +429,7 @@ public class ConfigureASystem {
                     
                     System.out.println();
         
-            system.getNetworkArray().get(0).getEnterpriseDirectory().getEnterpriseList().add(e) ;
+            system.getNetworkArray().get(0).getEnterpriseDirectory().getEnterpriseArray().add(e) ;
              
             
         
@@ -458,7 +458,7 @@ public class ConfigureASystem {
                 System.out.println("Head: " + userName);
             
                 System.out.println("Insurance Organization");
-                o = Ie.getOrganizationDirectory().createOrganization(Organization.Type.Insurance);
+                o = Ie.getOrgDir().createOrganization(Organization.Type.Insurance);
                     
                     for(int i = 87; i<=92; i++) 
                     {
@@ -489,7 +489,7 @@ public class ConfigureASystem {
                     }
         
             System.out.println();
-            system.getNetworkArray().get(1).getEnterpriseDirectory().getEnterpriseList().add(Ie) ;
+            system.getNetworkArray().get(1).getEnterpriseDirectory().getEnterpriseArray().add(Ie) ;
         
             // Boston Hospital - Enterprise
             System.err.println("Seattle Grey-Sloan Hospital");
@@ -510,7 +510,7 @@ public class ConfigureASystem {
                 System.out.println("Head: " + userName);
                 
                 System.out.println("Dental Organization");
-                o = e.getOrganizationDirectory().createOrganization(Organization.Type.Dental);
+                o = e.getOrgDir().createOrganization(Organization.Type.Dental);
                 
                 for(int i = 47; i<=68; i++) 
                 {
@@ -563,8 +563,8 @@ public class ConfigureASystem {
                         locationPoint.setCity(faker.address().cityName());
                         user1 = system.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", null, new PatientRole());
                         emp1= system.getPatDirectory().createPatient(name, "5085099183", genderVar, bgVar, user1, locationPoint, emailVar,(Insurance)Ie, insID , ssnVar);
-                        e.getPatDirectory().getPatientList().add((Patient)emp1);
-                        Ie.getPatDirectory().getPatientList().add((Patient)emp1);
+                        e.getPatDirectory().getPatientArray().add((Patient)emp1);
+                        Ie.getPatDirectory().getPatientArray().add((Patient)emp1);
                     }
                     
                     user1.setEmployee(emp1);
@@ -575,7 +575,7 @@ public class ConfigureASystem {
                 }
                 
                 System.out.println("CovidCenter Organization");
-                o = e.getOrganizationDirectory().createOrganization(Organization.Type.CovidCenter);
+                o = e.getOrgDir().createOrganization(Organization.Type.CovidCenter);
                 
                 for(int i = 200; i<=221; i++) 
                 {
@@ -627,8 +627,8 @@ public class ConfigureASystem {
                         locationPoint.setCity(faker.address().cityName());
                         user1 = system.getUserAccountDirectory().createUserAccount(userName, "Sam123!!", null, new PatientRole());
                         emp1= system.getPatDirectory().createPatient(name, "5085099183", genderVar, bgVar, user1, locationPoint, emailVar,(Insurance)Ie,insID , ssnVar);
-                        e.getPatDirectory().getPatientList().add((Patient)emp1);
-                        Ie.getPatDirectory().getPatientList().add((Patient)emp1);
+                        e.getPatDirectory().getPatientArray().add((Patient)emp1);
+                        Ie.getPatDirectory().getPatientArray().add((Patient)emp1);
                     }
                     
                     user1.setEmployee(emp1);
@@ -639,16 +639,16 @@ public class ConfigureASystem {
                 System.out.println();
                 
                 System.out.println("BedManagement Organization");
-                o = e.getOrganizationDirectory().createOrganization(Organization.Type.BedManagement);
+                o = e.getOrgDir().createOrganization(Organization.Type.BedManagement);
                 bo = ((BedManagementDepartment)o);
                 bo.createBedList(43);
                 
                 System.out.println();
                 System.out.println("Billing Organization");
-                o = e.getOrganizationDirectory().createOrganization(Organization.Type.Billing);
+                o = e.getOrgDir().createOrganization(Organization.Type.Billing);
                 
             
-            system.getNetworkArray().get(1).getEnterpriseDirectory().getEnterpriseList().add(e) ;
+            system.getNetworkArray().get(1).getEnterpriseDirectory().getEnterpriseArray().add(e) ;
         
         
             // Seattle Lab - Enterprise
@@ -669,7 +669,7 @@ public class ConfigureASystem {
                 System.out.println("Head: " + userName);
                 
                     System.out.println("Pathology Organization");
-                    o = e.getOrganizationDirectory().createOrganization(Organization.Type.Pathology);
+                    o = e.getOrgDir().createOrganization(Organization.Type.Pathology);
                     
                     for(int i = 70; i<=74; i++) 
                     {
@@ -712,7 +712,7 @@ public class ConfigureASystem {
                     
                 
                     System.out.println("Radiology Organization");
-                    o = e.getOrganizationDirectory().createOrganization(Organization.Type.Radiology);
+                    o = e.getOrgDir().createOrganization(Organization.Type.Radiology);
                     
                     for(int i = 75; i<=79; i++) 
                     {
@@ -753,7 +753,7 @@ public class ConfigureASystem {
                     }
             System.out.println();
         
-            system.getNetworkArray().get(1).getEnterpriseDirectory().getEnterpriseList().add(e) ;
+            system.getNetworkArray().get(1).getEnterpriseDirectory().getEnterpriseArray().add(e) ;
         
             // Seattle Pharmacy - Enterprise
             System.err.println("Seattle Walgreens Pharmacy");
@@ -773,7 +773,7 @@ public class ConfigureASystem {
                 System.out.println("Head: " + userName);
             
                 System.out.println("Medical Store Organization");
-                o = e.getOrganizationDirectory().createOrganization(Organization.Type.MedicalStore);
+                o = e.getOrgDir().createOrganization(Organization.Type.MedicalStore);
                     
                     for(int i = 81; i<=85; i++) 
                     {
@@ -803,7 +803,7 @@ public class ConfigureASystem {
                         
                     }
             System.out.println();
-            system.getNetworkArray().get(1).getEnterpriseDirectory().getEnterpriseList().add(e) ;
+            system.getNetworkArray().get(1).getEnterpriseDirectory().getEnterpriseArray().add(e) ;
 
         return system;
     }

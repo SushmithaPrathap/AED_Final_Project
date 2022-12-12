@@ -65,7 +65,7 @@ public class InsuranceDMainAreaJPanel extends javax.swing.JPanel {
 
                 row[3] = request.getStatus() == null ? "New" : request.getStatus();
                 //LabTest lt= ((InsuranceWorkRequest)request).getLabTest();
-                row[4] = ((InsuranceWorkRequest) request).getPatient().getInsuranceId();
+                row[4] = ((InsuranceWorkRequest) request).getPatient().getInsId();
                 row[5] = ((InsuranceWorkRequest) request).getAmount();
                 row[6] = request.getMessage();
                 row[7] = request;
@@ -270,7 +270,7 @@ public class InsuranceDMainAreaJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
 
         ManageInsuranceJPanel processWorkRequestJPanel
-                = new ManageInsuranceJPanel(userProcessContainer, enterprise.getOrganizationDirectory(), enterprise, userAccount);
+                = new ManageInsuranceJPanel(userProcessContainer, enterprise.getOrgDir(), enterprise, userAccount);
         userProcessContainer.add("ManageInsuranceJPanel", processWorkRequestJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);

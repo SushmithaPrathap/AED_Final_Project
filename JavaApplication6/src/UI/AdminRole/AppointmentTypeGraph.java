@@ -9,7 +9,7 @@ package UI.AdminRole;
 import model.appointment.Appointment;
 import model.EcoSystem;
 import model.Enterprise.Enterprise;
-import model.Enterprise.HospitalEnterprise.Hospital;
+import model.Enterprise.Hospital.Hospital;
 import model.Network.Network;
 import model.Patient.Patient;
 import java.awt.BorderLayout;
@@ -57,10 +57,10 @@ public class AppointmentTypeGraph extends javax.swing.JPanel {
         Map<String, Integer> workReqMap = new HashMap<>();
         ArrayList<Appointment> workReqList = new ArrayList<>();
 
-        for (Enterprise enterprise : selectedNetwork.getEnterpriseDirectory().getEnterpriseList()) {
+        for (Enterprise enterprise : selectedNetwork.getEnterpriseDirectory().getEnterpriseArray()) {
             if (enterprise instanceof Hospital) {
-                for (Patient p : enterprise.getPatDirectory().getPatientList()) {
-                    workReqList.addAll(p.getAppointmentDirectory().getAppointmentList());
+                for (Patient p : enterprise.getPatDirectory().getPatientArray()) {
+                    workReqList.addAll(p.getAppointmentDir().getAppointmentList());
                 }
             }
         }

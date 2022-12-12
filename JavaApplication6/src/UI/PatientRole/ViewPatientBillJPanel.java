@@ -8,7 +8,7 @@ package UI.PatientRole;
 import model.appointment.Appointment;
 import model.EcoSystem;
 import model.Enterprise.Enterprise;
-import model.Enterprise.HospitalEnterprise.Hospital;
+import model.Enterprise.Hospital.Hospital;
 import model.Enterprise.LabEnterprise.LabTest;
 import model.Organization.Organization;
 import model.Patient.Patient;
@@ -97,8 +97,8 @@ public class ViewPatientBillJPanel extends javax.swing.JPanel {
         
         double totalCharge = visitingCharge + operationCharge + labtestCharge;
         txtTotalCharge.setText(String.valueOf(totalCharge));
-        txtInsuranceE.setText(patient.getInsuranceE().getName() == null ? "" : patient.getInsuranceE().getName());
-        txtInsuranceId.setText(patient.getInsuranceId() == null ? "" : patient.getInsuranceId() );
+        txtInsuranceE.setText(patient.getInsVar().getName() == null ? "" : patient.getInsVar().getName());
+        txtInsuranceId.setText(patient.getInsId() == null ? "" : patient.getInsId() );
         txtApptnmtStatus.setText(appointment.getStatus());
         
         if(appointment.getStatus().equals(Appointment.AppointmentStatus.ApprovedInsurance.getValue()) ||

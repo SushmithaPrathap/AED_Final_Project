@@ -67,8 +67,8 @@ public abstract class Organization {
         employeeDirectory = new PersonDirectory();
         userAccountDirectory = new UserAccountDirectory();
         patientDirectory = new PatientDirectory();
-        if(patientDirectory.getPatientList() == null){
-            patientDirectory.setPatientList(new ArrayList<Patient>());
+        if(patientDirectory.getPatientArray() == null){
+            patientDirectory.setPatientArray(new ArrayList<Patient>());
         }
         billDirectory = new BillDirectory();
         if(billDirectory.getListBill() == null){

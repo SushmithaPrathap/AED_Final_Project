@@ -16,55 +16,58 @@ import java.util.List;
  */
 public class PatientDirectory {
 
-    private List<Patient> patientList;
+    private List<Patient> patientArray;
 
     public PatientDirectory() {
-        patientList = new ArrayList<>();
+        patientArray = new ArrayList<>();
     }
 
-    public List<Patient> getPatientList() {
-        return patientList;
+    public List<Patient> getPatientArray() {
+        return patientArray;
     }
 
-    public void setPatientList(List<Patient> patientList) {
-        this.patientList = patientList;
+    public void setPatientArray(List<Patient> patientArray) {
+        this.patientArray = patientArray;
     }
 
+    //craete a new patient
     public Patient createPatient(String patientName, String phoneNumber, String gender, String bloodGroup, UserAccount userAccount, Location locationPoint, String email,
             Insurance insuranceE, String insuranceId, String SSN) {
         Patient patient = new Patient();
         patient.setNameVar(patientName);
         patient.setPhone(phoneNumber);
-        patient.setPatientSex(gender);
+        patient.setPatSex(gender);
         //patient.setAddress(address);
-        patient.setBloodGroup(bloodGroup);
-        patient.setUserAccount(userAccount);
-        patient.setAddress(locationPoint);
+        patient.setBloodGrp(bloodGroup);
+        patient.setUserAcc(userAccount);
+        patient.setAddressVar(locationPoint);
         patient.setRole("Patient Role");
         patient.setEmail(email);
-        patientList.add(patient);
-        patient.createNewAppointmentDirectory();
-        patient.setInsuranceId(insuranceId);
-        patient.setInsuranceE(insuranceE);
-        patient.setSSN(SSN);
+        patientArray.add(patient);
+        patient.createNewApptDir();
+        patient.setInsId(insuranceId);
+        patient.setInsVar(insuranceE);
+        patient.setSsnVar(SSN);
         return patient;
     }
 
+    //upadate the patient
     public void updatePatient(int patientID, String name, String phoneNumber, String gender, String bloodGroup, Location locationPoint, String email) {
-        for (Patient patient : patientList) {
+        for (Patient patient : patientArray) {
             if (patient.getID() == patientID) {
                 patient.setNameVar(name);
-                patient.setAddress(locationPoint);
-                patient.setPatientSex(gender);
+                patient.setAddressVar(locationPoint);
+                patient.setPatSex(gender);
                 patient.setPhone(phoneNumber);
-                patient.setBloodGroup(bloodGroup);
+                patient.setBloodGrp(bloodGroup);
                 patient.setEmail(name);
             }
         }
     }
 
-    public Patient findPatientById(int patientId) {
-        for (Patient patient : patientList) {
+    //get patient by id passed
+    public Patient getPatById(int patientId) {
+        for (Patient patient : patientArray) {
             if (patient.getID() == patientId) {
                 return patient;
             }
@@ -72,9 +75,10 @@ public class PatientDirectory {
         return null;
     }
 
-    public Patient findPatientBySSN(String ssn) {
-        for (Patient patient : patientList) {
-            if (patient.getSSN().equals(ssn)) {
+    // get patient by the ssn passed
+    public Patient getPatBySSN(String ssn) {
+        for (Patient patient : patientArray) {
+            if (patient.getSsnVar().equals(ssn)) {
                 return patient;
             }
         }

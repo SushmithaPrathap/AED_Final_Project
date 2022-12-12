@@ -48,25 +48,25 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
         
         jLabel5.setText("Welcome " + account.getEmployee().getNameVar());
         
-        if(enterprise.getEnterpriseType().getValue().equals("Hospital"))
+        if(enterprise.getTypeEnterprise().getValue().equals("Hospital"))
         {
            populatePatients();
         }
         
         
-        if(enterprise.getEnterpriseType().getValue().equals("Lab"))
+        if(enterprise.getTypeEnterprise().getValue().equals("Lab"))
         {
             populateTest();
         }
         
         
-        if(enterprise.getEnterpriseType().getValue().equals("Pharmacy"))
+        if(enterprise.getTypeEnterprise().getValue().equals("Pharmacy"))
         {
            // populatepharmacyReceptionist();
         }
         
         
-        if(enterprise.getEnterpriseType().getValue().equals("Insurance"))
+        if(enterprise.getTypeEnterprise().getValue().equals("Insurance"))
         {
           //  populateTest();
         }
@@ -77,13 +77,13 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
     public void populatePatients() {
         DefaultTableModel model = (DefaultTableModel) PatientDataJTable.getModel();
         model.setRowCount(0);
-        if(enterprise.getPatDirectory()!= null && enterprise.getPatDirectory().getPatientList() != null){
-            for (Patient patient : enterprise.getPatDirectory().getPatientList()) {
+        if(enterprise.getPatDirectory()!= null && enterprise.getPatDirectory().getPatientArray() != null){
+            for (Patient patient : enterprise.getPatDirectory().getPatientArray()) {
                     Object[] row = new Object[4];
                     row[0] = patient.getID();
                     row[1] = patient;//.getName();
                     row[2] = patient.getPhone();
-                    row[3] = patient.getBloodGroup();
+                    row[3] = patient.getBloodGrp();
                     model.addRow(row); 
             }
         }
@@ -114,7 +114,7 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
                     row[0] = patient.getID();
                     row[1] = patient;//getName();
                     row[2] = patient.getPhone();
-                    row[3] = patient.getBloodGroup();
+                    row[3] = patient.getBloodGrp();
                     model.addRow(row); 
                 }
                 }
@@ -140,7 +140,7 @@ public class ReceptionistWorkAreaJPanel extends javax.swing.JPanel {
                     row[0] = patient.getID();
                     row[1] = patient;
                     row[2] = patient.getPhone();
-                    row[3] = patient.getBloodGroup();
+                    row[3] = patient.getBloodGrp();
                     model.addRow(row); 
                 }
                 }

@@ -302,13 +302,13 @@ public class PatientHistoryJPanel extends javax.swing.JPanel {
             
         if(patientHistoryDetails == null){
             patientHistoryDetails = new PatientHistoryDetails();
-            patient.getPatHistorydtls().add(patientHistoryDetails);
+            patient.getPatHistoryDetails().add(patientHistoryDetails);
         }
         
-        if(patient.getPatHistorydtls() == null)
+        if(patient.getPatHistoryDetails() == null)
         {
             ArrayList<PatientHistoryDetails> pdh = new ArrayList<>();
-            patient.setPatHistorydtls(pdh);
+            patient.setPatHistoryDetails(pdh);
         }
         
         //prescription.setDate(date);
@@ -336,13 +336,13 @@ public class PatientHistoryJPanel extends javax.swing.JPanel {
     public void populatePatientDetails(){
         DefaultTableModel model = (DefaultTableModel) patientDetailsTbl.getModel();
         model.setRowCount(0);
-        if(patient.getPatHistorydtls() == null )
+        if(patient.getPatHistoryDetails() == null )
         {
             PatientHistoryDetails patientHistoryDetails = new PatientHistoryDetails();
                 
-                patient.getPatHistorydtls().add(patientHistoryDetails);
+                patient.getPatHistoryDetails().add(patientHistoryDetails);
         }
-        for(PatientHistoryDetails phd : patient.getPatHistorydtls())
+        for(PatientHistoryDetails phd : patient.getPatHistoryDetails())
         {
         
             Object[] row = new Object[6];

@@ -11,7 +11,7 @@ import model.Bill.BillDirectory;
 import model.DB4OUtil.DB4OUtil;
 import model.EcoSystem;
 import model.Enterprise.Enterprise;
-import model.Enterprise.HospitalEnterprise.Hospital;
+import model.Enterprise.Hospital.Hospital;
 import model.Enterprise.InsuranceEnterprise.Insurance;
 import model.Enterprise.LabEnterprise.LabTest;
 import model.Organization.Organization;
@@ -109,8 +109,8 @@ public class GeneratePatientBillJPanel extends javax.swing.JPanel {
        
         double totalCharge = visitingCharge + operationCharge + labtestCharge;
         txtTotalCharge.setText(String.valueOf(totalCharge));
-        txtInsuranceE.setText(patient.getInsuranceE().getName() == null ? "" : patient.getInsuranceE().getName());
-        txtInsuranceId.setText(patient.getInsuranceId() == null ? "" : patient.getInsuranceId() );
+        txtInsuranceE.setText(patient.getInsVar().getName() == null ? "" : patient.getInsVar().getName());
+        txtInsuranceId.setText(patient.getInsId() == null ? "" : patient.getInsId() );
         txtApptnmtStatus.setText(appointment.getStatus());
         
         if(appointment.getStatus().equals(Appointment.AppointmentStatus.MarkForInsurance.getValue()))
@@ -397,7 +397,7 @@ public class GeneratePatientBillJPanel extends javax.swing.JPanel {
                 workreq.setHospitalBill(bill);
                 //workreq.setDoctor(doctor);
                 //workreq.setReceiver(userAccount);
-                Insurance lab = patient.getInsuranceE();
+                Insurance lab = patient.getInsVar();
                 lab.getWorkQueue().getWorkRequestList().add(workreq);
                 //LabTest labTest= new LabTest();
                 //labTest.setLab(lab);

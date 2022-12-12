@@ -4,17 +4,14 @@
  */
 package model.Patient;
 
-import model.appointment.Appointment;
 import model.appointment.AppointmentDirectory;
 import model.appointment.PatientHistoryDetails;
-import model.Bill.Bill;
 import model.Employee.Employee;
 import model.Enterprise.InsuranceEnterprise.Insurance;
 import model.Enterprise.LabEnterprise.LabTestDirectory;
 import model.Location.Location;
 import model.UserAccount.UserAccount;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  *
@@ -22,142 +19,135 @@ import java.util.Date;
  */
 public class Patient extends Employee {
 
+    AppointmentDirectory appointmentDir;
+    AppointmentDirectory labApptDir;
+    LabTestDirectory labTestDir;
+    String patSex;
+    private Location addressVar;
+    private String bloodGrp;
+    private String insId;
+    private Insurance insVar;
+    private ArrayList<PatientHistoryDetails> patHistoryDetails;
+    private String ssnVar;
     //String phoneNum;
-    AppointmentDirectory appointmentDirectory;
-    AppointmentDirectory labAppointmentDirectory;
-    LabTestDirectory labTestList;
-    String patientSex;
-    //private String address;
-    private Location address;
-    private String bloodGroup;
-    //private String emailId;
-    private String insuranceId;
-    private Insurance insuranceE;
-    private ArrayList<PatientHistoryDetails> patHistorydtls;
-    private String SSN;
 
-    public AppointmentDirectory getLabAppointmentDirectory() {
-        return labAppointmentDirectory;
+    public AppointmentDirectory getLabApptDir() {
+        return labApptDir;
     }
 
-    public void setLabAppointmentDirectory(AppointmentDirectory labAppointmentDirectory) {
-        this.labAppointmentDirectory = labAppointmentDirectory;
+    public void setLabApptDir(AppointmentDirectory labApptDir) {
+        this.labApptDir = labApptDir;
     }
 
-    public String getSSN() {
-        return SSN;
+    public String getSsnVar() {
+        return ssnVar;
     }
 
-    public void setSSN(String SSN) {
-        this.SSN = SSN;
+    public void setSsnVar(String ssnVar) {
+        this.ssnVar = ssnVar;
     }
 
     public Patient() {
         super();
-        this.patHistorydtls = new ArrayList<>();
-        this.appointmentDirectory = new AppointmentDirectory();
-        this.labAppointmentDirectory = new AppointmentDirectory();
-        this.labTestList = new LabTestDirectory();
+        this.patHistoryDetails = new ArrayList<>();
+        this.appointmentDir = new AppointmentDirectory();
+        this.labApptDir = new AppointmentDirectory();
+        this.labTestDir = new LabTestDirectory();
     }
 
-    public ArrayList<PatientHistoryDetails> getPatHistorydtls() {
-        return patHistorydtls;
+    public ArrayList<PatientHistoryDetails> getPatHistoryDetails() {
+        return patHistoryDetails;
     }
 
-    public void setPatHistorydtls(ArrayList<PatientHistoryDetails> patHistorydtls) {
-        this.patHistorydtls = patHistorydtls;
+    public void setPatHistoryDetails(ArrayList<PatientHistoryDetails> patHistoryDetails) {
+        this.patHistoryDetails = patHistoryDetails;
     }
 
-    public String getInsuranceId() {
-        return insuranceId;
+    public String getInsId() {
+        return insId;
     }
 
-    public Insurance getInsuranceE() {
-        return insuranceE;
+    public Insurance getInsVar() {
+        return insVar;
     }
 
-    public void setInsuranceE(Insurance insuranceE) {
-        this.insuranceE = insuranceE;
+    public void setInsVar(Insurance insVar) {
+        this.insVar = insVar;
     }
 
-    public void setInsuranceId(String insuranceId) {
-        this.insuranceId = insuranceId;
+    public void setInsId(String insId) {
+        this.insId = insId;
     }
 
-    private UserAccount userAccount;
+    private UserAccount userAcc;
 
-    public UserAccount getUserAccount() {
-        return userAccount;
+    public UserAccount getUserAcc() {
+        return userAcc;
     }
 
-    public void setUserAccount(UserAccount userAccount) {
-        this.userAccount = userAccount;
+    public void setUserAcc(UserAccount userAcc) {
+        this.userAcc = userAcc;
     }
 
-    public void createNewAppointmentDirectory() {
-        appointmentDirectory = new AppointmentDirectory();
+    public void createNewApptDir() {
+        appointmentDir = new AppointmentDirectory();
     }
 
-    public String getBloodGroup() {
-        return bloodGroup;
+    public String getBloodGrp() {
+        return bloodGrp;
     }
 
-    public void setBloodGroup(String bloodGroup) {
-        this.bloodGroup = bloodGroup;
+    public void setBloodGrp(String bloodGrp) {
+        this.bloodGrp = bloodGrp;
     }
 
-    public Location getAddress() {
-        return address;
+    public Location getAddressVar() {
+        return addressVar;
     }
 
-    public void setAddress(Location address) {
-        this.address = address;
+    public void setAddressVar(Location addressVar) {
+        this.addressVar = addressVar;
     }
 
-    public AppointmentDirectory getAppointmentDirectory() {
-        return appointmentDirectory;
+    public AppointmentDirectory getAppointmentDir() {
+        return appointmentDir;
     }
 
-    public void setAppointmentDirectory(AppointmentDirectory appointmentDirectory) {
-        this.appointmentDirectory = appointmentDirectory;
+    public void setAppointmentDir(AppointmentDirectory appointmentDir) {
+        this.appointmentDir = appointmentDir;
     }
 
-    public LabTestDirectory getLabTestList() {
-        return labTestList;
+    public LabTestDirectory getLabTestDir() {
+        return labTestDir;
     }
 
-    public void setLabTestList(LabTestDirectory labTestList) {
-        this.labTestList = labTestList;
+    public void setLabTestDir(LabTestDirectory labTestDir) {
+        this.labTestDir = labTestDir;
     }
 
-    public String getPatientSex() {
-        return patientSex;
+    public String getPatSex() {
+        return patSex;
     }
 
-    public void setPatientSex(String patientSex) {
-        this.patientSex = patientSex;
+    public void setPatSex(String patSex) {
+        this.patSex = patSex;
     }
 
-    void bookAppointment(Appointment app) {
-
-    }
-
-    Appointment viewAppointment(Date date) {
-        Appointment app = null;
-        return app;
-    }
-
-    void rescheduleAppointment(Appointment app) {
-        //update the appointment
-        //
-    }
-
-    Bill viewBills(Appointment app) {
-        Bill b = null;
-
-        return b;
-    }
-
+//    void bookAppointment(Appointment app) {
+//
+//    }
+//    Appointment viewAppointment(Date date) {
+//        Appointment app = null;
+//        return app;
+//    }
+//    void rescheduleAppointment(Appointment app) {
+//        //update the appointment
+//        //
+//    }
+//    Bill viewBills(Appointment app) {
+//        Bill b = null;
+//        return b;
+//    }
     @Override
     public String toString() {
         return this.getNameVar();

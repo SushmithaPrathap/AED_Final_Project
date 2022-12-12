@@ -11,7 +11,7 @@ import model.DB4OUtil.DB4OUtil;
 import model.EcoSystem;
 import model.Employee.Employee;
 import model.Enterprise.Enterprise;
-import model.Enterprise.HospitalEnterprise.Hospital;
+import model.Enterprise.Hospital.Hospital;
 import model.Enterprise.LabEnterprise.Lab;
 import model.Enterprise.LabEnterprise.LabTest;
 import model.Network.Network;
@@ -82,7 +82,7 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
     private void populateEnterpriseComboBox(Network network){
         enterpriseJComboBox1.removeAllItems();
         //enterpeirse-> bostonHospital!
-        for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()){
+        for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseArray()){
             if(enterprise instanceof Hospital)
             {
                 enterpriseJComboBox1.addItem(enterprise);
@@ -96,9 +96,9 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
        List<Employee> empList= new ArrayList<>();//enterprise.getEmployeeDirectory().getDoctorList();
        
        
-       if(enterprise !=null && enterprise.getOrganizationDirectory() != null && enterprise.getOrganizationDirectory().getOrganizationList() !=null){
-       ArrayList<Organization> deptList = enterprise.getOrganizationDirectory().getOrganizationList();
-       if(enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Hospital.getValue())){
+       if(enterprise !=null && enterprise.getOrgDir() != null && enterprise.getOrgDir().getOrganizationList() !=null){
+       ArrayList<Organization> deptList = enterprise.getOrgDir().getOrganizationList();
+       if(enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Hospital.getValue())){
            for(Organization dept : deptList)
                 {
                     if(dept instanceof model.Organization.GeneralOrganization){
@@ -526,15 +526,15 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
             System.out.println("expection in Book appointmentJPanel");
         }
         Employee doctor = (Employee)cmbDoctor.getSelectedItem();
-        if(enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Hospital.getValue())){
-            for(Appointment appointment : patient.getAppointmentDirectory().getAppointmentList()){
+        if(enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Hospital.getValue())){
+            for(Appointment appointment : patient.getAppointmentDir().getAppointmentList()){
                 if((appointment.getDate().compareTo(date1) == 0) && (appointment.getDoctor().getID() == doctor.getID())&& !appointment.getStatus().equalsIgnoreCase(Appointment.AppointmentStatus.Cancel.getValue())){
                     JOptionPane.showMessageDialog(null, "Patient has already booked appointment!", "Warning", JOptionPane.WARNING_MESSAGE);
                     return;
                 }
             }
-        }else if(enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())){
-            for(Appointment appointment : patient.getLabAppointmentDirectory().getAppointmentList()){
+        }else if(enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())){
+            for(Appointment appointment : patient.getLabApptDir().getAppointmentList()){
                 if((appointment.getDate().compareTo(date1) == 0) && (appointment.getDoctor().getID() == doctor.getID()) &&  !appointment.getStatus().equalsIgnoreCase(Appointment.AppointmentStatus.Cancel.getValue())){
                     JOptionPane.showMessageDialog(null, "Patient has already booked appointment!", "Warning", JOptionPane.WARNING_MESSAGE);
                     return;
@@ -553,19 +553,19 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
         
         
         Appointment appoint = null;
-        if(enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Hospital.getValue())){
-            appoint = patient.getAppointmentDirectory().createAppointment(patient, doctor, date1 , (String)txtAppointmentType.getSelectedItem());
+        if(enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Hospital.getValue())){
+            appoint = patient.getAppointmentDir().createAppointment(patient, doctor, date1 , (String)txtAppointmentType.getSelectedItem());
             appoint.setTime(time);
-        }else if(enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())){
-            appoint = patient.getLabAppointmentDirectory().createLabAppointment(patient, doctor, date1 , (String)txtAppointmentType.getSelectedItem());
+        }else if(enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())){
+            appoint = patient.getLabApptDir().createLabAppointment(patient, doctor, date1 , (String)txtAppointmentType.getSelectedItem());
             appoint.setTime(time);
         }
         Patient pt=null;
-        List<Patient> patList=enterprise.getPatDirectory().getPatientList();
+        List<Patient> patList=enterprise.getPatDirectory().getPatientArray();
         for(Patient p: patList)
         {
             //if()
-            if(p.getSSN()!=null && p.getInsuranceId() !=null &&p.getSSN().equals(patient.getSSN()) && p.getInsuranceId().equalsIgnoreCase(patient.getInsuranceId()) && p.getID() == patient.getID()){
+            if(p.getSsnVar()!=null && p.getInsId() !=null &&p.getSsnVar().equals(patient.getSsnVar()) && p.getInsId().equalsIgnoreCase(patient.getInsId()) && p.getID() == patient.getID()){
                 pt=p;
                 
                 break;
@@ -573,7 +573,7 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
         }
         
         if(pt==null)
-        {enterprise.getPatDirectory().getPatientList().add(patient);
+        {enterprise.getPatDirectory().getPatientArray().add(patient);
             
         }
         
@@ -582,7 +582,7 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
        
        List<Employee> empList= new ArrayList<>();//enterprise.getEmployeeDirectory().getDoctorList();
        UserAccount drUserAcc =null;
-       ArrayList<Organization> deptList = enterprise.getOrganizationDirectory().getOrganizationList();
+       ArrayList<Organization> deptList = enterprise.getOrgDir().getOrganizationList();
        for(Organization dept : deptList)
        {
            if(dept instanceof model.Organization.GeneralOrganization){
@@ -607,7 +607,7 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
         txtAppointmentType.setSelectedIndex(0);
         
         //add in work queue for assigned doctor
-        if(enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())){
+        if(enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Lab.getValue())){
             LabTechnicianWorkRequest workreq = new LabTechnicianWorkRequest();
                 workreq.setStatus("New");
                 appoint.setStatus(Appointment.AppointmentStatus.MarkforTest.getValue());
@@ -634,7 +634,7 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
                 workreq.setLabTest(labTest);
                 appoint.getLabTestList().addLabTest(labTest);
                 appoint.setStatus(Appointment.AppointmentStatus.MarkforTest.getValue());
-        }else if(enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.Hospital.getValue())){
+        }else if(enterprise.getTypeEnterprise().getValue().equals(Enterprise.EnterpriseType.Hospital.getValue())){
             DoctorWorkRequest drWorkReq = new DoctorWorkRequest();
             drWorkReq.setMessage("New Appointment");
             drWorkReq.setReceiver(drUserAcc);
@@ -660,7 +660,7 @@ public class BookSelfAppointmentJPanel extends javax.swing.JPanel {
         
 
         String uEmail= patient.getEmail();
-        UserAccount account = patient.getUserAccount();
+        UserAccount account = patient.getUserAcc();
         String phonecontact = patient.getPhone()+patient.getMobileCarrier();
         //registrationRequest.setContactCarrierName(contact);
         sendEmailMessageAppointment(uEmail, account, statusString);//.getText());
