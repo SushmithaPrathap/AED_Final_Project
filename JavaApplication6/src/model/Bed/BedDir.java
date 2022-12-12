@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author yash
  */
-public class BedDirectory {
+public class BedDir {
 
     List<Bed> listBed;
 
@@ -25,7 +25,7 @@ public class BedDirectory {
     }
     static int cnt = 1;
 
-    public BedDirectory(int count) {
+    public BedDir(int count) {
         listBed = new ArrayList<Bed>();
         //create new beds
         for (int i = 0; i < count; i++) {

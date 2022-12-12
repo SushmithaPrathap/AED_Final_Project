@@ -16,7 +16,7 @@ import java.util.Date;
 public class BedPatient {
 
     Bed bed;
-    Patient patient;
+    Patient pat;
     Date date;
 
     public Bed getBed() {
@@ -27,12 +27,12 @@ public class BedPatient {
         this.bed = bed;
     }
 
-    public Patient getPatient() {
-        return patient;
+    public Patient getPat() {
+        return pat;
     }
 
-    public void setPatient(Patient patient) {
-        this.patient = patient;
+    public void setPat(Patient pat) {
+        this.pat = pat;
     }
 
     public Date getDate() {

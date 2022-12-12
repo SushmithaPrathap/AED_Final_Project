@@ -15,52 +15,49 @@ import java.util.List;
 
 public class OperationDirectory {
 
-    List<Operation> operationlist;
+    List<Operation> operationArray;
+//Crud for operations and search and delete
 
-    //add
-    //update
-    //searchbyOperationdate
-    //delete-cancel
-    public List<Operation> getOperationlist() {
-        return operationlist;
+    public List<Operation> getOperationArray() {
+        return operationArray;
     }
 
-    public void setOperationlist(List<Operation> operationlist) {
-        this.operationlist = operationlist;
+    public void setOperationArray(List<Operation> operationArray) {
+        this.operationArray = operationArray;
     }
 
-    public Operation addOperation() {
+    public Operation postOperation() {
         Operation operation = new Operation();
-        operationlist.add(operation);
+        operationArray.add(operation);
         return operation;
 
     }
 
-    public Operation searchOperationbyDate(String date) {
-        for (Operation operation : operationlist) {
-            if (operation.getOperationDate() == date) {
-                return operation;
+    public Operation findOperationbyDate(String date) {
+        for (Operation op : operationArray) {
+            if (op.getOpDate() == date) {
+                return op;
             }
         }
         return null;
     }
 
     public void updateOperation(int operationNumber, String operationDate, String operationDescription, double operationCharge, String status, Patient patient, Employee doctor) {
-        for (Operation operation : operationlist) {
-            if (operation.getOperationNumber() == (operationNumber)) {
-                operation.setOperationDate(operationDate);
-                operation.setOperationDescription(operationDescription);
-                operation.setOperationCharge(operationCharge);
+        for (Operation operation : operationArray) {
+            if (operation.getOpNo() == (operationNumber)) {
+                operation.setOpDate(operationDate);
+                operation.setOpDesc(operationDescription);
+                operation.setOpAmount(operationCharge);
                 operation.setStatus(status);
                 operation.setPatient(patient);
-                operation.setDoctor(doctor);
+                operation.setDoc(doctor);
 
             }
         }
     }
 
-    public void cancelOperation(Operation operation) {
-        operationlist.remove(operation);
+    public void deleteOperation(Operation operation) {
+        operationArray.remove(operation);
     }
 
 }

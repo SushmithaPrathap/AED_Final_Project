@@ -113,11 +113,11 @@ jLabel6.setIcon(profilePic);
         //for (Map.Entry<Medicine, Double> entry : appointment.getPrescription().getMedicinePrescribed().entrySet()){
          Object[] row = new Object[7];
             row[0] = operatn.getOprType();
-            row[1] = operatn.getOperationDate();
+            row[1] = operatn.getOpDate();
             row[2] = operatn.getStatus() == null ? "New" : operatn.getStatus()  ;
-            row[3] = operatn.getOperationCharge();
-            row[4] = operatn.getBedAssigned() == null ? "Requested" : operatn.getBedAssigned() ;
-            row[5] = operatn.getOperationDescription();
+            row[3] = operatn.getOpAmount();
+            row[4] = operatn.getAssignedBed() == null ? "Requested" : operatn.getAssignedBed() ;
+            row[5] = operatn.getOpDesc();
             row[6] = operatn.getPerson() == null ? "Not Assigned" : operatn.getPerson();
             //row[7] = operatn.get
             model.addRow(row);
@@ -404,18 +404,18 @@ jLabel6.setIcon(profilePic);
 
                 operation.setPatient(patient);
 
-                operation.setOperationDate(date1);
+                operation.setOpDate(date1);
                 if(txtOprDescptn.getText() != null){
-                    operation.setOperationDescription(txtOprDescptn.getText());
+                    operation.setOpDesc(txtOprDescptn.getText());
                 }
                 else {
-                    operation.setOperationDescription(" ");
+                    operation.setOpDesc(" ");
 
                 }
 
-                operation.setOperationCharge(10000.00);
-                operation.setDoctor(doctor);
-                operation.setStatus(Operation.OperationStatus.WaitingConfirmation.getValue());
+                operation.setOpAmount(10000.00);
+                operation.setDoc(doctor);
+                operation.setStatus(Operation.OperationStatus.WaitingConfirmation.getStatValue());
                 operation.setOprType((String)cmbOperationType.getSelectedItem());
                 //set operation
                 appointment.setOperation(operation);

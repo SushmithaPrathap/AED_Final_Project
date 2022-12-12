@@ -74,7 +74,7 @@ public class ViewSelfPatientBillJPanel extends javax.swing.JPanel {
         double visitingCharge = appointment.getDoctor().getVisitCharge();
         Double operationCharge = 0d;
         if(appointment.getOperation() != null){
-            operationCharge = appointment.getOperation().getOperationCharge();
+            operationCharge = appointment.getOperation().getOpAmount();
         }
         
         txtVisingCharge.setText(String.valueOf(visitingCharge));

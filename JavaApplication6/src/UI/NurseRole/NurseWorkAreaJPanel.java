@@ -63,7 +63,7 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
                 Operation opr = app.getOperation() == null ? null : app.getOperation();
                 row[8] = opr.getStatus() == null ? "" : opr.getStatus();
                 row[9] = opr.getOprType();
-                row[10] = opr.getOperationDate() == null ? "" : opr.getOperationDate();
+                row[10] = opr.getOpDate() == null ? "" : opr.getOpDate();
                 model.addRow(row);
             }
         }
@@ -292,7 +292,7 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
                 Operation opr = app.getOperation() == null ? null : app.getOperation();
                 row[8] = opr.getStatus() == null ? "" : opr.getStatus();
                 row[9] = opr.getOprType();
-                row[10] = opr.getOperationDate() == null ? "" : opr.getOperationDate();
+                row[10] = opr.getOpDate() == null ? "" : opr.getOpDate();
                 model.addRow(row);
 
             }

@@ -6,7 +6,7 @@
 package UI.NurseRole;
 
 import model.Bed.Bed;
-import model.Organization.BedManagementDepartment;
+import model.Organization.BedMgmtDept;
 import model.Organization.Organization;
 import model.Organization.OrganizationDirectory;
 import model.Patient.Patient;
@@ -24,12 +24,12 @@ public class ManageBedbyNurseJPanel extends javax.swing.JPanel {
     JPanel userProcessContainer;
     OrganizationDirectory organizationDirectory;
     Organization organization;
-    BedManagementDepartment bedorg;
+    BedMgmtDept bedorg;
 
     /**
      * Creates new form ManageBedJPanel
      */
-    public ManageBedbyNurseJPanel(JPanel userProcessContainer, OrganizationDirectory organizationDirectory, Organization organization, BedManagementDepartment bedorg) {
+    public ManageBedbyNurseJPanel(JPanel userProcessContainer, OrganizationDirectory organizationDirectory, Organization organization, BedMgmtDept bedorg) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.organizationDirectory = organizationDirectory;
@@ -38,7 +38,7 @@ public class ManageBedbyNurseJPanel extends javax.swing.JPanel {
         btnUpdate.setEnabled(true);
         btnSave.setEnabled(false);
         bedCountTxt.setEditable(false);
-        currentBedCountTxt.setText(String.valueOf(this.bedorg.getBedCount()));
+        currentBedCountTxt.setText(String.valueOf(this.bedorg.getBedCnt()));
         currentBedCountTxt.setEditable(false);
         populateBedTable();
 
@@ -49,7 +49,7 @@ public class ManageBedbyNurseJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
         String bedStatus = (String) bedStatusCmb.getSelectedItem();
-        for (Bed bed : bedorg.getBedList().getListBed()) {
+        for (Bed bed : bedorg.getBedArray().getListBed()) {
             if (bed.getBedStatus().getStatus().equals(bedStatus)) {
                 Object[] row = new Object[3];
                 row[0] = bed.getBedId();
@@ -399,7 +399,7 @@ public class ManageBedbyNurseJPanel extends javax.swing.JPanel {
             return;
         }
         int newCountBed = Integer.parseInt(bedCountTxt.getText());
-        int currentCount = bedorg.getBedCount();
+        int currentCount = bedorg.getBedCnt();
 
         if (currentCount > newCountBed) {
             JOptionPane.showMessageDialog(null, "Cannot decrease bed Count!");
@@ -409,14 +409,14 @@ public class ManageBedbyNurseJPanel extends javax.swing.JPanel {
 
         newCountBed = newCountBed - currentCount;
 
-        bedorg.addBedInBedList(newCountBed);
+        bedorg.addBed(newCountBed);
         JOptionPane.showMessageDialog(null, "Beds added successfully!");
         //return;
 
         btnUpdate.setEnabled(true);
         btnSave.setEnabled(false);
         bedCountTxt.setEditable(false);
-        currentBedCountTxt.setText(String.valueOf(bedorg.getBedCount()));
+        currentBedCountTxt.setText(String.valueOf(bedorg.getBedCnt()));
         bedCountTxt.setText("");
     }//GEN-LAST:event_btnSaveActionPerformed
 

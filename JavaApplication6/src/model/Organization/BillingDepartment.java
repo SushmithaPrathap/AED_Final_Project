@@ -20,14 +20,14 @@ import java.util.Date;
 
 public class BillingDepartment extends Organization {
 
-    String billingId;
-    String billIssuer;
-    Patient patient;
-    Employee doctor;
-    Appointment appointment;
-    Bill bill;
-    String paymentStatus;
-    String paymentMode;
+//    String billId;
+//    String billIssuer;
+//    Patient patient;
+//    Employee doctor;
+//    Appointment appointment;
+    Bill billVar;
+//    String paymentStatus;
+//    String paymentMode;
 
     public BillingDepartment() {
         super(Organization.Type.Billing.getValue());
@@ -42,14 +42,14 @@ public class BillingDepartment extends Organization {
 
     Bill processBilling(Date date) {
 
-        return bill;
+        return billVar;
     }
 
-    public void generateInvoice(Date date, Patient patient) {
-        //generate invoice
+    public void createInvoice(Date date, Patient patient) {
+        //craete an invoice
     }
 
     public void selectPaymentMode() {
-        //choose a payment mode
+        //select a payment mode
     }
 }

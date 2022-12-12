@@ -7,7 +7,7 @@ import model.Enterprise.Insurance.Insurance;
 import model.Enterprise.Lab.Lab;
 import model.Enterprise.Pharmacy.Pharmacy;
 import model.Location.Location;
-import model.Organization.BedManagementDepartment;
+import model.Organization.BedMgmtDept;
 import model.Organization.Organization;
 import model.Patient.Patient;
 import model.Role.AdminRole;
@@ -260,8 +260,8 @@ public class ConfigureASystem {
                 
                 System.out.println("BedManagement Organization");
                 o = e.getOrgDir().createOrganization(Organization.Type.BedManagement);
-                BedManagementDepartment bo = ((BedManagementDepartment)o);
-                bo.createBedList(23);
+                BedMgmtDept bo = ((BedMgmtDept)o);
+                bo.getCreatedBedList(23);
                 
                 
                 System.out.println("Billing Organization");
@@ -640,8 +640,8 @@ public class ConfigureASystem {
                 
                 System.out.println("BedManagement Organization");
                 o = e.getOrgDir().createOrganization(Organization.Type.BedManagement);
-                bo = ((BedManagementDepartment)o);
-                bo.createBedList(43);
+                bo = ((BedMgmtDept)o);
+                bo.getCreatedBedList(43);
                 
                 System.out.println();
                 System.out.println("Billing Organization");

@@ -9,7 +9,7 @@ import model.appointment.Appointment;
 import model.Bed.Bed;
 import model.Enterprise.Enterprise;
 import model.Operation.Operation;
-import model.Organization.BedManagementDepartment;
+import model.Organization.BedMgmtDept;
 import model.Organization.Organization;
 import model.Organization.OrganizationDirectory;
 import model.Patient.Patient;
@@ -42,7 +42,7 @@ public class AssignBedJPanel extends javax.swing.JPanel {
     UserAccount doctor;
     UserAccount nurseUserAccount;
     WorkRequest workrequest;
-    BedManagementDepartment bedorg;
+    BedMgmtDept bedorg;
 
     /**
      * Creates new form AssignBed
@@ -77,17 +77,17 @@ public class AssignBedJPanel extends javax.swing.JPanel {
 
     }
 
-    BedManagementDepartment getBedDepartment() {
+    BedMgmtDept getBedDepartment() {
         //enterprise.getOrganizationDirectory().getOrganizationList();
 
         boolean flag = false;
-        BedManagementDepartment bedOrg = null;
+        BedMgmtDept bedOrg = null;
         OrganizationDirectory orgDir = enterprise.getOrgDir();
         for (Organization org : orgDir.getOrganizationList()) {
             if (org.getName().equals(Organization.Type.BedManagement.getValue())) {
                 //if bed management departemtn is present then navigate to bed management screen
                 flag = true;
-                bedOrg = (BedManagementDepartment) org;
+                bedOrg = (BedMgmtDept) org;
             }
         }
 
@@ -128,12 +128,12 @@ public class AssignBedJPanel extends javax.swing.JPanel {
         // viewRequestDateTxt.setText(workrequest.getRequestDate().toString() == null ? "" : workrequest.getRequestDate().toString());
         txtAreaMessage.setText(workrequest.getMessage());
         Operation oprtn = appointment.getOperation();
-        if (oprtn != null && oprtn.getBedAssigned() != null) {
-            Bed bed = oprtn.getBedAssigned();
+        if (oprtn != null && oprtn.getAssignedBed() != null) {
+            Bed bed = oprtn.getAssignedBed();
             txtBedId.setText(String.valueOf(bed.getBedId()));
             txtBedIPrice.setText(String.valueOf(bed.getAmount()));
             txtBedType.setText(bed.getBedType().toString());
-            txtBedAssignDate.setText(oprtn.getOperationDate());
+            txtBedAssignDate.setText(oprtn.getOpDate());
             btnviewBed.setEnabled(false);
         } else {
             btnviewBed.setEnabled(true);
@@ -530,7 +530,7 @@ public class AssignBedJPanel extends javax.swing.JPanel {
 
     private void closebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closebtnActionPerformed
         assignJPanel.setVisible(false);
-        if (appointment.getOperation().getBedAssigned() != null) {
+        if (appointment.getOperation().getAssignedBed() != null) {
             btnviewBed.setEnabled(false);
         }
     }//GEN-LAST:event_closebtnActionPerformed
@@ -617,7 +617,7 @@ public class AssignBedJPanel extends javax.swing.JPanel {
             SimpleDateFormat formatter1 = new SimpleDateFormat("yyyy-MM-dd");
             Date date1 = formatter1.parse(dateString);
 
-            List<Bed> bedList = bedorg.getBedList().getListBed();
+            List<Bed> bedList = bedorg.getBedArray().getListBed();
             DefaultTableModel model = (DefaultTableModel) bedJTable.getModel();
 
             model.setRowCount(0);
@@ -710,11 +710,11 @@ public class AssignBedJPanel extends javax.swing.JPanel {
             //selectedBed.setStatus(Bed.BedStatus.Occupied);
             JOptionPane.showMessageDialog(null, "Bed Assigned Successfully!", "Information", JOptionPane.INFORMATION_MESSAGE);
             Operation opr = appointment.getOperation();
-            opr.setBedAssigned(selectedBed);
-            opr.setOperationDate(dateString);
+            opr.setAssignedBed(selectedBed);
+            opr.setOpDate(dateString);
             opr.setPerson(nurseUserAccount.getEmployee());
             opr.setPerson(nurseUserAccount.getEmployee());
-            opr.setStatus(Operation.OperationStatus.BedAssigned.getValue());
+            opr.setStatus(Operation.OperationStatus.BedAssigned.getStatValue());
             appointment.setStatus(Appointment.AppointmentStatus.BedAssigned.getValue());
             //appointment.setStatus(Appointment.AppointmentStatus.);
             workrequest.setStatus("Handled- bed assigned sucessfully");

@@ -7,7 +7,7 @@ package UI.AdminRole;
 import model.DB4OUtil.DB4OUtil;
 import model.EcoSystem;
 import model.Enterprise.Enterprise;
-import model.Organization.BedManagementDepartment;
+import model.Organization.BedMgmtDept;
 import model.Organization.Organization;
 import model.Organization.Organization.Type;
 import model.Organization.OrganizationDirectory;
@@ -382,8 +382,8 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         Organization dept = directory.createOrganization(type);
         if (type.getValue().equals("Bed Management Department")) {
             int selectedBedCount = Integer.parseInt((String) cmbBedNUmber.getSelectedItem());
-            BedManagementDepartment bedMngDept = (BedManagementDepartment) dept;
-            bedMngDept.createBedList(selectedBedCount);
+            BedMgmtDept bedMngDept = (BedMgmtDept) dept;
+            bedMngDept.getCreatedBedList(selectedBedCount);
         }
 
         JOptionPane.showMessageDialog(null, "Added Successfully");

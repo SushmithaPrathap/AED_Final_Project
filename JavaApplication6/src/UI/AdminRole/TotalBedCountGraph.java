@@ -9,7 +9,7 @@ import model.Bed.Bed;
 import model.EcoSystem;
 import model.Enterprise.Enterprise;
 import model.Network.Network;
-import model.Organization.BedManagementDepartment;
+import model.Organization.BedMgmtDept;
 import model.Organization.Organization;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
@@ -61,9 +61,9 @@ public class TotalBedCountGraph extends javax.swing.JPanel {
         {
             for (Organization org : epr.getOrgDir().getOrganizationList()) 
             {
-                if (org instanceof BedManagementDepartment) 
+                if (org instanceof BedMgmtDept) 
                 {
-                    List<Bed> bedList = ((BedManagementDepartment) org).getBedList().getListBed();
+                    List<Bed> bedList = ((BedMgmtDept) org).getBedArray().getListBed();
                     for (Bed b : bedList) 
                     {
                         if (b.getBedStatus().getStatus().equals(Bed.BedStatus.Available.getStatus())) 

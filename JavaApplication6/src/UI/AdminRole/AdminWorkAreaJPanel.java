@@ -4,7 +4,7 @@ package UI.AdminRole;
 
 import model.EcoSystem;
 import model.Enterprise.Enterprise;
-import model.Organization.BedManagementDepartment;
+import model.Organization.BedMgmtDept;
 import model.Organization.Organization;
 import model.Organization.OrganizationDirectory;
 import model.UserAccount.UserAccount;
@@ -216,14 +216,14 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         //check if bed management department is created or not
         boolean flag=false;
-        BedManagementDepartment bedOrg=null;
+        BedMgmtDept bedOrg=null;
         OrganizationDirectory orgDir = enterprise.getOrgDir();
         for(Organization org : orgDir.getOrganizationList() ){
             if(org.getName().equals(Organization.Type.BedManagement.getValue()))
             {
                 //if bed management departemtn is present then navigate to bed management screen
                 flag = true;
-                bedOrg = (BedManagementDepartment)org;
+                bedOrg = (BedMgmtDept)org;
             }
         }
         

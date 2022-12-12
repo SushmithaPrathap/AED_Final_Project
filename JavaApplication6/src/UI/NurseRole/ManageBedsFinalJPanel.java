@@ -9,7 +9,7 @@ import model.appointment.Appointment;
 import model.Bed.Bed;
 import model.Enterprise.Enterprise;
 import model.Operation.Operation;
-import model.Organization.BedManagementDepartment;
+import model.Organization.BedMgmtDept;
 import model.Organization.Organization;
 import model.Organization.OrganizationDirectory;
 import model.Patient.Patient;
@@ -42,7 +42,7 @@ public class ManageBedsFinalJPanel extends javax.swing.JPanel {
     //Employee doctor;
     UserAccount nurseUserAccount;
     //WorkRequest workrequest;
-    BedManagementDepartment bedorg;
+    BedMgmtDept bedorg;
    
     public ManageBedsFinalJPanel(JPanel userProcessContainer, Enterprise enterprise,  UserAccount nurseUserAccount) {
         initComponents();
@@ -63,18 +63,18 @@ public class ManageBedsFinalJPanel extends javax.swing.JPanel {
             bedTypeCmb.addItem(status.getBedType());
         }
     }
-    BedManagementDepartment getBedDepartment(){
+    BedMgmtDept getBedDepartment(){
         //enterprise.getOrganizationDirectory().getOrganizationList();
         
         boolean flag=false;
-        BedManagementDepartment bedOrg=null;
+        BedMgmtDept bedOrg=null;
         OrganizationDirectory orgDir = enterprise.getOrgDir();
         for(Organization org : orgDir.getOrganizationList() ){
             if(org.getName().equals(Organization.Type.BedManagement.getValue()))
             {
                 //if bed management departemtn is present then navigate to bed management screen
                 flag = true;
-                bedOrg = (BedManagementDepartment)org;
+                bedOrg = (BedMgmtDept)org;
             }
         }
         
@@ -321,7 +321,7 @@ public class ManageBedsFinalJPanel extends javax.swing.JPanel {
        //
 //        List<Bed> bedList = null;//bedorg.getBedList().getBedList();
         
-        List<Bed> bedList = bedorg.getBedList().getListBed();
+        List<Bed> bedList = bedorg.getBedArray().getListBed();
         
 //        if(status.equals(Bed.BedStatus.AssignedLaundry.getStatus()))
 //        {
@@ -483,7 +483,7 @@ public class ManageBedsFinalJPanel extends javax.swing.JPanel {
                     Patient pat= selectedBed.getPat();
                     Appointment appointment = selectedBed.getAppointment();
                     selectedBed.setBedStatus(Bed.BedStatus.AssignedLaundry);
-                    appointment.getOperation().setStatus(Operation.OperationStatus.Completed.getValue());
+                    appointment.getOperation().setStatus(Operation.OperationStatus.Completed.getStatValue());
                     JOptionPane.showMessageDialog(null, "Bed status changed Successfully!", "Information", JOptionPane.INFORMATION_MESSAGE);
 //                    Patient pat= bedorg.getPatientByBedNDate(selectedBed,date1);
 //                    List<Appointment> appnmtList = pat.getAppointmentDirectory().getAppointmentList();

@@ -38,7 +38,7 @@ public class OrganizationDirectory {
             organizationList.add(organization);
         }
         else if (type.getValue().equals(Type.BedManagement.getValue())){
-            organization = new BedManagementDepartment();
+            organization = new BedMgmtDept();
             organizationList.add(organization);
         }
         else if (type.getValue().equals(Type.Cardiology.getValue())){

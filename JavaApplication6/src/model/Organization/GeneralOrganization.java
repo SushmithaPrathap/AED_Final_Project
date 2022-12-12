@@ -23,11 +23,11 @@ public class GeneralOrganization extends Organization {
 
     //@Override
     public ArrayList<Role> getRoleSupported() {
-        ArrayList<Role> roles = new ArrayList();
-        roles.add(new DoctorRole());
-        roles.add(new NurseRole());
-        roles.add(new ReceptionistRole());
-        return roles;
+        ArrayList<Role> rolesArray = new ArrayList();
+        rolesArray.add(new DoctorRole());
+        rolesArray.add(new NurseRole());
+        rolesArray.add(new ReceptionistRole());
+        return rolesArray;
     }
 
 }

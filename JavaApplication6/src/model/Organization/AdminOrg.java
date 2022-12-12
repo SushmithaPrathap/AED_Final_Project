@@ -8,22 +8,21 @@ package model.Organization;
  *
  * @author sushmithaprathap
  */
-//import model.Role.AdminRole;
 import model.Role.Role;
 
 import java.util.ArrayList;
 
-public class AdminOrganization extends Organization {
+public class AdminOrg extends Organization {
 
-    public AdminOrganization() {
+    public AdminOrg() {
         super(Type.Admin.getValue());
     }
 
     @Override
     public ArrayList<Role> getRoleSupported() {
-        ArrayList<Role> roles = new ArrayList();
+        ArrayList<Role> rolesArray = new ArrayList();
         //roles.add(new AdminRole());
-        return roles;
+        return rolesArray;
     }
 
 }

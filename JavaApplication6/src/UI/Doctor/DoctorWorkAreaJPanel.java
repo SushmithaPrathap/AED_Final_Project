@@ -547,18 +547,18 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 
                 operation.setPatient(patient);
                 
-                operation.setOperationDate(date1);
+                operation.setOpDate(date1);
                 if(txtOprDescptn.getText() != null){
-                operation.setOperationDescription(txtOprDescptn.getText());
+                operation.setOpDesc(txtOprDescptn.getText());
                 }
                 else { 
-                    operation.setOperationDescription(" ");
+                    operation.setOpDesc(" ");
                 
                 }
                 
-                operation.setOperationCharge(10000.00);
-                operation.setDoctor(doctor);
-                operation.setStatus(Operation.OperationStatus.WaitingConfirmation.getValue());
+                operation.setOpAmount(10000.00);
+                operation.setDoc(doctor);
+                operation.setStatus(Operation.OperationStatus.WaitingConfirmation.getStatValue());
                 operation.setOprType((String)cmbOperationType.getSelectedItem());
                 //set operation
                 appointment.setOperation(operation);
