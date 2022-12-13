@@ -12,7 +12,6 @@ import model.Organization.Organization;
 import model.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import UI.PatientLogin.CreateNewPatientSelfJPanel;
 
@@ -20,10 +19,10 @@ import UI.PatientLogin.CreateNewPatientSelfJPanel;
  *
  * @author sushmitamaity
  */
-public class MainJFrame extends JFrame {
+public class Main extends javax.swing.JFrame {
 
     /**
-     * Creates new form MainJFrame
+     * Creates new form Main
      */
     private EcoSystem system;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
@@ -31,7 +30,7 @@ public class MainJFrame extends JFrame {
     static boolean maximized = true;
     static ImageIcon ii;
 
-    public MainJFrame() {
+    public Main() {
         initComponents();
         system = dB4OUtil.retrieveSystem();
         this.setSize(1300, 700);
@@ -57,17 +56,16 @@ public class MainJFrame extends JFrame {
         btnLogout = new javax.swing.JButton();
         SideSubHeading = new javax.swing.JLabel();
         btnRegister = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         container = new javax.swing.JPanel();
+        kGradientPanel1 = new UI.KGradientPanel();
+        bgLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setUndecorated(true);
 
         jSplitPane1.setBackground(new java.awt.Color(255, 255, 255));
-        jSplitPane1.setDividerLocation(200);
+        jSplitPane1.setDividerLocation(240);
 
         jPanel1.setBackground(new java.awt.Color(9, 87, 136));
         jPanel1.setToolTipText("");
@@ -84,7 +82,7 @@ public class MainJFrame extends JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnLogin.setBackground(new java.awt.Color(153, 51, 0));
-        btnLogin.setFont(new java.awt.Font("Cochin", 1, 14)); // NOI18N
+        btnLogin.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("LOGIN");
         btnLogin.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
@@ -93,7 +91,7 @@ public class MainJFrame extends JFrame {
                 btnLoginActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 140, 35));
+        jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 160, 40));
 
         txtUsername.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         txtUsername.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 2, 1, new java.awt.Color(255, 255, 255)));
@@ -102,11 +100,11 @@ public class MainJFrame extends JFrame {
                 txtUsernameActionPerformed(evt);
             }
         });
-        jPanel1.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 160, 30));
+        jPanel1.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 180, 30));
 
         txtPasswordField.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         txtPasswordField.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 2, 1, new java.awt.Color(255, 255, 255)));
-        jPanel1.add(txtPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 160, 30));
+        jPanel1.add(txtPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 180, 30));
 
         lblUsername.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblUsername.setForeground(new java.awt.Color(255, 255, 255));
@@ -119,7 +117,7 @@ public class MainJFrame extends JFrame {
         jPanel1.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, -1, -1));
         jPanel1.add(loginJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(157, 210, -1, -1));
 
-        btnLogout.setFont(new java.awt.Font("Cochin", 1, 12)); // NOI18N
+        btnLogout.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnLogout.setText("LOGOUT");
         btnLogout.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
         btnLogout.setEnabled(false);
@@ -128,40 +126,27 @@ public class MainJFrame extends JFrame {
                 btnLogoutActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 140, 35));
+        jPanel1.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 610, 160, 40));
 
         SideSubHeading.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         SideSubHeading.setForeground(new java.awt.Color(255, 255, 255));
         SideSubHeading.setText("Please Login!");
-        jPanel1.add(SideSubHeading, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, 40));
+        jPanel1.add(SideSubHeading, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, 40));
 
-        btnRegister.setFont(new java.awt.Font("Cochin", 1, 12)); // NOI18N
-        btnRegister.setText("REGISTER");
+        btnRegister.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnRegister.setForeground(new java.awt.Color(102, 102, 102));
+        btnRegister.setText("SIGN UP");
         btnRegister.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
         btnRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegisterActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 140, 35));
+        jPanel1.add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 160, 40));
 
         jSplitPane1.setLeftComponent(jPanel1);
 
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Effective Healthcare!");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 80, -1, -1));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/Images/download.jpeg"))); // NOI18N
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1210, 810));
-
-        jSplitPane1.setRightComponent(jPanel2);
-
-        getContentPane().add(jSplitPane1, java.awt.BorderLayout.CENTER);
-
-        container.setBackground(new java.awt.Color(236, 236, 236));
+        container.setBackground(new java.awt.Color(161, 237, 246));
         container.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 containerMouseDragged(evt);
@@ -173,7 +158,25 @@ public class MainJFrame extends JFrame {
             }
         });
         container.setLayout(new java.awt.CardLayout());
-        getContentPane().add(container, java.awt.BorderLayout.PAGE_END);
+
+        bgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/Images/big bg.jpeg"))); // NOI18N
+
+        javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
+        kGradientPanel1.setLayout(kGradientPanel1Layout);
+        kGradientPanel1Layout.setHorizontalGroup(
+            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(bgLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        kGradientPanel1Layout.setVerticalGroup(
+            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(bgLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        container.add(kGradientPanel1, "card2");
+
+        jSplitPane1.setRightComponent(container);
+
+        getContentPane().add(jSplitPane1, java.awt.BorderLayout.PAGE_START);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -253,7 +256,7 @@ public class MainJFrame extends JFrame {
         container.removeAll();
         //JPanel blankJP = new JPanel();
         //KGradientPanel blankJP = new KGradientPanel();
-//        container.add("blank", kGradientPanel1);
+        container.add("blank", kGradientPanel1);
         CardLayout crdLyt = (CardLayout) container.getLayout();
         crdLyt.next(container);
         dB4OUtil.storeSystem(system);
@@ -333,14 +336,18 @@ public class MainJFrame extends JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -349,21 +356,20 @@ public class MainJFrame extends JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainJFrame().setVisible(true);
+                new Main().setVisible(true);
             }
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel SideSubHeading;
+    private javax.swing.JLabel bgLabel;
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnRegister;
     private javax.swing.JPanel container;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JSplitPane jSplitPane1;
+    private UI.KGradientPanel kGradientPanel1;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblUsername;
     private javax.swing.JLabel loginJLabel;

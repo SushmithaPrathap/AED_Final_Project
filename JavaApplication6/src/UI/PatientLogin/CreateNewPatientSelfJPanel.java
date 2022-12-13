@@ -22,7 +22,7 @@ import model.Utility.Validation;
 import java.awt.CardLayout;
 import java.util.ArrayList;
 import java.util.List;
-import UI.SomePanel;
+import UI.KGradientPanel;
 
 
 /**
@@ -446,7 +446,7 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
 
       userProcessContainer.removeAll();
         //JPanel blankJP = new JPanel();
-        SomePanel blankJP = new SomePanel();
+        KGradientPanel blankJP = new KGradientPanel();
         userProcessContainer.add("blank", blankJP);
         CardLayout crdLyt = (CardLayout) userProcessContainer.getLayout();
         crdLyt.next(userProcessContainer);

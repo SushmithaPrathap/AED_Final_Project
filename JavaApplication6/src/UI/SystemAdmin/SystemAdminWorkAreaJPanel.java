@@ -149,7 +149,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         jSplitPane.setLeftComponent(jPanel1);
 
-        jPanel2.setBackground(new java.awt.Color(164, 208, 215));
+        jPanel2.setBackground(new java.awt.Color(236, 236, 236));
 
         btnManageNetwork.setBackground(new java.awt.Color(9, 87, 136));
         btnManageNetwork.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
