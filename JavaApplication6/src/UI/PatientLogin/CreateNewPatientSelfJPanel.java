@@ -137,7 +137,7 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(9, 87, 136));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Register Patient");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 30, 199, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 20, 199, -1));
 
         txtPatientName.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtPatientName.addActionListener(new java.awt.event.ActionListener() {
@@ -150,7 +150,7 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Street:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 470, 60, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 100, 60, -1));
 
         lblGender.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblGender.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -204,7 +204,7 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
                 btnSubmitActionPerformed(evt);
             }
         });
-        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 750, -1, -1));
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 400, -1, -1));
 
         txtAddrStreet.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtAddrStreet.addActionListener(new java.awt.event.ActionListener() {
@@ -212,7 +212,7 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
                 txtAddrStreetActionPerformed(evt);
             }
         });
-        add(txtAddrStreet, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, 166, -1));
+        add(txtAddrStreet, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 100, 166, -1));
 
         lblemail.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblemail.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -243,45 +243,45 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
         add(contactCarrier, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, 165, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/CreatePatient.jpg"))); // NOI18N
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 90, 299, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 490, 299, -1));
 
         lblUserName1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblUserName1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblUserName1.setText("Insurance ID:");
-        add(lblUserName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 600, 110, -1));
+        add(lblUserName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 230, 110, -1));
 
         txtInsuranceID.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        add(txtInsuranceID, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 600, 166, -1));
+        add(txtInsuranceID, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 230, 166, -1));
 
         lblGender1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblGender1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblGender1.setText("Insurance Company:");
-        add(lblGender1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 650, 160, -1));
+        add(lblGender1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 280, 160, -1));
 
         cmbInsuranceCompany.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         cmbInsuranceCompany.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "--Select--", "Male", "Female", "Other" }));
-        add(cmbInsuranceCompany, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 650, 160, -1));
+        add(cmbInsuranceCompany, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 280, 160, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/createPatient2.png"))); // NOI18N
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 360, 530, 340));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 460, 450, -1));
 
         lblUserName2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblUserName2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblUserName2.setText("SSN:");
-        add(lblUserName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 700, 110, -1));
+        add(lblUserName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 330, 110, -1));
 
         txtSSN.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        add(txtSSN, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 700, 166, -1));
+        add(txtSSN, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 330, 166, -1));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel7.setText("ADDRESS");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, 90, -1));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 70, 90, -1));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel8.setText("City:");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 510, 60, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 140, 60, -1));
 
         txtAddrCity.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtAddrCity.addActionListener(new java.awt.event.ActionListener() {
@@ -289,12 +289,12 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
                 txtAddrCityActionPerformed(evt);
             }
         });
-        add(txtAddrCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 510, 166, -1));
+        add(txtAddrCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 140, 166, -1));
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel9.setText("State:");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 550, 60, -1));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 180, 60, -1));
 
         txtAddrState.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtAddrState.addActionListener(new java.awt.event.ActionListener() {
@@ -302,7 +302,7 @@ public class CreateNewPatientSelfJPanel extends javax.swing.JPanel {
                 txtAddrStateActionPerformed(evt);
             }
         });
-        add(txtAddrState, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 550, 166, -1));
+        add(txtAddrState, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 180, 166, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtPatientNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPatientNameActionPerformed

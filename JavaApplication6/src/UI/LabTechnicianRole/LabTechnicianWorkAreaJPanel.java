@@ -158,7 +158,6 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
         btnSubmit = new javax.swing.JButton();
         lblFileUpload = new javax.swing.JLabel();
         cmbStatusType = new javax.swing.JComboBox<>();
-        jLabel7 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -166,13 +165,11 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtDrRemarks = new javax.swing.JTextArea();
-        jPanel14 = new javax.swing.JPanel();
-        jPanel13 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        labTestTbl.setBackground(new java.awt.Color(255, 193, 131));
+        labTestTbl.setBackground(new java.awt.Color(236, 236, 236));
         labTestTbl.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
         labTestTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -202,10 +199,11 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(labTestTbl);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 810, 96));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, 670, 160));
 
-        processJButton.setBackground(new java.awt.Color(255, 155, 54));
+        processJButton.setBackground(new java.awt.Color(9, 87, 136));
         processJButton.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        processJButton.setForeground(new java.awt.Color(255, 255, 255));
         processJButton.setText("Process for Billing");
         processJButton.setPreferredSize(new java.awt.Dimension(167, 40));
         processJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -213,10 +211,10 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
                 processJButtonActionPerformed(evt);
             }
         });
-        add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 650, -1, -1));
+        add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 280, -1, -1));
 
-        refreshJButton.setBackground(new java.awt.Color(102, 147, 255));
         refreshJButton.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        refreshJButton.setForeground(new java.awt.Color(9, 87, 136));
         refreshJButton.setText("Refresh");
         refreshJButton.setPreferredSize(new java.awt.Dimension(100, 40));
         refreshJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -224,27 +222,27 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
                 refreshJButtonActionPerformed(evt);
             }
         });
-        add(refreshJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 50, -1, -1));
+        add(refreshJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 280, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel1.setText("Test Date :");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel4.setText("Doctor Remarks: ");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel2.setText("Test charges :");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(68, 145, 157));
+        jLabel3.setForeground(new java.awt.Color(9, 87, 136));
         jLabel3.setText("Reporting and Testing");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, -1, -1));
 
-        backJButton.setBackground(new java.awt.Color(102, 147, 255));
         backJButton.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        backJButton.setForeground(new java.awt.Color(9, 87, 136));
         backJButton.setText("Back");
         backJButton.setPreferredSize(new java.awt.Dimension(100, 40));
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -252,26 +250,27 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         testDateTxt.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        add(testDateTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 140, 160, -1));
+        add(testDateTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 160, -1));
 
         testNameTxt.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        add(testNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 100, 160, -1));
+        add(testNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 160, -1));
 
         testChargeTxt.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        add(testChargeTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, 160, -1));
+        add(testChargeTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 360, 160, -1));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel5.setText("Status :");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
 
         technicianNameTxt.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        add(technicianNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 180, 160, -1));
+        add(technicianNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 160, -1));
 
-        btnSubmit.setBackground(new java.awt.Color(102, 147, 255));
+        btnSubmit.setBackground(new java.awt.Color(9, 87, 136));
         btnSubmit.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
         btnSubmit.setText("Submit");
         btnSubmit.setPreferredSize(new java.awt.Dimension(100, 40));
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -279,10 +278,10 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
                 btnSubmitActionPerformed(evt);
             }
         });
-        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 480, -1, -1));
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, -1, -1));
 
         lblFileUpload.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        add(lblFileUpload, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 430, 360, 20));
+        add(lblFileUpload, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 440, 360, 20));
 
         cmbStatusType.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         cmbStatusType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -291,10 +290,7 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
                 cmbStatusTypeActionPerformed(evt);
             }
         });
-        add(cmbStatusType, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, 160, -1));
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/laboratory.jpg"))); // NOI18N
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 120, 290, 180));
+        add(cmbStatusType, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 160, -1));
 
         jPanel3.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
@@ -337,52 +333,22 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
                 .addGap(112, 112, 112))
         );
 
-        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 400, 170, 70));
+        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 170, 70));
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel9.setText("Technician Name :");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, -1, -1));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel6.setText("Test name :");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, -1, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
 
         txtDrRemarks.setColumns(20);
         txtDrRemarks.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtDrRemarks.setRows(5);
         jScrollPane2.setViewportView(txtDrRemarks);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 270, 160, 70));
-
-        jPanel14.setBackground(new java.awt.Color(196, 224, 229));
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 180, Short.MAX_VALUE)
-        );
-
-        add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 180));
-
-        jPanel13.setBackground(new java.awt.Color(68, 145, 157));
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 180, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 180, -1));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, 160, 70));
     }// </editor-fold>//GEN-END:initComponents
 
     private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed
@@ -611,11 +577,8 @@ public class LabTechnicianWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

@@ -103,10 +103,10 @@ public class ManageBedJPanel extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel3.setText("New Bed Count");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 480, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 480, -1, -1));
 
         bedCountTxt.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        add(bedCountTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 480, 146, -1));
+        add(bedCountTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, 146, -1));
 
         bedJTable.setBackground(new java.awt.Color(204, 204, 204));
         bedJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -150,7 +150,7 @@ public class ManageBedJPanel extends javax.swing.JPanel {
                 btnSaveActionPerformed(evt);
             }
         });
-        add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 530, -1, -1));
+        add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 470, -1, -1));
 
         btnUpdate.setBackground(new java.awt.Color(9, 87, 136));
         btnUpdate.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -209,10 +209,10 @@ public class ManageBedJPanel extends javax.swing.JPanel {
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel4.setText("Current Bed Count");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, -1, -1));
 
         txtCurrent.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        add(txtCurrent, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, 270, -1));
+        add(txtCurrent, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 420, 270, -1));
 
         btnViewGraph.setBackground(new java.awt.Color(9, 87, 136));
         btnViewGraph.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N

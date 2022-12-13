@@ -1,4 +1,3 @@
-
 package UI;
 
 import java.awt.Color;
@@ -24,8 +23,8 @@ import javax.swing.JToolBar;
 public class KGradientPanel extends JPanel {
 
 //    public Color kStartColor = Color.MAGENTA;
-    public Color kStartColor = Color.decode("#A1EDF6");
-    public Color kEndColor = Color.decode("#0882F6");
+    public Color kStartColor = Color.decode("#ececec");
+    public Color kEndColor = Color.decode("#ececec");
     public boolean kTransparentControls = true;
     public int kGradientFocus = 500;
 

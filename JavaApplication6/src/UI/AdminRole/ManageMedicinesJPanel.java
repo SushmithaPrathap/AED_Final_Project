@@ -156,7 +156,7 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        organizationJTable.setBackground(new java.awt.Color(255, 193, 131));
+        organizationJTable.setBackground(new java.awt.Color(236, 236, 236));
         organizationJTable.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
         organizationJTable.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         organizationJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -204,21 +204,21 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
         addMedicineJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         dosageJTextField.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
-        addMedicineJPanel.add(dosageJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 122, -1));
+        addMedicineJPanel.add(dosageJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 122, -1));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
         jLabel7.setText("Price");
-        addMedicineJPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
+        addMedicineJPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
         jLabel2.setText("Name");
-        addMedicineJPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
+        addMedicineJPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
         priceTxt.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
-        addMedicineJPanel.add(priceTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 122, -1));
+        addMedicineJPanel.add(priceTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 122, -1));
 
         nameJTextField.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
-        addMedicineJPanel.add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 122, -1));
+        addMedicineJPanel.add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 122, -1));
 
         cmbMedicineType.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
         cmbMedicineType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select", "Liquid", "Tablet", "Gel", "Injection", "Other" }));
@@ -227,22 +227,22 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
                 cmbMedicineTypeActionPerformed(evt);
             }
         });
-        addMedicineJPanel.add(cmbMedicineType, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 32, 122, -1));
+        addMedicineJPanel.add(cmbMedicineType, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 122, -1));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
         jLabel3.setText("Type");
-        addMedicineJPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 38, -1, -1));
+        addMedicineJPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
         jLabel5.setText("Dosage");
-        addMedicineJPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
+        addMedicineJPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
         jLabel6.setText("Available Unit");
-        addMedicineJPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
+        addMedicineJPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
         availableQtyTxt.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
-        addMedicineJPanel.add(availableQtyTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 122, -1));
+        addMedicineJPanel.add(availableQtyTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 122, -1));
 
         btnSave.setBackground(new java.awt.Color(9, 87, 136));
         btnSave.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
@@ -253,7 +253,7 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
                 btnSaveActionPerformed(evt);
             }
         });
-        addMedicineJPanel.add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 80, 30));
+        addMedicineJPanel.add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 80, 40));
 
         closebtn.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
         closebtn.setForeground(new java.awt.Color(9, 87, 136));
@@ -264,16 +264,16 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
                 closebtnActionPerformed(evt);
             }
         });
-        addMedicineJPanel.add(closebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 70, 30));
+        addMedicineJPanel.add(closebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 80, 30));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
         jLabel8.setText("Expiry Date");
-        addMedicineJPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
+        addMedicineJPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
 
         expDate.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
-        addMedicineJPanel.add(expDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 122, -1));
+        addMedicineJPanel.add(expDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 122, -1));
 
-        add(addMedicineJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 416, 310, 340));
+        add(addMedicineJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 416, 390, 280));
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -325,21 +325,21 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
         viewMedicineJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         dosageJTextField1.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
-        viewMedicineJPanel.add(dosageJTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 105, 122, -1));
+        viewMedicineJPanel.add(dosageJTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 122, -1));
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel9.setText("Price");
-        viewMedicineJPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 188, -1, -1));
+        viewMedicineJPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel10.setText("Name");
-        viewMedicineJPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 70, -1, -1));
+        viewMedicineJPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
         priceTxt1.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
-        viewMedicineJPanel.add(priceTxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 185, 122, -1));
+        viewMedicineJPanel.add(priceTxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 122, -1));
 
         nameJTextField1.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
-        viewMedicineJPanel.add(nameJTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 67, 122, -1));
+        viewMedicineJPanel.add(nameJTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 122, -1));
 
         cmbMedicineType1.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
         cmbMedicineType1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select", "Liquid", "Tablet", "Gel", "Injection", "Other" }));
@@ -348,22 +348,22 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
                 cmbMedicineType1ActionPerformed(evt);
             }
         });
-        viewMedicineJPanel.add(cmbMedicineType1, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 32, 122, -1));
+        viewMedicineJPanel.add(cmbMedicineType1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 122, -1));
 
         jLabel11.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel11.setText("Type");
-        viewMedicineJPanel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 38, -1, -1));
+        viewMedicineJPanel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel12.setText("Dosage");
-        viewMedicineJPanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 108, -1, -1));
+        viewMedicineJPanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel13.setText("Available Unit");
-        viewMedicineJPanel.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 148, -1, -1));
+        viewMedicineJPanel.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
         availableQtyTxt1.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
-        viewMedicineJPanel.add(availableQtyTxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 145, 122, -1));
+        viewMedicineJPanel.add(availableQtyTxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 122, -1));
 
         btnSave1.setBackground(new java.awt.Color(9, 87, 136));
         btnSave1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
@@ -374,10 +374,11 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
                 btnSave1ActionPerformed(evt);
             }
         });
-        viewMedicineJPanel.add(btnSave1, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 256, 80, 30));
+        viewMedicineJPanel.add(btnSave1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 90, 30));
 
+        btnUpdate1.setBackground(new java.awt.Color(9, 87, 136));
         btnUpdate1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        btnUpdate1.setForeground(new java.awt.Color(9, 87, 136));
+        btnUpdate1.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate1.setText("Update Details");
         btnUpdate1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(9, 87, 136)));
         btnUpdate1.addActionListener(new java.awt.event.ActionListener() {
@@ -385,7 +386,7 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
                 btnUpdate1ActionPerformed(evt);
             }
         });
-        viewMedicineJPanel.add(btnUpdate1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 256, 130, 30));
+        viewMedicineJPanel.add(btnUpdate1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 100, 30));
 
         closebtn1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         closebtn1.setForeground(new java.awt.Color(9, 87, 136));
@@ -395,16 +396,16 @@ public class ManageMedicinesJPanel extends javax.swing.JPanel {
                 closebtn1ActionPerformed(evt);
             }
         });
-        viewMedicineJPanel.add(closebtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 90, 30));
+        viewMedicineJPanel.add(closebtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 90, 30));
 
         jLabel14.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel14.setText("Expiry Date");
-        viewMedicineJPanel.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 223, -1, -1));
+        viewMedicineJPanel.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
 
         expDate1.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
-        viewMedicineJPanel.add(expDate1, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 220, 122, -1));
+        viewMedicineJPanel.add(expDate1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 122, -1));
 
-        add(viewMedicineJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(547, 416, 300, 340));
+        add(viewMedicineJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 420, 390, 280));
 
         backJButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         backJButton.setForeground(new java.awt.Color(9, 87, 136));

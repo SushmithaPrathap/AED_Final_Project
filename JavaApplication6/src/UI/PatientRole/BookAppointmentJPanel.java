@@ -148,8 +148,6 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
         jLabel12 = new javax.swing.JLabel();
         jpnael16 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
-        jPanel14 = new javax.swing.JPanel();
-        jPanel13 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         lblTestName = new javax.swing.JLabel();
         txtTestName = new javax.swing.JTextField();
@@ -163,8 +161,8 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
         jLabel1.setText("Book Appointment");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, 220, -1));
 
-        jButton1.setBackground(new java.awt.Color(102, 147, 255));
         jButton1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(9, 87, 136));
         jButton1.setText("Back");
         jButton1.setPreferredSize(new java.awt.Dimension(100, 40));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -172,20 +170,20 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 58, -1, -1));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Patient Name:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 109, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 109, -1));
 
         txtPatientName.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        add(txtPatientName, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 148, -1));
+        add(txtPatientName, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 148, -1));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Doctor:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 109, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 109, -1));
 
         cmbDoctor.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         cmbDoctor.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -194,12 +192,12 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
                 cmbDoctorActionPerformed(evt);
             }
         });
-        add(cmbDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, 148, -1));
+        add(cmbDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 148, -1));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Appointment Date:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 150, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 150, -1));
 
         txtAppointmetDate.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -224,10 +222,11 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
                 txtAppointmetDateKeyTyped(evt);
             }
         });
-        add(txtAppointmetDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, 148, -1));
+        add(txtAppointmetDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, 148, -1));
 
-        txtBookAppointment.setBackground(new java.awt.Color(255, 155, 54));
+        txtBookAppointment.setBackground(new java.awt.Color(9, 87, 136));
         txtBookAppointment.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        txtBookAppointment.setForeground(new java.awt.Color(255, 255, 255));
         txtBookAppointment.setText("Book Appointment");
         txtBookAppointment.setPreferredSize(new java.awt.Dimension(167, 40));
         txtBookAppointment.addActionListener(new java.awt.event.ActionListener() {
@@ -235,19 +234,19 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
                 txtBookAppointmentActionPerformed(evt);
             }
         });
-        add(txtBookAppointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 520, -1, -1));
+        add(txtBookAppointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 510, 220, -1));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel5.setText("Appointment Type:");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, -1, -1));
 
         txtAppointmentType.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtAppointmentType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "--Select--", "In-Person", "Online" }));
-        add(txtAppointmentType, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 390, 148, -1));
+        add(txtAppointmentType, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, 148, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/bookAppomnt.png"))); // NOI18N
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 50, -1, 145));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 30, -1, 145));
 
         jpnael10.setBackground(new java.awt.Color(164, 208, 215));
         jpnael10.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -394,7 +393,7 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
             .addGroup(jpnael12Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(jLabel12)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         add(jpnael12, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 300, -1, 60));
@@ -422,42 +421,12 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
         jpnael16Layout.setVerticalGroup(
             jpnael16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnael16Layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel13)
                 .addGap(24, 24, 24))
         );
 
         add(jpnael16, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 380, -1, 60));
-
-        jPanel14.setBackground(new java.awt.Color(196, 224, 229));
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-
-        add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 200));
-
-        jPanel13.setBackground(new java.awt.Color(68, 145, 157));
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 200, -1));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/SMS.jpg"))); // NOI18N
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 200, 560, 497));
@@ -465,10 +434,10 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
         lblTestName.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblTestName.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblTestName.setText("Test Name:");
-        add(lblTestName, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, 120, -1));
+        add(lblTestName, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, 120, -1));
 
         txtTestName.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        add(txtTestName, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, 140, -1));
+        add(txtTestName, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 450, 140, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtAppointmetDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAppointmetDateActionPerformed
@@ -863,8 +832,6 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jpnael10;
     private javax.swing.JPanel jpnael1014;
     private javax.swing.JPanel jpnael11;

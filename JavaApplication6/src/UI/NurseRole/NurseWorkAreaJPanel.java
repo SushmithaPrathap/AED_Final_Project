@@ -92,7 +92,7 @@ public class NurseWorkAreaJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        workRequestJTable.setBackground(new java.awt.Color(255, 193, 131));
+        workRequestJTable.setBackground(new java.awt.Color(236, 236, 236));
         workRequestJTable.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
         workRequestJTable.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(

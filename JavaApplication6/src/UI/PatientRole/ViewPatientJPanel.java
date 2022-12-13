@@ -192,7 +192,7 @@ public class ViewPatientJPanel extends javax.swing.JPanel {
                 btnSaveActionPerformed(evt);
             }
         });
-        add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 740, -1, -1));
+        add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 480, -1, -1));
 
         btnUpdate.setBackground(new java.awt.Color(9, 87, 136));
         btnUpdate.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -204,7 +204,7 @@ public class ViewPatientJPanel extends javax.swing.JPanel {
                 btnUpdateActionPerformed(evt);
             }
         });
-        add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 740, 85, -1));
+        add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 540, 85, -1));
 
         lblemail.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblemail.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);

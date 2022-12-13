@@ -163,7 +163,7 @@ public class PatientHistoryJPanel extends javax.swing.JPanel {
         });
         add(btnAddPatientDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 300, -1, -1));
 
-        patientDetailsTbl.setBackground(new java.awt.Color(255, 193, 131));
+        patientDetailsTbl.setBackground(new java.awt.Color(236, 236, 236));
         patientDetailsTbl.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
         patientDetailsTbl.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         patientDetailsTbl.setModel(new javax.swing.table.DefaultTableModel(
@@ -192,7 +192,7 @@ public class PatientHistoryJPanel extends javax.swing.JPanel {
         patientDetailsTbl.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(patientDetailsTbl);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 360, 570, 148));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 360, 690, 160));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel8.setText("Patient Name :");
@@ -207,7 +207,7 @@ public class PatientHistoryJPanel extends javax.swing.JPanel {
         add(patientNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, 161, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/prescroption1.jpg"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 340, 180, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 180, -1));
 
         btnViewDetails.setBackground(new java.awt.Color(9, 87, 136));
         btnViewDetails.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -219,7 +219,7 @@ public class PatientHistoryJPanel extends javax.swing.JPanel {
                 btnViewDetailsActionPerformed(evt);
             }
         });
-        add(btnViewDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 530, -1, -1));
+        add(btnViewDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 530, -1, -1));
 
         txtpatientHistoryId.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtpatientHistoryId.addActionListener(new java.awt.event.ActionListener() {

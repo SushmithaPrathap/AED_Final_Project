@@ -14,6 +14,9 @@ import java.awt.CardLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import UI.PatientLogin.CreateNewPatientSelfJPanel;
+import java.awt.GraphicsEnvironment;
+
+import javax.swing.JFrame;
 
 /**
  *
@@ -56,6 +59,7 @@ public class Main extends javax.swing.JFrame {
         btnLogout = new javax.swing.JButton();
         SideSubHeading = new javax.swing.JLabel();
         btnRegister = new javax.swing.JButton();
+        btnMax = new javax.swing.JButton();
         container = new javax.swing.JPanel();
         kGradientPanel1 = new UI.KGradientPanel();
         bgLabel = new javax.swing.JLabel();
@@ -144,6 +148,17 @@ public class Main extends javax.swing.JFrame {
         });
         jPanel1.add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 160, 40));
 
+        btnMax.setBackground(new java.awt.Color(9, 87, 136));
+        btnMax.setForeground(new java.awt.Color(255, 255, 255));
+        btnMax.setText("maximize");
+        btnMax.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnMax.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMaxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, -1));
+
         jSplitPane1.setLeftComponent(jPanel1);
 
         container.setBackground(new java.awt.Color(161, 237, 246));
@@ -159,7 +174,7 @@ public class Main extends javax.swing.JFrame {
         });
         container.setLayout(new java.awt.CardLayout());
 
-        bgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/Images/big bg.jpeg"))); // NOI18N
+        bgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/Images/download.jpeg"))); // NOI18N
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
@@ -319,6 +334,25 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsernameActionPerformed
 
+    private void btnMaxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMaxActionPerformed
+        // TODO add your handling code here:
+        if (maximized) {
+            //handle fullscreen - taskbar
+            Main.this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+            GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
+            Main.this.setMaximizedBounds(env.getMaximumWindowBounds());
+//            ii = new ImageIcon(getClass().getResource("minimize.png"));
+            btnMax.setText("Minimize");
+            maximized = false;
+        } else {
+
+            setExtendedState(JFrame.NORMAL);
+//            ii = new ImageIcon(getClass().getResource("maximize.png"));
+            btnMax.setText("Maximize");
+            maximized = true;
+        }
+    }//GEN-LAST:event_btnMaxActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -365,6 +399,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel bgLabel;
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnLogout;
+    private javax.swing.JButton btnMax;
     private javax.swing.JButton btnRegister;
     private javax.swing.JPanel container;
     private javax.swing.JPanel jPanel1;

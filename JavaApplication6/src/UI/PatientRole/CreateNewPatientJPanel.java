@@ -178,8 +178,9 @@ public class CreateNewPatientJPanel extends javax.swing.JPanel {
         txtBloodGroup.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "--Select--", "A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-" }));
         add(txtBloodGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 410, 166, -1));
 
-        btnSubmit.setBackground(new java.awt.Color(102, 147, 255));
+        btnSubmit.setBackground(new java.awt.Color(9, 87, 136));
         btnSubmit.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
         btnSubmit.setText("Submit");
         btnSubmit.setPreferredSize(new java.awt.Dimension(100, 40));
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -187,7 +188,7 @@ public class CreateNewPatientJPanel extends javax.swing.JPanel {
                 btnSubmitActionPerformed(evt);
             }
         });
-        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 770, -1, -1));
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 450, -1, -1));
 
         lblemail.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblemail.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);

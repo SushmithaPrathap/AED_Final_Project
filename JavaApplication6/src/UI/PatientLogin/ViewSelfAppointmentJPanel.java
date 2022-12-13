@@ -197,20 +197,20 @@ public class ViewSelfAppointmentJPanel extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Patient Name:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 350, 134, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 340, 134, -1));
 
         txtPatientName.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        add(txtPatientName, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 340, 162, -1));
+        add(txtPatientName, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 340, 162, -1));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Doctor:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 390, 134, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 390, 134, -1));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Appointment Date:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 430, 160, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, 160, -1));
 
         txtAppointmetDate.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtAppointmetDate.addActionListener(new java.awt.event.ActionListener() {
@@ -218,16 +218,16 @@ public class ViewSelfAppointmentJPanel extends javax.swing.JPanel {
                 txtAppointmetDateActionPerformed(evt);
             }
         });
-        add(txtAppointmetDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 430, 162, -1));
+        add(txtAppointmetDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 430, 162, -1));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel5.setText("Appointment Type:");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 470, 160, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 470, 160, -1));
 
         txtAppointmentType.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtAppointmentType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "--Select--", "In-Person", "Online" }));
-        add(txtAppointmentType, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 470, 162, -1));
+        add(txtAppointmentType, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 470, 162, -1));
 
         viewAppointmentJTable.setBackground(new java.awt.Color(236, 236, 236));
         viewAppointmentJTable.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
@@ -276,7 +276,7 @@ public class ViewSelfAppointmentJPanel extends javax.swing.JPanel {
         add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 220, -1));
 
         txtDoctor.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        add(txtDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 390, 162, -1));
+        add(txtDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 390, 162, -1));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel6.setText("Appointment Status : ");
@@ -298,11 +298,11 @@ public class ViewSelfAppointmentJPanel extends javax.swing.JPanel {
         add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 70, 116, -1));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/viewAppont.png"))); // NOI18N
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 348, 244, 165));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 244, 165));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel8.setText("Appointment Status:");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 520, -1, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 300, -1, -1));
 
         txtAppointmentStatus.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtAppointmentStatus.addActionListener(new java.awt.event.ActionListener() {
@@ -310,39 +310,39 @@ public class ViewSelfAppointmentJPanel extends javax.swing.JPanel {
                 txtAppointmentStatusActionPerformed(evt);
             }
         });
-        add(txtAppointmentStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 510, 162, -1));
+        add(txtAppointmentStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 300, 162, -1));
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel9.setText("PatientId:");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 310, 134, -1));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, 134, -1));
 
         txtPatientId.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        add(txtPatientId, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 300, 162, -1));
+        add(txtPatientId, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 300, 162, -1));
 
         jLabel12.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel12.setText("Insurance Status:");
-        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 560, 143, -1));
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 340, 143, -1));
 
         txtInsuranceStatus.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        add(txtInsuranceStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 550, 161, -1));
+        add(txtInsuranceStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 340, 161, -1));
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel10.setText("Insurance ID:");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 600, 166, -1));
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 380, 166, -1));
 
         txtInsuranceId.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        add(txtInsuranceId, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 590, 160, -1));
+        add(txtInsuranceId, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 380, 160, -1));
 
         jLabel11.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel11.setText("Insurance Company:");
-        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 630, 166, -1));
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 420, 166, -1));
 
         txtInsuranceE.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        add(txtInsuranceE, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 630, 160, -1));
+        add(txtInsuranceE, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 420, 160, -1));
 
         btnViewBill.setBackground(new java.awt.Color(9, 87, 136));
         btnViewBill.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -354,7 +354,7 @@ public class ViewSelfAppointmentJPanel extends javax.swing.JPanel {
                 btnViewBillActionPerformed(evt);
             }
         });
-        add(btnViewBill, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 670, 162, -1));
+        add(btnViewBill, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 530, 162, -1));
 
         jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(9, 87, 136));

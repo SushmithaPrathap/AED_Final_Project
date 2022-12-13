@@ -149,7 +149,7 @@ public class InsuranceDMainAreaJPanel extends javax.swing.JPanel {
                 processJButtonActionPerformed(evt);
             }
         });
-        add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 560, 190, 60));
+        add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 530, 190, 60));
 
         refreshJButton.setBackground(new java.awt.Color(9, 87, 136));
         refreshJButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -161,7 +161,7 @@ public class InsuranceDMainAreaJPanel extends javax.swing.JPanel {
                 refreshJButtonActionPerformed(evt);
             }
         });
-        add(refreshJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 400, 190, 60));
+        add(refreshJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, 190, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/Images/ins.png"))); // NOI18N
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 300, 580, 400));
@@ -181,7 +181,7 @@ public class InsuranceDMainAreaJPanel extends javax.swing.JPanel {
                 btnNewInsuranceActionPerformed(evt);
             }
         });
-        add(btnNewInsurance, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 480, 190, 60));
+        add(btnNewInsurance, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, 190, 60));
     }// </editor-fold>//GEN-END:initComponents
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed

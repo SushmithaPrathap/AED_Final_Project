@@ -189,14 +189,14 @@ public class LabAssistantMainAreaJPanel extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(assignJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addGap(29, 29, 29)
                 .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
+                .addGap(29, 29, 29)
                 .addComponent(processJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, 290, 350));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 290, 300));
 
         jLabel5.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(9, 87, 136));

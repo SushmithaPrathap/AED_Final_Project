@@ -219,7 +219,7 @@ public class PharmacyWorkerWorkAreaJPanel extends javax.swing.JPanel {
         jLabel9.setText("Worker Name :");
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 380, -1, 20));
 
-        medicineQuantityTbl.setBackground(new java.awt.Color(255, 193, 131));
+        medicineQuantityTbl.setBackground(new java.awt.Color(236, 236, 236));
         medicineQuantityTbl.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
         medicineQuantityTbl.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         medicineQuantityTbl.setModel(new javax.swing.table.DefaultTableModel(

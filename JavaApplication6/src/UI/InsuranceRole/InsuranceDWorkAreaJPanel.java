@@ -215,7 +215,7 @@ public class InsuranceDWorkAreaJPanel extends javax.swing.JPanel {
         add(cmbStatusType, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, 160, -1));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/insurance2.jpg"))); // NOI18N
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 90, 490, 350));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 90, 470, 350));
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel9.setText("Enterprise :");

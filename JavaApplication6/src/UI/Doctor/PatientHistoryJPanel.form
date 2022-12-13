@@ -224,7 +224,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="420" y="360" width="570" height="148"/>
+          <AbsoluteConstraints x="210" y="360" width="690" height="160"/>
         </Constraint>
       </Constraints>
 
@@ -233,7 +233,7 @@
         <Component class="javax.swing.JTable" name="patientDetailsTbl">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="83" green="c1" red="ff" type="rgb"/>
+              <Color blue="ec" green="ec" red="ec" type="rgb"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -335,7 +335,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="230" y="340" width="180" height="-1"/>
+          <AbsoluteConstraints x="10" y="290" width="180" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -360,7 +360,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="640" y="530" width="-1" height="-1"/>
+          <AbsoluteConstraints x="500" y="530" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>

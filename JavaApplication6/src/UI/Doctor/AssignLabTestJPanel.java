@@ -109,7 +109,7 @@ public class AssignLabTestJPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        assignTestTbl.setBackground(new java.awt.Color(255, 193, 131));
+        assignTestTbl.setBackground(new java.awt.Color(236, 236, 236));
         assignTestTbl.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
         assignTestTbl.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         assignTestTbl.setModel(new javax.swing.table.DefaultTableModel(

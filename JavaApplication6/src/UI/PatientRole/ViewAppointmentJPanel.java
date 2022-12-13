@@ -241,7 +241,7 @@ public class ViewAppointmentJPanel extends javax.swing.JPanel {
         txtAppointmentType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "--Select--", "In-Person", "Online" }));
         add(txtAppointmentType, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 480, 162, -1));
 
-        viewAppointmentJTable.setBackground(new java.awt.Color(255, 193, 131));
+        viewAppointmentJTable.setBackground(new java.awt.Color(236, 236, 236));
         viewAppointmentJTable.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
         viewAppointmentJTable.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         viewAppointmentJTable.setModel(new javax.swing.table.DefaultTableModel(

@@ -134,13 +134,12 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtOprDescptn = new javax.swing.JTextArea();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        DoctorWorkAreaTable.setBackground(new java.awt.Color(255, 193, 131));
+        DoctorWorkAreaTable.setBackground(new java.awt.Color(236, 236, 236));
         DoctorWorkAreaTable.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
         DoctorWorkAreaTable.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         DoctorWorkAreaTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -173,7 +172,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             DoctorWorkAreaTable.getColumnModel().getColumn(5).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 709, 260));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 90, 940, 260));
 
         refreshTestJButton.setBackground(new java.awt.Color(9, 87, 136));
         refreshTestJButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -239,7 +238,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 btnCompletedActionPerformed(evt);
             }
         });
-        add(btnCompleted, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 610, 190, -1));
+        add(btnCompleted, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 610, 210, -1));
 
         btnPrescribeMeds.setBackground(new java.awt.Color(9, 87, 136));
         btnPrescribeMeds.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -313,9 +312,8 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        closebtn.setBackground(new java.awt.Color(9, 87, 136));
         closebtn.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        closebtn.setForeground(new java.awt.Color(255, 255, 255));
+        closebtn.setForeground(new java.awt.Color(9, 87, 136));
         closebtn.setText("Close");
         closebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -351,32 +349,36 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             .addGroup(scheduleSurgeryJPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(scheduleSurgeryJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(oprDesc)
+                    .addComponent(jLabel5))
+                .addGap(27, 27, 27)
+                .addGroup(scheduleSurgeryJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(cmbOperationType, 0, 127, Short.MAX_VALUE)
+                    .addComponent(appoinmtntDTxt)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGroup(scheduleSurgeryJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(scheduleSurgeryJPanelLayout.createSequentialGroup()
                         .addGroup(scheduleSurgeryJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(oprDesc)
-                            .addComponent(jLabel5))
-                        .addGap(27, 27, 27)
-                        .addGroup(scheduleSurgeryJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cmbOperationType, 0, 127, Short.MAX_VALUE)
-                            .addComponent(appoinmtntDTxt)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(scheduleSurgeryJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(scheduleSurgeryJPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(26, 26, 26)
-                                .addComponent(patientNameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(scheduleSurgeryJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(scheduleSurgeryJPanelLayout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addGap(26, 26, 26)
+                                        .addComponent(patientNameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(scheduleSurgeryJPanelLayout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(dateTxt))))
                             .addGroup(scheduleSurgeryJPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
-                                .addComponent(dateTxt)))
+                                .addGap(62, 62, 62)
+                                .addComponent(saveButton)))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, scheduleSurgeryJPanelLayout.createSequentialGroup()
-                        .addComponent(saveButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(scheduleSurgeryJPanelLayout.createSequentialGroup()
+                        .addGap(85, 85, 85)
                         .addComponent(closebtn)
-                        .addGap(42, 42, 42))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         scheduleSurgeryJPanelLayout.setVerticalGroup(
             scheduleSurgeryJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -397,19 +399,16 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(scheduleSurgeryJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(oprDesc)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(scheduleSurgeryJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(saveButton)
-                    .addComponent(closebtn))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(scheduleSurgeryJPanelLayout.createSequentialGroup()
+                        .addComponent(saveButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(closebtn)))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
-        add(scheduleSurgeryJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 390, -1, -1));
+        add(scheduleSurgeryJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 390, -1, 250));
         scheduleSurgeryJPanel.getAccessibleContext().setAccessibleName("Add Surgery");
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/doctoMain.JPG"))); // NOI18N
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 200, 280));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(9, 87, 136));
@@ -830,7 +829,6 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

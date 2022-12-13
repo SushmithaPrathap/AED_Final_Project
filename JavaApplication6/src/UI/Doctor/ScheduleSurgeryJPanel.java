@@ -200,9 +200,8 @@ jLabel6.setIcon(profilePic);
             }
         });
 
-        closebtn.setBackground(new java.awt.Color(9, 87, 136));
         closebtn.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        closebtn.setForeground(new java.awt.Color(255, 255, 255));
+        closebtn.setForeground(new java.awt.Color(9, 87, 136));
         closebtn.setText("Close");
         closebtn.setPreferredSize(new java.awt.Dimension(100, 40));
         closebtn.addActionListener(new java.awt.event.ActionListener() {
@@ -246,22 +245,23 @@ jLabel6.setIcon(profilePic);
                     .addComponent(cmbOperationType, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(appoinmtntDTxt)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(scheduleSurgeryJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(scheduleSurgeryJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(scheduleSurgeryJPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(26, 26, 26)
-                        .addComponent(patientNameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(scheduleSurgeryJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(scheduleSurgeryJPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(26, 26, 26)
+                                .addComponent(patientNameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(scheduleSurgeryJPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(18, 18, 18)
+                                .addComponent(dateTxt))))
                     .addGroup(scheduleSurgeryJPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(dateTxt))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, scheduleSurgeryJPanelLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(closebtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                        .addGap(85, 85, 85)
+                        .addGroup(scheduleSurgeryJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(closebtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
         );
         scheduleSurgeryJPanelLayout.setVerticalGroup(
             scheduleSurgeryJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -282,17 +282,17 @@ jLabel6.setIcon(profilePic);
                 .addGap(18, 18, 18)
                 .addGroup(scheduleSurgeryJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(oprDesc)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(scheduleSurgeryJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(closebtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(scheduleSurgeryJPanelLayout.createSequentialGroup()
+                        .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(closebtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         add(scheduleSurgeryJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, -1, -1));
 
-        tblSurgeyDetails.setBackground(new java.awt.Color(255, 193, 131));
+        tblSurgeyDetails.setBackground(new java.awt.Color(236, 236, 236));
         tblSurgeyDetails.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         tblSurgeyDetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

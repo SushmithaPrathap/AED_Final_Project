@@ -65,7 +65,6 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         nameJTextField = new javax.swing.JTextField();
         backJButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         btnViewGraph = new javax.swing.JButton();
@@ -76,7 +75,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        networkJTable.setBackground(new java.awt.Color(255, 193, 131));
+        networkJTable.setBackground(new java.awt.Color(236, 236, 236));
         networkJTable.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
         networkJTable.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         networkJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -117,7 +116,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
             networkJTable.getColumnModel().getColumn(0).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 130, 233, 183));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 130, 380, 183));
 
         submitJButton.setBackground(new java.awt.Color(9, 87, 136));
         submitJButton.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -153,9 +152,6 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel2.setText("Create Network");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, -1, 34));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Network.jpg"))); // NOI18N
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 340, 440, 250));
 
         jPanel13.setBackground(new java.awt.Color(68, 145, 157));
 
@@ -199,7 +195,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                 btnViewGraph1ActionPerformed(evt);
             }
         });
-        add(btnViewGraph1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 230, -1));
+        add(btnViewGraph1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, 230, -1));
 
         btnViewApptntStatus.setBackground(new java.awt.Color(9, 87, 136));
         btnViewApptntStatus.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -211,7 +207,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                 btnViewApptntStatusActionPerformed(evt);
             }
         });
-        add(btnViewApptntStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 560, 230, -1));
+        add(btnViewApptntStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 490, 230, -1));
 
         jPanel15.setBackground(new java.awt.Color(68, 145, 157));
 
@@ -333,7 +329,6 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnViewGraph1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JScrollPane jScrollPane1;

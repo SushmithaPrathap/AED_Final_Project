@@ -140,7 +140,7 @@ public class ManageBedsFinalJPanel extends javax.swing.JPanel {
                 btnViewActionPerformed(evt);
             }
         });
-        assignJPanel.add(btnView, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, -1, -1));
+        assignJPanel.add(btnView, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 100, 30));
 
         bedJTable.setBackground(new java.awt.Color(204, 204, 204));
         bedJTable.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 204, 255)));
@@ -164,7 +164,7 @@ public class ManageBedsFinalJPanel extends javax.swing.JPanel {
         bedJTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane2.setViewportView(bedJTable);
 
-        assignJPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, 240, 210));
+        assignJPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 240, 210));
 
         txtBedDate.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtBedDate.addActionListener(new java.awt.event.ActionListener() {
@@ -188,7 +188,7 @@ public class ManageBedsFinalJPanel extends javax.swing.JPanel {
                 btnAssignBedActionPerformed(evt);
             }
         });
-        assignJPanel.add(btnAssignBed, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 490, -1, -1));
+        assignJPanel.add(btnAssignBed, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, -1, -1));
 
         jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel15.setText("Bed Type");
@@ -205,7 +205,7 @@ public class ManageBedsFinalJPanel extends javax.swing.JPanel {
 
         lblBedStatus1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         lblBedStatus1.setText("New Bed Status");
-        assignJPanel.add(lblBedStatus1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 440, -1, -1));
+        assignJPanel.add(lblBedStatus1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, -1, -1));
 
         bedStatusCmb1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         bedStatusCmb1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Available", "Occupied", "Assigned Laundry" }));
@@ -214,9 +214,9 @@ public class ManageBedsFinalJPanel extends javax.swing.JPanel {
                 bedStatusCmb1ActionPerformed(evt);
             }
         });
-        assignJPanel.add(bedStatusCmb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 440, 146, -1));
+        assignJPanel.add(bedStatusCmb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 146, -1));
 
-        add(assignJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 60, 374, 540));
+        add(assignJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(414, 60, 480, 470));
 
         backJButton.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         backJButton.setForeground(new java.awt.Color(9, 87, 136));
@@ -230,7 +230,7 @@ public class ManageBedsFinalJPanel extends javax.swing.JPanel {
         add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/Images/beds.jpeg"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, 360, 248));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 360, 248));
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
